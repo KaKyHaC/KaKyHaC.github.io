@@ -41,7 +41,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        .skills, .projects, .contacts {
+        .skills, .projects, .experience, .contacts {
             margin-bottom: 2rem;
         }
         footer {
@@ -59,6 +59,14 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .qr-code {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .qr-code img {
+            width: 150px; /* Уменьшен размер QR-кода */
+            height: 150px;
+        }
     </style>
 </head>
 <body>
@@ -72,39 +80,55 @@
     <a href="#about">About Me</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
     <a href="#contacts">Contacts</a>
 </nav>
 
 <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I'm Dmytro Barannik, born in 1997 in Kharkiv, Ukraine. I am a dedicated Android developer with 6 years of commercial experience in the IT industry. I enjoy creating innovative solutions for healthcare, smart home, media, and security applications. My goal is to continuously improve my skills and contribute to impactful projects.</p>
+    <p>I am Dmytro Barannik, an experienced Android developer with over 6 years of expertise in creating mobile applications. I deliver high-quality solutions across domains like healthcare, smart home, and security. I constantly strive to enhance my skills and stay updated with the latest technologies.</p>
 </section>
 
 <section id="skills" class="skills">
     <h2>Skills</h2>
     <ul>
-        <li>Programming Languages: Java, Kotlin, C++, Dart</li>
-        <li>Frameworks and Libraries: Android SDK, Jetpack Compose, Dagger 2, Room, Retrofit</li>
-        <li>Architectural Patterns: MVVM, MVP, Clean Architecture</li>
-        <li>Tools: Firebase, Git, JUnit, Espresso</li>
-        <li>Database: SQLite, Firebase Realtime Database</li>
-        <li>Operating Systems: macOS, Windows, Linux</li>
+        <li><strong>Programming Languages:</strong> Java, Kotlin, C++, Dart</li>
+        <li><strong>Frameworks and Libraries:</strong> Android SDK, Flutter SDK, Jetpack Compose, Dagger 2, Room, Retrofit</li>
+        <li><strong>Architectural Patterns:</strong> MVVM, MVP, Clean Architecture</li>
+        <li><strong>CI/CD Tools:</strong> Firebase Cloud Messaging, Git Flow</li>
+        <li><strong>Databases:</strong> SQLite, Firebase, MySQL</li>
+        <li><strong>Testing:</strong> JUnit, Espresso, Mockito</li>
     </ul>
 </section>
 
 <section id="projects" class="projects">
-    <h2>Featured Projects</h2>
+    <h2>Projects</h2>
     <ul>
         <li><strong>People Notes:</strong> A personal information manager app available on <a href="https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes" target="_blank" class="btn">Google Play</a>.</li>
-        <li><strong>YouTube Channel:</strong> Showcasing technical tutorials and insights. Visit <a href="https://www.youtube.com/@d.v.barannik" target="_blank" class="btn">YouTube</a>.</li>
+        <li><strong>YouTube Channel:</strong> Technical tutorials and insights. Visit <a href="https://www.youtube.com/@d.v.barannik" target="_blank" class="btn">YouTube</a>.</li>
+        <li><strong>Smart Home App:</strong> A solution for controlling home systems, cameras, and security features.</li>
+        <li><strong>Healthcare Portal:</strong> A platform for patients, doctors, and B2B with video consultations and e-commerce features.</li>
+    </ul>
+</section>
+
+<section id="experience" class="experience">
+    <h2>Experience</h2>
+    <ul>
+        <li><strong>CHI Software (2020 - Present):</strong> Leading Android development projects, mentoring junior developers, and ensuring high code quality.</li>
+        <li><strong>Nitrix Studio (2018 - 2020):</strong> Developed Android and Flutter applications for various domains, including smart home and entertainment.</li>
+        <li><strong>IT Company (2017 - 2018):</strong> Created Android applications for media and security projects.</li>
     </ul>
 </section>
 
 <section id="contacts" class="contacts">
     <h2>Contact Me</h2>
-    <p>Email: barannik.dv@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/dmytro-barannik" target="_blank">linkedin.com/in/dmytro-barannik</a></p>
-    <p>GitHub: <a href="https://github.com/dvbarannik" target="_blank">github.com/dvbarannik</a></p>
+    <p>Email: <a href="mailto:d.v.barannik@gmail.com">d.v.barannik@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/KaKyHaC" target="_blank">github.com/KaKyHaC</a></p>
+    <div class="qr-code">
+        <h3>Follow me on Instagram</h3>
+        <img src="dima_barannik_qr.png" alt="Instagram QR Code">
+        <p><a href="https://www.instagram.com/dima_barannik/" target="_blank">@dima_barannik</a></p>
+    </div>
 </section>
 
 <footer>
