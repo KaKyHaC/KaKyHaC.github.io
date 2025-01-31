@@ -3,6 +3,17 @@
     background: var(--bg-color);
 }
 
+#summary h2 {
+    text-align: left;
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
 .summary-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -10,13 +21,6 @@
     padding: 25px;
     border-radius: 8px;
     box-shadow: var(--card-shadow);
-}
-
-#summary h2 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 30px;
-    text-align: center;
 }
 
 .summary-content p {
