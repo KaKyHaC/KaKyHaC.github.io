@@ -3,118 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dmytro Barannik - Senior Android Developer with 7 years of experience">
     <title>Dmytro Barannik - Android Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </nav>
 
     <header>
-        <h1>Dmytro Barannik</h1>
-        <p>Senior Android Developer</p>
-        <nav>
-            <ul>
-                <li><a href="#summary">Summary</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Dmytro Barannik</h1>
+            <h2>Android Developer</h2>
+            <div class="contacts">
+                <a href="mailto:d.v.barannik@gmail.com"><i class="fas fa-envelope"></i> d.v.barannik@gmail.com</a>
+                <a href="tel:+380661748228"><i class="fas fa-phone"></i> +380661748228</a>
+                <a href="https://github.com/KaKyHaC" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://play.google.com/store/apps/dev?id=7572188664286438813" target="_blank">
+                    <i class="fab fa-google-play"></i> Play Store
+                </a>
+            </div>
+        </div>
     </header>
 
-    <section id="summary">
-        <h2>Summary</h2>
-        <p>Experienced Android Developer with 7 years of expertise in mobile application development, specializing in Kotlin, Java, and Flutter. Proficient in Jetpack Compose, Android SDK, NDK, Coroutines, and modern architecture patterns.</p>
-        <p>Published multiple applications on Google Play:</p>
-        <ul>
-            <li><a href="https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes" target="_blank">People Notes (MyPeople)</a> - A personal contact management app.</li>
-            <li><a href="https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall" target="_blank">Resistance: Nightfall</a> - A multiplayer social deduction game.</li>
-        </ul>
-        <p>Proficient in Firebase services, Dependency Injection, networking solutions, and modern UI frameworks.</p>
-    </section>
+    <main>
+        <section id="summary" class="container">
+            <h2>Summary</h2>
+            <p>Experienced Android Developer with 7 years of expertise in mobile application development, specializing in Kotlin, Java, and Flutter. Proficient in Jetpack Compose, Android SDK, NDK, Coroutines, and modern architecture patterns.</p>
+            <p>Published multiple applications on Google Play:</p>
+            <ul>
+                <li><a href="https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes" target="_blank">People Notes (MyPeople)</a> - A personal contact management app.</li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall" target="_blank">Resistance: Nightfall</a> - A multiplayer social deduction game.</li>
+            </ul>
+            <p>Proficient in Firebase services, Dependency Injection, networking solutions, and modern UI frameworks.</p>
+        </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-            <li>✅ Kotlin, Java, C++, Dart, Python</li>
-            <li>✅ Jetpack Compose, Android SDK, Android NDK, Kotlin Multiplatform, Flutter</li>
-            <li>✅ Jetpack Compose, Material 3, Leanback (Android TV)</li>
-            <li>✅ MVVM, MVP, BLoC, Redux, Clean Architecture, GoF, SOLID</li>
-            <li>✅ LiveData, ViewModel, Flow</li>
-            <li>✅ Retrofit 2, OkHttp, WebSockets, Socket API</li>
-            <li>✅ Fetch 2 (for downloads)</li>
-            <li>✅ Room, Firebase Firestore, Firebase Realtime Database, Realm, SQLite, MySQL</li>
-            <li>✅ Firebase Storage, SharedPreferences, Proto DataStore</li>
-            <li>✅ Coroutines/Flow, RxJava/RxKotlin, AsyncTask</li>
-            <li>✅ WorkManager, Coroutine Workers, Services</li>
-            <li>✅ Firebase Authentication, Firestore, Realtime Database, Firebase Storage</li>
-            <li>✅ Firebase Analytics, Crashlytics, Remote Config, Firebase Performance Monitoring</li>
-            <li>✅ Dagger 2, Hilt, Koin</li>
-            <li>✅ Git Flow, Git (GitHub, GitLab, Bitbucket)</li>
-            <li>✅ Google Play Billing, In-App Purchases (IAP), AdMob</li>
-            <li>✅ CameraX, ExoPlayer, VLC, Glide, Coil</li>
-            <li>✅ Unit & UI Testing: JUnit 5, Espresso, Mockito</li>
-            <li>✅ Instrumentation & Automated Tests: Mockk, Firebase Test Lab</li>
-            <li>✅ Logging & Debugging: Timber, Android Profiler, LeakCanary</li>
-            <li>✅ Agile, Scrum, Kanban, Waterfall</li>
-            <li>✅ macOS, Windows, Linux</li>
-            <li>✅ Android Studio, IntelliJ IDEA, Visual Studio Code</li>
-        </ul>
-    </section>
+        <section id="skills" class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <ul>
+                        <li>Kotlin</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                        <li>Dart</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
+                    <ul>
+                        <li>Jetpack Compose</li>
+                        <li>Android SDK</li>
+                        <li>Android NDK</li>
+                        <li>Kotlin Multiplatform</li>
+                        <li>Flutter</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Modern Architecture</h3>
+                    <ul>
+                        <li>MVVM</li>
+                        <li>MVP</li>
+                        <li>BLoC</li>
+                        <li>Redux</li>
+                        <li>Clean Architecture</li>
+                        <li>GoF</li>
+                        <li>SOLID</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Databases</h3>
+                    <ul>
+                        <li>LiveData</li>
+                        <li>ViewModel</li>
+                        <li>Flow</li>
+                        <li>Retrofit 2</li>
+                        <li>OkHttp</li>
+                        <li>WebSockets</li>
+                        <li>Socket API</li>
+                        <li>Fetch 2</li>
+                        <li>Room</li>
+                        <li>Firebase Firestore</li>
+                        <li>Firebase Realtime Database</li>
+                        <li>Realm</li>
+                        <li>SQLite</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud Services</h3>
+                    <ul>
+                        <li>Firebase Storage</li>
+                        <li>SharedPreferences</li>
+                        <li>Proto DataStore</li>
+                        <li>Firebase Authentication</li>
+                        <li>Firebase Analytics</li>
+                        <li>Firebase Crashlytics</li>
+                        <li>Firebase Remote Config</li>
+                        <li>Firebase Performance Monitoring</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cogs"></i> Dependency Injection</h3>
+                    <ul>
+                        <li>Dagger 2</li>
+                        <li>Hilt</li>
+                        <li>Koin</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code-branch"></i> Version Control</h3>
+                    <ul>
+                        <li>Git Flow</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-shopping-cart"></i> In-App Purchases</h3>
+                    <ul>
+                        <li>Google Play Billing</li>
+                        <li>In-App Purchases (IAP)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-video"></i> Media & Entertainment</h3>
+                    <ul>
+                        <li>ExoPlayer</li>
+                        <li>VLC</li>
+                        <li>Glide</li>
+                        <li>Coil</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-mobile-alt"></i> Android TV</h3>
+                    <ul>
+                        <li>Jetpack Compose</li>
+                        <li>Material 3</li>
+                        <li>Leanback</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-mobile-alt"></i> Testing</h3>
+                    <ul>
+                        <li>Unit Testing</li>
+                        <li>UI Testing</li>
+                        <li>Automated Tests</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-mobile-alt"></i> Logging & Debugging</h3>
+                    <ul>
+                        <li>Timber</li>
+                        <li>Android Profiler</li>
+                        <li>LeakCanary</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-mobile-alt"></i> Agile & Project Management</h3>
+                    <ul>
+                        <li>Agile</li>
+                        <li>Scrum</li>
+                        <li>Kanban</li>
+                        <li>Waterfall</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-mobile-alt"></i> Development Tools</h3>
+                    <ul>
+                        <li>macOS</li>
+                        <li>Windows</li>
+                        <li>Linux</li>
+                        <li>Android Studio</li>
+                        <li>IntelliJ IDEA</li>
+                        <li>Visual Studio Code</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>People Notes (MyPeople)</h3>
-            <p>Personal contact management app with Firebase Firestore, Jetpack Compose, and WorkManager.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes" target="_blank">View on Google Play</a>
-        </div>
-        <div class="project">
-            <h3>Resistance: Nightfall</h3>
-            <p>Multiplayer social deduction game using Firebase Authentication and Kotlin.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall" target="_blank">View on Google Play</a>
-        </div>
-        <div class="project">
-            <h3>Smart Home</h3>
-            <p>Application to control smart home systems, including lights, security, and automation.</p>
-        </div>
-        <div class="project">
-            <h3>Healthcare</h3>
-            <p>Medical portal for patients and doctors with telemedicine features.</p>
-        </div>
-        <div class="project">
-            <h3>Services - Car Plate Recognition</h3>
-            <p>Developed a car plate recognition system using C++ ALPR OCR and JNI.</p>
-        </div>
-        <div class="project">
-            <h3>Media & Entertainment</h3>
-            <p>Developed music and video streaming apps using ExoPlayer, VLC, and Firebase.</p>
-        </div>
-    </section>
+        <section id="projects" class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3>People Notes (MyPeople)</h3>
+                    <div class="project-duration">Dec 2024 – Present</div>
+                    <div class="tech-stack">
+                        <span>Kotlin</span>
+                        <span>Jetpack Compose</span>
+                        <span>Firebase</span>
+                    </div>
+                    <p>A personal contact management application...</p>
+                </article>
+                <article class="project-card">
+                    <h3>Resistance: Nightfall</h3>
+                    <div class="project-duration">Aug 2020 – Present</div>
+                    <div class="tech-stack">
+                        <span>Kotlin</span>
+                        <span>Firebase</span>
+                    </div>
+                    <p>A multiplayer social deduction game...</p>
+                </article>
+                <article class="project-card">
+                    <h3>Smart Home</h3>
+                    <div class="project-duration">Jan 2025 – Present</div>
+                    <div class="tech-stack">
+                        <span>Kotlin</span>
+                        <span>Jetpack Compose</span>
+                    </div>
+                    <p>Application to control smart home systems...</p>
+                </article>
+                <article class="project-card">
+                    <h3>Healthcare</h3>
+                    <div class="project-duration">Jan 2025 – Present</div>
+                    <div class="tech-stack">
+                        <span>Kotlin</span>
+                        <span>Jetpack Compose</span>
+                    </div>
+                    <p>Medical portal for patients and doctors...</p>
+                </article>
+                <article class="project-card">
+                    <h3>Services - Car Plate Recognition</h3>
+                    <div class="project-duration">Jan 2025 – Present</div>
+                    <div class="tech-stack">
+                        <span>C++</span>
+                        <span>JNI</span>
+                    </div>
+                    <p>Developed a car plate recognition system...</p>
+                </article>
+                <article class="project-card">
+                    <h3>Media & Entertainment</h3>
+                    <div class="project-duration">Jan 2025 – Present</div>
+                    <div class="tech-stack">
+                        <span>ExoPlayer</span>
+                        <span>VLC</span>
+                        <span>Firebase</span>
+                    </div>
+                    <p>Developed music and video streaming apps...</p>
+                </article>
+            </div>
+        </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="job">
-            <h3>CHI Software</h3>
-            <p>Android Developer (Sep 2020 – Present)</p>
-        </div>
-        <div class="job">
-            <h3>Nitrix Studio</h3>
-            <p>Android/Flutter Developer (Aug 2018 – Aug 2020)</p>
-        </div>
-    </section>
+        <section id="experience" class="container">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>CHI Software</h3>
+                <p>Android Developer (Sep 2020 – Present)</p>
+            </div>
+            <div class="job">
+                <h3>Nitrix Studio</h3>
+                <p>Android/Flutter Developer (Aug 2018 – Aug 2020)</p>
+            </div>
+        </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:d.v.barannik@gmail.com">d.v.barannik@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/KaKyHaC" target="_blank">KaKyHaC</a></p>
-        <p>Google Play: <a href="https://play.google.com/store/apps/dev?id=7572188664286438813" target="_blank">Developer Page</a></p>
-    </section>
+        <section id="education" class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>National Technical University of Ukraine "Kyiv Polytechnic Institute"</h3>
+                <p>Bachelor's Degree in Computer Science</p>
+                <div class="education-duration">Sep 2014 – Jun 2018</div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Dmytro Barannik. All rights reserved.</p>
+        <div class="container">
+            <p>© 2024 Dmytro Barannik. All rights reserved.</p>
+        </div>
     </footer>
-
 </body>
 </html>
