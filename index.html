@@ -15,40 +15,32 @@
     <link rel="stylesheet" href="css/projects-cards.css">
     <link rel="stylesheet" href="css/summary.css">
     <link rel="stylesheet" href="css/experience.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="script.js" defer></script>
     <script src="js/projects.js"></script>
 </head>
 <body>
     <div id="app">
-        <nav id="main-nav">
-            <ul>
-                <li><a href="#summary">Summary</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-            </ul>
-        </nav>
-        <header id="main-header">
-            <div class="container">
-                <h1>Dmytro Barannik</h1>
-                <h2>Android Developer</h2>
-                <div class="contacts">
-                    <a href="mailto:d.v.barannik@gmail.com">
-                        <i class="fas fa-envelope"></i> d.v.barannik@gmail.com
-                    </a>
-                    <a href="tel:+380661748228">
-                        <i class="fas fa-phone"></i> +380661748228
-                    </a>
-                    <a href="https://github.com/KaKyHaC" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://play.google.com/store/apps/dev?id=7572188664286438813" target="_blank">
-                        <i class="fab fa-google-play"></i> Play Store
-                    </a>
+        <header class="header">
+            <nav class="nav container">
+                <a href="#" class="nav-logo">Portfolio</a>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
-            </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
             <section id="summary">
@@ -640,6 +632,44 @@
                     </div>
                 </div>
             </section>
+            <section id="contact" class="container">
+                <h2>Contact Information</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <a href="mailto:d.v.barannik@gmail.com">d.v.barannik@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-details">
+                                <h3>Phone</h3>
+                                <a href="tel:+380661748228">+380 66 174 8228</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div class="contact-details">
+                                <h3>GitHub</h3>
+                                <a href="https://github.com/KaKyHaC" target="_blank">github.com/KaKyHaC</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-google-play"></i>
+                            <div class="contact-details">
+                                <h3>Google Play</h3>
+                                <a href="https://play.google.com/store/apps/dev?id=7572188664286438813" target="_blank">Developer Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer id="main-footer">
             <div class="container">
@@ -650,5 +680,6 @@
     <script src="js/main.js"></script>
     <script src="js/skills.js"></script>
     <script src="js/experience.js"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>
