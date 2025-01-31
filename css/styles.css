@@ -9,6 +9,7 @@
     --grid-gap: 20px;
     --card-padding: 20px;
     --border-radius: 8px;
+    --header-height: 60px;
 }
 
 /* Сброс стилей */
@@ -185,4 +186,150 @@ section h2 {
     color: var(--text-color);
     margin: 10px 0;
     line-height: 1.4;
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.profile-photo {
+    flex: 0 0 300px;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo {
+        flex: 0 0 200px;
+        max-width: 200px;
+    }
+}
+
+.home-content {
+    padding: 1rem 0;
+    margin-left: 0;
+    margin-bottom: 2rem;
+}
+
+.name-block {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+}
+
+.profile-photo {
+    flex: 0 0 200px;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: var(--card-shadow);
+}
+
+.name-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.name-title h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.name-title h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.home-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 600px;
+    text-align: left;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .name-block {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .profile-photo {
+        flex: 0 0 150px;
+        max-width: 150px;
+        margin: 0 auto;
+    }
+
+    .name-title {
+        align-items: center;
+    }
+
+    .name-title h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .name-title h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .home-content p {
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+/* Обновляем стили хедера */
+header {
+    height: var(--header-height);
+    padding: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.3rem 0;
+    }
+}
+
+/* Обновляем стили для секции Summary */
+#summary {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#summary h2 {
+    margin-top: 0;
 }
