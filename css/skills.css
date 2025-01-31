@@ -1,92 +1,71 @@
-.skills-grid {
+#skills {
+    padding: 60px 0;
+}
+
+.skills-content {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .skill-category {
-    position: relative;
     background: var(--bg-color);
-    border-radius: 12px;
-    box-shadow: var(--card-shadow);
-    overflow: hidden;
-    cursor: pointer;
-    height: 80px; /* Высота в закрытом состоянии */
-    transition: all 0.3s ease;
-}
-
-/* Превью карточки (показывается по умолчанию) */
-.skill-category h3 {
     padding: 20px;
-    margin: 0;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    z-index: 2;
-    background: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
-/* Контент карточки (скрыт по умолчанию) */
+.skill-category i {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.skill-category:hover i {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-right: 40px;
+    word-wrap: break-word;
+}
+
 .skill-category ul {
-    padding: 0 20px 20px;
-    margin: 0;
     list-style: none;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
+    padding: 0;
+    margin: 0;
 }
 
 .skill-category li {
     margin: 8px 0;
     padding-left: 20px;
     position: relative;
-    color: #666;
+    color: var(--text-color);
+    word-wrap: break-word;
 }
 
 .skill-category li::before {
-    content: "•";
-    color: var(--primary-color);
+    content: "→";
     position: absolute;
     left: 0;
+    color: var(--primary-color);
 }
 
-/* Состояние при наведении/активации на десктопе */
-@media (min-width: 769px) {
-    .skill-category:hover {
-        height: auto;
-        transform: translateY(-5px);
-    }
-
-    .skill-category:hover ul {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Мобильные стили */
 @media (max-width: 768px) {
-    .skill-category.active {
-        height: auto;
-    }
-
-    .skill-category.active ul {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Индикатор для мобильных устройств */
-    .skill-category h3::after {
-        content: "↓";
-        position: absolute;
-        right: 20px;
-        transition: transform 0.3s ease;
-    }
-
-    .skill-category.active h3::after {
-        transform: rotate(180deg);
+    .skills-content {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
     }
 } 
