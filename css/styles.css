@@ -25,13 +25,13 @@ body {
     line-height: 1.6;
 }
 
-/* Секции */
+/* Общие стили для секций */
 section {
     width: 100%;
     padding: var(--section-padding) 0;
 }
 
-/* Контейнеры */
+/* Контейнер секции */
 .container {
     width: 100%;
     max-width: var(--container-width);
@@ -51,30 +51,7 @@ section h2 {
     padding: 0 var(--card-padding);
 }
 
-/* Сетки */
-.grid-container {
-    display: grid;
-    gap: var(--grid-gap);
-    width: 100%;
-}
-
-.grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-/* Карточки */
-.card {
-    background: var(--bg-color);
-    padding: var(--card-padding);
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-}
-
-/* Контент секций */
+/* Общие стили для контента всех секций */
 .summary-content,
 .experience-content,
 .projects-content,
@@ -82,31 +59,63 @@ section h2 {
 .languages-content,
 .contact-content {
     width: 100%;
-    margin-top: 20px;
+    display: grid;
+    gap: var(--grid-gap);
+}
+
+/* Специфичные настройки сетки для разных секций */
+.skills-content,
+.languages-content {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.projects-content {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.experience-content,
+.summary-content,
+.contact-content {
+    grid-template-columns: 1fr;
+}
+
+/* Общие стили для карточек */
+.skill-category,
+.language-card,
+.project-card,
+.experience-item,
+.summary-card,
+.contact-item {
+    background: var(--bg-color);
+    padding: var(--card-padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    width: 100%;
 }
 
 /* Медиа запросы */
 @media (max-width: 1024px) {
-    .grid-3 {
+    .skills-content,
+    .languages-content {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    .projects-content {
+        grid-template-columns: 1fr;
+    }
+
     section h2 {
         font-size: 1.8rem;
     }
 }
 
 @media (max-width: 768px) {
-    :root {
-        --section-padding: 40px;
-        --card-padding: 15px;
-    }
-
-    .grid-3,
-    .grid-2 {
+    .skills-content,
+    .languages-content,
+    .projects-content {
         grid-template-columns: 1fr;
     }
-    
+
     section h2 {
         font-size: 1.5rem;
         margin-bottom: 20px;
