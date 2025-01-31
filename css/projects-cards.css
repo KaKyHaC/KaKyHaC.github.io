@@ -1,0 +1,180 @@
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.project-card {
+    position: relative;
+    height: 280px;
+    background: var(--bg-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Стили для превью */
+.project-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    background: var(--bg-color);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.3s ease;
+}
+
+.project-preview h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.project-brief {
+    color: #666;
+    line-height: 1.6;
+    /* Ограничиваем количество строк в превью */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Стили для деталей */
+.project-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    background: var(--bg-color);
+    z-index: 1;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.project-header {
+    margin-bottom: 15px;
+}
+
+.project-header h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.project-duration {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.tech-stack span {
+    background: var(--section-bg);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.project-content {
+    margin-top: 15px;
+}
+
+.project-role {
+    margin-top: 15px;
+}
+
+.project-role h4 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.project-role ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.project-role li {
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.project-role li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: -15px;
+}
+
+/* Поведение при наведении на десктопе */
+@media (min-width: 769px) {
+    .project-card:hover .project-preview {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .project-card:hover .project-details {
+        transform: translateY(0);
+    }
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .project-card {
+        height: auto;
+        min-height: 280px;
+    }
+
+    .project-preview {
+        position: relative;
+        height: auto;
+    }
+
+    .project-details {
+        position: relative;
+        transform: none;
+        display: none;
+    }
+
+    /* Добавляем индикатор для мобильных устройств */
+    .project-preview::after {
+        content: "Tap to see more";
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        background: var(--primary-color);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        opacity: 0.8;
+    }
+}
+
+/* Стили для скроллбара */
+.project-details::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-details::-webkit-scrollbar-track {
+    background: var(--section-bg);
+}
+
+.project-details::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+} 
