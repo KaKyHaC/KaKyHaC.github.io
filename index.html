@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/skills.css">
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/additional.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="script.js" defer></script>
 </head>
@@ -46,8 +47,67 @@
             </div>
         </header>
         <main>
-            <section id="summary"></section>
-            <section id="skills"></section>
+            <section id="summary" class="container">
+                <h2>Summary</h2>
+                <div class="summary-content">
+                    <p>Experienced Android Developer with 7 years of expertise in mobile application development, specializing in Kotlin, Java, and Flutter. Proficient in Jetpack Compose, Android SDK, NDK, Coroutines, RxJava, and modern architecture patterns (MVVM, MVP, Clean Architecture).</p>
+                    <p>Successfully published multiple applications on Google Play, including:</p>
+                    <ul>
+                        <li><strong>People Notes (MyPeople)</strong> – a personal contact management app designed to store important details about people, track key events, and provide personalized interactions.</li>
+                        <li><strong>Resistance: Nightfall</strong> – a social deduction game inspired by The Resistance: Avalon, featuring strategic team-based gameplay and engaging mechanics.</li>
+                    </ul>
+                    <p>Proficient in Firebase services, Dependency Injection, Jetpack Compose for UI development and modern networking solutions. Skilled in implementing in-app billing, ads, and authentication.</p>
+                    <p>Extensive experience in Healthcare, Smart Home, Security, Media & Entertainment, and AI-powered solutions. Hands-on expertise in real-time video processing, networking, and databases.</p>
+                </div>
+            </section>
+            <section id="skills" class="container">
+                <h2>Skills & Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>📌 Programming Languages</h3>
+                        <ul>
+                            <li>Kotlin</li>
+                            <li>Java</li>
+                            <li>C++</li>
+                            <li>Dart</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>📌 Core Technologies</h3>
+                        <ul>
+                            <li>Android SDK</li>
+                            <li>Jetpack Compose</li>
+                            <li>Android NDK</li>
+                            <li>Kotlin Multiplatform</li>
+                            <li>Flutter</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>📌 Architecture</h3>
+                        <ul>
+                            <li>MVVM, MVP, Clean Architecture</li>
+                            <li>BLoC, Redux</li>
+                            <li>GoF, SOLID</li>
+                            <li>LiveData, ViewModel</li>
+                            <li>Coroutines/Flow</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>📌 Firebase & Cloud</h3>
+                        <ul>
+                            <li>Authentication</li>
+                            <li>Firestore</li>
+                            <li>Realtime Database</li>
+                            <li>Analytics & Crashlytics</li>
+                            <li>Remote Config</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
             <section id="experience" class="container">
                 <h2>Experience</h2>
                 <div class="experience-timeline">
@@ -55,24 +115,39 @@
                         <h3>CHI Software</h3>
                         <p class="job-title">Android Developer</p>
                         <p class="job-period">September 2020 – Present</p>
-                        <p class="job-description">Lead Android development for Smart Home project, mentoring junior developers and improving app stability and performance.</p>
+                        <ul class="job-responsibilities">
+                            <li>Led Android development for Smart Home project</li>
+                            <li>Mentored junior developers</li>
+                            <li>Improved app stability and performance</li>
+                            <li>Conducted code reviews and implemented best practices</li>
+                        </ul>
                     </div>
 
                     <div class="job">
                         <h3>Nitrix Studio</h3>
                         <p class="job-title">Android/Flutter Developer</p>
                         <p class="job-period">August 2018 – August 2020</p>
+                        <ul class="job-responsibilities">
+                            <li>Developed cross-platform applications using Flutter</li>
+                            <li>Implemented new features and maintained existing codebase</li>
+                            <li>Worked on performance optimization</li>
+                        </ul>
                     </div>
 
                     <div class="job">
                         <h3>IT Company</h3>
                         <p class="job-title">Android Developer</p>
                         <p class="job-period">September 2017 – June 2018</p>
+                        <ul class="job-responsibilities">
+                            <li>Developed Android applications from scratch</li>
+                            <li>Collaborated with design and backend teams</li>
+                            <li>Participated in code reviews and testing</li>
+                        </ul>
                     </div>
                 </div>
             </section>
             <section id="projects" class="container">
-                <h2>Projects</h2>
+                <h2>Featured Projects</h2>
                 <div class="projects-grid">
                     <article class="project-card">
                         <h3>People Notes (MyPeople)</h3>
@@ -80,18 +155,16 @@
                         <div class="tech-stack">
                             <span>Kotlin</span>
                             <span>Jetpack Compose</span>
-                            <span>Firebase Firestore</span>
-                            <span>Firebase Storage</span>
+                            <span>Firebase</span>
                             <span>Hilt</span>
                         </div>
                         <p class="project-description">A personal contact management application that allows users to store and organize detailed information about people, track key events, and maintain important notes.</p>
                         <div class="project-role">
-                            <h4>Role: Android Developer (Solo Project)</h4>
+                            <h4>Role: Solo Developer</h4>
                             <ul>
-                                <li>Designed and developed the entire application architecture from scratch</li>
-                                <li>Implemented database management using Firebase Firestore</li>
-                                <li>Integrated Google Play Billing and AdMob</li>
-                                <li>Developed custom notification system using WorkManager</li>
+                                <li>Designed and developed the entire application</li>
+                                <li>Implemented Firebase integration</li>
+                                <li>Added monetization features</li>
                             </ul>
                         </div>
                     </article>
@@ -102,39 +175,16 @@
                         <div class="tech-stack">
                             <span>Kotlin</span>
                             <span>Jetpack Compose</span>
-                            <span>Firebase Firestore</span>
-                            <span>Firebase Authentication</span>
-                            <span>Hilt</span>
+                            <span>Firebase</span>
+                            <span>Material 3</span>
                         </div>
-                        <p class="project-description">A multiplayer social deduction game inspired by The Resistance: Avalon. Features real-time online multiplayer, private lobbies, and interactive chat.</p>
+                        <p class="project-description">A multiplayer social deduction game with real-time gameplay, private lobbies, and interactive features.</p>
                         <div class="project-role">
-                            <h4>Role: Android Developer (Solo Project)</h4>
+                            <h4>Role: Solo Developer</h4>
                             <ul>
-                                <li>Developed real-time multiplayer logic using Firebase Firestore</li>
-                                <li>Implemented anonymous authentication</li>
-                                <li>Designed and built UI with Jetpack Compose</li>
-                                <li>Optimized real-time game event handling</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <h3>Smart Home</h3>
-                        <p class="project-duration">Jul 2023 – Aug 2024</p>
-                        <div class="tech-stack">
-                            <span>Kotlin</span>
-                            <span>MVP</span>
-                            <span>Koin</span>
-                            <span>RxJava2</span>
-                            <span>Room</span>
-                        </div>
-                        <p class="project-description">Application for smart house control and systems management, supporting mobile, tablets, TSW panels, TST, and TSR.</p>
-                        <div class="project-role">
-                            <h4>Role: Lead Android Development</h4>
-                            <ul>
-                                <li>Led code reviews and mentored junior developers</li>
-                                <li>Implemented new features and system integrations</li>
-                                <li>Enhanced system stability and performance</li>
+                                <li>Implemented real-time multiplayer</li>
+                                <li>Created engaging UI with Jetpack Compose</li>
+                                <li>Optimized performance</li>
                             </ul>
                         </div>
                     </article>

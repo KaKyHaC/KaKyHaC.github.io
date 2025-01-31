@@ -1,0 +1,160 @@
+/* Education Styles */
+.education-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-item {
+    background: var(--bg-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateX(10px);
+}
+
+.education-item::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.education-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.education-period {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.education-degree {
+    color: #444;
+}
+
+/* Languages Styles */
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.language-item {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.language-item:hover {
+    transform: translateY(-5px);
+}
+
+.flag {
+    font-size: 2rem;
+}
+
+.language {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.level {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Experience Styles */
+.job {
+    background: var(--bg-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.job:hover {
+    transform: translateX(10px);
+}
+
+.job-title {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.job-period {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.job-responsibilities {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.job-responsibilities li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.job-responsibilities li::before {
+    content: "→";
+    color: var(--primary-color);
+    position: absolute;
+    left: -20px;
+}
+
+/* Summary Styles */
+.summary-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.summary-content p {
+    margin-bottom: 15px;
+}
+
+.summary-content ul {
+    margin: 15px 0;
+    list-style: none;
+}
+
+.summary-content li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.summary-content li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+} 
