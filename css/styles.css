@@ -57,7 +57,8 @@ section h2 {
 .projects-content,
 .skills-content,
 .languages-content,
-.contact-content {
+.contact-content,
+.education-content {
     width: 100%;
     display: grid;
     gap: var(--grid-gap);
@@ -85,7 +86,8 @@ section h2 {
 .project-card,
 .experience-item,
 .summary-card,
-.contact-item {
+.contact-item,
+.education-card {
     background: var(--bg-color);
     padding: var(--card-padding);
     border-radius: var(--border-radius);
@@ -113,11 +115,31 @@ section h2 {
     .skills-content,
     .languages-content,
     .projects-content {
-        grid-template-columns: 1fr;
+        grid-grid-template-columns: 1fr;
     }
 
     section h2 {
         font-size: 1.5rem;
         margin-bottom: 20px;
     }
+}
+
+/* Специфичные стили для education */
+.education-content {
+    grid-template-columns: 1fr;
+}
+
+.education-card h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.education-place {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.education-date {
+    color: #666;
+    font-size: 0.9rem;
 }
