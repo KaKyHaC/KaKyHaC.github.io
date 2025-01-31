@@ -41,8 +41,11 @@
     line-height: 1.6;
     /* Ограничиваем количество строк в превью */
     display: -webkit-box;
+    display: box;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
+    box-orient: vertical;
     overflow: hidden;
 }
 
