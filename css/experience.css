@@ -1,0 +1,105 @@
+#experience {
+    padding: 60px 0;
+}
+
+.experience-timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    visibility: visible;
+}
+
+/* Стили для превью (видно по умолчанию) */
+.experience-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.experience-preview h3 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.company-period {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Стили для деталей (скрыты по умолчанию) */
+.experience-details {
+    margin-top: 20px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.job-title {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.experience-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.experience-details li {
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #444;
+}
+
+.experience-details li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Состояния при наведении/активации */
+@media (min-width: 769px) {
+    .experience-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .experience-item:hover .experience-details {
+        opacity: 1;
+        max-height: 500px;
+    }
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .experience-item.active .experience-details {
+        opacity: 1;
+        max-height: 500px;
+    }
+
+    /* Индикатор для мобильных */
+    .experience-preview::after {
+        content: "↓";
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .experience-item.active .experience-preview::after {
+        transform: rotate(180deg);
+    }
+} 
