@@ -98,29 +98,48 @@ section h2 {
 /* Медиа запросы */
 @media (max-width: 1024px) {
     .skills-content,
-    .languages-content {
-        grid-template-columns: repeat(2, 1fr);
+    .languages-content,
+    .projects-content {
+        grid-template-columns: 1fr; /* Одна карточка в строке */
     }
     
-    .projects-content {
-        grid-template-columns: 1fr;
-    }
-
     section h2 {
         font-size: 1.8rem;
+    }
+
+    /* Уменьшаем отступы */
+    :root {
+        --section-padding: 40px;
+        --card-padding: 15px;
+        --grid-gap: 15px;
     }
 }
 
 @media (max-width: 768px) {
     .skills-content,
     .languages-content,
-    .projects-content {
-        grid-grid-template-columns: 1fr;
+    .projects-content,
+    .education-content,
+    .experience-content,
+    .contact-content {
+        grid-template-columns: 1fr; /* Одна карточка в строке */
+        padding: 0 15px;
     }
 
     section h2 {
         font-size: 1.5rem;
         margin-bottom: 20px;
+    }
+
+    /* Корректируем размеры карточек */
+    .skill-category,
+    .language-card,
+    .project-card,
+    .experience-item,
+    .education-card,
+    .contact-item {
+        width: 100%;
+        margin: 0;
     }
 }
 
