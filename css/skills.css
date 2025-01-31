@@ -1,43 +1,92 @@
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    margin-top: 2rem;
+    padding: 20px 0;
 }
 
 .skill-category {
+    position: relative;
     background: var(--bg-color);
-    padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+    height: 80px; /* Высота в закрытом состоянии */
+    transition: all 0.3s ease;
 }
 
-.skill-category:hover {
-    transform: translateY(-5px);
-}
-
+/* Превью карточки (показывается по умолчанию) */
 .skill-category h3 {
+    padding: 20px;
+    margin: 0;
     color: var(--primary-color);
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    z-index: 2;
+    background: var(--bg-color);
+    position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+/* Контент карточки (скрыт по умолчанию) */
 .skill-category ul {
+    padding: 0 20px 20px;
+    margin: 0;
     list-style: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
 }
 
 .skill-category li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
+    margin: 8px 0;
+    padding-left: 20px;
     position: relative;
+    color: #666;
 }
 
 .skill-category li::before {
-    content: "✅";
+    content: "•";
+    color: var(--primary-color);
     position: absolute;
     left: 0;
+}
+
+/* Состояние при наведении/активации на десктопе */
+@media (min-width: 769px) {
+    .skill-category:hover {
+        height: auto;
+        transform: translateY(-5px);
+    }
+
+    .skill-category:hover ul {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .skill-category.active {
+        height: auto;
+    }
+
+    .skill-category.active ul {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Индикатор для мобильных устройств */
+    .skill-category h3::after {
+        content: "↓";
+        position: absolute;
+        right: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .skill-category.active h3::after {
+        transform: rotate(180deg);
+    }
 } 
