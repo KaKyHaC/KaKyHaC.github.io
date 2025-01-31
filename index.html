@@ -3,157 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dmytro Barannik Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f4fb;
-            color: #333;
-        }
-        header {
-            background: #e1005e; /* Основной цвет */
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            margin: 0.5rem 0 0;
-        }
-        nav {
-            text-align: center;
-            margin: 1rem 0;
-        }
-        nav a {
-            margin: 0 1rem;
-            text-decoration: none;
-            color: #e1005e;
-            font-weight: bold;
-        }
-        section {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .skills, .projects, .experience, .contacts {
-            margin-bottom: 2rem;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background: #333;
-            color: #fff;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            color: #fff;
-            background: #e1005e;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .qr-code {
-            text-align: center;
-            margin-top: 1rem;
-        }
-        .qr-code img {
-            width: 150px;
-            height: 150px;
-        }
-        h2 {
-            color: #e1005e;
-        }
-        a:hover {
-            color: #b80049; /* Тёмный оттенок для hover */
-        }
-    </style>
+    <title>Dmytro Barannik - Android Developer</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <h1>Dmytro Barannik</h1>
-    <p>Android Developer | Kotlin, Java, Flutter Expert</p>
-</header>
+    <header>
+        <h1>Dmytro Barannik</h1>
+        <p>Senior Android Developer</p>
+        <nav>
+            <ul>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<nav>
-    <a href="#about">About Me</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contacts">Contacts</a>
-</nav>
+    <section id="summary">
+        <h2>Summary</h2>
+        <p>Experienced Android Developer with 7 years of expertise in mobile application development, specializing in Kotlin, Java, and Flutter. Proficient in Jetpack Compose, Android SDK, NDK, Coroutines, and modern architecture patterns.</p>
+        <p>Published multiple applications on Google Play:</p>
+        <ul>
+            <li><a href="https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes" target="_blank">People Notes (MyPeople)</a> - A personal contact management app.</li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall" target="_blank">Resistance: Nightfall</a> - A multiplayer social deduction game.</li>
+        </ul>
+        <p>Proficient in Firebase services, Dependency Injection, networking solutions, and modern UI frameworks.</p>
+    </section>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am Dmytro Barannik, an Android developer with over 6 years of commercial experience in IT. 
-        I possess foundational skills in Android mobile application development using Kotlin, Java, and Dart, as well as a strong understanding of Android SDK and Flutter SDK. 
-        I have experience working with various technologies and core Android development components.
-    </p>
-    <p>
-        Proven ability to work effectively in teams of different sizes, participating in projects throughout their lifecycle—from initial concept to final deployment and maintenance.
-        I bring a diverse perspective to developing solutions, thanks to broad experience in areas such as healthcare, smart home, media and entertainment, and security services.
-        I am eager to learn and find new methods to enhance my skills in mobile development.
-    </p>
-</section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>✅ Kotlin, Java, C++, Dart, Python</li>
+            <li>✅ Jetpack Compose, Android SDK, NDK</li>
+            <li>✅ MVVM, Clean Architecture, SOLID</li>
+            <li>✅ Firebase, Room, SQLite</li>
+            <li>✅ Retrofit, OkHttp</li>
+            <li>✅ CI/CD, Git, Agile</li>
+        </ul>
+    </section>
 
-<section id="skills" class="skills">
-    <h2>Skills / Competencies</h2>
-    <ul>
-        <li><strong>Programming Languages:</strong> Java, Kotlin, C++, Dart</li>
-        <li><strong>Technologies/Frameworks/Libraries:</strong> Android SDK, Flutter SDK, Android NDK, Kotlin Multiplatform, Jetpack Compose, Jetpack Libraries, RxJava/RxKotlin, Coroutines, Dagger 2, Koin, Espresso, CameraX, ExoPlayer, VLC, Room, Glide</li>
-        <li><strong>Architecture Patterns:</strong> MVVM, MVP, BLoC, Clean Architecture, GoF, SOLID</li>
-        <li><strong>CI/CD:</strong> Firebase Cloud Messaging, Git Flow</li>
-        <li><strong>Databases:</strong> SQLite, Room, Firebase Realtime Database, MySQL</li>
-        <li><strong>Networking:</strong> Fetch 2, Retrofit 2, Socket API</li>
-        <li><strong>Multithreading:</strong> RxJava/RxKotlin, Coroutines, AsyncTask</li>
-        <li><strong>Testing:</strong> UI/Unit Testing, JUnit 5, Espresso, Mockito</li>
-        <li><strong>Operating Systems:</strong> macOS, Windows, Linux</li>
-        <li><strong>Development Methodologies:</strong> SCRUM, Kanban, Agile, Waterfall</li>
-        <li><strong>Languages:</strong> English (Upper-Intermediate)</li>
-    </ul>
-</section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>People Notes (MyPeople)</h3>
+            <p>Personal contact management app with Firebase Firestore, Jetpack Compose, and WorkManager.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes" target="_blank">View on Google Play</a>
+        </div>
+        <div class="project">
+            <h3>Resistance: Nightfall</h3>
+            <p>Multiplayer social deduction game using Firebase Authentication and Kotlin.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall" target="_blank">View on Google Play</a>
+        </div>
+    </section>
 
-<section id="projects" class="projects">
-    <h2>Projects</h2>
-    <ul>
-        <li><strong>People Notes:</strong> A personal information manager app available on <a href="https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes" target="_blank" class="btn">Google Play</a>.</li>
-        <li><strong>YouTube Channel:</strong> Technical tutorials and insights. Visit <a href="https://www.youtube.com/@d.v.barannik" target="_blank" class="btn">YouTube</a>.</li>
-        <li><strong>Smart Home App:</strong> A solution for controlling home systems, cameras, and security features.</li>
-        <li><strong>Healthcare Portal:</strong> A platform for patients, doctors, and B2B with video consultations and e-commerce features.</li>
-    </ul>
-</section>
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="job">
+            <h3>CHI Software</h3>
+            <p>Android Developer (Sep 2020 – Present)</p>
+        </div>
+        <div class="job">
+            <h3>Nitrix Studio</h3>
+            <p>Android/Flutter Developer (Aug 2018 – Aug 2020)</p>
+        </div>
+    </section>
 
-<section id="experience" class="experience">
-    <h2>Experience</h2>
-    <ul>
-        <li><strong>CHI Software (2020 - Present):</strong> Leading Android development projects, mentoring junior developers, and ensuring high code quality.</li>
-        <li><strong>Nitrix Studio (2018 - 2020):</strong> Developed Android and Flutter applications for various domains, including smart home and entertainment.</li>
-        <li><strong>IT Company (2017 - 2018):</strong> Created Android applications for media and security projects.</li>
-    </ul>
-</section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:d.v.barannik@gmail.com">d.v.barannik@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/KaKyHaC" target="_blank">KaKyHaC</a></p>
+        <p>Google Play: <a href="https://play.google.com/store/apps/dev?id=7572188664286438813" target="_blank">Developer Page</a></p>
+    </section>
 
-<section id="contacts" class="contacts">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:d.v.barannik@gmail.com">d.v.barannik@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/KaKyHaC" target="_blank">github.com/KaKyHaC</a></p>
-    <div class="qr-code">
-        <h3>Follow me on Instagram</h3>
-        <img src="dima_barannik_qr.png" alt="Instagram QR Code">
-        <p><a href="https://www.instagram.com/dima_barannik/" target="_blank">@dima_barannik</a></p>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2025 Dmytro Barannik. All Rights Reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2025 Dmytro Barannik. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
