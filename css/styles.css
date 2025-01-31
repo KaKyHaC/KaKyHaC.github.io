@@ -162,3 +162,27 @@ section h2 {
     color: #666;
     font-size: 0.9rem;
 }
+
+/* Стили для тегов технологий */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.tech-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+/* Обновляем стили для описания */
+.project-description {
+    color: var(--text-color);
+    margin: 10px 0;
+    line-height: 1.4;
+}
