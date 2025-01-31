@@ -1,0 +1,114 @@
+/* Переменные */
+:root {
+    --primary-color: #007bff;
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --section-padding: 60px;
+    --container-width: 1200px;
+    --grid-gap: 20px;
+    --card-padding: 20px;
+    --border-radius: 8px;
+}
+
+/* Сброс стилей */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Общие стили */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Секции */
+section {
+    width: 100%;
+    padding: var(--section-padding) 0;
+}
+
+/* Контейнеры */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--card-padding);
+}
+
+/* Заголовки секций */
+section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-weight: 600;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--card-padding);
+}
+
+/* Сетки */
+.grid-container {
+    display: grid;
+    gap: var(--grid-gap);
+    width: 100%;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Карточки */
+.card {
+    background: var(--bg-color);
+    padding: var(--card-padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+/* Контент секций */
+.summary-content,
+.experience-content,
+.projects-content,
+.skills-content,
+.languages-content,
+.contact-content {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Медиа запросы */
+@media (max-width: 1024px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 40px;
+        --card-padding: 15px;
+    }
+
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+}
