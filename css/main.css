@@ -46,4 +46,76 @@ a {
 
 a:hover {
     color: var(--secondary-color);
+}
+
+/* Добавьте эти стили в main.css или создайте новый файл summary.css */
+
+/* Сброс стандартного padding для секции summary */
+#summary {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: var(--section-bg);
+}
+
+/* Контейнер для содержимого summary */
+.summary-wrapper {
+    width: 100%;
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.summary-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.summary-content h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.summary-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.summary-content ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.summary-content li {
+    margin: 15px 0;
+    padding-left: 25px;
+    position: relative;
+    opacity: 0.9;
+}
+
+.summary-content li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .summary-wrapper {
+        padding: 40px 0;
+    }
+
+    .summary-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .summary-content p {
+        font-size: 1rem;
+    }
 } 
