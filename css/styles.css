@@ -333,3 +333,90 @@ header {
 #summary h2 {
     margin-top: 0;
 }
+
+.skills-card {
+    position: relative;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.skills-card h3 {
+    margin: 0 0 1rem 0;
+    padding: 0;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .skills-card h3 {
+        cursor: pointer;
+        padding-right: 25px; /* Место для стрелки */
+    }
+
+    .skills-card h3::after {
+        content: "▼";
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .skills-card .skills-list {
+        display: none;
+        margin-top: 1rem;
+    }
+
+    .skills-card.active h3::after {
+        transform: rotate(180deg);
+    }
+
+    .skills-card.active .skills-list {
+        display: block;
+    }
+}
+
+.skill-category {
+    position: relative;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 1rem;
+}
+
+.skill-category h3 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill-category i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.skill-category ul {
+    margin: 1rem 0 0 0;
+    padding-left: 1.5rem;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .skill-category {
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .skill-category:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    .skill-category ul {
+        display: none;
+    }
+
+    .skill-category.active ul {
+        display: block;
+    }
+}
