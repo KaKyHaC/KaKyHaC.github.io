@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dmytro Barannik - Senior Android Developer with 7 years of experience">
     <title>Dmytro Barannik - Android Developer</title>
-    <!-- Favicon для современных браузеров -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    
-    <!-- Favicon для iOS -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
-    
-    <!-- Manifest для PWA -->
-    <link rel="manifest" href="site.webmanifest">
-    
-    <!-- Цвет темы для мобильных браузеров -->
-    <meta name="theme-color" content="#ffffff">
-
-    <script type="module" src="/src/main.js"></script>
     
     <!-- Open Graph tags for better sharing -->
     <meta property="og:title" content="Dmytro Barannik - Senior Android Developer">
@@ -25,801 +12,302 @@
     <meta property="og:image" content="https://dvbarannik.github.io/images/profile_photo.jpg">
     <meta property="og:url" content="https://dvbarannik.github.io/">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0f0f11">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Entry Point -->
+    <script type="module" src="/src/main.js"></script>
 </head>
 <body>
-    <div id="app">
-            <nav class="nav container">
-                <a href="#" class="nav-logo">Portfolio</a>
-
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+    <div id="app" class="layout-split">
+        
+        <!-- Sticky Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-inner">
+                <div class="profile-section">
+                    <img src="images/profile_photo.jpg" alt="Dmytro Barannik" class="profile-image">
+                    <h1>Dmytro Barannik</h1>
+                    <h2>Android Developer</h2>
+                    <p class="tagline">8+ years of crafting high-performance, elegant mobile experiences.</p>
                 </div>
-
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li>
-                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        <main>
-            <section id="home">
-                <div class="container">
-                    <div class="home-content">
-                        <div class="name-block">
-                            <div class="profile-photo">
-                                <img src="images/profile_photo.jpg" alt="Profile photo" class="profile-image">
-                            </div>
-                            <div class="name-title">
-                                <h1>Dmytro Barannik</h1>
-                                <h2>Android Developer</h2>
-                            </div>
-                        </div>
-                    </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                        <li><a href="#experience" class="nav-link">Experience</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="social-links">
+                    <a href="https://github.com/KaKyHaC" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://play.google.com/store/apps/dev?id=7572188664286438813" target="_blank" title="Google Play"><i class="fab fa-google-play"></i></a>
+                    <a href="https://www.linkedin.com/in/dmitry-barannik" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://t.me/dima_barannik" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
                 </div>
-            </section>
-            <section id="summary">
-                <div class="container">
-                    <h2>Summary</h2>
-                    <div class="summary-content">
+            </div>
+        </aside>
+
+        <!-- Mobile Header (Visible only on small screens) -->
+        <header class="mobile-header">
+            <div class="mobile-logo">DB.</div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            
+            <!-- About Section (Bento Grid) -->
+            <section id="about" class="section-block">
+                <h2 class="section-title">About Me</h2>
+                <div class="bento-grid">
+                    <div class="bento-item glass span-2">
+                        <i class="fas fa-user-astronaut bento-icon"></i>
+                        <h3>Summary</h3>
                         <p>Experienced Android Developer with 8+ years of expertise in mobile application development, specializing in Kotlin, Java, and Flutter. Proficient in Jetpack Compose, Android SDK, NDK, Coroutines, RxJava, and modern architecture patterns (MVVM, MVP, Clean Architecture).</p>
-                        
-                        <p>Successfully published multiple applications on Google Play, including:</p>
-                        <ul>
-                            <li><strong>People Notes (MyPeople)</strong> – a personal contact management app designed to store important details about people, track key events, and provide personalized interactions.</li>
-                            <li><strong>Resistance: Nightfall</strong> – a social deduction game inspired by The Resistance: Avalon, featuring strategic team-based gameplay and engaging mechanics.</li>
-                        </ul>
-                        
-                        <p>Proficient in Firebase services, Dependency Injection, Jetpack Compose for UI development and modern networking solutions. Skilled in implementing in-app billing, ads, and authentication.</p>
-                        
+                    </div>
+                    
+                    <div class="bento-item glass">
+                        <i class="fas fa-award bento-icon"></i>
+                        <h3>Track Record</h3>
+                        <p>Successfully published multiple applications on Google Play, including <strong>People Notes</strong> and <strong>Resistance: Nightfall</strong>.</p>
+                    </div>
+                    
+                    <div class="bento-item glass span-2">
+                        <i class="fas fa-laptop-code bento-icon"></i>
+                        <h3>Domains</h3>
                         <p>Extensive experience in Healthcare, Smart Home, Security, Media & Entertainment, and AI-powered solutions. Hands-on expertise in real-time video processing, networking, and databases.</p>
                     </div>
                 </div>
             </section>
-            <section id="skills">
-                <div class="container">
-                    <h2>Skills</h2>
-                    <div class="skills-content">
-                        <div class="skill-category glass">
-                            <i class="fas fa-code"></i>
-                            <h3>Programming Languages</h3>
-                            <ul>
-                                <li>Kotlin</li>
-                                <li>Java</li>
-                                <li>C++</li>
-                                <li>Dart</li>
-                                <li>Python</li>
-                            </ul>
-                        </div>
 
-                        <div class="skill-category glass">
-                            <i class="fas fa-mobile-alt"></i>
-                            <h3>Core Technologies & Frameworks</h3>
-                            <ul>
-                                <li>Android SDK</li>
-                                <li>Jetpack Compose</li>
-                                <li>Android NDK</li>
-                                <li>Kotlin Multiplatform</li>
-                                <li>Flutter</li>
-                            </ul>
+            <!-- Skills Section -->
+            <section id="skills" class="section-block">
+                <h2 class="section-title">Skills</h2>
+                <div class="bento-grid">
+                    
+                    <div class="bento-item glass">
+                        <i class="fas fa-code bento-icon"></i>
+                        <h3>Languages</h3>
+                        <div class="tags">
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Dart</span>
+                            <span class="tag">Python</span>
                         </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-paint-brush"></i>
-                            <h3>UI Development</h3>
-                            <ul>
-                                <li>Jetpack Compose</li>
-                                <li>Material 3</li>
-                                <li>Leanback (Android TV)</li>
-                            </ul>
+                    </div>
+                    
+                    <div class="bento-item glass">
+                        <i class="fas fa-mobile-alt bento-icon"></i>
+                        <h3>Frameworks</h3>
+                        <div class="tags">
+                            <span class="tag">Android SDK</span>
+                            <span class="tag">Jetpack Compose</span>
+                            <span class="tag">Android NDK</span>
+                            <span class="tag">KMP</span>
+                            <span class="tag">Flutter</span>
                         </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-sitemap"></i>
-                            <h3>Architecture & State Management</h3>
-                            <ul>
-                                <li>MVVM, MVP, BLoC, Redux</li>
-                                <li>Clean Architecture</li>
-                                <li>GoF, SOLID</li>
-                                <li>LiveData, ViewModel, Flow</li>
-                            </ul>
+                    </div>
+                    
+                    <div class="bento-item glass">
+                        <i class="fas fa-sitemap bento-icon"></i>
+                        <h3>Architecture</h3>
+                        <div class="tags">
+                            <span class="tag">MVVM</span>
+                            <span class="tag">Clean Arch</span>
+                            <span class="tag">BLoC</span>
+                            <span class="tag">Flow</span>
+                            <span class="tag">Dagger/Hilt/Koin</span>
                         </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-network-wired"></i>
-                            <h3>Networking & APIs</h3>
-                            <ul>
-                                <li>Retrofit 2, OkHttp</li>
-                                <li>WebSockets, Socket API</li>
-                                <li>Fetch 2 (for downloads)</li>
-                            </ul>
+                    </div>
+                    
+                    <div class="bento-item glass">
+                        <i class="fas fa-database bento-icon"></i>
+                        <h3>Storage & Cloud</h3>
+                        <div class="tags">
+                            <span class="tag">Room</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Realm</span>
+                            <span class="tag">SQLite</span>
+                            <span class="tag">DataStore</span>
                         </div>
+                    </div>
 
-                        <div class="skill-category glass">
-                            <i class="fas fa-database"></i>
-                            <h3>Databases & Storage</h3>
-                            <ul>
-                                <li>Room, Firebase Firestore</li>
-                                <li>Firebase Realtime Database</li>
-                                <li>Realm, SQLite, MySQL</li>
-                                <li>Firebase Storage</li>
-                                <li>SharedPreferences, Proto DataStore</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-tasks"></i>
-                            <h3>Multithreading & Background Processing</h3>
-                            <ul>
-                                <li>Coroutines/Flow</li>
-                                <li>RxJava/RxKotlin</li>
-                                <li>AsyncTask</li>
-                                <li>WorkManager</li>
-                                <li>Coroutine Workers</li>
-                                <li>Services</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-cloud"></i>
-                            <h3>Cloud & Firebase Services</h3>
-                            <ul>
-                                <li>Firebase Authentication</li>
-                                <li>Firestore, Realtime Database</li>
-                                <li>Firebase Storage</li>
-                                <li>Firebase Analytics, Crashlytics</li>
-                                <li>Remote Config</li>
-                                <li>Firebase Performance Monitoring</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-syringe"></i>
-                            <h3>Dependency Injection (DI)</h3>
-                            <ul>
-                                <li>Dagger 2</li>
-                                <li>Hilt</li>
-                                <li>Koin</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-code-branch"></i>
-                            <h3>CI/CD & Version Control</h3>
-                            <ul>
-                                <li>Git Flow</li>
-                                <li>Git (GitHub, GitLab, Bitbucket)</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-shopping-cart"></i>
-                            <h3>Billing & Monetization</h3>
-                            <ul>
-                                <li>Google Play Billing</li>
-                                <li>In-App Purchases (IAP)</li>
-                                <li>AdMob</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-camera"></i>
-                            <h3>Multimedia & Camera</h3>
-                            <ul>
-                                <li>CameraX</li>
-                                <li>ExoPlayer</li>
-                                <li>VLC</li>
-                                <li>Glide</li>
-                                <li>Coil</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-bug"></i>
-                            <h3>Testing & Debugging</h3>
-                            <ul>
-                                <li>Unit & UI Testing: JUnit 5, Espresso, Mockito</li>
-                                <li>Instrumentation & Automated Tests: Mockk, Firebase Test Lab</li>
-                                <li>Logging & Debugging: Timber, Android Profiler, LeakCanary</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-project-diagram"></i>
-                            <h3>Development Methodologies</h3>
-                            <ul>
-                                <li>Agile</li>
-                                <li>Scrum</li>
-                                <li>Kanban</li>
-                                <li>Waterfall</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category glass">
-                            <i class="fas fa-laptop-code"></i>
-                            <h3>Operating Systems & Development Tools</h3>
-                            <ul>
-                                <li>macOS, Windows, Linux</li>
-                                <li>Android Studio</li>
-                                <li>IntelliJ IDEA</li>
-                                <li>Visual Studio Code</li>
-                            </ul>
+                    <div class="bento-item glass span-2">
+                        <i class="fas fa-network-wired bento-icon"></i>
+                        <h3>Network & Media</h3>
+                        <div class="tags">
+                            <span class="tag">Retrofit</span>
+                            <span class="tag">WebSockets</span>
+                            <span class="tag">CameraX</span>
+                            <span class="tag">ExoPlayer</span>
+                            <span class="tag">Glide/Coil</span>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="experience">
-                <div class="container">
-                    <h2>Experience</h2>
-                    <div class="experience-timeline">
-                        <div class="experience-item">
-                            <div class="experience-preview">
+
+            <!-- Experience Section -->
+            <section id="experience" class="section-block">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-bento">
+                    
+                    <div class="experience-card glass">
+                        <div class="exp-header">
+                            <div class="exp-title">
                                 <h3>CHI Software</h3>
-                                <span class="company-period">September 2020 – Present</span>
+                                <h4>Android Developer</h4>
                             </div>
-                            <div class="experience-details">
-                                <div class="job-title">Android Developer</div>
-                                <ul>
-                                    <li>Developed and maintained Android applications</li>
-                                    <li>Implemented MVVM and Clean Architecture patterns</li>
-                                    <li>Used Kotlin Coroutines and Flow for async operations</li>
-                                    <li>Integrated Firebase services and implemented push notifications</li>
-                                    <li>Created custom UI components and animations</li>
-                                    <li>Conducted code reviews and mentored junior developers</li>
-                                </ul>
-                            </div>
+                            <span class="exp-date">Sep 2020 – Present</span>
                         </div>
+                        <ul class="exp-list">
+                            <li>Developed and maintained Android applications</li>
+                            <li>Implemented MVVM and Clean Architecture patterns</li>
+                            <li>Used Kotlin Coroutines and Flow for async operations</li>
+                            <li>Integrated Firebase services and implemented push notifications</li>
+                            <li>Created custom UI components and animations</li>
+                            <li>Conducted code reviews and mentored junior developers</li>
+                        </ul>
+                    </div>
 
-                        <div class="experience-item">
-                            <div class="experience-preview">
+                    <div class="experience-card glass">
+                        <div class="exp-header">
+                            <div class="exp-title">
                                 <h3>Nitrix Studio</h3>
-                                <span class="company-period">August 2018 – August 2020</span>
+                                <h4>Android/Flutter Developer</h4>
                             </div>
-                            <div class="experience-details">
-                                <div class="job-title">Android/Flutter Developer</div>
-                                <ul>
-                                    <li>Developed cross-platform applications using Flutter</li>
-                                    <li>Created native Android applications using Kotlin and Java</li>
-                                    <li>Implemented modern architecture patterns</li>
-                                    <li>Worked with REST APIs and local databases</li>
-                                    <li>Integrated analytics and crash reporting tools</li>
-                                    <li>Added in-app purchases and subscription features</li>
-                                </ul>
-                            </div>
+                            <span class="exp-date">Aug 2018 – Aug 2020</span>
                         </div>
+                        <ul class="exp-list">
+                            <li>Developed cross-platform applications using Flutter</li>
+                            <li>Created native Android applications using Kotlin and Java</li>
+                            <li>Implemented modern architecture patterns</li>
+                            <li>Worked with REST APIs and local databases</li>
+                        </ul>
+                    </div>
 
-                        <div class="experience-item">
-                            <div class="experience-preview">
+                    <div class="experience-card glass">
+                        <div class="exp-header">
+                            <div class="exp-title">
                                 <h3>IT Company</h3>
-                                <span class="company-period">September 2017 – June 2018</span>
+                                <h4>Android Developer</h4>
                             </div>
-                            <div class="experience-details">
-                                <div class="job-title">Android Developer</div>
-                                <ul>
-                                    <li>Developed Android applications using Java</li>
-                                    <li>Implemented UI using Material Design guidelines</li>
-                                    <li>Created unit tests and UI tests</li>
-                                    <li>Worked with REST APIs</li>
-                                    <li>Fixed bugs and improved application stability</li>
-                                    <li>Participated in code reviews and team meetings</li>
-                                </ul>
-                            </div>
+                            <span class="exp-date">Sep 2017 – Jun 2018</span>
                         </div>
+                        <ul class="exp-list">
+                            <li>Developed Android applications using Java</li>
+                            <li>Implemented UI using Material Design guidelines</li>
+                            <li>Fixed bugs and improved application stability</li>
+                        </ul>
                     </div>
+
                 </div>
             </section>
-            <section id="projects">
-                <div class="container">
-                    <h2>Projects</h2>
-                    <div class="projects-content">
-                        <!-- People Notes -->
-                        <div class="project-card glass">
+
+            <!-- Projects Section -->
+            <section id="projects" class="section-block">
+                <h2 class="section-title">Projects</h2>
+                <div class="bento-grid">
+                    
+                    <div class="project-bento glass span-2">
+                        <div class="proj-head">
                             <h3>People Notes (MyPeople)</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Dec 2024 – Present</p>
-                                <p class="project-role">Android Developer (Solo Project)</p>
-                                <p class="project-description">A personal contact management application that allows users to store and organize detailed information about people, track key events, and maintain important notes.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Kotlin</span>
-                                        <span class="tech-tag">Jetpack Compose</span>
-                                        <span class="tech-tag">Firebase Firestore</span>
-                                        <span class="tech-tag">Firebase Storage</span>
-                                        <span class="tech-tag">Hilt</span>
-                                        <span class="tech-tag">Coroutines</span>
-                                        <span class="tech-tag">Flow</span>
-                                        <span class="tech-tag">WorkManager</span>
-                                        <span class="tech-tag">Navigation Component</span>
-                                        <span class="tech-tag">Material 3</span>
-                                        <span class="tech-tag">Google Play Billing</span>
-                                        <span class="tech-tag">AdMob</span>
-                                    </div>
-                                    <ul>
-                                        <li>Designed and developed the entire application architecture from scratch</li>
-                                        <li>Implemented database management using Firebase Firestore</li>
-                                        <li>Integrated Google Play Billing and AdMob for monetization</li>
-                                        <li>Developed a custom notification system using WorkManager</li>
-                                        <li>Conducted performance optimization</li>
-                                        <li>Published the app on Google Play</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <span class="proj-role">Solo Project (Dec 2024 – Present)</span>
                         </div>
+                        <p>A personal contact management application that allows users to store and organize detailed information about people, track key events, and maintain important notes.</p>
+                        <div class="tags">
+                            <span class="tag">Compose</span>
+                            <span class="tag">Firestore</span>
+                            <span class="tag">Hilt</span>
+                            <span class="tag">WorkManager</span>
+                            <span class="tag">AdMob</span>
+                        </div>
+                    </div>
 
-                        <!-- Resistance: Nightfall -->
-                        <div class="project-card glass">
+                    <div class="project-bento glass span-2">
+                        <div class="proj-head">
                             <h3>Resistance: Nightfall</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Jan 2025 – Present</p>
-                                <p class="project-role">Android Developer (Solo Project)</p>
-                                <p class="project-description">A multiplayer social deduction game inspired by The Resistance: Avalon. Players take on secret roles, form teams, and attempt to complete or sabotage missions through strategy and deception.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Kotlin</span>
-                                        <span class="tech-tag">Jetpack Compose</span>
-                                        <span class="tech-tag">Firebase Firestore</span>
-                                        <span class="tech-tag">Firebase Authentication</span>
-                                        <span class="tech-tag">Hilt</span>
-                                        <span class="tech-tag">Coroutines</span>
-                                        <span class="tech-tag">Flow</span>
-                                        <span class="tech-tag">Navigation Component</span>
-                                        <span class="tech-tag">Material 3</span>
-                                        <span class="tech-tag">Timber</span>
-                                        <span class="tech-tag">JUnit</span>
-                                        <span class="tech-tag">Mockk</span>
-                                    </div>
-                                    <ul>
-                                        <li>Developed real-time multiplayer logic using Firebase</li>
-                                        <li>Implemented anonymous authentication</li>
-                                        <li>Designed and built the entire UI with Jetpack Compose</li>
-                                        <li>Managed game state and role assignments</li>
-                                        <li>Optimized real-time event handling</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <span class="proj-role">Solo Project (Jan 2025 – Present)</span>
                         </div>
+                        <p>A multiplayer social deduction game inspired by The Resistance: Avalon. Players take on secret roles, form teams, and attempt to complete or sabotage missions through strategy and deception.</p>
+                        <div class="tags">
+                            <span class="tag">Compose</span>
+                            <span class="tag">Firebase Realtime</span>
+                            <span class="tag">Flow</span>
+                            <span class="tag">Multiplayer</span>
+                        </div>
+                    </div>
 
-                        <!-- Symmetry -->
-                        <div class="project-card glass">
+                    <div class="project-bento glass span-2">
+                        <div class="proj-head">
                             <h3>Symmetry</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Sep 2024 – Dec 2024</p>
-                                <p class="project-role">Android Developer</p>
-                                <p class="project-description">App for inspectors and customers. Inspectors detect gas leaks using a camera and automatically save found spots with media and location. When the inspection is complete the app sends it to the server. Customers can check all available inspections including media files, meta-data and see each spot on a map</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Kotlin</span>
-                                        <span class="tech-tag">Jetpack Compose</span>
-                                        <span class="tech-tag">Room</span>
-                                        <span class="tech-tag">AWS Cognito</span>
-                                        <span class="tech-tag">Retrofit</span>
-                                        <span class="tech-tag">Google Maps</span>
-                                        <span class="tech-tag">CameraX</span>
-                                        <span class="tech-tag">Coil</span>
-                                        <span class="tech-tag">Hilt</span>
-                                        <span class="tech-tag">Coroutines</span>
-                                        <span class="tech-tag">Flow</span>
-                                        <span class="tech-tag">Navigation Component</span>
-                                    </div>
-                                    <ul>
-                                        <li>Designed and developed the application using Kotlin and Jetpack Compose for a modern UI.</li>
-                                        <li>Integrated CameraX for capturing media during inspections and saving metadata in Room.</li>
-                                        <li>Implemented Google Maps for visualizing inspection spots and gas leaks.</li>
-                                        <li>Used Retrofit for syncing inspection data with the server and ensuring seamless communication.</li>
-                                        <li>Integrated AWS Cognito for secure authentication and data access.</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <span class="proj-role">Android Developer (Sep 2024 – Dec 2024)</span>
                         </div>
+                        <p>App for inspectors and customers. Inspectors detect gas leaks using a camera and automatically save found spots with media and location. Customers can check inspections on a map.</p>
+                        <div class="tags">
+                            <span class="tag">CameraX</span>
+                            <span class="tag">Google Maps</span>
+                            <span class="tag">AWS Cognito</span>
+                            <span class="tag">Room</span>
+                        </div>
+                    </div>
 
-                        <!-- Smart Home -->
-                        <div class="project-card glass">
+                    <div class="project-bento glass span-2">
+                        <div class="proj-head">
                             <h3>Smart Home</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Jul 2023 – Aug 2024</p>
-                                <p class="project-role">Lead Android Development</p>
-                                <p class="project-description">Application to have control over the smart house and its systems. Users are able to setup different variety of home and rooms settings, control lights, shades, fans, and thermostats, observe live from cameras, managing security systems.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Kotlin</span>
-                                        <span class="tech-tag">MVP</span>
-                                        <span class="tech-tag">Koin</span>
-                                        <span class="tech-tag">RxJava2</span>
-                                        <span class="tech-tag">Room</span>
-                                        <span class="tech-tag">Glide</span>
-                                        <span class="tech-tag">JUnit</span>
-                                        <span class="tech-tag">CI/CD</span>
-                                    </div>
-                                    <ul>
-                                        <li>Performed detailed code reviews focusing on quality and performance</li>
-                                        <li>Mentored junior developers</li>
-                                        <li>Designed and implemented new features</li>
-                                        <li>Conducted thorough testing</li>
-                                        <li>Performed regular maintenance and resolved bugs</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <span class="proj-role">Lead Android Dev (Jul 2023 – Aug 2024)</span>
                         </div>
-
-                        <!-- Healthcare -->
-                        <div class="project-card glass">
-                            <h3>Healthcare</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Nov 2022 – Jun 2023</p>
-                                <p class="project-role">Android Developer</p>
-                                <p class="project-description">Medical portal for patients, doctors, and B2B. Personal accounts management, doctor consultations (text, audio, video chats), medical preparations marketplace, forum for communication, news, and articles.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Kotlin</span>
-                                        <span class="tech-tag">MVVM</span>
-                                        <span class="tech-tag">Dagger-Android</span>
-                                        <span class="tech-tag">RxJava2</span>
-                                        <span class="tech-tag">Room</span>
-                                        <span class="tech-tag">Navigation Component</span>
-                                    </div>
-                                    <ul>
-                                        <li>Designed and implemented new features</li>
-                                        <li>Conducted thorough testing of developed features</li>
-                                        <li>Performed regular maintenance and resolved bugs</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <p>Application to have control over the smart house and its systems. Users are able to setup different variety of home and rooms settings, control lights, shades, fans, and thermostats, observe live from cameras.</p>
+                        <div class="tags">
+                            <span class="tag">MVP</span>
+                            <span class="tag">RxJava2</span>
+                            <span class="tag">Koin</span>
+                            <span class="tag">IoT</span>
                         </div>
+                    </div>
 
-                        <!-- Car Plate Recognition -->
-                        <div class="project-card glass">
+                    <div class="project-bento glass span-2">
+                        <div class="proj-head">
                             <h3>Car Plate Recognition</h3>
-                            <div class="project-info">
-                                <p class="project-duration">May 2022 – Oct 2022</p>
-                                <p class="project-role">Android Developer</p>
-                                <p class="project-description">Application for real-time car plate recognition using camera. The app analyzes images in real-time, stores found plates with photos, and allows searching through the database of recognized plates.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Kotlin</span>
-                                        <span class="tech-tag">C++</span>
-                                        <span class="tech-tag">NDK</span>
-                                        <span class="tech-tag">Dagger 2</span>
-                                        <span class="tech-tag">Retrofit 2</span>
-                                        <span class="tech-tag">Room</span>
-                                        <span class="tech-tag">RxJava</span>
-                                        <span class="tech-tag">Jetpack</span>
-                                        <span class="tech-tag">Camera 2</span>
-                                    </div>
-                                    <ul>
-                                        <li>Integrated C++ ALPR OCR library using JNI</li>
-                                        <li>Ensured efficient Java-C++ communication</li>
-                                        <li>Optimized memory and performance for real-time processing</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <span class="proj-role">Android Developer (May 2022 – Oct 2022)</span>
                         </div>
-
-                        <!-- Elevator Display -->
-                        <div class="project-card glass">
-                            <h3>Elevator Display</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Nov 2021 - Apr 2022</p>
-                                <p class="project-role">Android Developer</p>
-                                <p class="project-description">Information display system for elevators showing floor numbers, traffic direction, news, and images. The app processes signals from FT232 port using native C++ SerialPort library to handle elevator commands.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Java</span>
-                                        <span class="tech-tag">Android NDK</span>
-                                        <span class="tech-tag">SerialPort</span>
-                                    </div>
-                                    <ul>
-                                        <li>Adapted features for tablet devices</li>
-                                        <li>Optimized UI/UX for different screen sizes</li>
-                                        <li>Implemented responsive design principles</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Lift Configuration -->
-                        <div class="project-card glass">
-                            <h3>Lift Configuration</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Mar 2021 - Oct 2021</p>
-                                <p class="project-role">Android Developer</p>
-                                <p class="project-description">Remote configuration application for elevator systems using Wi-Fi Direct technology. Allows users to discover nearby elevator displays and send configuration updates wirelessly.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Java</span>
-                                        <span class="tech-tag">Wi-Fi Direct</span>
-                                    </div>
-                                    <ul>
-                                        <li>Designed and implemented new features</li>
-                                        <li>Resolved software bugs and improved reliability</li>
-                                        <li>Conducted code refactoring for better maintainability</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Lift Auto-Install -->
-                        <div class="project-card glass">
-                            <h3>Lift Auto-Install</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Sept 2020 - Mar 2021</p>
-                                <p class="project-role">Android Developer</p>
-                                <p class="project-description">System application for automatic installation and lifecycle management of elevator display software. Uses root access to handle installation and ensure automatic startup on device boot.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Java</span>
-                                        <span class="tech-tag">Root access</span>
-                                        <span class="tech-tag">System permissions</span>
-                                    </div>
-                                    <ul>
-                                        <li>Implemented automatic software installation</li>
-                                        <li>Managed device lifecycle events</li>
-                                        <li>Improved system stability and reliability</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Music Streaming -->
-                        <div class="project-card glass">
-                            <h3>Music Streaming</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Feb 2020 - Sep 2020</p>
-                                <p class="project-role">Android Developer</p>
-                                <p class="project-description">Advanced music streaming application with offline downloads, background playback, and Android Auto integration. Features a rich audio experience with comprehensive playlist management.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Java</span>
-                                        <span class="tech-tag">ExoPlayer</span>
-                                        <span class="tech-tag">Android Auto</span>
-                                        <span class="tech-tag">Dagger 2</span>
-                                        <span class="tech-tag">Fetch 2</span>
-                                        <span class="tech-tag">RxJava</span>
-                                    </div>
-                                    <ul>
-                                        <li>Designed and implemented new UI features</li>
-                                        <li>Developed microservice architecture</li>
-                                        <li>Optimized database performance</li>
-                                        <li>Created intuitive user interfaces</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Image Security -->
-                        <div class="project-card glass">
-                            <h3>Image Security</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Aug 2019 - Feb 2020</p>
-                                <p class="project-role">Android Developer</p>
-                                <p class="project-description">Versatile application for image compression and encoding with steganography capabilities. Available for both mobile and desktop platforms, allowing secure data embedding within images.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Kotlin</span>
-                                        <span class="tech-tag">Spring Framework</span>
-                                        <span class="tech-tag">Image Processing</span>
-                                    </div>
-                                    <ul>
-                                        <li>Developed the application from scratch</li>
-                                        <li>Implemented comprehensive testing</li>
-                                        <li>Created detailed documentation</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Music Streaming Platform -->
-                        <div class="project-card glass">
-                            <h3>Music Streaming Platform</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Jan 2019 - Aug 2019</p>
-                                <p class="project-role">Android Developer</p>
-                                <p class="project-description">Robust music streaming platform with playlist management, content sharing, and offline playback capabilities. Features a comprehensive music player with advanced streaming functionality.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Kotlin</span>
-                                        <span class="tech-tag">Exo Player</span>
-                                        <span class="tech-tag">Dagger 2</span>
-                                        <span class="tech-tag">Fetch 2</span>
-                                        <span class="tech-tag">Retrofit 2</span>
-                                        <span class="tech-tag">Room</span>
-                                        <span class="tech-tag">RxJava</span>
-                                        <span class="tech-tag">Jetpack</span>
-                                    </div>
-                                    <ul>
-                                        <li>Implemented Clean Architecture principles</li>
-                                        <li>Managed dependencies with Dagger 2</li>
-                                        <li>Built MVVM architecture with LiveData</li>
-                                        <li>Developed offline download functionality</li>
-                                        <li>Integrated Firebase Dynamic Links</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card Game Score Calculator -->
-                        <div class="project-card glass">
-                            <h3>Card Game Score Calculator</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Jul 2018 - Dec 2018</p>
-                                <p class="project-role">Flutter Developer</p>
-                                <p class="project-description">Cross-platform application for calculating and tracking scores in card games. Features multiple game modes, score history, animations, and localization support.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Dart</span>
-                                        <span class="tech-tag">Flutter</span>
-                                        <span class="tech-tag">firebase_admob</span>
-                                        <span class="tech-tag">shared_preferences</span>
-                                        <span class="tech-tag">json_serializable</span>
-                                        <span class="tech-tag">firebase_core</span>
-                                        <span class="tech-tag">firebase_crashlytics</span>
-                                        <span class="tech-tag">flutter_inapp_purchase</span>
-                                    </div>
-                                    <ul>
-                                        <li>Designed and implemented new features</li>
-                                        <li>Improved code quality through refactoring</li>
-                                        <li>Added unit tests for business logic</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Media Streaming Service -->
-                        <div class="project-card glass">
-                            <h3>Media Streaming Service</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Jan 2018 – Jul 2018</p>
-                                <p class="project-role">Android Developer</p>
-                                <p class="project-description">Comprehensive media streaming application for movies, series, and live TV. Delivers high-quality viewing experience across mobile and Android TV platforms.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Kotlin</span>
-                                        <span class="tech-tag">ExoPlayer</span>
-                                        <span class="tech-tag">VLC</span>
-                                        <span class="tech-tag">Dagger 2</span>
-                                        <span class="tech-tag">Fetch 2</span>
-                                        <span class="tech-tag">Retrofit 2</span>
-                                        <span class="tech-tag">Room</span>
-                                        <span class="tech-tag">RxJava</span>
-                                        <span class="tech-tag">Jetpack</span>
-                                        <span class="tech-tag">Leanback</span>
-                                    </div>
-                                    <ul>
-                                        <li>Implemented Clean Architecture principles</li>
-                                        <li>Used Single Activity pattern</li>
-                                        <li>Developed video player with multiple format support</li>
-                                        <li>Created Android TV interface with Leanback</li>
-                                        <li>Implemented content search and sharing</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Social Card Game -->
-                        <div class="project-card glass">
-                            <h3>Social Card Game</h3>
-                            <div class="project-info">
-                                <p class="project-duration">Sep 2017 - Jan 2018</p>
-                                <p class="project-role">Flutter Developer</p>
-                                <p class="project-description">Cross-platform mobile adaptation of a social role-playing card game. Features both local and online multiplayer modes with engaging party game mechanics.</p>
-                                <div class="project-details">
-                                    <div class="tech-stack">
-                                        <span class="tech-tag">Dart</span>
-                                        <span class="tech-tag">Flutter</span>
-                                        <span class="tech-tag">firebase_admob</span>
-                                        <span class="tech-tag">shared_preferences</span>
-                                        <span class="tech-tag">flutter_html</span>
-                                        <span class="tech-tag">flutter_socket_io</span>
-                                        <span class="tech-tag">firebase_core</span>
-                                        <span class="tech-tag">firebase_crashlytics</span>
-                                    </div>
-                                    <ul>
-                                        <li>Designed and implemented new features</li>
-                                        <li>Used BLoC pattern for state management</li>
-                                        <li>Implemented dark and light themes</li>
-                                        <li>Optimized performance and stability</li>
-                                        <li>Improved code quality through refactoring</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <p>Application for real-time car plate recognition using camera. The app analyzes images in real-time, stores found plates with photos, and allows searching through the database.</p>
+                        <div class="tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">NDK / JNI</span>
+                            <span class="tag">Camera 2</span>
+                            <span class="tag">OCR</span>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section id="education">
-                <div class="container"> 
-                    <h2>Education</h2>
-                    <div class="education-content">
-                        <div class="education-card">
-                            <h3>Postgraduate studies in Computer Engineering and Management</h3>
-                            <p class="education-place">Kharkiv National University of Radioelectronics</p>
-                            <p class="education-date">2020 - Present</p>
+                    
+                    <div class="project-bento glass span-2">
+                        <div class="proj-head">
+                            <h3>Elevator Displays & Config</h3>
+                            <span class="proj-role">Android Developer (2020 – 2022)</span>
                         </div>
-
-                        <div class="education-card">
-                            <h3>Master's Degree in Computer Engineering and Management</h3>
-                            <p class="education-place">Kharkiv National University of Radioelectronics</p>
-                            <p class="education-date">2019 - 2020</p>
-                        </div>
-                        
-                        <div class="education-card">
-                            <h3>Bachelor's Degree in Computer Engineering and Management</h3>
-                            <p class="education-place">Kharkiv National University of Radioelectronics</p>
-                            <p class="education-date">2014 - 2019</p>
+                        <p>Developed multiple system apps for elevator displays: an information display system interpreting FT232 signals, a Wi-Fi Direct remote config tool, and an auto-installer running with root access.</p>
+                        <div class="tags">
+                            <span class="tag">Root Access</span>
+                            <span class="tag">Wi-Fi Direct</span>
+                            <span class="tag">SerialPort (C++)</span>
                         </div>
                     </div>
+
                 </div>
             </section>
-            <section id="languages">
-                <div class="container">
-                    <h2>Languages</h2>
-                    <div class="languages-content">
-                        <div class="language-card">
-                            <div class="language-name">English</div>
-                            <div class="language-level">B2 - Upper Intermediate</div>
-                        </div>
-                        
-                        <div class="language-card">
-                            <div class="language-name">Ukrainian</div>
-                            <div class="language-level">Native</div>
-                        </div>
-                        
-                        <div class="language-card">
-                            <div class="language-name">Russian</div>
-                            <div class="language-level">Native</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="contact">
-                <div class="container">
-                    <h2>Contact</h2>
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <a class="contact-item" href="mailto:d.v.barannik@gmail.com">
-                                <i class="fas fa-envelope"></i>
-                                <div class="contact-details">
-                                    <h3>Email</h3>
-                                    <span>d.v.barannik@gmail.com</span>
-                                </div>
-                            </a>
 
-                            <a class="contact-item" href="tel:+380661748228">
-                                <i class="fas fa-phone"></i>
-                                <div class="contact-details">
-                                    <h3>Phone</h3>
-                                    <span>+380 66 174 8228</span>
-                                </div>
-                            </a>
-
-                            <a class="contact-item" href="https://github.com/KaKyHaC" target="_blank">
-                                <i class="fab fa-github"></i>
-                                <div class="contact-details">
-                                    <h3>GitHub</h3>
-                                    <span>github.com/KaKyHaC</span>
-                                </div>
-                            </a>
-
-                            <a class="contact-item" href="https://play.google.com/store/apps/dev?id=7572188664286438813" target="_blank">
-                                <i class="fab fa-google-play"></i>
-                                <div class="contact-details">
-                                    <h3>Google Play</h3>
-                                    <span>Developer Account</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
-        <footer id="main-footer">
-            <div class="container">
-                <p>© 2024 Dmytro Barannik. All rights reserved.</p>
-            </div>
-        </footer>
     </div>
-    </body>
+</body>
 </html>
