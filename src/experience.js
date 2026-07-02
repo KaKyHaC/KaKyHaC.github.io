@@ -1,15 +1,16 @@
 export const experience = [
     {
-        company_name: "Військовий інститут телекомунікацій та інформатизації імені Героїв Крут",
-        role: "Викладач кафедри комунікаційних систем та мереж",
-        start_date: "08.2025",
+        company_name: "DᎥᗰᗩᒪᎥᑎᗩ",
+        role: "Solo Android Developer / Publisher",
+        start_date: "12.2024",
         end_date: "Present",
         is_current: true,
-        category: "Education / Academic",
+        category: "Independent Development",
         tasks: [
-            "Teaching courses on modern communication systems, network architectures, and software engineering principles.",
-            "Developing curriculum, practical workshops, and laboratory assignments for cadets.",
-            "Guiding students in research projects and providing mentorship in technical problem-solving."
+            "Handled the full mobile app lifecycle from conceptualization and UI/UX design to Google Play Store publication.",
+            "Developed and published successful indie projects such as 'People Notes' and 'Resistance: Nightfall'.",
+            "Integrated various SDKs including Firebase, AdMob, and Google Play Billing for monetization and analytics.",
+            "Employed modern tech stacks like Jetpack Compose, MVVM, and Room for robust app architectures."
         ]
     },
     {
@@ -27,17 +28,16 @@ export const experience = [
         ]
     },
     {
-        company_name: "DᎥᗰᗩᒪᎥᑎᗩ",
-        role: "Solo Android Developer / Publisher",
-        start_date: "12.2024",
+        company_name: "ВІТІ", // Using abbreviation to match companies.js if necessary, or we'll update it
+        role: "Lecturer at the Department of Communication Systems and Networks",
+        start_date: "08.2025",
         end_date: "Present",
         is_current: true,
-        category: "Independent Development",
+        category: "Education / Academic",
         tasks: [
-            "Handled the full mobile app lifecycle from conceptualization and UI/UX design to Google Play Store publication.",
-            "Developed and published successful indie projects such as 'People Notes' and 'Resistance: Nightfall'.",
-            "Integrated various SDKs including Firebase, AdMob, and Google Play Billing for monetization and analytics.",
-            "Employed modern tech stacks like Jetpack Compose, MVVM, and Room for robust app architectures."
+            "Teaching courses on modern communication systems, network architectures, and software engineering principles.",
+            "Developing curriculum, practical workshops, and laboratory assignments for cadets.",
+            "Guiding students in research projects and providing mentorship in technical problem-solving."
         ]
     },
     {

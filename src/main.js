@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="timeline-dot tooltip-wrapper" style="${dotStyle}">
                         <span class="tooltip-text">${compConfig.shortName}</span>
                     </div>
-                    <div class="timeline-content glass">
+                    <div class="timeline-content glass company-border" style="--comp-color: ${compConfig.color}">
                         <div class="exp-header">
                             <div class="exp-title">
                                 <h3>${exp.company_name}</h3>

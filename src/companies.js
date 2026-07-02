@@ -1,7 +1,7 @@
 export const companies = {
-    'Військовий інститут телекомунікацій та інформатизації імені Героїв Крут': {
+    'ВІТІ': {
         shortName: 'ВІТІ',
-        color: '#147f36ff', // Orange
+        color: '#147f36ff', // Green
         cssVar: 'var(--company-military, #FF9800)'
     },
     'MEGOGO': {
