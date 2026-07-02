@@ -1,8 +1,26 @@
 export const projects = [
     {
+        id: 'lucky-loot-boxes',
+        title: '67 Lucky Loot Boxes',
+        role: 'Solo Android Developer',
+        company: 'Solo Project',
+        date: 'May 2026',
+        description: 'A highly engaging drop simulator game where players open loot boxes to build collections of rare items. Features include distinct rarity tiers (Common to Legendary), themed seasons (Cosmic Wonders, Wild Animals), daily streak bonuses, crafting systems, and smooth unboxing animations.',
+        tasks: [
+            'Engineered the underlying probability algorithms to simulate a balanced and exciting rarity economy.',
+            'Designed fluid, satisfying animations for box-opening sequences and implemented an auto-roll system for fast progression.',
+            'Added themed seasonal updates and integrated a new "Pick 1 of 3" mechanic alongside AdMob and Google Play Billing.'
+        ],
+        technologies: ['Kotlin', 'Jetpack Compose', 'Android SDK', 'AdMob', 'Google Play Billing'],
+        tags: ['Kotlin', 'Jetpack Compose', 'Casual Game', 'AdMob'],
+        imagePlaceholder: 'L',
+        imageColor: 'linear-gradient(135deg, #FFCA28, #F57F17)'
+    },
+    {
         id: 'megogo',
         title: 'Megogo Mobile/ATV App',
         role: 'Android Developer',
+        company: 'Megogo',
         date: 'Mar 2025 – Nov 2025',
         description: 'A large-scale video streaming service for Android phones and Android TV. The application delivers Live TV and VOD with a massive catalog, user profiles, parental controls, and fast, high-quality playback via ExoPlayer (Leanback for TV).',
         tasks: [
@@ -20,6 +38,7 @@ export const projects = [
         id: 'tic-tac-toe',
         title: 'Tic-Tac-Toe 3 Player: X O D',
         role: 'Solo Android Developer',
+        company: 'Solo Project',
         date: 'Mar 2025 – Present',
         description: 'An innovative and chaotic multiplayer twist on classic tic-tac-toe designed for 3 players (X, O, ∆). Features a scalable board (from 3x3 up to 7x7), unique AI opponents, ranked online matchmaking, custom dynamic backgrounds (Aurora, Neon), and immersive haptics.',
         tasks: [
@@ -34,26 +53,10 @@ export const projects = [
         imageColor: 'linear-gradient(135deg, #8E24AA, #6A1B9A)'
     },
     {
-        id: 'epic-clicker',
-        title: 'Epic Clicker: Brainrot Fury',
-        role: 'Solo Android Developer',
-        date: 'Feb 2024 – Present',
-        description: 'A progression-driven idle clicker game built around exponential economy growth, prestige strategies (RESPECT resets), and meme-inspired characters. The game features seasonal leaderboards, unlockable hero abilities, offline progress, and deep combo synergies.',
-        tasks: [
-            'Drove the project through the full lifecycle: from core game design, balance, and UI/UX to engineering and Google Play publishing.',
-            'Built a modular hero and skin system with unique abilities (e.g., hold-to-auto-tap, x10 critical taps, investment scaling).',
-            'Automated app localization into 15+ languages using a custom Python script and the Gemini API, maintaining XML tags and adapting slang.',
-            'Instrumented analytics, Remote Config A/B tests, and crash reporting to optimize performance and retention.'
-        ],
-        technologies: ['Kotlin', 'Jetpack Compose', 'Firebase Firestore', 'Remote Config', 'Firebase Analytics', 'Crashlytics', 'Hilt', 'Coroutines', 'Flow', 'Material 3', 'Navigation Component', 'AdMob'],
-        tags: ['Kotlin', 'Jetpack Compose', 'Firebase', 'AdMob', 'Game Dev'],
-        imagePlaceholder: 'E',
-        imageColor: 'linear-gradient(135deg, #FFB300, #F39C12)'
-    },
-    {
         id: 'people-notes',
         title: 'People Notes (MyPeople)',
         role: 'Solo Android Developer',
+        company: 'Solo Project',
         date: 'Jan 2025 – Present',
         description: 'A comprehensive personal CRM and contact management application (rated 4.6/5). It enables users to organize detailed profiles, track important dates and events, monitor shared finances, and categorize social connections using a clean, customizable dashboard.',
         tasks: [
@@ -71,6 +74,7 @@ export const projects = [
         id: 'resistance-multiplayer',
         title: 'Resistance: Multiplayer Game',
         role: 'Solo Android Developer',
+        company: 'Solo Project',
         date: 'Dec 2024 – Present',
         description: 'A high-stakes Cold War-era online multiplayer social deduction game inspired by The Resistance: Avalon. Players are secretly assigned roles (e.g., Detective, Hitman, Mole) and must use strategy, deception, and real-time chat to succeed or sabotage missions.',
         tasks: [
@@ -85,9 +89,28 @@ export const projects = [
         imageColor: 'linear-gradient(135deg, #E53935, #C62828)'
     },
     {
+        id: 'epic-clicker',
+        title: 'Epic Clicker: Brainrot Fury',
+        role: 'Solo Android Developer',
+        company: 'Solo Project',
+        date: 'Feb 2024 – Present',
+        description: 'A progression-driven idle clicker game built around exponential economy growth, prestige strategies (RESPECT resets), and meme-inspired characters. The game features seasonal leaderboards, unlockable hero abilities, offline progress, and deep combo synergies.',
+        tasks: [
+            'Drove the project through the full lifecycle: from core game design, balance, and UI/UX to engineering and Google Play publishing.',
+            'Built a modular hero and skin system with unique abilities (e.g., hold-to-auto-tap, x10 critical taps, investment scaling).',
+            'Automated app localization into 15+ languages using a custom Python script and the Gemini API, maintaining XML tags and adapting slang.',
+            'Instrumented analytics, Remote Config A/B tests, and crash reporting to optimize performance and retention.'
+        ],
+        technologies: ['Kotlin', 'Jetpack Compose', 'Firebase Firestore', 'Remote Config', 'Firebase Analytics', 'Crashlytics', 'Hilt', 'Coroutines', 'Flow', 'Material 3', 'Navigation Component', 'AdMob'],
+        tags: ['Kotlin', 'Jetpack Compose', 'Firebase', 'AdMob', 'Game Dev'],
+        imagePlaceholder: 'E',
+        imageColor: 'linear-gradient(135deg, #FFB300, #F39C12)'
+    },
+    {
         id: 'symmetry',
         title: 'Symmetry',
         role: 'Android Developer',
+        company: 'CHI Software',
         date: 'Sep 2024 – Dec 2024',
         description: 'An enterprise application for safety inspectors and their customers. Inspectors use the app\'s camera tools to detect gas leaks, automatically tagging media with geolocation data. Customers can view the results, track meta-data, and monitor danger spots via a map interface.',
         tasks: [
@@ -104,6 +127,7 @@ export const projects = [
         id: 'smart-home',
         title: 'Smart Home',
         role: 'Lead Android Developer',
+        company: 'CHI Software',
         date: 'Jul 2023 – Aug 2024',
         description: 'A centralized control hub application for smart house systems. Users can configure rooms, manage lighting, adjust climate thermostats, monitor live security cameras, and control automated shades across mobile devices, tablets, and dedicated smart panels (TSW, TST, TSR).',
         tasks: [
@@ -121,6 +145,7 @@ export const projects = [
         id: 'healthcare',
         title: 'Healthcare',
         role: 'Android Developer',
+        company: 'CHI Software',
         date: 'Nov 2022 – Jun 2023',
         description: 'A comprehensive B2B/B2C medical portal tailored for patients and doctors. Features include personal account management, integrated telemedicine (secure text, audio, and video consultations), an online marketplace for medical preparations, and a medical forum.',
         tasks: [
@@ -137,6 +162,7 @@ export const projects = [
         id: 'car-plate',
         title: 'Car Plate Recognition',
         role: 'Android Developer',
+        company: 'CHI Software',
         date: 'May 2022 – Oct 2022',
         description: 'An AI-driven real-time car plate recognition tool. The app analyzes high-speed live camera streams, stores recognized license plates with accompanying photos, allows local database searching, and synchronizes data with remote servers.',
         tasks: [
@@ -153,6 +179,7 @@ export const projects = [
         id: 'liftapp',
         title: 'LiftApp',
         role: 'Android Developer',
+        company: 'CHI Software',
         date: 'Nov 2021 – Apr 2022',
         description: 'A hardware-integrated digital dashboard for elevators. Renders dynamic information to passengers, including real-time floor numbers, traffic direction, news feeds, and promotional images directly on tablet displays installed in the elevator cab.',
         tasks: [
@@ -168,6 +195,7 @@ export const projects = [
         id: 'liftapp-remote',
         title: 'LiftApp Remote Setup',
         role: 'Android Developer',
+        company: 'CHI Software',
         date: 'Mar 2021 – Oct 2021',
         description: 'A specialized remote configuration utility for elevator technicians. Allows maintenance workers to wirelessly connect to the main LiftApp panels and update configuration parameters safely without needing physical access to the device ports.',
         tasks: [
@@ -183,6 +211,7 @@ export const projects = [
         id: 'liftapp-bootloader',
         title: 'LiftApp Bootloader',
         role: 'Android Developer',
+        company: 'CHI Software',
         date: 'Sep 2020 – Mar 2021',
         description: 'A background system application requiring root privileges, designed to manage the lifecycle of the main LiftApp software. It acts as an OTA update manager that automatically detects, silently installs, and launches new application versions.',
         tasks: [
@@ -198,6 +227,7 @@ export const projects = [
         id: 'music-streaming-2020',
         title: 'Music Streaming',
         role: 'Android Developer',
+        company: 'Nitrix Studio',
         date: 'Feb 2020 – Sep 2020',
         description: 'A premium music streaming platform focused on delivering an enhanced audio experience. Capabilities include full background playback, downloading tracks for offline listening, comprehensive playlist management, and deep integration with Android Auto.',
         tasks: [
@@ -215,6 +245,7 @@ export const projects = [
         id: 'image-compression',
         title: 'Image Compression & Steganography',
         role: 'Android Developer',
+        company: 'Nitrix Studio',
         date: 'Aug 2019 – Feb 2020',
         description: 'A specialized security utility designed to compress and encode images while applying advanced steganography techniques. This allows users to secretly embed and extract hidden data within standard image files across both mobile and desktop platforms.',
         tasks: [
@@ -231,6 +262,7 @@ export const projects = [
         id: 'music-platform-2019',
         title: 'Music Streaming Platform',
         role: 'Android Developer',
+        company: 'Nitrix Studio',
         date: 'Jan 2019 – Aug 2019',
         description: 'A robust digital streaming ecosystem enabling users to discover music, organize extensive playlists, cache tracks for offline use, and natively share content with friends through dynamic links.',
         tasks: [
@@ -248,6 +280,7 @@ export const projects = [
         id: 'card-game-calculator',
         title: 'Card Game Score Calculator',
         role: 'Flutter Developer',
+        company: 'Nitrix Studio',
         date: 'Jul 2018 – Dec 2018',
         description: 'A versatile cross-platform Flutter utility for tracking scores in popular card games. The app features multiple distinct game modes, detailed score history logs, engaging UI animations, premium subscription models, and dual-language localization.',
         tasks: [
@@ -264,6 +297,7 @@ export const projects = [
         id: 'media-streaming-2018',
         title: 'Media Streaming Service',
         role: 'Android Developer',
+        company: 'IT Company',
         date: 'Jan 2018 – Jul 2018',
         description: 'A comprehensive media portal delivering high-quality streaming for movies, TV series, and live broadcasting. The app is highly optimized for large screens, utilizing Android TV libraries to ensure a seamless couch-viewing experience.',
         tasks: [
@@ -280,6 +314,7 @@ export const projects = [
         id: 'resistance-local',
         title: 'Resistance: Local Game',
         role: 'Flutter Developer / Solo Developer',
+        company: 'IT Company',
         date: 'Sep 2017 – Jan 2018',
         description: 'A digital, cross-platform adaptation of the famous social deduction board game. Designed to be played locally by 5 to 10 players on a single device. Features a modern glassmorphism UI, detailed mission tracking histories, and dynamic visual theming.',
         tasks: [
@@ -291,21 +326,5 @@ export const projects = [
         tags: ['Dart', 'Flutter', 'BLoC', 'Party Game'],
         imagePlaceholder: 'R',
         imageColor: 'linear-gradient(135deg, #D32F2F, #B71C1C)'
-    },
-    {
-        id: 'lucky-loot-boxes',
-        title: '67 Lucky Loot Boxes',
-        role: 'Solo Android Developer',
-        date: 'May 2026',
-        description: 'A highly engaging drop simulator game where players open loot boxes to build collections of rare items. Features include distinct rarity tiers (Common to Legendary), themed seasons (Cosmic Wonders, Wild Animals), daily streak bonuses, crafting systems, and smooth unboxing animations.',
-        tasks: [
-            'Engineered the underlying probability algorithms to simulate a balanced and exciting rarity economy.',
-            'Designed fluid, satisfying animations for box-opening sequences and implemented an auto-roll system for fast progression.',
-            'Added themed seasonal updates and integrated a new "Pick 1 of 3" mechanic alongside AdMob and Google Play Billing.'
-        ],
-        technologies: ['Kotlin', 'Jetpack Compose', 'Android SDK', 'AdMob', 'Google Play Billing'],
-        tags: ['Kotlin', 'Jetpack Compose', 'Casual Game', 'AdMob'],
-        imagePlaceholder: 'L',
-        imageColor: 'linear-gradient(135deg, #FFCA28, #F57F17)'
     }
 ];

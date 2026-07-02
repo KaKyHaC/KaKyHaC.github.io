@@ -27,36 +27,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Render Projects
     const projectsContainer = document.getElementById('projects-container');
     if (projectsContainer) {
-        projects.forEach(proj => {
-            const tasksHtml = proj.tasks.map(t => `<li>${t}</li>`).join('');
+        projects.forEach((proj, index) => {
             const tagsHtml = proj.tags.map(t => `<span class="tag">${t}</span>`).join('');
             
+            // Map company to CSS class
+            let companyClass = 'company-solo';
+            if (proj.company === 'CHI Software') companyClass = 'company-chi';
+            if (proj.company === 'Megogo') companyClass = 'company-megogo';
+            if (proj.company === 'Nitrix Studio') companyClass = 'company-nitrix';
+            if (proj.company === 'IT Company') companyClass = 'company-it';
+
             const projHtml = `
-                <div class="project-bento glass span-2 interactive-project fade-in">
-                    <!-- Compact Header -->
+                <div class="glass interactive-project fade-in" data-index="${index}">
                     <div class="proj-header-compact">
-                        <div class="proj-title-group">
-                            <h3>${proj.title}</h3>
-                            <span class="proj-role">${proj.role} (${proj.date})</span>
+                        <div class="proj-title-row">
+                            <div class="proj-title-group">
+                                <h3>
+                                    ${proj.title}
+                                    <div class="company-dot ${companyClass} tooltip-wrapper">
+                                        <span class="tooltip-text">${proj.company}</span>
+                                    </div>
+                                </h3>
+                                <span class="proj-role">${proj.role}</span>
+                            </div>
                         </div>
-                        <div class="proj-toggle-icon">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Detailed View -->
-                    <div class="proj-details">
-                        <div class="proj-media-placeholder" style="background: ${proj.imageColor}">
-                            <span class="media-letter">${proj.imagePlaceholder}</span>
-                        </div>
-                        <p class="proj-desc">${proj.description}</p>
-                        
-                        <h4 class="proj-subheading">Key Tasks & Achievements</h4>
-                        <ul class="proj-tasks">
-                            ${tasksHtml}
-                        </ul>
-                        
-                        <div class="tags">
+                        <p class="proj-date">${proj.date}</p>
+                        <div class="compact-tags">
                             ${tagsHtml}
                         </div>
                     </div>
@@ -65,23 +61,68 @@ document.addEventListener('DOMContentLoaded', () => {
             projectsContainer.insertAdjacentHTML('beforeend', projHtml);
         });
 
-        // Add Accordion logic
-        const interactiveProjects = document.querySelectorAll('.interactive-project');
-        interactiveProjects.forEach(proj => {
-            const header = proj.querySelector('.proj-header-compact');
-            header.addEventListener('click', () => {
-                const wasActive = proj.classList.contains('active');
-                
-                // Optional: Close all other projects
-                // interactiveProjects.forEach(p => p.classList.remove('active'));
-                
-                if (!wasActive) {
-                    proj.classList.add('active');
-                } else {
-                    proj.classList.remove('active');
+        // Modal Logic
+        const modal = document.getElementById('project-modal');
+        const modalClose = document.getElementById('modal-close');
+        
+        // Modal DOM elements
+        const mImage = document.getElementById('modal-image');
+        const mLetter = document.getElementById('modal-letter');
+        const mTitle = document.getElementById('modal-title');
+        const mRole = document.getElementById('modal-role');
+        const mDate = document.getElementById('modal-date');
+        const mDesc = document.getElementById('modal-desc');
+        const mTasks = document.getElementById('modal-tasks');
+        const mTechs = document.getElementById('modal-techs');
+        const mCompanyDot = document.getElementById('modal-company-dot');
+        const mCompanyTooltip = document.getElementById('modal-company-tooltip');
+
+        if (modal) {
+            const interactiveProjects = document.querySelectorAll('.interactive-project');
+            interactiveProjects.forEach(projCard => {
+                projCard.addEventListener('click', () => {
+                    const idx = projCard.getAttribute('data-index');
+                    const p = projects[idx];
+
+                    // Populate modal
+                    mImage.style.background = p.imageColor;
+                    mLetter.textContent = p.imagePlaceholder;
+                    mTitle.textContent = p.title;
+                    mRole.textContent = p.role;
+                    mDate.textContent = p.date;
+                    mDesc.textContent = p.description;
+                    
+                    mTasks.innerHTML = p.tasks.map(t => `<li>${t}</li>`).join('');
+                    mTechs.innerHTML = p.technologies.map(t => `<span class="tag">${t}</span>`).join('');
+                    
+                    // Company dot
+                    let cClass = 'company-solo';
+                    if (p.company === 'CHI Software') cClass = 'company-chi';
+                    if (p.company === 'Megogo') cClass = 'company-megogo';
+                    if (p.company === 'Nitrix Studio') cClass = 'company-nitrix';
+                    if (p.company === 'IT Company') cClass = 'company-it';
+                    
+                    mCompanyDot.className = `company-dot tooltip-wrapper ${cClass}`;
+                    mCompanyTooltip.textContent = p.company;
+
+                    // Show modal
+                    modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                });
+            });
+
+            const closeModal = () => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            };
+
+            modalClose.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
                 }
             });
-        });
+        }
     }
 
     // 3. Scroll-driven Animations (Fade In)

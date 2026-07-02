@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
     <!-- Entry Point -->
-    <script type="module" src="/src/main.js"></script>
 </head>
 <body>
     <div id="app" class="layout-split">
@@ -225,5 +224,42 @@
 
         </main>
     </div>
+
+    <!-- Project Modal Overlay -->
+    <div id="project-modal" class="modal-overlay hidden">
+        <div class="modal-container glass">
+            <button id="modal-close" class="modal-close-btn">&times;</button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="modal-image" class="proj-media-placeholder">
+                        <span id="modal-letter" class="media-letter"></span>
+                    </div>
+                    <div class="modal-title-group">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <h3 id="modal-title"></h3>
+                            <div id="modal-company-dot" class="company-dot tooltip-wrapper">
+                                <span class="tooltip-text" id="modal-company-tooltip"></span>
+                            </div>
+                        </div>
+                        <p id="modal-role" class="proj-role"></p>
+                        <p id="modal-date" class="proj-date"></p>
+                    </div>
+                </div>
+                
+                <div class="modal-body">
+                    <p id="modal-desc" class="proj-desc"></p>
+                    
+                    <h4 class="proj-subheading">Key Achievements</h4>
+                    <ul id="modal-tasks" class="proj-tasks"></ul>
+                    
+                    <h4 class="proj-subheading">Technologies</h4>
+                    <div id="modal-techs" class="proj-tags modal-tags"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Entry Point -->
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>
