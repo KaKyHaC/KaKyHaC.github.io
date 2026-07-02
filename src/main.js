@@ -2,6 +2,7 @@ import './style.css'
 import { projects } from './projects.js'
 import { experience } from './experience.js'
 import { getCompanyConfig } from './companies.js'
+import { skillsData } from './skills.js'
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Menu Toggle
@@ -25,6 +26,45 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 1.5 Render Skills
+    const skillsContainer = document.getElementById('skills-container');
+    if (skillsContainer) {
+        const skillsMapping = {
+            programming_languages: { title: 'Languages', icon: 'fas fa-code', span: 1 },
+            android_core_and_ui: { title: 'Android & UI', icon: 'fab fa-android', span: 1 },
+            architecture_and_design: { title: 'Architecture', icon: 'fas fa-sitemap', span: 1 },
+            asynchrony_and_networking: { title: 'Network & Async', icon: 'fas fa-network-wired', span: 1 },
+            databases_and_local_storage: { title: 'Storage', icon: 'fas fa-database', span: 1 },
+            cloud_and_backend: { title: 'Cloud & Backend', icon: 'fas fa-cloud', span: 1 },
+            dependency_injection: { title: 'DI', icon: 'fas fa-syringe', span: 1 },
+            multimedia_hardware_and_camera: { title: 'Media & Hardware', icon: 'fas fa-camera', span: 1 },
+            testing_and_debugging: { title: 'Testing & Debugging', icon: 'fas fa-bug', span: 1 },
+            monetization_analytics_and_devops: { title: 'DevOps & Growth', icon: 'fas fa-chart-line', span: 1 },
+            inferred_game_dev_and_publishing: { title: 'Game Dev & Publishing', icon: 'fas fa-gamepad', span: 2 },
+            inferred_ai_and_automation: { title: 'AI & Automation', icon: 'fas fa-robot', span: 2 }
+        };
+
+        const categories = skillsData.skills_profile.categories;
+        Object.keys(categories).forEach(key => {
+            const mapping = skillsMapping[key];
+            if (!mapping) return;
+
+            const tagsHtml = categories[key].map(skill => `<span class="tag">${skill}</span>`).join('');
+            const spanClass = mapping.span === 2 ? 'span-2' : '';
+
+            const skillHtml = `
+                <div class="bento-item glass ${spanClass}">
+                    <i class="${mapping.icon} bento-icon"></i>
+                    <h3>${mapping.title}</h3>
+                    <div class="tags">
+                        ${tagsHtml}
+                    </div>
+                </div>
+            `;
+            skillsContainer.insertAdjacentHTML('beforeend', skillHtml);
+        });
+    }
 
     // 2. Render Projects
     const projectsContainer = document.getElementById('projects-container');
