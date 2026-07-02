@@ -167,7 +167,12 @@
 
             <!-- Projects Section -->
             <section id="projects" class="section-block">
-                <h2 class="section-title">Projects</h2>
+                <div class="projects-header">
+                    <h2 class="section-title">Projects <span id="projects-filter-label" class="filter-label hidden"></span></h2>
+                    <button id="clear-filter-btn" class="clear-filter-btn hidden">
+                        <i class="fas fa-times"></i> Clear Filter
+                    </button>
+                </div>
                 <div id="projects-container" class="projects-list">
                     <!-- Projects will be injected here dynamically by main.js -->
                 </div>

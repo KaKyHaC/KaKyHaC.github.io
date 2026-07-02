@@ -1,12 +1,12 @@
 export const companies = {
     'Військовий інститут телекомунікацій та інформатизації імені Героїв Крут': {
         shortName: 'ВІТІ',
-        color: '#FF9800', // Orange
+        color: '#147f36ff', // Orange
         cssVar: 'var(--company-military, #FF9800)'
     },
     'MEGOGO': {
         shortName: 'MEGOGO',
-        color: '#2196F3', // Blue
+        color: 'rgba(93, 189, 211, 1)', // Blue
         cssVar: 'var(--company-megogo, #2196F3)'
     },
     'DᎥᗰᗩᒪᎥᑎᗩ': {
@@ -21,12 +21,12 @@ export const companies = {
     },
     'Nitrix Studio': {
         shortName: 'Nitrix',
-        color: '#8E24AA', // Purple
+        color: '#1b08c4ff', // Purple
         cssVar: 'var(--company-nitrix, #8E24AA)'
     },
     'IT Company': {
         shortName: 'IT Company',
-        color: '#00BFA5', // Teal
+        color: '#bf3000ff', // Teal
         cssVar: 'var(--company-it, #00BFA5)'
     }
 };

@@ -328,6 +328,21 @@ a {
     position: relative;
     background-color: inherit;
     width: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+@media screen and (min-width: 769px) {
+    .timeline-item:nth-child(even) {
+        margin-top: -120px;
+    }
+    .timeline-item:nth-child(odd):not(:first-child) {
+        margin-top: -120px;
+    }
 }
 
 .timeline-item.left {
@@ -423,6 +438,7 @@ a {
         width: 100%;
         padding-left: 50px;
         padding-right: 0;
+        margin-top: 0 !important;
     }
     .timeline-item.left,
     .timeline-item.right {
@@ -433,6 +449,55 @@ a {
         left: 10px;
         right: auto;
     }
+}
+
+/* --- Projects Filter Header --- */
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.projects-header .section-title {
+    margin-bottom: 0;
+}
+
+.filter-label {
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary-color);
+    background: rgba(255, 215, 0, 0.1);
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.clear-filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--surface-border);
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+}
+
+.clear-filter-btn:hover {
+    background: rgba(255, 50, 50, 0.1);
+    color: #ff5252;
+    border-color: rgba(255, 50, 50, 0.3);
+}
+
+.clear-filter-btn.hidden,
+.filter-label.hidden {
+    display: none;
 }
 
 /* --- Interactive Projects --- */

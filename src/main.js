@@ -28,8 +28,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Render Projects
     const projectsContainer = document.getElementById('projects-container');
-    if (projectsContainer) {
-        projects.forEach((proj, index) => {
+    const filterLabel = document.getElementById('projects-filter-label');
+    const clearFilterBtn = document.getElementById('clear-filter-btn');
+
+    // Global observer for fade-in elements
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Modal Logic Setup (DOM elements only queried once)
+    const modal = document.getElementById('project-modal');
+    const modalClose = document.getElementById('modal-close');
+    const mImage = document.getElementById('modal-image');
+    const mLetter = document.getElementById('modal-letter');
+    const mTitle = document.getElementById('modal-title');
+    const mRole = document.getElementById('modal-role');
+    const mDate = document.getElementById('modal-date');
+    const mDesc = document.getElementById('modal-desc');
+    const mTasks = document.getElementById('modal-tasks');
+    const mTechs = document.getElementById('modal-techs');
+    const mCompanyDot = document.getElementById('modal-company-dot');
+    const mCompanyTooltip = document.getElementById('modal-company-tooltip');
+
+    if (modal) {
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    }
+
+    const renderProjects = (filterCompany) => {
+        if (!projectsContainer) return;
+        projectsContainer.innerHTML = '';
+
+        if (filterCompany) {
+            filterLabel.textContent = `(${getCompanyConfig(filterCompany).shortName})`;
+            filterLabel.classList.remove('hidden');
+            clearFilterBtn.classList.remove('hidden');
+        } else {
+            filterLabel.classList.add('hidden');
+            clearFilterBtn.classList.add('hidden');
+        }
+
+        const filteredProjects = filterCompany 
+            ? projects.filter(p => p.company === filterCompany || (filterCompany === 'DᎥᗰᗩᒪᎥᑎᗩ' && p.company === 'Solo Project')) 
+            : projects;
+
+        filteredProjects.forEach((proj) => {
+            const originalIndex = projects.indexOf(proj);
             const tagsHtml = proj.tags.map(t => `<span class="tag">${t}</span>`).join('');
             
             // Map company to CSS colors
@@ -37,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dotStyle = `background-color: ${compConfig.color}; box-shadow: 0 0 8px ${compConfig.color}80;`;
 
             const projHtml = `
-                <div class="glass interactive-project fade-in" data-index="${index}">
+                <div class="glass interactive-project fade-in" data-index="${originalIndex}">
                     <div class="proj-header-compact">
                         <div class="proj-title-row">
                             <div class="proj-title-group">
@@ -60,25 +115,13 @@ document.addEventListener('DOMContentLoaded', () => {
             projectsContainer.insertAdjacentHTML('beforeend', projHtml);
         });
 
-        // Modal Logic
-        const modal = document.getElementById('project-modal');
-        const modalClose = document.getElementById('modal-close');
-        
-        // Modal DOM elements
-        const mImage = document.getElementById('modal-image');
-        const mLetter = document.getElementById('modal-letter');
-        const mTitle = document.getElementById('modal-title');
-        const mRole = document.getElementById('modal-role');
-        const mDate = document.getElementById('modal-date');
-        const mDesc = document.getElementById('modal-desc');
-        const mTasks = document.getElementById('modal-tasks');
-        const mTechs = document.getElementById('modal-techs');
-        const mCompanyDot = document.getElementById('modal-company-dot');
-        const mCompanyTooltip = document.getElementById('modal-company-tooltip');
-
+        // Re-attach modal listeners
         if (modal) {
             const interactiveProjects = document.querySelectorAll('.interactive-project');
             interactiveProjects.forEach(projCard => {
+                // Ensure the fade-in triggers
+                observer.observe(projCard);
+                
                 projCard.addEventListener('click', () => {
                     const idx = projCard.getAttribute('data-index');
                     const p = projects[idx];
@@ -94,38 +137,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     mTasks.innerHTML = p.tasks.map(t => `<li>${t}</li>`).join('');
                     mTechs.innerHTML = p.technologies.map(t => `<span class="tag">${t}</span>`).join('');
                     
-                    // Company dot
                     const cConfig = getCompanyConfig(p.company);
                     mCompanyDot.className = `company-dot tooltip-wrapper`;
                     mCompanyDot.style.backgroundColor = cConfig.color;
                     mCompanyDot.style.boxShadow = `0 0 8px ${cConfig.color}80`;
                     mCompanyTooltip.textContent = cConfig.shortName;
 
-                    // Reset modal scroll position
                     const modalContainer = modal.querySelector('.modal-container');
-                    if (modalContainer) {
-                        modalContainer.scrollTop = 0;
-                    }
+                    if (modalContainer) modalContainer.scrollTop = 0;
 
-                    // Show modal
                     modal.classList.remove('hidden');
-                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                    document.body.style.overflow = 'hidden';
                 });
             });
-
-            const closeModal = () => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = '';
-            };
-
-            modalClose.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
         }
+    };
+
+    if (clearFilterBtn) {
+        clearFilterBtn.addEventListener('click', () => {
+            renderProjects(null);
+        });
     }
+
+    // Initial render
+    renderProjects(null);
 
     // 2.5 Render Experience Timeline
     const expContainer = document.getElementById('experience-timeline');
@@ -144,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const expHtml = `
-                <div class="timeline-item ${sideClass} fade-in">
+                <div class="timeline-item ${sideClass} fade-in" data-company="${exp.company_name}">
                     <div class="timeline-dot tooltip-wrapper" style="${dotStyle}">
                         <span class="tooltip-text">${compConfig.shortName}</span>
                     </div>
@@ -162,32 +197,25 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             expContainer.insertAdjacentHTML('beforeend', expHtml);
         });
+
+        // Add click listener to timeline items for filtering
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        timelineItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const comp = item.getAttribute('data-company');
+                renderProjects(comp);
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     }
 
     // 3. Scroll-driven Animations (Fade In)
-    // Re-query fadeElements because we just injected new html
-    const fadeElements = document.querySelectorAll('.bento-item, .experience-card, .interactive-project, .timeline-item');
-    
-    // Initial setup: add fade-in class to all elements we want to animate
+    const fadeElements = document.querySelectorAll('.bento-item, .experience-card, .timeline-item');
     fadeElements.forEach(el => {
         el.classList.add('fade-in');
-    });
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger when 10% of element is visible
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    fadeElements.forEach(el => {
         observer.observe(el);
     });
 
