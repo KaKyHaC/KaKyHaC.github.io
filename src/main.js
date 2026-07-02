@@ -105,6 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     mCompanyDot.className = `company-dot tooltip-wrapper ${cClass}`;
                     mCompanyTooltip.textContent = p.company;
 
+                    // Reset modal scroll position
+                    const modalContainer = modal.querySelector('.modal-container');
+                    if (modalContainer) {
+                        modalContainer.scrollTop = 0;
+                    }
+
                     // Show modal
                     modal.classList.remove('hidden');
                     document.body.style.overflow = 'hidden'; // Prevent background scrolling
