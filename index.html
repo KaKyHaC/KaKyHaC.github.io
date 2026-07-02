@@ -20,6 +20,17 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
+    <!-- Prevent FOUC (Flash of Unstyled Content) before Vite injects CSS -->
+    <style>
+        body {
+            background-color: #0f0f11; /* Match var(--bg-color) */
+            color: #e0e0e0; /* Match var(--text-primary) */
+            margin: 0;
+            font-family: sans-serif;
+        }
+        /* Optional: Hide main content until loaded if needed, but just bg color usually fixes the flash */
+    </style>
+    
     <!-- Entry Point -->
 </head>
 <body>
