@@ -1,4 +1,5 @@
 import './style.css'
+import { projects } from './projects.js'
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Menu Toggle
@@ -23,8 +24,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Scroll-driven Animations (Fade In)
-    const fadeElements = document.querySelectorAll('.bento-item, .experience-card, .project-bento');
+    // 2. Render Projects
+    const projectsContainer = document.getElementById('projects-container');
+    if (projectsContainer) {
+        projects.forEach(proj => {
+            const tasksHtml = proj.tasks.map(t => `<li>${t}</li>`).join('');
+            const tagsHtml = proj.tags.map(t => `<span class="tag">${t}</span>`).join('');
+            
+            const projHtml = `
+                <div class="project-bento glass span-2 interactive-project fade-in">
+                    <!-- Compact Header -->
+                    <div class="proj-header-compact">
+                        <div class="proj-title-group">
+                            <h3>${proj.title}</h3>
+                            <span class="proj-role">${proj.role} (${proj.date})</span>
+                        </div>
+                        <div class="proj-toggle-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Detailed View -->
+                    <div class="proj-details">
+                        <div class="proj-media-placeholder" style="background: ${proj.imageColor}">
+                            <span class="media-letter">${proj.imagePlaceholder}</span>
+                        </div>
+                        <p class="proj-desc">${proj.description}</p>
+                        
+                        <h4 class="proj-subheading">Key Tasks & Achievements</h4>
+                        <ul class="proj-tasks">
+                            ${tasksHtml}
+                        </ul>
+                        
+                        <div class="tags">
+                            ${tagsHtml}
+                        </div>
+                    </div>
+                </div>
+            `;
+            projectsContainer.insertAdjacentHTML('beforeend', projHtml);
+        });
+
+        // Add Accordion logic
+        const interactiveProjects = document.querySelectorAll('.interactive-project');
+        interactiveProjects.forEach(proj => {
+            const header = proj.querySelector('.proj-header-compact');
+            header.addEventListener('click', () => {
+                const wasActive = proj.classList.contains('active');
+                
+                // Optional: Close all other projects
+                // interactiveProjects.forEach(p => p.classList.remove('active'));
+                
+                if (!wasActive) {
+                    proj.classList.add('active');
+                } else {
+                    proj.classList.remove('active');
+                }
+            });
+        });
+    }
+
+    // 3. Scroll-driven Animations (Fade In)
+    // Re-query fadeElements because we just injected new project HTML
+    const fadeElements = document.querySelectorAll('.bento-item, .experience-card, .interactive-project');
     
     // Initial setup: add fade-in class to all elements we want to animate
     fadeElements.forEach(el => {
@@ -41,8 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optional: Stop observing once faded in
-                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -51,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // 3. Active Nav Link on Scroll
+    // 4. Active Nav Link on Scroll
     const sections = document.querySelectorAll('.section-block');
     
     const updateActiveLink = () => {
@@ -61,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
             
-            // Adjust the offset threshold based on your layout
             if (window.scrollY >= (sectionTop - 150)) {
                 current = section.getAttribute('id');
             }
