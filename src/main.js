@@ -1,5 +1,7 @@
 import './style.css'
 import { projects } from './projects.js'
+import { experience } from './experience.js'
+import { getCompanyConfig } from './companies.js'
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Menu Toggle
@@ -30,12 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
         projects.forEach((proj, index) => {
             const tagsHtml = proj.tags.map(t => `<span class="tag">${t}</span>`).join('');
             
-            // Map company to CSS class
-            let companyClass = 'company-solo';
-            if (proj.company === 'CHI Software') companyClass = 'company-chi';
-            if (proj.company === 'Megogo') companyClass = 'company-megogo';
-            if (proj.company === 'Nitrix Studio') companyClass = 'company-nitrix';
-            if (proj.company === 'IT Company') companyClass = 'company-it';
+            // Map company to CSS colors
+            const compConfig = getCompanyConfig(proj.company);
+            const dotStyle = `background-color: ${compConfig.color}; box-shadow: 0 0 8px ${compConfig.color}80;`;
 
             const projHtml = `
                 <div class="glass interactive-project fade-in" data-index="${index}">
@@ -44,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="proj-title-group">
                                 <h3>
                                     ${proj.title}
-                                    <div class="company-dot ${companyClass} tooltip-wrapper">
-                                        <span class="tooltip-text">${proj.company}</span>
+                                    <div class="company-dot tooltip-wrapper" style="${dotStyle}">
+                                        <span class="tooltip-text">${compConfig.shortName}</span>
                                     </div>
                                 </h3>
                                 <span class="proj-role">${proj.role}</span>
@@ -96,14 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     mTechs.innerHTML = p.technologies.map(t => `<span class="tag">${t}</span>`).join('');
                     
                     // Company dot
-                    let cClass = 'company-solo';
-                    if (p.company === 'CHI Software') cClass = 'company-chi';
-                    if (p.company === 'Megogo') cClass = 'company-megogo';
-                    if (p.company === 'Nitrix Studio') cClass = 'company-nitrix';
-                    if (p.company === 'IT Company') cClass = 'company-it';
-                    
-                    mCompanyDot.className = `company-dot tooltip-wrapper ${cClass}`;
-                    mCompanyTooltip.textContent = p.company;
+                    const cConfig = getCompanyConfig(p.company);
+                    mCompanyDot.className = `company-dot tooltip-wrapper`;
+                    mCompanyDot.style.backgroundColor = cConfig.color;
+                    mCompanyDot.style.boxShadow = `0 0 8px ${cConfig.color}80`;
+                    mCompanyTooltip.textContent = cConfig.shortName;
 
                     // Reset modal scroll position
                     const modalContainer = modal.querySelector('.modal-container');
@@ -131,9 +127,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // 2.5 Render Experience Timeline
+    const expContainer = document.getElementById('experience-timeline');
+    if (expContainer) {
+        experience.forEach((exp, index) => {
+            const sideClass = index % 2 === 0 ? 'left' : 'right';
+            const compConfig = getCompanyConfig(exp.company_name);
+            const dotStyle = `background-color: ${compConfig.color}; box-shadow: 0 0 8px ${compConfig.color}80;`;
+            const currentClass = exp.is_current ? 'current' : '';
+            
+            let tasksHtml = '';
+            if (exp.tasks && exp.tasks.length > 0) {
+                tasksHtml = `<ul class="exp-list" style="margin-top: 15px;">
+                                ${exp.tasks.map(t => `<li>${t}</li>`).join('')}
+                             </ul>`;
+            }
+
+            const expHtml = `
+                <div class="timeline-item ${sideClass} fade-in">
+                    <div class="timeline-dot tooltip-wrapper" style="${dotStyle}">
+                        <span class="tooltip-text">${compConfig.shortName}</span>
+                    </div>
+                    <div class="timeline-content glass">
+                        <div class="exp-header">
+                            <div class="exp-title">
+                                <h3>${exp.company_name}</h3>
+                                <h4>${exp.role}</h4>
+                            </div>
+                            <span class="exp-date ${currentClass}">${exp.start_date} – ${exp.end_date}</span>
+                        </div>
+                        ${tasksHtml}
+                    </div>
+                </div>
+            `;
+            expContainer.insertAdjacentHTML('beforeend', expHtml);
+        });
+    }
+
     // 3. Scroll-driven Animations (Fade In)
-    // Re-query fadeElements because we just injected new project HTML
-    const fadeElements = document.querySelectorAll('.bento-item, .experience-card, .interactive-project');
+    // Re-query fadeElements because we just injected new html
+    const fadeElements = document.querySelectorAll('.bento-item, .experience-card, .interactive-project, .timeline-item');
     
     // Initial setup: add fade-in class to all elements we want to animate
     fadeElements.forEach(el => {
