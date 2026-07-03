@@ -270,6 +270,15 @@ a {
 .skill-card {
     cursor: pointer;
     transition: var(--transition);
+    padding: 20px;
+}
+
+.skill-card .bento-header {
+    margin-bottom: 10px;
+}
+
+.skill-card .tags {
+    margin-top: 5px;
 }
 
 .skill-card:hover {
