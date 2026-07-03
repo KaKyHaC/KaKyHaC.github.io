@@ -584,6 +584,58 @@ a {
     }
 }
 
+/* --- Single-Sided Timeline (Education) --- */
+.timeline-single-sided::after {
+    left: 20px;
+}
+
+.timeline-single-sided .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 0;
+    left: 0 !important;
+}
+
+.timeline-single-sided .timeline-item .timeline-dot {
+    left: 10px;
+    right: auto;
+    transform: none;
+}
+
+.timeline-single-sided .timeline-item .company-border {
+    border-right: none;
+    border-left: 4px solid var(--comp-color);
+}
+
+.timeline-single-sided .timeline-item.expanded .company-border {
+    border-left-width: 6px;
+    border-right-width: 0;
+}
+
+.edu-achievements {
+    margin-top: 40px;
+    padding: 30px;
+}
+
+.edu-achievements ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.edu-achievements li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.edu-achievements li::before {
+    content: '🏆';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 /* --- Projects Filter Header --- */
 .projects-header {
     display: flex;

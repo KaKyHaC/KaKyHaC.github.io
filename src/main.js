@@ -4,6 +4,7 @@ import { experience } from './experience.js'
 import { getCompanyConfig } from './companies.js'
 import { skillsData } from './skills.js'
 import { skillsDetails } from './skillsDetails.js'
+import { educationProfile } from './education.js'
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Menu Toggle
@@ -349,6 +350,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+    }
+
+    // 2.7 Render Education
+    const eduTimelineContainer = document.getElementById('education-timeline');
+    if (eduTimelineContainer && educationProfile && educationProfile.degrees) {
+        educationProfile.degrees.forEach((deg) => {
+            // Reusing some classes from Experience for consistency
+            const compColor = '#00d2ff'; // A nice blue for education
+
+            const eduHtml = `
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content glass company-border" style="--comp-color: ${compColor}">
+                        <div class="exp-header" style="cursor: default;">
+                            <div class="exp-title">
+                                <h3>${deg.level}</h3>
+                                <h4>${deg.specialty}</h4>
+                            </div>
+                            <div class="exp-header-right">
+                                <span class="exp-date">${deg.start_year} – ${deg.end_year}</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 15px; color: var(--text-secondary); font-size: 0.95rem;">
+                            <p>${deg.graduation_details}</p>
+                            ${deg.research_focus ? `<p style="margin-top: 8px;"><strong>Research Focus:</strong> ${deg.research_focus}</p>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+            eduTimelineContainer.insertAdjacentHTML('beforeend', eduHtml);
+        });
+    }
+
+    const eduAchievementsContainer = document.getElementById('education-achievements');
+    const eduAchievementsList = document.getElementById('education-achievements-list');
+    
+    if (eduAchievementsContainer && eduAchievementsList && educationProfile && educationProfile.additional_achievements) {
+        if (educationProfile.additional_achievements.length > 0) {
+            eduAchievementsList.innerHTML = educationProfile.additional_achievements.map(ach => `<li>${ach}</li>`).join('');
+            eduAchievementsContainer.classList.remove('hidden');
+        }
     }
 
     // 3. Scroll-driven Animations (Fade In)
