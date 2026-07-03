@@ -3,6 +3,7 @@ import { projects } from './projects.js'
 import { experience } from './experience.js'
 import { getCompanyConfig } from './companies.js'
 import { skillsData } from './skills.js'
+import { skillsDetails } from './skillsDetails.js'
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Menu Toggle
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const spanClass = mapping.span === 2 ? 'span-2' : '';
 
             const skillHtml = `
-                <div class="bento-item glass ${spanClass}">
+                <div class="bento-item glass ${spanClass} skill-card" data-category="${key}" data-title="${mapping.title}" data-icon="${mapping.icon}">
                     <div class="bento-header">
                         <i class="${mapping.icon} bento-icon"></i>
                         <h3>${mapping.title}</h3>
@@ -65,6 +66,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             skillsContainer.insertAdjacentHTML('beforeend', skillHtml);
+        });
+
+        // --- Skill Category Modal ---
+        const skillModal = document.getElementById('skill-category-modal');
+        const skillModalClose = document.getElementById('skill-modal-close');
+        const skillModalIcon = document.getElementById('skill-modal-icon');
+        const skillModalTitle = document.getElementById('skill-modal-category-title');
+        const skillModalList = document.getElementById('skill-modal-list');
+
+        const closeSkillModal = () => {
+            skillModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+
+        if (skillModal) {
+            skillModalClose.addEventListener('click', closeSkillModal);
+            skillModal.addEventListener('click', (e) => {
+                if (e.target === skillModal) closeSkillModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeSkillModal();
+            });
+        }
+
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const key = card.getAttribute('data-category');
+                const title = card.getAttribute('data-title');
+                const icon = card.getAttribute('data-icon');
+
+                // Populate header
+                skillModalIcon.className = `${icon} bento-icon`;
+                skillModalTitle.textContent = title;
+
+                // Get skills for this category
+                const categorySkills = skillsDetails.filter(s => s.category === key);
+
+                // Render skill items
+                skillModalList.innerHTML = categorySkills.map((s, i) => `
+                    <div class="skill-modal-item${i > 0 ? ' skill-modal-divider' : ''}">
+                        <p class="skill-modal-name">${s.skill}</p>
+                        <p class="skill-modal-desc">${s.description}</p>
+                        <p class="skill-modal-usage"><span class="skill-usage-icon">💻</span>${s.usage}</p>
+                    </div>
+                `).join('');
+
+                skillModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                skillModalList.scrollTop = 0;
+            });
         });
     }
 
