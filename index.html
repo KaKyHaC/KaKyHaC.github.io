@@ -32,8 +32,8 @@
     </style>
     
     <!-- Entry Point -->
-  <script type="module" crossorigin src="./assets/index-5dDAhBqt.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BfxhwD_8.css">
+  <script type="module" crossorigin src="./assets/index-BV7b9A_E.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Eo6h8SOb.css">
 </head>
 <body>
     <div id="app" class="layout-split">
@@ -84,23 +84,29 @@
                 <h2 class="section-title">About Me</h2>
                 <div class="bento-grid">
                     <div class="bento-item glass span-2">
-                        <i class="fas fa-user-astronaut bento-icon"></i>
-                        <h3>Senior Software Engineer | Tech Lead | PhD</h3>
+                        <div class="bento-header">
+                            <i class="fas fa-user-astronaut bento-icon"></i>
+                            <h3>Senior Software Engineer | Tech Lead | PhD</h3>
+                        </div>
                         <p>I am a Senior Software Engineer with over 8 years of commercial experience in building high-load and scalable mobile applications across Media & Entertainment, Smart Home, Healthcare, and AI-powered solutions. My engineering approach is built on technological maturity: I am deeply immersed in the Kotlin ecosystem, actively utilizing Clean Architecture and Coroutines to build reliable systems.</p>
                         <p style="margin-top: 10px;">AI is an integral part of my daily workflow. I leverage Gemini as my "virtual junior developer," delegating feature implementation and test generation, while performing strict code reviews as a tech lead. I also develop custom automation tools, such as Python scripts integrated with LLM APIs for contextual application localization into 15+ languages.</p>
                         <p style="margin-top: 10px;"><i>I value a user-centric product culture and aim to work in a transparent Agile/Scrum environment that fosters innovation, healthy feedback, and engineering excellence.</i></p>
                     </div>
                     
                     <div class="bento-item glass">
-                        <i class="fas fa-rocket bento-icon"></i>
-                        <h3>Product & Leadership</h3>
+                        <div class="bento-header">
+                            <i class="fas fa-rocket bento-icon"></i>
+                            <h3>Product & Leadership</h3>
+                        </div>
                         <p><strong>Indie Development (Google Play):</strong> Independently managed the entire product lifecycle—from UI/UX design and architecture to release and monetization—for multiple applications under the DᎥᗰᗩᒪᎥᑎᗩ brand. Successful projects include <em>People Notes</em> (4.6 rating), <em>Resistance</em>, and <em>Tic-Tac-Toe 3 Player</em> (5,000+ downloads).</p>
                         <p style="margin-top: 10px;"><strong>Mentorship:</strong> Hands-on experience leading Android development teams, conducting constructive code reviews, and mentoring junior engineers.</p>
                     </div>
 
                     <div class="bento-item glass">
-                        <i class="fas fa-microscope bento-icon"></i>
-                        <h3>Research & Academic</h3>
+                        <div class="bento-header">
+                            <i class="fas fa-microscope bento-icon"></i>
+                            <h3>Research & Academic</h3>
+                        </div>
                         <p><strong>Academic Status:</strong> PhD in Electronic Communications and Radio Engineering (NURE, 2025). Lecturer at the Department of Communication Systems and Networks at the Military Institute of Telecommunications and Information Technologies.</p>
                         <p style="margin-top: 10px;"><strong>Achievements:</strong> Holder of a patent for a method of positional coding to reduce video stream intensity. Co-author of multiple publications in Scopus-indexed journals (Q3). Awarded the Cabinet of Ministers of Ukraine Scholarship for Young Scientists (2025).</p>
                     </div>
@@ -170,6 +176,18 @@
                     <div id="modal-techs" class="proj-tags modal-tags"></div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Skill Category Modal -->
+    <div id="skill-category-modal" class="modal-overlay hidden">
+        <div class="modal-container glass skill-modal-container">
+            <button id="skill-modal-close" class="modal-close-btn">&times;</button>
+            <div class="skill-modal-header">
+                <i id="skill-modal-icon" class="bento-icon"></i>
+                <h2 id="skill-modal-category-title"></h2>
+            </div>
+            <div id="skill-modal-list" class="skill-modal-list"></div>
         </div>
     </div>
 
