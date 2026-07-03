@@ -50,7 +50,10 @@ export const projects = [
         technologies: ['Kotlin', 'Jetpack Compose', 'Firebase Firestore', 'Google Play Games Services', 'Hilt', 'Coroutines', 'Flow', 'Material 3', 'Navigation Component', 'AdMob', 'JUnit', 'Robolectric'],
         tags: ['Kotlin', 'Jetpack Compose', 'Firebase', 'Google Play Games', 'Hilt'],
         imagePlaceholder: 'T',
-        imageColor: 'linear-gradient(135deg, #8E24AA, #6A1B9A)'
+        imageColor: 'linear-gradient(135deg, #8E24AA, #6A1B9A)',
+        icon: 'images/projects/tictactoe_icon.png',
+        banner: 'images/projects/tictactoe_banner.jpg',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.dvbarannik.tictactoy'
     },
     {
         id: 'people-notes',
