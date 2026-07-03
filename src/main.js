@@ -55,8 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const skillHtml = `
                 <div class="bento-item glass ${spanClass}">
-                    <i class="${mapping.icon} bento-icon"></i>
-                    <h3>${mapping.title}</h3>
+                    <div class="bento-header">
+                        <i class="${mapping.icon} bento-icon"></i>
+                        <h3>${mapping.title}</h3>
+                    </div>
                     <div class="tags">
                         ${tagsHtml}
                     </div>

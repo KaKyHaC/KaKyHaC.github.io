@@ -270,15 +270,21 @@ a {
     grid-column: span 2;
 }
 
+.bento-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
 .bento-icon {
     font-size: 2rem;
     color: var(--primary-color);
-    margin-bottom: 20px;
 }
 
 .bento-item h3 {
     font-size: 1.4rem;
-    margin-bottom: 12px;
+    margin: 0;
 }
 
 .bento-item p {
