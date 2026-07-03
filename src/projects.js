@@ -93,11 +93,11 @@ export const projects = [
     },
     {
         id: 'epic-clicker',
-        title: 'Epic Clicker: Brainrot Fury',
+        title: '67 Brainrot Clicker',
         role: 'Solo Android Developer',
         company: 'Solo Project',
         date: 'Feb 2024 – Present',
-        description: 'A progression-driven idle clicker game built around exponential economy growth, prestige strategies (RESPECT resets), and meme-inspired characters. The game features seasonal leaderboards, unlockable hero abilities, offline progress, and deep combo synergies.',
+        description: 'A meme-fueled idle clicker game where players tap to unlock characters, earn Respect, and climb global leaderboards. The game features seasonal leaderboards, unlockable hero abilities, offline progress, and deep combo synergies.',
         tasks: [
             'Drove the project through the full lifecycle: from core game design, balance, and UI/UX to engineering and Google Play publishing.',
             'Built a modular hero and skin system with unique abilities (e.g., hold-to-auto-tap, x10 critical taps, investment scaling).',
@@ -107,7 +107,10 @@ export const projects = [
         technologies: ['Kotlin', 'Jetpack Compose', 'Firebase Firestore', 'Remote Config', 'Firebase Analytics', 'Crashlytics', 'Hilt', 'Coroutines', 'Flow', 'Material 3', 'Navigation Component', 'AdMob'],
         tags: ['Kotlin', 'Jetpack Compose', 'Firebase', 'AdMob', 'Game Dev'],
         imagePlaceholder: 'E',
-        imageColor: 'linear-gradient(135deg, #FFB300, #F39C12)'
+        imageColor: 'linear-gradient(135deg, #FFB300, #F39C12)',
+        icon: 'images/projects/brainrotclicker_icon.png',
+        banner: 'images/projects/brainrotclicker_banner.jpg',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.dvbarannik.brainrotclicker2'
     },
     {
         id: 'symmetry',
