@@ -299,27 +299,11 @@ export const projects = [
         imageColor: 'linear-gradient(135deg, #5C6BC0, #283593)'
     },
     {
-        id: 'liftapp',
-        title: 'LiftApp',
-        role: 'Android Developer',
-        company: 'IT Company',
-        date: 'Apr 2018 – Jun 2018',
-        description: 'A hardware-integrated digital dashboard for elevators. Renders dynamic information to passengers, including real-time floor numbers, traffic direction, news feeds, and promotional images directly on tablet displays installed in the elevator cab.',
-        tasks: [
-            'Utilized a native C++ SerialPort library to directly monitor, decode, and process physical hardware signals from the elevator\'s FT232 port.',
-            'Adapted the UI layer and optimized performance specifically for continuous, 24/7 operation on Android tablet devices.'
-        ],
-        technologies: ['Java', 'Android NDK', 'C++', 'SerialPort library'],
-        tags: ['Java', 'Android NDK', 'C++', 'Hardware Integration'],
-        imagePlaceholder: 'L',
-        imageColor: 'linear-gradient(135deg, #FF7043, #D84315)'
-    },
-    {
         id: 'liftapp-remote',
         title: 'LiftApp Remote Setup',
         role: 'Android Developer',
         company: 'IT Company',
-        date: 'Jan 2018 – Mar 2018',
+        date: 'Apr 2018 – Jun 2018',
         description: 'A specialized remote configuration utility for elevator technicians. Allows maintenance workers to wirelessly connect to the main LiftApp panels and update configuration parameters safely without needing physical access to the device ports.',
         tasks: [
             'Engineered a reliable local wireless connection protocol utilizing Wi-Fi Direct to securely transmit configuration payloads.',
@@ -329,6 +313,22 @@ export const projects = [
         tags: ['Java', 'Wi-Fi Direct', 'Networking'],
         imagePlaceholder: 'L',
         imageColor: 'linear-gradient(135deg, #8D6E63, #5D4037)'
+    },
+    {
+        id: 'liftapp-bootloader',
+        title: 'LiftApp Bootloader',
+        role: 'Android Developer',
+        company: 'IT Company',
+        date: 'Jan 2018 – Mar 2018',
+        description: 'A background system application requiring root privileges, designed to manage the lifecycle of the main LiftApp software. It acts as an OTA update manager that automatically detects, silently installs, and launches new application versions.',
+        tasks: [
+            'Implemented silent, automated software installation routines by executing low-level root commands within the Android OS.',
+            'Configured broadcast receivers for boot events to manage the device lifecycle and ensure the main LiftApp launches instantly upon system boot.'
+        ],
+        technologies: ['Java', 'Root Access', 'Android System Permissions'],
+        tags: ['Java', 'Root Access', 'System Administration'],
+        imagePlaceholder: 'L',
+        imageColor: 'linear-gradient(135deg, #424242, #212121)'
     },
     {
         id: 'resistance-local',
@@ -351,19 +351,19 @@ export const projects = [
         playStoreLink: 'https://play.google.com/store/apps/details?id=com.divan.theresistance'
     },
     {
-        id: 'liftapp-bootloader',
-        title: 'LiftApp Bootloader',
+        id: 'liftapp',
+        title: 'LiftApp',
         role: 'Android Developer',
         company: 'IT Company',
         date: 'Sep 2017 – Dec 2017',
-        description: 'A background system application requiring root privileges, designed to manage the lifecycle of the main LiftApp software. It acts as an OTA update manager that automatically detects, silently installs, and launches new application versions.',
+        description: 'A hardware-integrated digital dashboard for elevators. Renders dynamic information to passengers, including real-time floor numbers, traffic direction, news feeds, and promotional images directly on tablet displays installed in the elevator cab.',
         tasks: [
-            'Implemented silent, automated software installation routines by executing low-level root commands within the Android OS.',
-            'Configured broadcast receivers for boot events to manage the device lifecycle and ensure the main LiftApp launches instantly upon system boot.'
+            'Utilized a native C++ SerialPort library to directly monitor, decode, and process physical hardware signals from the elevator\'s FT232 port.',
+            'Adapted the UI layer and optimized performance specifically for continuous, 24/7 operation on Android tablet devices.'
         ],
-        technologies: ['Java', 'Root Access', 'Android System Permissions'],
-        tags: ['Java', 'Root Access', 'System Administration'],
+        technologies: ['Java', 'Android NDK', 'C++', 'SerialPort library'],
+        tags: ['Java', 'Android NDK', 'C++', 'Hardware Integration'],
         imagePlaceholder: 'L',
-        imageColor: 'linear-gradient(135deg, #424242, #212121)'
+        imageColor: 'linear-gradient(135deg, #FF7043, #D84315)'
     }
 ];
