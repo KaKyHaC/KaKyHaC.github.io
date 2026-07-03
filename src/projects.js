@@ -1,5 +1,26 @@
 export const projects = [
     {
+        id: 'libpolycodec',
+        title: 'LibPolyCodec: Data Compression Library',
+        role: 'C++ Software Architect',
+        company: 'MITI',
+        date: 'Jun 2026 – Present',
+        description: 'A high-performance, cross-platform C++ library for static and streaming image processing (compression, cryptography, steganography). Designed for maximum speed and efficiency across diverse architectures, from Desktop/Mobile to UAV microcontrollers, leveraging the Polyadic Coding Algorithm (OPC).',
+        tasks: [
+            'Architected a 4-layer Data-Driven Pipeline (Data, Pipeline, Modules, Session) with independent black-box modules and symmetric encoding/decoding chains.',
+            'Engineered an "Absolute Zero-Allocation" & "No-Exceptions" memory model using a compile-time AllocPolicy (HeapAllocPolicy for general use, StaticPoolPolicy for embedded systems).',
+            'Implemented the OPC3 (Polyadic Coding) algorithm with BigInteger support and hybrid hardware acceleration (SIMD AVX/SSE for Desktop, NEON for Mobile).',
+            'Designed a unified CodecSession facade supporting zero-allocation batch processing, hot reconfiguration, and adaptive ROI via InformativenessMap.'
+        ],
+        technologies: ['C++20', 'CMake', 'Polyadic Coding', 'SIMD (AVX/NEON)', 'Data-Driven Pipeline', 'Zero-Allocation', 'Android NDK'],
+        tags: ['C++20', 'Architecture', 'Compression', 'SIMD', 'Cross-platform'],
+        imagePlaceholder: 'L',
+        imageColor: 'linear-gradient(135deg, #1565C0, #0D47A1)',
+        icon: 'images/projects/libpolycodec_icon.png',
+        banner: 'images/projects/libpolycodec_banner.jpg',
+        githubLink: 'https://github.com/dvbarannik/libpolycodec'
+    },
+    {
         id: 'lucky-loot-boxes',
         title: '67 Lucky Loot Boxes',
         role: 'Solo Android Developer',

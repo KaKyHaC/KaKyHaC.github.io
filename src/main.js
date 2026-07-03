@@ -231,6 +231,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (p.playStoreLink) {
                         mLinkBtn.href = p.playStoreLink;
+                        mLinkBtn.innerHTML = '<i class="fab fa-google-play"></i> Google Play';
+                        mLinkBtn.classList.remove('hidden');
+                    } else if (p.githubLink) {
+                        mLinkBtn.href = p.githubLink;
+                        mLinkBtn.innerHTML = '<i class="fab fa-github"></i> GitHub';
                         mLinkBtn.classList.remove('hidden');
                     } else {
                         mLinkBtn.href = '#';
