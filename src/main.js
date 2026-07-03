@@ -147,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mTechs = document.getElementById('modal-techs');
     const mCompanyDot = document.getElementById('modal-company-dot');
     const mCompanyTooltip = document.getElementById('modal-company-tooltip');
+    const mLinkBtn = document.getElementById('modal-link-btn');
 
     if (modal) {
         const closeModal = () => {
@@ -186,9 +187,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const projHtml = `
                 <div class="glass interactive-project fade-in" data-index="${originalIndex}" style="--comp-color: ${compConfig.color}; border-top: 4px solid var(--comp-color);">
                     <div class="proj-card-header">
-                        <div class="proj-mini-placeholder" style="background: ${proj.imageColor}">
-                            <span class="proj-mini-letter">${proj.imagePlaceholder}</span>
-                        </div>
+                        ${proj.icon 
+                            ? `<img src="${proj.icon}" class="proj-mini-icon" alt="${proj.title} icon">` 
+                            : `<div class="proj-mini-placeholder" style="background: ${proj.imageColor}">
+                                   <span class="proj-mini-letter">${proj.imagePlaceholder}</span>
+                               </div>`
+                        }
                         <h3 class="proj-card-title">
                             ${proj.title}
                         </h3>
@@ -214,8 +218,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     const p = projects[idx];
 
                     // Populate modal
-                    mImage.style.background = p.imageColor;
-                    mLetter.textContent = p.imagePlaceholder;
+                    if (p.banner) {
+                        mImage.style.background = `url(${p.banner}) center/cover no-repeat`;
+                        mLetter.textContent = '';
+                    } else if (p.icon) {
+                        mImage.style.background = `url(${p.icon}) center/contain no-repeat ${p.imageColor}`;
+                        mLetter.textContent = '';
+                    } else {
+                        mImage.style.background = p.imageColor;
+                        mLetter.textContent = p.imagePlaceholder;
+                    }
+
+                    if (p.playStoreLink) {
+                        mLinkBtn.href = p.playStoreLink;
+                        mLinkBtn.classList.remove('hidden');
+                    } else {
+                        mLinkBtn.href = '#';
+                        mLinkBtn.classList.add('hidden');
+                    }
+
                     mTitle.textContent = p.title;
                     mRole.textContent = p.role;
                     mDate.textContent = p.date;

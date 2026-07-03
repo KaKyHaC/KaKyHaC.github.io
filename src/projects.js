@@ -68,7 +68,10 @@ export const projects = [
         technologies: ['Kotlin', 'Jetpack Compose', 'Firebase Firestore', 'Firebase Storage', 'Hilt', 'Coroutines', 'Flow', 'WorkManager', 'Navigation Component', 'Material 3', 'Google Play Billing', 'AdMob'],
         tags: ['Kotlin', 'Jetpack Compose', 'Firebase', 'WorkManager', 'Billing'],
         imagePlaceholder: 'P',
-        imageColor: 'linear-gradient(135deg, #00ACC1, #00838F)'
+        imageColor: 'linear-gradient(135deg, #00ACC1, #00838F)',
+        icon: 'images/projects/peoplenotes_icon.png',
+        banner: 'images/projects/peoplenotes_banner.png',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes'
     },
     {
         id: 'resistance-multiplayer',
