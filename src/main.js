@@ -5,7 +5,13 @@ import { getCompanyConfig } from './companies.js'
 import { skillsData } from './skills.js'
 import { skillsDetails } from './skillsDetails.js'
 import { educationProfile } from './education.js'
-
+import {
+    trackSocialClick,
+    trackNavigationClick,
+    trackThemeSwitch,
+    trackProjectView,
+    trackProjectLinkClick
+} from './analytics.js'
 document.addEventListener('DOMContentLoaded', () => {
     // 0. Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
@@ -25,10 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.documentElement.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
                 themeIcon.classList.replace('fa-sun', 'fa-moon');
+                trackThemeSwitch('light');
             } else {
                 document.documentElement.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'dark');
                 themeIcon.classList.replace('fa-moon', 'fa-sun');
+                trackThemeSwitch('dark');
             }
         });
     }
@@ -47,10 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close mobile menu when clicking a link
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            const targetSection = e.currentTarget.getAttribute('href').replace('#', '');
+            trackNavigationClick(targetSection);
             if (hamburger && hamburger.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 sidebar.classList.remove('menu-open');
+            }
+        });
+    });
+
+    // 1.2 Social Links tracking
+    const socialLinks = document.querySelectorAll('.social-links a');
+    socialLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const title = e.currentTarget.getAttribute('title');
+            if (title) {
+                trackSocialClick(title.toLowerCase());
             }
         });
     });
@@ -187,6 +208,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (mLinkBtn) {
+        mLinkBtn.addEventListener('click', () => {
+            if (mTitle.textContent && mLinkBtn.href) {
+                trackProjectLinkClick(mTitle.textContent, mLinkBtn.href);
+            }
+        });
+    }
+
     const renderProjects = (filterCompany) => {
         if (!projectsContainer) return;
         projectsContainer.innerHTML = '';
@@ -243,6 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 projCard.addEventListener('click', () => {
                     const idx = projCard.getAttribute('data-index');
                     const p = projects[idx];
+                    
+                    trackProjectView(p.title);
 
                     // Populate modal
                     if (p.banner) {
