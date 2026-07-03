@@ -624,14 +624,15 @@ a {
 /* --- Interactive Projects --- */
 .projects-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
 
 .interactive-project {
-    padding: 24px 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    gap: 12px;
     cursor: pointer;
     transition: var(--transition);
     position: relative;
@@ -641,39 +642,57 @@ a {
 .interactive-project:hover {
     border-color: var(--primary-color);
     background: rgba(30, 30, 35, 0.7);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
-.proj-header-compact {
+/* --- Compact card header: mini placeholder + title --- */
+.proj-card-header {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.proj-title-row {
-    display: flex;
-    justify-content: space-between;
     align-items: flex-start;
+    gap: 14px;
 }
 
-.proj-title-group h3 {
-    font-size: 1.4rem;
-    margin-bottom: 4px;
+.proj-mini-placeholder {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.proj-title-group .proj-role {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
+.proj-mini-letter {
     font-family: 'Outfit', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1;
 }
 
-.proj-date {
+.proj-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+/* Short description — truncated to 2 lines */
+.proj-short-desc {
     font-size: 0.85rem;
     color: var(--text-secondary);
-    opacity: 0.7;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
 }
 
 .compact-tags {
@@ -947,8 +966,19 @@ a {
         grid-column: span 1;
     }
 
+    .projects-list {
+        grid-template-columns: 1fr;
+    }
+
     /* Hamburger animation */
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+/* Tablet: 2 columns for projects */
+@media (max-width: 900px) and (min-width: 769px) {
+    .projects-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         filteredProjects.forEach((proj) => {
             const originalIndex = projects.indexOf(proj);
-            const tagsHtml = proj.tags.map(t => `<span class="tag">${t}</span>`).join('');
+            const tagsHtml = proj.tags.slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('');
             
             // Map company to CSS colors
             const compConfig = getCompanyConfig(proj.company);
@@ -135,22 +135,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const projHtml = `
                 <div class="glass interactive-project fade-in" data-index="${originalIndex}">
-                    <div class="proj-header-compact">
-                        <div class="proj-title-row">
-                            <div class="proj-title-group">
-                                <h3>
-                                    ${proj.title}
-                                    <div class="company-dot tooltip-wrapper" style="${dotStyle}">
-                                        <span class="tooltip-text">${compConfig.shortName}</span>
-                                    </div>
-                                </h3>
-                                <span class="proj-role">${proj.role}</span>
+                    <div class="proj-card-header">
+                        <div class="proj-mini-placeholder" style="background: ${proj.imageColor}">
+                            <span class="proj-mini-letter">${proj.imagePlaceholder}</span>
+                        </div>
+                        <h3 class="proj-card-title">
+                            ${proj.title}
+                            <div class="company-dot tooltip-wrapper" style="${dotStyle}">
+                                <span class="tooltip-text">${compConfig.shortName}</span>
                             </div>
-                        </div>
-                        <p class="proj-date">${proj.date}</p>
-                        <div class="compact-tags">
-                            ${tagsHtml}
-                        </div>
+                        </h3>
+                    </div>
+                    <p class="proj-short-desc">${proj.description}</p>
+                    <div class="compact-tags">
+                        ${tagsHtml}
                     </div>
                 </div>
             `;
