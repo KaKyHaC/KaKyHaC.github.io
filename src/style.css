@@ -260,14 +260,22 @@ a {
     transition: var(--transition);
 }
 
-.skill-card {
-    cursor: pointer;
-}
-
 .bento-item:hover {
     transform: translateY(-5px);
     border-color: var(--surface-hover);
     background: rgba(30, 30, 35, 0.7);
+}
+
+.skill-card {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--primary-color);
+    background: rgba(35, 35, 40, 0.8);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
 }
 
 .bento-item.span-2 {
