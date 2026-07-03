@@ -71,7 +71,9 @@ a {
 .sidebar-inner {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 32px;
 }
 
 .profile-image {
@@ -108,12 +110,11 @@ a {
 .tagline {
     color: var(--text-secondary);
     font-size: 0.95rem;
-    margin-bottom: 40px;
     line-height: 1.5;
 }
 
 .sidebar-nav {
-    flex-grow: 1;
+    /* Flexible spacing is handled by .sidebar-inner space-between */
 }
 
 .sidebar-nav ul {
@@ -155,9 +156,9 @@ a {
 }
 
 .social-links {
-    display: flex;
-    gap: 16px;
-    margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    gap: 12px;
 }
 
 .social-links a {
