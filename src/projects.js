@@ -334,7 +334,7 @@ export const projects = [
         id: 'resistance-local',
         title: 'Resistance: Local Game',
         role: 'Flutter Developer / Solo Developer',
-        company: 'Solo Project',
+        company: 'DᎥᗰᗩᒪᎥᑎᗩ',
         date: 'Sep 2017 – Jan 2018',
         description: 'A digital, cross-platform adaptation of the famous social deduction board game. Designed to be played locally by 5 to 10 players on a single device. Features a modern glassmorphism UI, detailed mission tracking histories, and dynamic visual theming.',
         tasks: [
