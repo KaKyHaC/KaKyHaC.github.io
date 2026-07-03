@@ -682,8 +682,9 @@ a {
 }
 
 .clear-filter-btn.hidden,
-.filter-label.hidden {
-    display: none;
+.filter-label.hidden,
+.hidden:not(.modal-overlay) {
+    display: none !important;
 }
 
 /* --- Interactive Projects --- */
