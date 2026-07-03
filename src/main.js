@@ -213,12 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const dotStyle = `background-color: ${compConfig.color}; box-shadow: 0 0 8px ${compConfig.color}80;`;
             const currentClass = exp.is_current ? 'current' : '';
             
-            let tasksHtml = '';
-            if (exp.tasks && exp.tasks.length > 0) {
-                tasksHtml = `<ul class="exp-list" style="margin-top: 15px;">
-                                ${exp.tasks.map(t => `<li>${t}</li>`).join('')}
-                             </ul>`;
-            }
+            const tasksHtml = (exp.tasks && exp.tasks.length > 0)
+                ? exp.tasks.map(t => `<li>${t}</li>`).join('')
+                : '';
 
             const expHtml = `
                 <div class="timeline-item ${sideClass} fade-in" data-company="${exp.company_name}">
@@ -231,26 +228,64 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h3>${exp.company_name}</h3>
                                 <h4>${exp.role}</h4>
                             </div>
-                            <span class="exp-date ${currentClass}">${exp.start_date} – ${exp.end_date}</span>
+                            <div class="exp-header-right">
+                                <span class="exp-date ${currentClass}">${exp.start_date} – ${exp.end_date}</span>
+                                <div class="exp-chevron"><i class="fas fa-chevron-down"></i></div>
+                            </div>
                         </div>
-                        ${tasksHtml}
+                        <div class="exp-tasks-wrapper">
+                            <div class="exp-tasks-inner">
+                                <ul class="exp-list">${tasksHtml}</ul>
+                                <button class="exp-filter-btn" data-company="${exp.company_name}">
+                                    <i class="fas fa-layer-group"></i> Projects
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
             expContainer.insertAdjacentHTML('beforeend', expHtml);
         });
 
-        // Add click listener to timeline items for filtering
+        // --- Accordion logic: hover on desktop, click on mobile ---
+        const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
         const timelineItems = document.querySelectorAll('.timeline-item');
-        timelineItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const comp = item.getAttribute('data-company');
-                renderProjects(comp);
-                const projectsSection = document.getElementById('projects');
-                if (projectsSection) {
-                    projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+
+        const expandItem = (item) => {
+            timelineItems.forEach(other => {
+                if (other !== item) other.classList.remove('expanded');
             });
+            item.classList.add('expanded');
+        };
+
+        const collapseItem = (item) => {
+            item.classList.remove('expanded');
+        };
+
+        timelineItems.forEach(item => {
+            if (isTouchDevice) {
+                item.addEventListener('click', (e) => {
+                    if (e.target.closest('.exp-filter-btn')) return;
+                    item.classList.contains('expanded') ? collapseItem(item) : expandItem(item);
+                });
+            } else {
+                item.addEventListener('mouseenter', () => expandItem(item));
+                item.addEventListener('mouseleave', () => collapseItem(item));
+            }
+
+            // → Projects filter button
+            const filterBtn = item.querySelector('.exp-filter-btn');
+            if (filterBtn) {
+                filterBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const comp = item.getAttribute('data-company');
+                    renderProjects(comp);
+                    const projectsSection = document.getElementById('projects');
+                    if (projectsSection) {
+                        projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }
         });
     }
 

@@ -343,12 +343,7 @@ a {
 }
 
 @media screen and (min-width: 769px) {
-    .timeline-item:nth-child(even) {
-        margin-top: -200px;
-    }
-    .timeline-item:nth-child(odd):not(:first-child) {
-        margin-top: -200px;
-    }
+    /* Accordion cards expand in place — no overlap */
 }
 
 .timeline-item.left {
@@ -396,7 +391,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     flex-wrap: wrap;
     gap: 10px;
 }
@@ -443,6 +438,103 @@ a {
     position: absolute;
     left: 0;
     top: 0;
+}
+
+/* --- Experience Accordion Expand/Collapse --- */
+
+.exp-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.exp-chevron {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--surface-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+                color 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+    flex-shrink: 0;
+}
+
+.timeline-item.expanded .exp-chevron {
+    transform: rotate(180deg);
+    color: var(--comp-color);
+    border-color: var(--comp-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Tasks wrapper — collapsed by default */
+.exp-tasks-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    transition: max-height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+                opacity 0.35s ease,
+                margin-top 0.35s ease;
+}
+
+.timeline-item.expanded .exp-tasks-wrapper {
+    max-height: 700px;
+    opacity: 1;
+    margin-top: 16px;
+}
+
+.exp-tasks-inner {
+    padding-top: 4px;
+}
+
+/* Highlight card on expand */
+.timeline-item.expanded .timeline-content {
+    background: rgba(30, 30, 35, 0.85);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+}
+
+.timeline-item.left.expanded .company-border {
+    border-right-width: 6px;
+}
+
+.timeline-item.right.expanded .company-border {
+    border-left-width: 6px;
+}
+
+/* → Projects button */
+.exp-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 16px;
+    padding: 7px 15px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--surface-border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.exp-filter-btn:hover {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.4);
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.exp-filter-btn i {
+    font-size: 0.8rem;
 }
 
 /* Media Query for Timeline Mobile */
