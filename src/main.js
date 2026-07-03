@@ -244,8 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
             expContainer.insertAdjacentHTML('beforeend', expHtml);
         });
 
-        // --- Accordion logic: hover on desktop, click on mobile ---
-        const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+        // --- Accordion: click to expand/collapse on all devices ---
         const timelineItems = document.querySelectorAll('.timeline-item');
 
         const expandItem = (item) => {
@@ -260,15 +259,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         timelineItems.forEach(item => {
-            if (isTouchDevice) {
-                item.addEventListener('click', (e) => {
-                    if (e.target.closest('.exp-filter-btn')) return;
-                    item.classList.contains('expanded') ? collapseItem(item) : expandItem(item);
-                });
-            } else {
-                item.addEventListener('mouseenter', () => expandItem(item));
-                item.addEventListener('mouseleave', () => collapseItem(item));
-            }
+            item.addEventListener('click', (e) => {
+                if (e.target.closest('.exp-filter-btn')) return;
+                item.classList.contains('expanded') ? collapseItem(item) : expandItem(item);
+            });
 
             // → Projects filter button
             const filterBtn = item.querySelector('.exp-filter-btn');
