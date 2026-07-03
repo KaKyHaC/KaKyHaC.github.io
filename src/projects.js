@@ -334,6 +334,9 @@ export const projects = [
         technologies: ['Dart', 'Flutter', 'BLoC', 'firebase_admob', 'shared_preferences', 'flutter_html', 'flutter_socket_io', 'firebase_core', 'firebase_crashlytics'],
         tags: ['Dart', 'Flutter', 'BLoC', 'Party Game'],
         imagePlaceholder: 'R',
-        imageColor: 'linear-gradient(135deg, #D32F2F, #B71C1C)'
+        imageColor: 'linear-gradient(135deg, #D32F2F, #B71C1C)',
+        icon: 'images/projects/resistance_icon.png',
+        banner: 'images/projects/resistance_banner.jpg',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.divan.theresistance'
     }
 ];
