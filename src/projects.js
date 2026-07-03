@@ -41,24 +41,6 @@ export const projects = [
         playStoreLink: 'https://play.google.com/store/apps/details?id=com.dvbarannik.luckylootbox'
     },
     {
-        id: 'megogo',
-        title: 'Megogo Mobile/ATV App',
-        role: 'Android Developer',
-        company: 'Megogo',
-        date: 'Mar 2025 – Nov 2025',
-        description: 'A large-scale video streaming service for Android phones and Android TV. The application delivers Live TV and VOD with a massive catalog, user profiles, parental controls, and fast, high-quality playback via ExoPlayer (Leanback for TV).',
-        tasks: [
-            'Migrated legacy XML-based screens to Jetpack Compose, significantly improving UI rendering performance and long-term code maintainability.',
-            'Implemented channel availability and playback entry logic, handling in-app purchases and secure parental controls.',
-            'Developed complex deep link handling capabilities using Install Referrer and custom URI schemes to boost marketing and user acquisition.',
-            'Strengthened navigation flow, improved error handling across multiple modules, and increased overall unit test coverage.'
-        ],
-        technologies: ['Kotlin', 'Java', 'Jetpack Compose', 'RxJava', 'Dagger 2', 'Android TV (Leanback)', 'ExoPlayer', 'Retrofit', 'OkHttp', 'Glide', 'WorkManager', 'Navigation Component', 'JUnit', 'Mockito', 'Robolectric'],
-        tags: ['Kotlin', 'Jetpack Compose', 'Android TV', 'ExoPlayer', 'Retrofit', 'Dagger 2'],
-        imagePlaceholder: 'M',
-        imageColor: 'linear-gradient(135deg, #43A047, #2E7D32)'
-    },
-    {
         id: 'lora-iot-network',
         title: 'Distributed IoT LoRa Sensor Network',
         role: 'IoT Firmware Engineer',
@@ -78,6 +60,24 @@ export const projects = [
         icon: 'images/projects/lora_iot_icon.png',
         banner: 'images/projects/lora_iot_banner.jpg',
         githubLink: 'https://github.com/dvbarannik/lora-iot-system'
+    },
+    {
+        id: 'megogo',
+        title: 'Megogo Mobile/ATV App',
+        role: 'Android Developer',
+        company: 'Megogo',
+        date: 'Mar 2025 – Nov 2025',
+        description: 'A large-scale video streaming service for Android phones and Android TV. The application delivers Live TV and VOD with a massive catalog, user profiles, parental controls, and fast, high-quality playback via ExoPlayer (Leanback for TV).',
+        tasks: [
+            'Migrated legacy XML-based screens to Jetpack Compose, significantly improving UI rendering performance and long-term code maintainability.',
+            'Implemented channel availability and playback entry logic, handling in-app purchases and secure parental controls.',
+            'Developed complex deep link handling capabilities using Install Referrer and custom URI schemes to boost marketing and user acquisition.',
+            'Strengthened navigation flow, improved error handling across multiple modules, and increased overall unit test coverage.'
+        ],
+        technologies: ['Kotlin', 'Java', 'Jetpack Compose', 'RxJava', 'Dagger 2', 'Android TV (Leanback)', 'ExoPlayer', 'Retrofit', 'OkHttp', 'Glide', 'WorkManager', 'Navigation Component', 'JUnit', 'Mockito', 'Robolectric'],
+        tags: ['Kotlin', 'Jetpack Compose', 'Android TV', 'ExoPlayer', 'Retrofit', 'Dagger 2'],
+        imagePlaceholder: 'M',
+        imageColor: 'linear-gradient(135deg, #43A047, #2E7D32)'
     },
     {
         id: 'tic-tac-toe',
