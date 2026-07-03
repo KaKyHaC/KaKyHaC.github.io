@@ -14,7 +14,10 @@ export const projects = [
         technologies: ['Kotlin', 'Jetpack Compose', 'Android SDK', 'AdMob', 'Google Play Billing'],
         tags: ['Kotlin', 'Jetpack Compose', 'Casual Game', 'AdMob'],
         imagePlaceholder: 'L',
-        imageColor: 'linear-gradient(135deg, #FFCA28, #F57F17)'
+        imageColor: 'linear-gradient(135deg, #FFCA28, #F57F17)',
+        icon: 'images/projects/lucky_icon.png',
+        banner: 'images/projects/lucky_banner.jpg',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.dvbarannik.luckylootbox'
     },
     {
         id: 'megogo',
