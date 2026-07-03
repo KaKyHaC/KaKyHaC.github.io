@@ -122,6 +122,23 @@ export const projects = [
         playStoreLink: 'https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall'
     },
     {
+        id: 'symmetry',
+        title: 'Symmetry',
+        role: 'Android Developer',
+        company: 'CHI Software',
+        date: 'Sep 2024 – Mar 2025',
+        description: 'An enterprise application for safety inspectors and their customers. Inspectors use the app\'s camera tools to detect gas leaks, automatically tagging media with geolocation data. Customers can view the results, track meta-data, and monitor danger spots via a map interface.',
+        tasks: [
+            'Integrated CameraX for capturing and processing high-quality media during field inspections, saving metadata directly into Room.',
+            'Implemented Google Maps SDK for accurate geospatial visualization of inspection spots and gas leaks.',
+            'Configured secure user authentication, identity management, and server data syncing through AWS Cognito and Retrofit.'
+        ],
+        technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'AWS Cognito', 'Retrofit', 'Google Maps', 'CameraX', 'Coil', 'Hilt', 'Coroutines', 'Flow', 'Navigation Component'],
+        tags: ['CameraX', 'Google Maps', 'AWS Cognito', 'Room', 'Retrofit'],
+        imagePlaceholder: 'S',
+        imageColor: 'linear-gradient(135deg, #4CAF50, #2E7D32)'
+    },
+    {
         id: 'epic-clicker',
         title: '67 Brainrot Clicker',
         role: 'Solo Android Developer',
@@ -143,28 +160,11 @@ export const projects = [
         playStoreLink: 'https://play.google.com/store/apps/details?id=com.dvbarannik.brainrotclicker2'
     },
     {
-        id: 'symmetry',
-        title: 'Symmetry',
-        role: 'Android Developer',
-        company: 'CHI Software',
-        date: 'Sep 2024 – Dec 2024',
-        description: 'An enterprise application for safety inspectors and their customers. Inspectors use the app\'s camera tools to detect gas leaks, automatically tagging media with geolocation data. Customers can view the results, track meta-data, and monitor danger spots via a map interface.',
-        tasks: [
-            'Integrated CameraX for capturing and processing high-quality media during field inspections, saving metadata directly into Room.',
-            'Implemented Google Maps SDK for accurate geospatial visualization of inspection spots and gas leaks.',
-            'Configured secure user authentication, identity management, and server data syncing through AWS Cognito and Retrofit.'
-        ],
-        technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'AWS Cognito', 'Retrofit', 'Google Maps', 'CameraX', 'Coil', 'Hilt', 'Coroutines', 'Flow', 'Navigation Component'],
-        tags: ['CameraX', 'Google Maps', 'AWS Cognito', 'Room', 'Retrofit'],
-        imagePlaceholder: 'S',
-        imageColor: 'linear-gradient(135deg, #4CAF50, #2E7D32)'
-    },
-    {
         id: 'smart-home',
         title: 'Smart Home',
         role: 'Lead Android Developer',
         company: 'CHI Software',
-        date: 'Jul 2023 – Aug 2024',
+        date: 'Dec 2022 – Aug 2024',
         description: 'A centralized control hub application for smart house systems. Users can configure rooms, manage lighting, adjust climate thermostats, monitor live security cameras, and control automated shades across mobile devices, tablets, and dedicated smart panels (TSW, TST, TSR).',
         tasks: [
             'Led the Android development team, conducting strict code reviews with a primary focus on app security, performance, and memory management.',
@@ -182,7 +182,7 @@ export const projects = [
         title: 'Healthcare',
         role: 'Android Developer',
         company: 'CHI Software',
-        date: 'Nov 2022 – Jun 2023',
+        date: 'Jun 2021 – Nov 2022',
         description: 'A comprehensive B2B/B2C medical portal tailored for patients and doctors. Features include personal account management, integrated telemedicine (secure text, audio, and video consultations), an online marketplace for medical preparations, and a medical forum.',
         tasks: [
             'Designed and integrated complex telehealth features within a robust MVVM and Clean Architecture framework.',
@@ -199,7 +199,7 @@ export const projects = [
         title: 'Car Plate Recognition',
         role: 'Android Developer',
         company: 'CHI Software',
-        date: 'May 2022 – Oct 2022',
+        date: 'Sep 2020 – May 2021',
         description: 'An AI-driven real-time car plate recognition tool. The app analyzes high-speed live camera streams, stores recognized license plates with accompanying photos, allows local database searching, and synchronizes data with remote servers.',
         tasks: [
             'Integrated a native C++ ALPR (Automatic License Plate Recognition) OCR library into the Android ecosystem using JNI.',
@@ -212,59 +212,11 @@ export const projects = [
         imageColor: 'linear-gradient(135deg, #607D8B, #455A64)'
     },
     {
-        id: 'liftapp',
-        title: 'LiftApp',
-        role: 'Android Developer',
-        company: 'CHI Software',
-        date: 'Nov 2021 – Apr 2022',
-        description: 'A hardware-integrated digital dashboard for elevators. Renders dynamic information to passengers, including real-time floor numbers, traffic direction, news feeds, and promotional images directly on tablet displays installed in the elevator cab.',
-        tasks: [
-            'Utilized a native C++ SerialPort library to directly monitor, decode, and process physical hardware signals from the elevator\'s FT232 port.',
-            'Adapted the UI layer and optimized performance specifically for continuous, 24/7 operation on Android tablet devices.'
-        ],
-        technologies: ['Java', 'Android NDK', 'C++', 'SerialPort library'],
-        tags: ['Java', 'Android NDK', 'C++', 'Hardware Integration'],
-        imagePlaceholder: 'L',
-        imageColor: 'linear-gradient(135deg, #FF7043, #D84315)'
-    },
-    {
-        id: 'liftapp-remote',
-        title: 'LiftApp Remote Setup',
-        role: 'Android Developer',
-        company: 'CHI Software',
-        date: 'Mar 2021 – Oct 2021',
-        description: 'A specialized remote configuration utility for elevator technicians. Allows maintenance workers to wirelessly connect to the main LiftApp panels and update configuration parameters safely without needing physical access to the device ports.',
-        tasks: [
-            'Engineered a reliable local wireless connection protocol utilizing Wi-Fi Direct to securely transmit configuration payloads.',
-            'Refactored legacy network-handling code to dramatically improve connection stability, maintainability, and data transfer speeds.'
-        ],
-        technologies: ['Java', 'Wi-Fi Direct'],
-        tags: ['Java', 'Wi-Fi Direct', 'Networking'],
-        imagePlaceholder: 'L',
-        imageColor: 'linear-gradient(135deg, #8D6E63, #5D4037)'
-    },
-    {
-        id: 'liftapp-bootloader',
-        title: 'LiftApp Bootloader',
-        role: 'Android Developer',
-        company: 'CHI Software',
-        date: 'Sep 2020 – Mar 2021',
-        description: 'A background system application requiring root privileges, designed to manage the lifecycle of the main LiftApp software. It acts as an OTA update manager that automatically detects, silently installs, and launches new application versions.',
-        tasks: [
-            'Implemented silent, automated software installation routines by executing low-level root commands within the Android OS.',
-            'Configured broadcast receivers for boot events to manage the device lifecycle and ensure the main LiftApp launches instantly upon system boot.'
-        ],
-        technologies: ['Java', 'Root Access', 'Android System Permissions'],
-        tags: ['Java', 'Root Access', 'System Administration'],
-        imagePlaceholder: 'L',
-        imageColor: 'linear-gradient(135deg, #424242, #212121)'
-    },
-    {
         id: 'music-streaming-2020',
         title: 'Music Streaming',
         role: 'Android Developer',
         company: 'Nitrix Studio',
-        date: 'Feb 2020 – Sep 2020',
+        date: 'Apr 2020 – Aug 2020',
         description: 'A premium music streaming platform focused on delivering an enhanced audio experience. Capabilities include full background playback, downloading tracks for offline listening, comprehensive playlist management, and deep integration with Android Auto.',
         tasks: [
             'Developed complex microservices to support a modular and highly scalable backend architecture.',
@@ -282,7 +234,7 @@ export const projects = [
         title: 'Image Compression & Steganography',
         role: 'Android Developer',
         company: 'Nitrix Studio',
-        date: 'Aug 2019 – Feb 2020',
+        date: 'Nov 2019 – Mar 2020',
         description: 'A specialized security utility designed to compress and encode images while applying advanced steganography techniques. This allows users to secretly embed and extract hidden data within standard image files across both mobile and desktop platforms.',
         tasks: [
             'Architected and engineered the application from scratch using Kotlin and Spring Framework for the backend processing.',
@@ -299,7 +251,7 @@ export const projects = [
         title: 'Music Streaming Platform',
         role: 'Android Developer',
         company: 'Nitrix Studio',
-        date: 'Jan 2019 – Aug 2019',
+        date: 'Jun 2019 – Oct 2019',
         description: 'A robust digital streaming ecosystem enabling users to discover music, organize extensive playlists, cache tracks for offline use, and natively share content with friends through dynamic links.',
         tasks: [
             'Built the application adhering strictly to Clean Architecture and MVVM patterns to ensure a maintainable codebase.',
@@ -317,7 +269,7 @@ export const projects = [
         title: 'Card Game Score Calculator',
         role: 'Flutter Developer',
         company: 'Nitrix Studio',
-        date: 'Jul 2018 – Dec 2018',
+        date: 'Jan 2019 – May 2019',
         description: 'A versatile cross-platform Flutter utility for tracking scores in popular card games. The app features multiple distinct game modes, detailed score history logs, engaging UI animations, premium subscription models, and dual-language localization.',
         tasks: [
             'Designed and implemented new features in Dart to meet core player needs and improve the tracking experience.',
@@ -333,8 +285,8 @@ export const projects = [
         id: 'media-streaming-2018',
         title: 'Media Streaming Service',
         role: 'Android Developer',
-        company: 'IT Company',
-        date: 'Jan 2018 – Jul 2018',
+        company: 'Nitrix Studio',
+        date: 'Aug 2018 – Dec 2018',
         description: 'A comprehensive media portal delivering high-quality streaming for movies, TV series, and live broadcasting. The app is highly optimized for large screens, utilizing Android TV libraries to ensure a seamless couch-viewing experience.',
         tasks: [
             'Executed a Single Activity Architecture based on Clean Architecture principles and managed UI states with MVVM/LiveData.',
@@ -347,10 +299,42 @@ export const projects = [
         imageColor: 'linear-gradient(135deg, #5C6BC0, #283593)'
     },
     {
+        id: 'liftapp',
+        title: 'LiftApp',
+        role: 'Android Developer',
+        company: 'IT Company',
+        date: 'Apr 2018 – Jun 2018',
+        description: 'A hardware-integrated digital dashboard for elevators. Renders dynamic information to passengers, including real-time floor numbers, traffic direction, news feeds, and promotional images directly on tablet displays installed in the elevator cab.',
+        tasks: [
+            'Utilized a native C++ SerialPort library to directly monitor, decode, and process physical hardware signals from the elevator\'s FT232 port.',
+            'Adapted the UI layer and optimized performance specifically for continuous, 24/7 operation on Android tablet devices.'
+        ],
+        technologies: ['Java', 'Android NDK', 'C++', 'SerialPort library'],
+        tags: ['Java', 'Android NDK', 'C++', 'Hardware Integration'],
+        imagePlaceholder: 'L',
+        imageColor: 'linear-gradient(135deg, #FF7043, #D84315)'
+    },
+    {
+        id: 'liftapp-remote',
+        title: 'LiftApp Remote Setup',
+        role: 'Android Developer',
+        company: 'IT Company',
+        date: 'Jan 2018 – Mar 2018',
+        description: 'A specialized remote configuration utility for elevator technicians. Allows maintenance workers to wirelessly connect to the main LiftApp panels and update configuration parameters safely without needing physical access to the device ports.',
+        tasks: [
+            'Engineered a reliable local wireless connection protocol utilizing Wi-Fi Direct to securely transmit configuration payloads.',
+            'Refactored legacy network-handling code to dramatically improve connection stability, maintainability, and data transfer speeds.'
+        ],
+        technologies: ['Java', 'Wi-Fi Direct'],
+        tags: ['Java', 'Wi-Fi Direct', 'Networking'],
+        imagePlaceholder: 'L',
+        imageColor: 'linear-gradient(135deg, #8D6E63, #5D4037)'
+    },
+    {
         id: 'resistance-local',
         title: 'Resistance: Local Game',
         role: 'Flutter Developer / Solo Developer',
-        company: 'IT Company',
+        company: 'Solo Project',
         date: 'Sep 2017 – Jan 2018',
         description: 'A digital, cross-platform adaptation of the famous social deduction board game. Designed to be played locally by 5 to 10 players on a single device. Features a modern glassmorphism UI, detailed mission tracking histories, and dynamic visual theming.',
         tasks: [
@@ -365,5 +349,21 @@ export const projects = [
         icon: 'images/projects/resistance_icon.png',
         banner: 'images/projects/resistance_banner.jpg',
         playStoreLink: 'https://play.google.com/store/apps/details?id=com.divan.theresistance'
+    },
+    {
+        id: 'liftapp-bootloader',
+        title: 'LiftApp Bootloader',
+        role: 'Android Developer',
+        company: 'IT Company',
+        date: 'Sep 2017 – Dec 2017',
+        description: 'A background system application requiring root privileges, designed to manage the lifecycle of the main LiftApp software. It acts as an OTA update manager that automatically detects, silently installs, and launches new application versions.',
+        tasks: [
+            'Implemented silent, automated software installation routines by executing low-level root commands within the Android OS.',
+            'Configured broadcast receivers for boot events to manage the device lifecycle and ensure the main LiftApp launches instantly upon system boot.'
+        ],
+        technologies: ['Java', 'Root Access', 'Android System Permissions'],
+        tags: ['Java', 'Root Access', 'System Administration'],
+        imagePlaceholder: 'L',
+        imageColor: 'linear-gradient(135deg, #424242, #212121)'
     }
 ];

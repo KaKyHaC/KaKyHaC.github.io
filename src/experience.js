@@ -2,7 +2,7 @@ export const experience = [
     {
         company_name: "DᎥᗰᗩᒪᎥᑎᗩ",
         role: "Solo Android Developer / Publisher",
-        start_date: "12.2024",
+        start_date: "09.2017",
         end_date: "Present",
         is_current: true,
         category: "Independent Development",
@@ -11,6 +11,19 @@ export const experience = [
             "Developed and published successful indie projects such as 'People Notes' and 'Resistance: Nightfall'.",
             "Integrated various SDKs including Firebase, AdMob, and Google Play Billing for monetization and analytics.",
             "Employed modern tech stacks like Jetpack Compose, MVVM, and Room for robust app architectures."
+        ]
+    },
+    {
+        company_name: "MITI",
+        role: "Lecturer at the Department of Communication Systems and Networks",
+        start_date: "08.2025",
+        end_date: "Present",
+        is_current: true,
+        category: "Education / Academic",
+        tasks: [
+            "Teaching courses on modern communication systems, network architectures, and software engineering principles.",
+            "Developing curriculum, practical workshops, and laboratory assignments for cadets.",
+            "Guiding students in research projects and providing mentorship in technical problem-solving."
         ]
     },
     {
@@ -25,19 +38,6 @@ export const experience = [
             "Implemented channel availability and playback entry logic, handling in-app purchases and parental controls.",
             "Developed complex deep link handling capabilities using Install Referrer and custom URI schemes.",
             "Strengthened navigation flow and improved error handling for seamless user experience."
-        ]
-    },
-    {
-        company_name: "MITI",
-        role: "Lecturer at the Department of Communication Systems and Networks",
-        start_date: "08.2025",
-        end_date: "Present",
-        is_current: true,
-        category: "Education / Academic",
-        tasks: [
-            "Teaching courses on modern communication systems, network architectures, and software engineering principles.",
-            "Developing curriculum, practical workshops, and laboratory assignments for cadets.",
-            "Guiding students in research projects and providing mentorship in technical problem-solving."
         ]
     },
     {
