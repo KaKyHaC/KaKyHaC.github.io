@@ -59,6 +59,27 @@ export const projects = [
         imageColor: 'linear-gradient(135deg, #43A047, #2E7D32)'
     },
     {
+        id: 'lora-iot-network',
+        title: 'Distributed IoT LoRa Sensor Network',
+        role: 'IoT Firmware Engineer',
+        company: 'MITI',
+        date: 'Sep 2025 – Dec 2025',
+        description: 'Development and deployment of a distributed, low-power sensor network based on ESP32 (LilyGO LoRa32) boards. The project encompasses the entire stack from low-level radio parameter optimization and sensor integration (DHT22, PIR, Vibration) to secure encrypted telemetry transmission and real-time data visualization using MQTT and Node-RED.',
+        tasks: [
+            'Architected distributed sensor nodes for environmental monitoring (temperature/humidity) and perimeter security (motion/vibration detection).',
+            'Configured LoRa physical layer parameters (SF, BW, CR, Preamble) to achieve a robust balance between transmission range, power efficiency, and data reliability.',
+            'Implemented a secure communication layer using AES-128 encryption and custom ACK-based reliability protocols for packet delivery in unreliable radio environments.',
+            'Developed a scalable data pipeline utilizing Mosquitto MQTT broker and Node-RED for real-time visualization, anomaly detection, and automated alert notifications.'
+        ],
+        technologies: ['C++', 'Arduino Framework', 'ESP32', 'LoRa (SX1276)', 'MQTT', 'Node-RED', 'AES-128'],
+        tags: ['IoT', 'Embedded Systems', 'Telecommunications', 'LoRaWAN', 'Firmware'],
+        imagePlaceholder: 'L',
+        imageColor: 'linear-gradient(135deg, #FF6F00, #BF360C)',
+        icon: 'images/projects/lora_iot_icon.png',
+        banner: 'images/projects/lora_iot_banner.jpg',
+        githubLink: 'https://github.com/dvbarannik/lora-iot-system'
+    },
+    {
         id: 'tic-tac-toe',
         title: 'Tic-Tac-Toe 3 Player: X O D',
         role: 'Solo Android Developer',
