@@ -398,7 +398,7 @@ a {
 }
 
 .timeline-content {
-    padding: 30px;
+    padding: 20px 24px;
     position: relative;
     border-radius: 16px;
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
@@ -418,36 +418,91 @@ a {
 
 .exp-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 0;
-    flex-wrap: wrap;
-    gap: 10px;
+}
+
+.exp-icon-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.exp-title {
+    flex: 1;
+    min-width: 0;
 }
 
 .exp-title h3 {
-    font-size: 1.5rem;
-    margin-bottom: 4px;
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .exp-title h4 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
     font-weight: 400;
+    /* Allow 2-3 lines — no truncation */
+    white-space: normal;
+    overflow: visible;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.4;
 }
 
-.exp-date {
+/* Date floating outside the card, on the opposite side */
+.exp-date-outside {
+    position: absolute;
+    top: 22px;
     font-family: 'Outfit', sans-serif;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 4px 12px;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    background: rgba(15, 15, 20, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 5px 14px;
     border-radius: 20px;
+    pointer-events: none;
+    letter-spacing: 0.3px;
+    box-shadow: 0 0 14px -2px var(--comp-color, rgba(255,255,255,0.1));
 }
 
-.exp-date.current {
+.exp-date-outside.right {
+    right: -10px;
+    transform: translateX(100%);
+}
+
+.exp-date-outside.left {
+    left: -10px;
+    transform: translateX(-100%);
+}
+
+.exp-date-outside.current {
     color: var(--primary-color);
-    background: rgba(255, 215, 0, 0.1);
+    background: rgba(20, 18, 5, 0.8);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 18px -2px rgba(255, 215, 0, 0.5);
+}
+
+/* Company logo image inside icon wrap */
+.exp-company-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 6px;
 }
 
 .exp-list {
@@ -475,6 +530,12 @@ a {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
+}
+
+/* chevron now auto-pushed to right via exp-header flex */
+.exp-header > .exp-chevron {
+    margin-left: auto;
     flex-shrink: 0;
 }
 
@@ -591,6 +652,13 @@ a {
     .timeline-item.right .company-border {
         border-right: none;
         border-left: 4px solid var(--comp-color);
+    }
+    /* On mobile, hide the floating date and show it below the title */
+    .exp-date-outside {
+        display: none;
+    }
+    .exp-header {
+        flex-wrap: wrap;
     }
 }
 

@@ -282,25 +282,38 @@ document.addEventListener('DOMContentLoaded', () => {
         experience.forEach((exp, index) => {
             const sideClass = index % 2 === 0 ? 'left' : 'right';
             const compConfig = getCompanyConfig(exp.company_name);
-            const dotStyle = `background-color: ${compConfig.color}; box-shadow: 0 0 8px ${compConfig.color}80;`;
             const currentClass = exp.is_current ? 'current' : '';
+            const iconClass = compConfig.icon || 'fas fa-building';
             
             const tasksHtml = (exp.tasks && exp.tasks.length > 0)
                 ? exp.tasks.map(t => `<li>${t}</li>`).join('')
                 : '';
 
+            // Date floats on the OPPOSITE side of the card
+            const dateSide = sideClass === 'left' ? 'right' : 'left';
+
+            // Use image logo if available, else fallback to FA icon
+            const iconHtml = compConfig.logoImg
+                ? `<img src="${compConfig.logoImg}" alt="${exp.company_name} logo" class="exp-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                   <i class="${iconClass}" style="color: ${compConfig.color}; display:none;"></i>`
+                : `<i class="${iconClass}" style="color: ${compConfig.color};"></i>`;
+
             const expHtml = `
                 <div class="timeline-item ${sideClass} fade-in" data-company="${exp.company_name}">
+                    <div class="exp-date-outside ${dateSide} ${currentClass}" style="--comp-color: ${compConfig.color}">
+                        ${exp.start_date} – ${exp.end_date}
+                    </div>
+                    <div class="timeline-dot" style="background-color: ${compConfig.color}; box-shadow: 0 0 10px ${compConfig.color}80;"></div>
                     <div class="timeline-content glass company-border" style="--comp-color: ${compConfig.color}">
                         <div class="exp-header">
+                            <div class="exp-icon-wrap" style="background: ${compConfig.color}20; border: 1px solid ${compConfig.color}40;">
+                                ${iconHtml}
+                            </div>
                             <div class="exp-title">
                                 <h3>${exp.company_name}</h3>
                                 <h4>${exp.role}</h4>
                             </div>
-                            <div class="exp-header-right">
-                                <span class="exp-date ${currentClass}">${exp.start_date} – ${exp.end_date}</span>
-                                <div class="exp-chevron"><i class="fas fa-chevron-down"></i></div>
-                            </div>
+                            <div class="exp-chevron"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="exp-tasks-wrapper">
                             <div class="exp-tasks-inner">
