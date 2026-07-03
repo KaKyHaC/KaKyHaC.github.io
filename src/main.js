@@ -219,9 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const expHtml = `
                 <div class="timeline-item ${sideClass} fade-in" data-company="${exp.company_name}">
-                    <div class="timeline-dot tooltip-wrapper" style="${dotStyle}">
-                        <span class="tooltip-text">${compConfig.shortName}</span>
-                    </div>
                     <div class="timeline-content glass company-border" style="--comp-color: ${compConfig.color}">
                         <div class="exp-header">
                             <div class="exp-title">

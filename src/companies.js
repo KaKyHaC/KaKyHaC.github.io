@@ -1,6 +1,6 @@
 export const companies = {
-    'ВІТІ': {
-        shortName: 'ВІТІ',
+    'MITI': {
+        shortName: 'MITI',
         color: '#147f36ff', // Green
         cssVar: 'var(--company-military, #FF9800)'
     },

@@ -28,7 +28,7 @@ export const experience = [
         ]
     },
     {
-        company_name: "ВІТІ", // Using abbreviation to match companies.js if necessary, or we'll update it
+        company_name: "MITI",
         role: "Lecturer at the Department of Communication Systems and Networks",
         start_date: "08.2025",
         end_date: "Present",
