@@ -746,56 +746,136 @@ a {
     }
 }
 
-/* --- Single-Sided Timeline (Education) --- */
-.timeline-single-sided::after {
+/* --- Custom Education Timeline --- */
+.edu-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.edu-group {
+    position: relative;
+    width: 100%;
+}
+
+.edu-line-left {
+    position: absolute;
+    width: 2px;
+    background-color: var(--surface-border);
+    top: 0;
+    bottom: 0;
     left: 20px;
 }
 
-.timeline-single-sided .timeline-item {
+.edu-line-right {
+    position: absolute;
+    width: 2px;
+    background-color: var(--surface-border);
+    top: 0;
+    bottom: 0;
+    right: 20px;
+}
+
+.edu-connector {
+    height: 2px;
+    background-color: var(--surface-border);
+    margin: 0 20px;
+}
+
+.edu-item {
+    position: relative;
     width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.edu-item.left {
     padding-left: 50px;
-    padding-right: 0;
-    left: 0 !important;
+    padding-right: 50px;
 }
 
-.timeline-single-sided .timeline-item .timeline-dot {
-    left: 10px;
-    right: auto;
-    transform: none;
+.edu-item.right {
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
-.timeline-single-sided .timeline-item .company-border {
-    border-right: none;
+.edu-item .timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: 28px;
+    z-index: 1;
+}
+
+.edu-item.left .timeline-dot {
+    left: 13px;
+}
+
+.edu-item.right .timeline-dot {
+    right: 13px;
+}
+
+.edu-card {
+    padding: 14px 20px;
+    border-radius: 12px;
+}
+
+.edu-card.left-card {
     border-left: 4px solid var(--comp-color);
 }
 
-.timeline-single-sided .timeline-item.expanded .company-border {
-    border-left-width: 6px;
-    border-right-width: 0;
+.edu-card.right-card {
+    border-right: 4px solid var(--comp-color);
 }
 
-.timeline-badge {
-    position: relative;
-    left: 20px;
-    transform: translateX(-50%);
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 6px 16px;
-    border-radius: 20px;
-    display: inline-block;
+.edu-card .exp-title h3 {
+    font-size: 1.1rem;
+}
+
+.edu-card .exp-title h4 {
+    font-size: 0.85rem;
+}
+
+.edu-details {
+    margin-top: 8px;
+    color: var(--text-secondary);
     font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 20px 0;
-    z-index: 2;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    clear: both;
+    line-height: 1.4;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .edu-line-right {
+        left: 20px;
+        right: auto;
+    }
+    
+    .edu-connector {
+        display: none;
+    }
+
+    .edu-item.left,
+    .edu-item.right {
+        padding-left: 50px;
+        padding-right: 0;
+    }
+    
+    .edu-item.right .timeline-dot {
+        right: auto;
+        left: 13px;
+    }
+    
+    .edu-card.right-card {
+        border-right: none;
+        border-left: 4px solid var(--comp-color);
+    }
 }
 
 .edu-achievements {
-    margin-top: 40px;
+    margin-top: 15px;
     padding: 30px;
 }
 

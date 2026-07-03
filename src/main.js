@@ -391,18 +391,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2.7 Render Education
     const eduTimelineContainer = document.getElementById('education-timeline');
     if (eduTimelineContainer && educationProfile) {
+        let eduHtml = '';
+        
         if (educationProfile.higher_education && educationProfile.higher_education.degrees) {
-            eduTimelineContainer.insertAdjacentHTML('beforeend', '<div style="width:100%;"><div class="timeline-badge fade-in">Higher Education</div></div>');
+            eduHtml += `
+                <div class="edu-group higher-edu-group">
+                    <div class="edu-line-left"></div>
+            `;
             
             educationProfile.higher_education.degrees.forEach((deg) => {
                 const compColor = '#00d2ff'; // A nice blue for education
 
-                const eduHtml = `
-                    <div class="timeline-item left fade-in">
-                        <div class="timeline-content glass company-border" style="--comp-color: ${compColor}">
+                eduHtml += `
+                    <div class="edu-item left fade-in">
+                        <div class="timeline-dot" style="background-color: ${compColor}; box-shadow: 0 0 10px ${compColor}80;"></div>
+                        <div class="timeline-content glass edu-card left-card" style="--comp-color: ${compColor}">
                             <div class="exp-header" style="cursor: default;">
                                 <div class="exp-title">
                                     <h3>${deg.level}</h3>
@@ -412,44 +417,50 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <span class="exp-date">${deg.start_year} – ${deg.end_year}</span>
                                 </div>
                             </div>
-                            <div style="margin-top: 15px; color: var(--text-secondary); font-size: 0.95rem;">
+                            <div class="edu-details">
                                 <p>${deg.graduation_details}${deg.diploma_id ? ` (ID: ${deg.diploma_id})` : ''}</p>
-                                ${deg.research_focus ? `<p style="margin-top: 8px;"><strong>Research Focus:</strong> ${deg.research_focus}</p>` : ''}
+                                ${deg.research_focus ? `<p style="margin-top: 6px;"><strong>Research Focus:</strong> ${deg.research_focus}</p>` : ''}
                             </div>
                         </div>
                     </div>
                 `;
-                eduTimelineContainer.insertAdjacentHTML('beforeend', eduHtml);
             });
+            eduHtml += `</div>`; // end higher-edu-group
         }
 
         if (educationProfile.secondary_education && educationProfile.secondary_education.certificates) {
-            eduTimelineContainer.insertAdjacentHTML('beforeend', '<div style="width:100%;"><div class="timeline-badge fade-in">Secondary Education</div></div>');
+            // Add connector
+            eduHtml += `<div class="edu-connector fade-in"></div>`;
+            
+            eduHtml += `
+                <div class="edu-group secondary-edu-group">
+                    <div class="edu-line-right"></div>
+            `;
             
             educationProfile.secondary_education.certificates.forEach((cert) => {
                 const compColor = '#00a8cc'; 
-                const eduHtml = `
-                    <div class="timeline-item left fade-in">
-                        <div class="timeline-content glass company-border" style="--comp-color: ${compColor}">
+                eduHtml += `
+                    <div class="edu-item right fade-in">
+                        <div class="timeline-dot" style="background-color: ${compColor}; box-shadow: 0 0 10px ${compColor}80;"></div>
+                        <div class="timeline-content glass edu-card right-card" style="--comp-color: ${compColor}">
                             <div class="exp-header" style="cursor: default;">
                                 <div class="exp-title">
-                                    <h3>${cert.level}</h3>
-                                    <h4>${educationProfile.secondary_education.institution}</h4>
+                                    <h3>${cert.level}${cert.achievements ? ` (with ${cert.achievements})` : ''}</h3>
                                 </div>
                                 <div class="exp-header-right">
                                     <span class="exp-date">${cert.graduation_year}</span>
                                 </div>
                             </div>
-                            <div style="margin-top: 15px; color: var(--text-secondary); font-size: 0.95rem;">
+                            <div class="edu-details">
                                 <p>${cert.graduation_details}${cert.certificate_id ? ` (ID: ${cert.certificate_id})` : ''}</p>
-                                ${cert.achievements ? `<p style="margin-top: 8px;"><strong>Achievements:</strong> ${cert.achievements}</p>` : ''}
                             </div>
                         </div>
                     </div>
                 `;
-                eduTimelineContainer.insertAdjacentHTML('beforeend', eduHtml);
             });
+            eduHtml += `</div>`; // end secondary-edu-group
         }
+        eduTimelineContainer.innerHTML = eduHtml;
     }
 
     const eduAchievementsContainer = document.getElementById('education-achievements');
@@ -463,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Scroll-driven Animations (Fade In)
-    const fadeElements = document.querySelectorAll('.bento-item, .experience-card, .timeline-item');
+    const fadeElements = document.querySelectorAll('.bento-item, .experience-card, .timeline-item, .edu-item, .timeline-badge, .edu-connector');
     fadeElements.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
