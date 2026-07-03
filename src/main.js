@@ -182,19 +182,15 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Map company to CSS colors
             const compConfig = getCompanyConfig(proj.company);
-            const dotStyle = `background-color: ${compConfig.color}; box-shadow: 0 0 8px ${compConfig.color}80;`;
 
             const projHtml = `
-                <div class="glass interactive-project fade-in" data-index="${originalIndex}">
+                <div class="glass interactive-project fade-in" data-index="${originalIndex}" style="--comp-color: ${compConfig.color}; border-top: 4px solid var(--comp-color);">
                     <div class="proj-card-header">
                         <div class="proj-mini-placeholder" style="background: ${proj.imageColor}">
                             <span class="proj-mini-letter">${proj.imagePlaceholder}</span>
                         </div>
                         <h3 class="proj-card-title">
                             ${proj.title}
-                            <div class="company-dot tooltip-wrapper" style="${dotStyle}">
-                                <span class="tooltip-text">${compConfig.shortName}</span>
-                            </div>
                         </h3>
                     </div>
                     <p class="proj-short-desc">${proj.description}</p>
