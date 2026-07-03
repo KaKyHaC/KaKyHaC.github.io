@@ -5,11 +5,95 @@
     --primary-hover: #E6C200;
     --bg-color: #0c0c0e;
     --surface-color: rgba(24, 24, 27, 0.6);
-    --surface-border: rgba(255, 255, 255, 0.05);
-    --surface-hover: rgba(255, 255, 255, 0.08);
+    --surface-border: var(--overlay-5);
+    --surface-hover: var(--overlay-8);
     --text-primary: #F4F4F5;
     --text-secondary: #A1A1AA;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --glass-bg: rgba(24, 24, 27, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --date-bg: rgba(15, 15, 20, 0.75);
+    --date-current-bg: rgba(20, 18, 5, 0.8);
+    
+    --overlay-3: rgba(255, 255, 255, 0.035);
+    --overlay-4: rgba(255, 255, 255, 0.04);
+    --overlay-5: rgba(255, 255, 255, 0.05);
+    --overlay-8: rgba(255, 255, 255, 0.08);
+    --overlay-10: rgba(255, 255, 255, 0.1);
+    --overlay-12: rgba(255, 255, 255, 0.12);
+    --overlay-20: rgba(255, 255, 255, 0.2);
+    --overlay-30: rgba(255, 255, 255, 0.3);
+    --overlay-50: rgba(255, 255, 255, 0.5);
+    --overlay-60: rgba(255, 255, 255, 0.6);
+    --overlay-75: rgba(255, 255, 255, 0.75);
+    
+    --card-bg-60: rgba(30, 30, 35, 0.6);
+    --card-bg-70: rgba(30, 30, 35, 0.7);
+    --card-bg-75: rgba(30, 30, 35, 0.75);
+    --card-bg-80: rgba(35, 35, 40, 0.8);
+    --card-bg-85: rgba(30, 30, 35, 0.85);
+}
+
+[data-theme="light"] {
+    --primary-color: #D4AF37;
+    --primary-hover: #B8860B;
+    --bg-color: #f8f9fa;
+    --surface-color: rgba(255, 255, 255, 0.75);
+    --surface-border: rgba(0, 0, 0, 0.1);
+    --surface-hover: rgba(0, 0, 0, 0.05);
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --date-bg: rgba(255, 255, 255, 0.85);
+    --date-current-bg: rgba(255, 250, 230, 0.9);
+    
+    --overlay-3: rgba(0, 0, 0, 0.035);
+    --overlay-4: rgba(0, 0, 0, 0.04);
+    --overlay-5: rgba(0, 0, 0, 0.05);
+    --overlay-8: rgba(0, 0, 0, 0.08);
+    --overlay-10: rgba(0, 0, 0, 0.1);
+    --overlay-12: rgba(0, 0, 0, 0.12);
+    --overlay-20: rgba(0, 0, 0, 0.2);
+    --overlay-30: rgba(0, 0, 0, 0.3);
+    --overlay-50: rgba(0, 0, 0, 0.5);
+    --overlay-60: rgba(0, 0, 0, 0.6);
+    --overlay-75: rgba(0, 0, 0, 0.75);
+
+    --card-bg-60: rgba(255, 255, 255, 0.7);
+    --card-bg-70: rgba(255, 255, 255, 0.8);
+    --card-bg-75: rgba(255, 255, 255, 0.85);
+    --card-bg-80: rgba(255, 255, 255, 0.9);
+    --card-bg-85: rgba(255, 255, 255, 0.95);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--surface-color);
+    border: 1px solid var(--surface-border);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 * {
@@ -264,7 +348,7 @@ a {
 .bento-item:hover {
     transform: translateY(-5px);
     border-color: var(--surface-hover);
-    background: rgba(30, 30, 35, 0.7);
+    background: var(--card-bg-70);
 }
 
 .skill-card {
@@ -284,7 +368,7 @@ a {
 .skill-card:hover {
     transform: translateY(-5px) scale(1.02);
     border-color: var(--primary-color);
-    background: rgba(35, 35, 40, 0.8);
+    background: var(--card-bg-80);
     box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
 }
 
@@ -361,9 +445,9 @@ a {
 
 .timeline-item:hover .timeline-content {
     transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.1);
-    background: rgba(30, 30, 35, 0.75);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25), 0 0 0 1px var(--comp-color, rgba(255,255,255,0.05));
+    border-color: var(--overlay-10);
+    background: var(--card-bg-75);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25), 0 0 0 1px var(--comp-color, var(--overlay-5));
 }
 
 @media screen and (min-width: 769px) {
@@ -469,15 +553,15 @@ a {
     font-size: 0.85rem;
     font-weight: 600;
     white-space: nowrap;
-    background: rgba(15, 15, 20, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--date-bg);
+    border: 1px solid var(--overlay-12);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     padding: 5px 14px;
     border-radius: 20px;
     pointer-events: none;
     letter-spacing: 0.3px;
-    box-shadow: 0 0 14px -2px var(--comp-color, rgba(255,255,255,0.1));
+    box-shadow: 0 0 14px -2px var(--comp-color, var(--overlay-10));
 }
 
 .exp-date-outside.right {
@@ -492,7 +576,7 @@ a {
 
 .exp-date-outside.current {
     color: var(--primary-color);
-    background: rgba(20, 18, 5, 0.8);
+    background: var(--date-current-bg);
     border-color: rgba(255, 215, 0, 0.3);
     box-shadow: 0 0 18px -2px rgba(255, 215, 0, 0.5);
 }
@@ -543,7 +627,7 @@ a {
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--overlay-5);
     border: 1px solid var(--surface-border);
     display: flex;
     align-items: center;
@@ -561,7 +645,7 @@ a {
     transform: rotate(180deg);
     color: var(--comp-color);
     border-color: var(--comp-color);
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--overlay-8);
 }
 
 /* Tasks wrapper — collapsed by default */
@@ -587,7 +671,7 @@ a {
 
 /* Highlight card on expand */
 .timeline-item.expanded .timeline-content {
-    background: rgba(30, 30, 35, 0.85);
+    background: var(--card-bg-85);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -606,7 +690,7 @@ a {
     gap: 7px;
     margin-top: 16px;
     padding: 7px 15px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--overlay-4);
     border: 1px solid var(--surface-border);
     border-radius: 8px;
     color: var(--text-secondary);
@@ -761,7 +845,7 @@ a {
 }
 
 .clear-filter-btn {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--overlay-5);
     border: 1px solid var(--surface-border);
     color: var(--text-secondary);
     padding: 8px 16px;
@@ -804,7 +888,7 @@ a {
 
 .interactive-project:hover {
     border-color: var(--primary-color);
-    background: rgba(30, 30, 35, 0.7);
+    background: var(--card-bg-70);
     transform: translateY(-4px);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
@@ -839,7 +923,7 @@ a {
     font-family: 'Outfit', sans-serif;
     font-size: 1.3rem;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--overlay-50);
     line-height: 1;
 }
 
@@ -876,7 +960,7 @@ a {
 .compact-tags .tag {
     font-size: 0.75rem;
     padding: 3px 8px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--overlay-5);
 }
 
 /* Company Indicators */
@@ -949,9 +1033,9 @@ a {
     position: relative;
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--overlay-10);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    background: rgba(30, 30, 35, 0.6);
+    background: var(--card-bg-60);
 }
 
 /* Custom Scrollbar for Modal */
@@ -962,7 +1046,7 @@ a {
     background: transparent;
 }
 .modal-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--overlay-20);
     border-radius: 4px;
 }
 
@@ -1043,7 +1127,7 @@ a {
     padding: 8px 32px 28px;
     flex: 1;
     scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.1) transparent;
+    scrollbar-color: var(--overlay-10) transparent;
 }
 
 .skill-modal-item {
@@ -1076,7 +1160,7 @@ a {
     display: flex;
     gap: 8px;
     align-items: flex-start;
-    background: rgba(255, 255, 255, 0.035);
+    background: var(--overlay-3);
     border-radius: 8px;
     padding: 10px 12px;
     border-left: 2px solid var(--primary-color);
@@ -1103,7 +1187,7 @@ a {
     font-size: 5rem;
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--overlay-30);
 }
 
 .proj-link-btn {

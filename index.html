@@ -23,17 +23,30 @@
     <!-- Prevent FOUC (Flash of Unstyled Content) before Vite injects CSS -->
     <style>
         body {
-            background-color: #0f0f11; /* Match var(--bg-color) */
-            color: #e0e0e0; /* Match var(--text-primary) */
+            background-color: #0c0c0e; /* Match var(--bg-color) */
+            color: #F4F4F5; /* Match var(--text-primary) */
             margin: 0;
             font-family: sans-serif;
         }
-        /* Optional: Hide main content until loaded if needed, but just bg color usually fixes the flash */
+        html[data-theme="light"] body {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
     </style>
     
-    <!-- Entry Point -->
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
 </head>
 <body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+        <i class="fas fa-sun" id="theme-icon"></i>
+    </button>
+
     <div id="app" class="layout-split">
         
         <!-- Sticky Sidebar -->

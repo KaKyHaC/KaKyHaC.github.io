@@ -7,6 +7,32 @@ import { skillsDetails } from './skillsDetails.js'
 import { educationProfile } from './education.js'
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    // Check initial theme state
+    if (document.documentElement.getAttribute('data-theme') === 'light') {
+        if (themeIcon) themeIcon.classList.replace('fa-sun', 'fa-moon');
+    }
+
+    if (themeToggle && themeIcon) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            if (newTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+    }
+
     // 1. Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.querySelector('.sidebar');
