@@ -92,7 +92,10 @@ export const projects = [
         technologies: ['Kotlin', 'Jetpack Compose', 'Firebase Firestore', 'Firebase Authentication', 'Hilt', 'Coroutines', 'Flow', 'Navigation Component', 'Material 3', 'Timber', 'JUnit', 'Mockk'],
         tags: ['Kotlin', 'Jetpack Compose', 'Firestore', 'Auth', 'Hilt'],
         imagePlaceholder: 'R',
-        imageColor: 'linear-gradient(135deg, #E53935, #C62828)'
+        imageColor: 'linear-gradient(135deg, #E53935, #C62828)',
+        icon: 'images/projects/resistance_multiplayer_icon.png',
+        banner: 'images/projects/resistance_multiplayer_banner.jpg',
+        playStoreLink: 'https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall'
     },
     {
         id: 'epic-clicker',
