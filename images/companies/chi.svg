@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="18" fill="#E040FB"/>
+  <text x="50" y="42" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">CHI</text>
+  <text x="50" y="68" font-family="Arial, sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.8)" text-anchor="middle" dominant-baseline="middle" letter-spacing="1.5">SOFTWARE</text>
+</svg>

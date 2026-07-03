@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="18" fill="#147f36"/>
+  <text x="50" y="36" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">MITI</text>
+  <line x1="20" y1="52" x2="80" y2="52" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+  <text x="50" y="68" font-family="Arial, sans-serif" font-size="7" font-weight="600" fill="rgba(255,255,255,0.8)" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.5">UNIVERSITY</text>
+</svg>
