@@ -301,10 +301,11 @@ function renderProjects(filterCompany = null) {
     }
 
     const filtered = filterCompany
-        ? projectsData.filter(p =>
-            p.company === filterCompany ||
-            (filterCompany === 'DᎥᗰᗩᒪᎥᑎᗩ' && p.company === 'Solo Project')
-          )
+        ? projectsData.filter(p => {
+            const pShort = getCompanyConfig(p.company).shortName;
+            const filterShort = getCompanyConfig(filterCompany).shortName;
+            return pShort === filterShort;
+          })
         : projectsData;
 
     filtered.forEach(proj => {
