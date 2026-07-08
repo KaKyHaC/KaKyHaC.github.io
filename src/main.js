@@ -81,17 +81,19 @@ function initMobileMenu() {
 
 // ─── Language Switcher ───────────────────────────────────────────────────────
 function initLangSwitcher() {
-    const langBtns = document.querySelectorAll('.lang-btn');
-    const currentLang = getLang();
+    const langToggle = document.getElementById('lang-toggle');
+    if (!langToggle) return;
 
-    langBtns.forEach(btn => {
-        if (btn.dataset.lang === currentLang) btn.classList.add('active');
-        btn.addEventListener('click', () => {
-            if (btn.dataset.lang === getLang()) return;
-            langBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            setLang(btn.dataset.lang, renderAll);
-        });
+    const updateBtnText = () => {
+        langToggle.textContent = getLang() === 'uk' ? 'EN' : 'UA';
+    };
+
+    updateBtnText();
+
+    langToggle.addEventListener('click', async () => {
+        const nextLang = getLang() === 'en' ? 'uk' : 'en';
+        await setLang(nextLang, renderAll);
+        updateBtnText();
     });
 }
 
