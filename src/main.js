@@ -22,52 +22,72 @@ const observer = new IntersectionObserver((entries) => {
 
 // ─── Theme ───────────────────────────────────────────────────────────────────
 function initTheme() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
+    const themeToggles = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
+    const themeIcons = document.querySelectorAll('#theme-icon, #mobile-theme-icon');
 
     if (document.documentElement.getAttribute('data-theme') === 'light') {
-        if (themeIcon) themeIcon.classList.replace('fa-sun', 'fa-moon');
-    }
-
-    if (themeToggle && themeIcon) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            if (newTheme === 'light') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-                trackThemeSwitch('light');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'dark');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-                trackThemeSwitch('dark');
-            }
+        themeIcons.forEach(icon => {
+            if (icon) icon.classList.replace('fa-sun', 'fa-moon');
         });
     }
+
+    themeToggles.forEach(toggle => {
+        if (toggle) {
+            toggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                if (newTheme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                    themeIcons.forEach(icon => icon && icon.classList.replace('fa-sun', 'fa-moon'));
+                    trackThemeSwitch('light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'dark');
+                    themeIcons.forEach(icon => icon && icon.classList.replace('fa-moon', 'fa-sun'));
+                    trackThemeSwitch('dark');
+                }
+            });
+        }
+    });
 }
 
 // ─── Mobile menu ─────────────────────────────────────────────────────────────
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.querySelector('.sidebar');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+
+    const closeMenu = () => {
+        if (hamburger) hamburger.classList.remove('active');
+        if (sidebar) sidebar.classList.remove('menu-open');
+        if (mobileOverlay) mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
 
     if (hamburger && sidebar) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             sidebar.classList.toggle('menu-open');
+            if (mobileOverlay) mobileOverlay.classList.toggle('active');
+            
+            if (sidebar.classList.contains('menu-open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
+    }
+    
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', closeMenu);
     }
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             const targetSection = e.currentTarget.getAttribute('href').replace('#', '');
             trackNavigationClick(targetSection);
-            if (hamburger?.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                sidebar.classList.remove('menu-open');
-            }
+            closeMenu();
         });
     });
 
@@ -81,19 +101,25 @@ function initMobileMenu() {
 
 // ─── Language Switcher ───────────────────────────────────────────────────────
 function initLangSwitcher() {
-    const langToggle = document.getElementById('lang-toggle');
-    if (!langToggle) return;
+    const langToggles = document.querySelectorAll('#lang-toggle, #mobile-lang-toggle');
 
     const updateBtnText = () => {
-        langToggle.textContent = getLang() === 'uk' ? 'EN' : 'UA';
+        const text = getLang() === 'uk' ? 'EN' : 'UA';
+        langToggles.forEach(toggle => {
+            if (toggle) toggle.textContent = text;
+        });
     };
 
     updateBtnText();
 
-    langToggle.addEventListener('click', async () => {
-        const nextLang = getLang() === 'en' ? 'uk' : 'en';
-        await setLang(nextLang, renderAll);
-        updateBtnText();
+    langToggles.forEach(toggle => {
+        if (toggle) {
+            toggle.addEventListener('click', async () => {
+                const nextLang = getLang() === 'en' ? 'uk' : 'en';
+                await setLang(nextLang, renderAll);
+                updateBtnText();
+            });
+        }
     });
 }
 
