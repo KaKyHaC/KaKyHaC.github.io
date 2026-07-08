@@ -15,7 +15,7 @@ export default [
         ]
     },
     {
-        company_name: "МІТІТ",
+        company_name: "ВІТІ",
         role: "Викладач кафедри систем зв\'язку та мереж",
         start_date: "08.2025",
         end_date: "по теперішній час",

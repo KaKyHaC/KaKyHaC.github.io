@@ -52,6 +52,9 @@ export const getCompanyConfig = (companyName) => {
     if (companyName === 'Megogo') {
         return companies['MEGOGO'];
     }
+    if (companyName === 'ВІТІ') {
+        return companies['MITI'];
+    }
     return companies[companyName] || {
         shortName: companyName,
         color: '#FFFFFF',
