@@ -5,6 +5,7 @@ import { getCompanyConfig } from './companies.js'
 import { skillsData } from './skills.js'
 import { skillsDetails } from './skillsDetails.js'
 import { educationProfile } from './education.js'
+import { scientificProfile } from './research.js'
 import {
     trackSocialClick,
     trackNavigationClick,
@@ -502,6 +503,137 @@ document.addEventListener('DOMContentLoaded', () => {
             eduAchievementsList.innerHTML = educationProfile.additional_achievements.map(ach => `<li>${ach}</li>`).join('');
             eduAchievementsContainer.classList.remove('hidden');
         }
+    }
+
+    // 2.8 Render Research & Publications
+    const researchContainer = document.getElementById('research-container');
+    const academicProfilesContainer = document.getElementById('academic-profiles');
+
+    if (researchContainer && scientificProfile && scientificProfile.scientific_profile) {
+        const data = scientificProfile.scientific_profile;
+
+        // Render Academic Profiles (Badges)
+        if (data.academic_profiles && academicProfilesContainer) {
+            const profilesHtml = Object.entries(data.academic_profiles).map(([key, url]) => {
+                const name = key.replace('_', ' ');
+                let iconClass = 'fas fa-link';
+                if (key.toLowerCase().includes('orcid')) iconClass = 'fab fa-orcid';
+                else if (key.toLowerCase().includes('scopus')) iconClass = 'fas fa-book-open';
+                else if (key.toLowerCase().includes('scholar')) iconClass = 'fas fa-graduation-cap';
+                return `<a href="${url}" target="_blank" class="tag" style="text-decoration: none; display: inline-flex; align-items: center; gap: 5px; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border-color); padding: 5px 10px; border-radius: 6px;"><i class="${iconClass}"></i> ${name}</a>`;
+            }).join('');
+            academicProfilesContainer.innerHTML = profilesHtml;
+        }
+
+        let researchHtml = '';
+
+        // Patents
+        if (data.patents && data.patents.length > 0) {
+            const patentsHtml = data.patents.map(p => `
+                <div style="margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                    <h4 style="margin: 0 0 5px 0;">${p.title}</h4>
+                    <p style="font-size: 0.9em; color: var(--text-secondary); margin: 0 0 5px 0;"><strong>${p.patent_number}</strong> | ${p.issue_date}</p>
+                    <p style="font-size: 0.9em; margin: 0 0 8px 0;"><em>${p.authors.join(', ')}</em></p>
+                    <p style="font-size: 0.85em; color: var(--text-secondary); margin: 0; line-height: 1.5;">${p.description}</p>
+                </div>
+            `).join('');
+
+            researchHtml += `
+                <div class="bento-item glass span-2 fade-in">
+                    <div class="bento-header">
+                        <i class="fas fa-certificate bento-icon"></i>
+                        <h3>Patents</h3>
+                    </div>
+                    <div>${patentsHtml}</div>
+                </div>
+            `;
+        }
+
+        // Publications
+        if (data.scientific_publications && data.scientific_publications.length > 0) {
+            const pubsHtml = data.scientific_publications.map(p => `
+                <div style="margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                    <h4 style="margin: 0 0 5px 0;">${p.title}</h4>
+                    <p style="font-size: 0.9em; margin: 0 0 5px 0;"><em>${p.authors.join(', ')}</em></p>
+                    <p style="font-size: 0.85em; color: var(--text-secondary); margin: 0;">${p.journal} (${p.year})</p>
+                    <div style="margin-top: 8px; display: flex; gap: 5px; flex-wrap: wrap;">
+                        <span class="tag" style="font-size: 0.75em; padding: 2px 8px;">${p.indexing}</span>
+                        ${p.doi ? `<a href="https://doi.org/${p.doi}" target="_blank" class="tag" style="font-size: 0.75em; padding: 2px 8px; text-decoration: none;"><i class="fas fa-external-link-alt"></i> DOI</a>` : ''}
+                    </div>
+                </div>
+            `).join('');
+
+            researchHtml += `
+                <div class="bento-item glass span-2 fade-in">
+                    <div class="bento-header">
+                        <i class="fas fa-book bento-icon"></i>
+                        <h3>Scientific Publications</h3>
+                    </div>
+                    <div>${pubsHtml}</div>
+                </div>
+            `;
+        }
+
+        // Conferences
+        if (data.conference_proceedings && data.conference_proceedings.length > 0) {
+            const confsHtml = data.conference_proceedings.map(c => `
+                <div style="margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;">
+                    <h4 style="margin: 0 0 5px 0;">${c.title}</h4>
+                    <p style="font-size: 0.9em; margin: 0 0 5px 0;"><em>${c.authors.join(', ')}</em></p>
+                    <p style="font-size: 0.85em; color: var(--text-secondary); margin: 0;">${c.conference} (${c.year})</p>
+                    ${c.doi ? `<div style="margin-top: 8px;"><a href="https://doi.org/${c.doi}" target="_blank" class="tag" style="font-size: 0.75em; padding: 2px 8px; text-decoration: none;"><i class="fas fa-external-link-alt"></i> DOI</a></div>` : ''}
+                </div>
+            `).join('');
+
+            researchHtml += `
+                <div class="bento-item glass fade-in">
+                    <div class="bento-header">
+                        <i class="fas fa-users bento-icon"></i>
+                        <h3>Conference Proceedings</h3>
+                    </div>
+                    <div>${confsHtml}</div>
+                </div>
+            `;
+        }
+
+        // Awards & Activities
+        let awardsHtml = '';
+        if (data.awards_and_honors && data.awards_and_honors.length > 0) {
+            awardsHtml += data.awards_and_honors.map(a => `
+                <div style="margin-bottom: 12px;">
+                    <h4 style="margin: 0 0 3px 0;">${a.title}</h4>
+                    ${a.date ? `<p style="font-size: 0.85em; color: var(--text-secondary); margin: 0 0 3px 0;">${a.date}</p>` : ''}
+                    ${a.description ? `<p style="font-size: 0.85em; margin: 0;">${a.description}</p>` : ''}
+                </div>
+            `).join('');
+        }
+        
+        if (data.academic_activities && data.academic_activities.length > 0) {
+            if (awardsHtml !== '') {
+                awardsHtml += '<hr style="border-color: var(--border-color); margin: 15px 0;">';
+            }
+            awardsHtml += data.academic_activities.map(a => `
+                <div style="margin-bottom: 12px;">
+                    <h4 style="margin: 0 0 3px 0;">${a.role}</h4>
+                    <p style="font-size: 0.85em; margin: 0 0 3px 0;">${a.event}</p>
+                    <p style="font-size: 0.85em; color: var(--text-secondary); margin: 0;">${a.date}</p>
+                </div>
+            `).join('');
+        }
+
+        if (awardsHtml !== '') {
+            researchHtml += `
+                <div class="bento-item glass fade-in">
+                    <div class="bento-header">
+                        <i class="fas fa-trophy bento-icon"></i>
+                        <h3>Awards & Activities</h3>
+                    </div>
+                    <div>${awardsHtml}</div>
+                </div>
+            `;
+        }
+
+        researchContainer.innerHTML = researchHtml;
     }
 
     // 3. Scroll-driven Animations (Fade In)
