@@ -32,6 +32,32 @@
             background-color: #f8f9fa;
             color: #212529;
         }
+        /* Lang switcher basic styles (before CSS loads) */
+        .lang-switcher {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            margin-top: 12px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: inherit;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 3px 9px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: rgba(0, 210, 255, 0.15);
+            border-color: rgba(0, 210, 255, 0.5);
+            color: #00d2ff;
+        }
     </style>
     
     <script>
@@ -55,18 +81,24 @@
                 <div class="profile-section">
                     <img src="images/profile_photo.jpg" alt="Dmytro Barannik" class="profile-image">
                     <h1>Dmytro Barannik</h1>
-                    <h2>Senior Software Engineer</h2>
-                    <p class="tagline">8+ years of crafting high-performance, scalable software experiences.</p>
+                    <h2 id="profile-role">Senior Software Engineer</h2>
+                    <p class="tagline" id="profile-tagline">8+ years of crafting high-performance, scalable software experiences.</p>
+                </div>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="lang-switcher">
+                    <button class="lang-btn" data-lang="en" id="lang-btn-en" aria-label="Switch to English">EN</button>
+                    <button class="lang-btn" data-lang="uk" id="lang-btn-uk" aria-label="Перемкнути на українську">UA</button>
                 </div>
                 
                 <nav class="sidebar-nav">
                     <ul>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#skills" class="nav-link">Skills</a></li>
-                        <li><a href="#experience" class="nav-link">Experience</a></li>
-                        <li><a href="#projects" class="nav-link">Projects</a></li>
-                        <li><a href="#education" class="nav-link">Education</a></li>
-                        <li><a href="#research" class="nav-link">Research & Publications</a></li>
+                        <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+                        <li><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
+                        <li><a href="#experience" class="nav-link" id="nav-experience">Experience</a></li>
+                        <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
+                        <li><a href="#education" class="nav-link" id="nav-education">Education</a></li>
+                        <li><a href="#research" class="nav-link" id="nav-research">Research &amp; Publications</a></li>
                     </ul>
                 </nav>
                 
@@ -96,41 +128,41 @@
             
             <!-- About Section (Bento Grid) -->
             <section id="about" class="section-block">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" id="section-title-about">About Me</h2>
                 <div class="bento-grid">
                     <div class="bento-item glass span-2">
                         <div class="bento-header">
                             <i class="fas fa-user-astronaut bento-icon"></i>
-                            <h3>Senior Software Engineer | Tech Lead | PhD</h3>
+                            <h3 id="about-title-1">Senior Software Engineer | Tech Lead | PhD</h3>
                         </div>
-                        <p>I am a Senior Software Engineer with over 8 years of commercial experience in building high-load and scalable mobile applications across Media & Entertainment, Smart Home, Healthcare, and AI-powered solutions. My engineering approach is built on technological maturity: I am deeply immersed in the Kotlin ecosystem, actively utilizing Clean Architecture and Coroutines to build reliable systems.</p>
-                        <p style="margin-top: 10px;">AI is an integral part of my daily workflow. I leverage Gemini as my "virtual junior developer," delegating feature implementation and test generation, while performing strict code reviews as a tech lead. I also develop custom automation tools, such as Python scripts integrated with LLM APIs for contextual application localization into 15+ languages.</p>
-                        <p style="margin-top: 10px;"><i>I value a user-centric product culture and aim to work in a transparent Agile/Scrum environment that fosters innovation, healthy feedback, and engineering excellence.</i></p>
+                        <p id="about-bio-1">I am a Senior Software Engineer with over 8 years of commercial experience in building high-load and scalable mobile applications across Media &amp; Entertainment, Smart Home, Healthcare, and AI-powered solutions. My engineering approach is built on technological maturity: I am deeply immersed in the Kotlin ecosystem, actively utilizing Clean Architecture and Coroutines to build reliable systems.</p>
+                        <p id="about-bio-2" style="margin-top: 10px;">AI is an integral part of my daily workflow. I leverage Gemini as my "virtual junior developer," delegating feature implementation and test generation, while performing strict code reviews as a tech lead. I also develop custom automation tools, such as Python scripts integrated with LLM APIs for contextual application localization into 15+ languages.</p>
+                        <p id="about-bio-3" style="margin-top: 10px;"><i>I value a user-centric product culture and aim to work in a transparent Agile/Scrum environment that fosters innovation, healthy feedback, and engineering excellence.</i></p>
                     </div>
                     
                     <div class="bento-item glass">
                         <div class="bento-header">
                             <i class="fas fa-rocket bento-icon"></i>
-                            <h3>Product & Leadership</h3>
+                            <h3 id="about-title-2">Product &amp; Leadership</h3>
                         </div>
-                        <p><strong>Indie Development (Google Play):</strong> Independently managed the entire product lifecycle—from UI/UX design and architecture to release and monetization—for multiple applications under the DᎥᗰᗩᒪᎥᑎᗩ brand. Successful projects include <em>People Notes</em> (4.6 rating), <em>Resistance</em>, and <em>Tic-Tac-Toe 3 Player</em> (5,000+ downloads).</p>
-                        <p style="margin-top: 10px;"><strong>Mentorship:</strong> Hands-on experience leading Android development teams, conducting constructive code reviews, and mentoring junior engineers.</p>
+                        <p id="about-leadership-1"><strong>Indie Development (Google Play):</strong> Independently managed the entire product lifecycle—from UI/UX design and architecture to release and monetization—for multiple applications under the DᎥᗰᗩᒪᎥᑎᗩ brand. Successful projects include <em>People Notes</em> (4.6 rating), <em>Resistance</em>, and <em>Tic-Tac-Toe 3 Player</em> (5,000+ downloads).</p>
+                        <p id="about-leadership-2" style="margin-top: 10px;"><strong>Mentorship:</strong> Hands-on experience leading Android development teams, conducting constructive code reviews, and mentoring junior engineers.</p>
                     </div>
 
                     <div class="bento-item glass">
                         <div class="bento-header">
                             <i class="fas fa-microscope bento-icon"></i>
-                            <h3>Research & Academic</h3>
+                            <h3 id="about-title-3">Research &amp; Academic</h3>
                         </div>
-                        <p><strong>Academic Status:</strong> PhD in Electronic Communications and Radio Engineering (NURE, 2025). Lecturer at the Department of Communication Systems and Networks at the Military Institute of Telecommunications and Information Technologies.</p>
-                        <p style="margin-top: 10px;"><strong>Achievements:</strong> Holder of a patent for a method of positional coding to reduce video stream intensity. Co-author of multiple publications in Scopus-indexed journals (Q3). Awarded the Cabinet of Ministers of Ukraine Scholarship for Young Scientists (2025).</p>
+                        <p id="about-research-1"><strong>Academic Status:</strong> PhD in Electronic Communications and Radio Engineering (NURE, 2025). Lecturer at the Department of Communication Systems and Networks at the Military Institute of Telecommunications and Information Technologies.</p>
+                        <p id="about-research-2" style="margin-top: 10px;"><strong>Achievements:</strong> Holder of a patent for a method of positional coding to reduce video stream intensity. Co-author of multiple publications in Scopus-indexed journals (Q3). Awarded the Cabinet of Ministers of Ukraine Scholarship for Young Scientists (2025).</p>
                     </div>
                 </div>
             </section>
 
             <!-- Skills Section -->
             <section id="skills" class="section-block">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title" id="section-title-skills">Skills</h2>
                 <div id="skills-container" class="bento-grid">
                     <!-- Skills will be injected here dynamically by main.js -->
                 </div>
@@ -138,7 +170,7 @@
 
             <!-- Experience Section -->
             <section id="experience" class="section-block">
-                <h2 class="section-title">Experience</h2>
+                <h2 class="section-title" id="section-title-experience">Experience</h2>
                 <div id="experience-timeline" class="timeline-container">
                     <!-- Timeline items will be injected here dynamically by main.js -->
                 </div>
@@ -159,7 +191,7 @@
 
             <!-- Education Section -->
             <section id="education" class="section-block">
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title" id="section-title-education">Education</h2>
                 <div id="education-timeline" class="edu-timeline">
                     <!-- Education degrees will be injected here dynamically by main.js -->
                 </div>
@@ -168,7 +200,7 @@
             <!-- Research & Publications Section -->
             <section id="research" class="section-block">
                 <div class="projects-header" style="flex-wrap: wrap; gap: 15px;">
-                    <h2 class="section-title">Research & Publications</h2>
+                    <h2 class="section-title" id="section-title-research">Research &amp; Publications</h2>
                     <div id="academic-profiles" class="academic-profiles" style="display: flex; gap: 10px; flex-wrap: wrap;">
                         <!-- Profile badges will be injected here dynamically -->
                     </div>
