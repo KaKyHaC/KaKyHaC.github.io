@@ -291,7 +291,7 @@ a {
     top: 0;
     width: 100%;
     padding: 16px 24px;
-    background: rgba(12, 12, 14, 0.85);
+    background: var(--surface-color);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--surface-border);
     z-index: 1000;
