@@ -1371,6 +1371,39 @@ a {
     transform: translateY(0);
 }
 
+/* --- Desktop Height Responsiveness --- */
+@media screen and (min-width: 769px) and (max-height: 850px) {
+    .sidebar {
+        padding: 30px;
+    }
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 16px;
+    }
+    .profile-section h1 {
+        font-size: 1.8rem;
+    }
+    .sidebar-inner {
+        gap: 20px;
+    }
+    .tagline {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-height: 700px) {
+    .profile-image {
+        display: none;
+    }
+    .profile-section h2 {
+        display: none;
+    }
+    .sidebar-nav ul {
+        gap: 12px;
+    }
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
     .sidebar {
