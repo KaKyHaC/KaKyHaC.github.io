@@ -149,6 +149,7 @@ function applyUI(ui) {
     setText(el('section-title-about'), ui.sections.about);
     setText(el('section-title-skills'), ui.sections.skills);
     setText(el('section-title-experience'), ui.sections.experience);
+    setText(el('section-title-projects'), ui.sections.projects);
     setText(el('section-title-education'), ui.sections.education);
     setText(el('section-title-research'), ui.sections.research);
 
