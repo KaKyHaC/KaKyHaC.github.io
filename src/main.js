@@ -495,15 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
         eduTimelineContainer.innerHTML = eduHtml;
     }
 
-    const eduAchievementsContainer = document.getElementById('education-achievements');
-    const eduAchievementsList = document.getElementById('education-achievements-list');
-    
-    if (eduAchievementsContainer && eduAchievementsList && educationProfile && educationProfile.additional_achievements) {
-        if (educationProfile.additional_achievements.length > 0) {
-            eduAchievementsList.innerHTML = educationProfile.additional_achievements.map(ach => `<li>${ach}</li>`).join('');
-            eduAchievementsContainer.classList.remove('hidden');
-        }
-    }
+
 
     // 2.8 Render Research & Publications
     const researchContainer = document.getElementById('research-container');

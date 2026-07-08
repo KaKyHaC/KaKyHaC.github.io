@@ -49,9 +49,5 @@ export const educationProfile = {
         graduation_details: "Certificate issued on May 31, 2012."
       }
     ]
-  },
-  additional_achievements: [
-    "Awarded the scholarship of the Cabinet of Ministers of Ukraine for young scientists in November 2025.",
-    "Prize winner (3rd place) in the II stage of the Minor Academy of Sciences of Ukraine (MAN) research defense competition, in the 'Security of Information and Telecommunication Systems' section."
-  ]
+  }
 };
