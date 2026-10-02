@@ -15,10 +15,10 @@ export const companies = {
     },
     'DᎥᗰᗩᒪᎥᑎᗩ': {
         shortName: 'DᎥᗰᗩᒪᎥᑎᗩ',
-        color: '#FFD700',
-        cssVar: 'var(--company-solo, #FFD700)',
+        color: '#E11D74',
+        cssVar: 'var(--company-solo, #E11D74)',
         icon: 'fas fa-star',
-        logoImg: 'images/companies/dimalina.svg'
+        logoImg: 'images/companies/dimalina.png'
     },
     'CHI Software': {
         shortName: 'CHI',
