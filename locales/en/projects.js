@@ -7,7 +7,7 @@
 export default [
     {
         id: 'pro-klimat',
-        title: 'ProKlimat — HVAC & Climate Services Platform',
+        title: 'ProKlimat — HVAC Platform',
         role: 'Lead Frontend Engineer & UI/UX Architect',
         company: 'Solo Project',
         date: 'Oct 2026',
@@ -29,7 +29,7 @@ export default [
     },
     {
         id: 'klinik-bangsar-south',
-        title: 'Klinik Bangsar South — Medical & Healthcare Web Portal',
+        title: 'Klinik Bangsar South — Medical Portal',
         role: 'Lead Frontend Engineer & UI/UX Architect',
         company: 'Solo Project',
         date: 'Sep 2026',

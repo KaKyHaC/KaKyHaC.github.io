@@ -7,7 +7,7 @@
 export default [
     {
         id: 'pro-klimat',
-        title: 'ProKlimat: Сервісна веб-платформа кліматичних систем та інжинірингу',
+        title: 'ProKlimat — Кліматичний сервіс',
         role: 'Провідний фронтенд-інженер та UI/UX архітектор',
         company: 'Solo Project',
         date: 'Жовтень 2026',
@@ -29,7 +29,7 @@ export default [
     },
     {
         id: 'klinik-bangsar-south',
-        title: 'Klinik Bangsar South: Клінічний веб-портал медичних послуг та охорони здоров\'я',
+        title: 'Klinik Bangsar South — Медичний портал',
         role: 'Провідний фронтенд-інженер та UI/UX архітектор',
         company: 'Solo Project',
         date: 'Вересень 2026',
