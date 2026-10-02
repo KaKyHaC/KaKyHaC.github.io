@@ -34,6 +34,13 @@ export const companies = {
         icon: 'fas fa-code',
         logoImg: 'images/companies/nitrix.svg'
     },
+    'KhNUIA': {
+        shortName: 'KhNUIA',
+        color: '#1e3a8a',
+        cssVar: 'var(--company-khnuia, #1E3A8A)',
+        icon: 'fas fa-shield-alt',
+        logoImg: 'images/companies/khnuia.svg'
+    },
     'IT Company': {
         shortName: 'IT Co.',
         color: '#bf3000ff',
@@ -54,6 +61,9 @@ export const getCompanyConfig = (companyName) => {
     }
     if (companyName === 'ВІТІ') {
         return companies['MITI'];
+    }
+    if (companyName === 'ХНУВС') {
+        return companies['KhNUIA'];
     }
     return companies[companyName] || {
         shortName: companyName,

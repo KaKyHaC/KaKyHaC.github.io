@@ -35,7 +35,7 @@ export default {
         leadership1: '<strong>Indie Development (Google Play):</strong> Independently managed the entire product lifecycle—from UI/UX design and architecture to release and monetization—for multiple applications under the DᎥᗰᗩᒪᎥᑎᗩ brand. Successful projects include <em>People Notes</em> (4.6 rating), <em>Resistance</em>, and <em>Tic-Tac-Toe 3 Player</em> (5,000+ downloads).',
         leadership2: '<strong>Mentorship:</strong> Hands-on experience leading Android development teams, conducting constructive code reviews, and mentoring junior engineers.',
         title3: 'Research & Academic',
-        research1: '<strong>Academic Status:</strong> PhD in Electronic Communications and Radio Engineering (NURE, 2025). Lecturer at the Department of Communication Systems and Networks at the Military Institute of Telecommunications and Information Technologies.',
+        research1: '<strong>Academic Status:</strong> PhD in Electronic Communications and Radio Engineering (NURE, 2025). Associate Professor at the Department of Combating Cybercrime at Kharkiv National University of Internal Affairs (KhNUIA).',
         research2: '<strong>Achievements:</strong> Holder of a patent for a method of positional coding to reduce video stream intensity. Co-author of multiple publications in Scopus-indexed journals (Q3). Awarded the Cabinet of Ministers of Ukraine Scholarship for Young Scientists (2025).',
     },
     skills: {
@@ -64,6 +64,7 @@ export default {
         openLink: 'Open Link',
         googlePlay: 'Google Play',
         github: 'GitHub',
+        website: 'Visit Website',
     },
     research: {
         patents: 'Patents',

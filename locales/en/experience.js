@@ -15,11 +15,23 @@ export default [
         ]
     },
     {
+        company_name: "KhNUIA",
+        role: "Associate Professor at the Department of Combating Cybercrime",
+        start_date: "09.2026",
+        end_date: "Present",
+        is_current: true,
+        category: "Education / Academic",
+        tasks: [
+            "Teaching disciplines in cybersecurity and combating cybercrime, developing modern curriculum and practical workshops.",
+            "Conducting research and academic supervision of cadets and students in cybersecurity technologies and digital investigations."
+        ]
+    },
+    {
         company_name: "MITI",
         role: "Lecturer at the Department of Communication Systems and Networks",
         start_date: "08.2025",
-        end_date: "Present",
-        is_current: true,
+        end_date: "09.2026",
+        is_current: false,
         category: "Education / Academic",
         tasks: [
             "Teaching courses on modern communication systems, network architectures, and software engineering principles.",

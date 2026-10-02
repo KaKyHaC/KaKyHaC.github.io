@@ -391,7 +391,11 @@ function initProjectModal() {
                 mLetter.textContent = p.imagePlaceholder;
             }
 
-            if (p.playStoreLink) {
+            if (p.liveLink) {
+                mLinkBtn.href = p.liveLink;
+                mLinkBtn.innerHTML = `<i class="fas fa-globe"></i> ${ui.projects?.website || 'Visit Website'}`;
+                mLinkBtn.classList.remove('hidden');
+            } else if (p.playStoreLink) {
                 mLinkBtn.href = p.playStoreLink;
                 mLinkBtn.innerHTML = `<i class="fab fa-google-play"></i> ${ui.projects?.googlePlay || 'Google Play'}`;
                 mLinkBtn.classList.remove('hidden');

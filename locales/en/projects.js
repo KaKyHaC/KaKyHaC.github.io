@@ -6,6 +6,48 @@
  */
 export default [
     {
+        id: 'pro-klimat',
+        title: 'ProKlimat — HVAC & Climate Services Platform',
+        role: 'Frontend & UI/UX Developer',
+        company: 'Solo Project',
+        date: 'Oct 2026',
+        description: 'A modern, high-performance web platform and landing portal for climate control and HVAC engineering services (installation, maintenance, diagnostics, and automotive air conditioning). Built with Astro for blazing-fast performance and featuring responsive interactive animations, a dark/light theme engine, and SEO optimization.',
+        tasks: [
+            'Architected and implemented a high-performance, accessible landing platform using Astro and modern Vanilla CSS.',
+            'Developed interactive SVG micro-animations, including a custom interactive fan and real-time counter animations.',
+            'Engineered a zero-flicker dark/light theme switching engine with persistent local storage and CSS custom properties.',
+            'Implemented full internationalization (UA/RU), structured JSON-LD Schema.org data for local business, and OpenGraph metadata.'
+        ],
+        technologies: ['Astro', 'JavaScript', 'CSS3', 'HTML5', 'Cloudflare Pages', 'SVG Animation', 'SEO / Schema.org', 'i18n'],
+        tags: ['Astro', 'JavaScript', 'CSS3 / UI/UX', 'Cloudflare Pages', 'i18n'],
+        imagePlaceholder: 'P',
+        imageColor: 'linear-gradient(135deg, #0284C7, #0369A1)',
+        icon: 'images/projects/proklimat_icon.webp',
+        banner: 'images/projects/proklimat_banner.jpg',
+        liveLink: 'https://pro-klimat.pages.dev/'
+    },
+    {
+        id: 'klinik-bangsar-south',
+        title: 'Klinik Bangsar South — Medical & Healthcare Web Portal',
+        role: 'Frontend & UI/UX Developer',
+        company: 'Solo Project',
+        date: 'Sep 2026',
+        description: 'A bilingual web platform and patient portal for a private medical and sexual health clinic in Kuala Lumpur, Malaysia. Features an accessible multi-page architecture, comprehensive medical service catalogs, confidential appointment request workflows, and patient educational guides.',
+        tasks: [
+            'Developed a modern, clean healthcare portal utilizing Vite, modular JavaScript, and mobile-first responsive layout.',
+            'Designed confidential consultation booking flows with integrated direct WhatsApp and phone communication channels.',
+            'Implemented bilingual localization (English / Bahasa Melayu) and accessibility best practices (WCAG/a11y).',
+            'Configured comprehensive medical SEO, structured MedicalClinic JSON-LD schema, and fast edge deployment via Cloudflare Pages.'
+        ],
+        technologies: ['Vite', 'JavaScript', 'CSS3', 'HTML5', 'Cloudflare Pages', 'SEO / Schema.org', 'i18n (EN/BM)', 'a11y'],
+        tags: ['Vite', 'JavaScript', 'CSS3 / UI/UX', 'Cloudflare Pages', 'Medical Portal'],
+        imagePlaceholder: 'K',
+        imageColor: 'linear-gradient(135deg, #FF6B35, #D84315)',
+        icon: 'images/projects/klinik_icon.png',
+        banner: 'images/projects/klinik_banner.jpg',
+        liveLink: 'https://klinik-bangsar-south.pages.dev/'
+    },
+    {
         id: 'libpolycodec',
         title: 'LibPolyCodec: Data Compression Library',
         role: 'C++ Software Architect',

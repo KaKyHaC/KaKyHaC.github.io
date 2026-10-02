@@ -6,6 +6,48 @@
  */
 export default [
     {
+        id: 'pro-klimat',
+        title: 'ProKlimat: Сервіс та монтаж кліматичних систем',
+        role: 'Фронтенд та UI/UX розробник',
+        company: 'Solo Project',
+        date: 'Жовтень 2026',
+        description: 'Сучасна високопродуктивна веб-платформа та сервісний портал для компанії з монтажу, обслуговування й ремонту кліматичних систем і автокондиціонерів. Реалізована на фреймворку Astro з акцентом на максимальну швидкість, інтерактивні анімації, динамічне перемикання тем та глибоку SEO-оптимізацію.',
+        tasks: [
+            'Спроєктував та розробив високопродуктивний адаптивний лендинг на базі Astro та сучасного чистого CSS.',
+            'Створив інтерактивні векторні мікро-анімації, включаючи кастомний інтерактивний SVG-вентилятор та лічильники досягнень.',
+            'Реалізував систему миттєвого перемикання темної та світлої тем без мерехтіння на базі CSS-змінних і збереженням стану.',
+            'Налаштував двомовну локалізацію (UA/RU), розмітку структурованих даних Schema.org для локального бізнесу та OpenGraph-метатеги.'
+        ],
+        technologies: ['Astro', 'JavaScript', 'CSS3', 'HTML5', 'Cloudflare Pages', 'SVG Animation', 'SEO / Schema.org', 'i18n'],
+        tags: ['Astro', 'JavaScript', 'CSS3 / UI/UX', 'Cloudflare Pages', 'i18n'],
+        imagePlaceholder: 'P',
+        imageColor: 'linear-gradient(135deg, #0284C7, #0369A1)',
+        icon: 'images/projects/proklimat_icon.webp',
+        banner: 'images/projects/proklimat_banner.jpg',
+        liveLink: 'https://pro-klimat.pages.dev/'
+    },
+    {
+        id: 'klinik-bangsar-south',
+        title: 'Klinik Bangsar South: Медичний веб-портал',
+        role: 'Фронтенд та UI/UX розробник',
+        company: 'Solo Project',
+        date: 'Вересень 2026',
+        description: 'Двомовний веб-портал медичного центру та клініки конфіденційного здоров\'я у Куала-Лумпурі (Малайзія). Включає багатосторінкову архітектуру, інтерактивні каталоги медичних послуг, зручний запис на прийом, довідники для пацієнтів та адаптивний преміальний інтерфейс.',
+        tasks: [
+            'Розробив сучасний адаптивний медичний веб-портал на базі Vite, модульного JavaScript та гнучкої верстки.',
+            'Спроєктував зручний користувацький шлях для конфіденційного запису на прийом з прямою інтеграцією месенджерів.',
+            'Реалізував повноцінне двомовне перемикання (EN / BM) та високі стандарти доступності (WCAG/a11y).',
+            'Оптимізував сайт для медичного SEO, налаштував структуровані дані Schema.org (MedicalClinic) та деплой на Cloudflare Pages.'
+        ],
+        technologies: ['Vite', 'JavaScript', 'CSS3', 'HTML5', 'Cloudflare Pages', 'SEO / Schema.org', 'i18n (EN/BM)', 'a11y'],
+        tags: ['Vite', 'JavaScript', 'CSS3 / UI/UX', 'Cloudflare Pages', 'Medical Portal'],
+        imagePlaceholder: 'K',
+        imageColor: 'linear-gradient(135deg, #FF6B35, #D84315)',
+        icon: 'images/projects/klinik_icon.png',
+        banner: 'images/projects/klinik_banner.jpg',
+        liveLink: 'https://klinik-bangsar-south.pages.dev/'
+    },
+    {
         id: 'libpolycodec',
         title: 'LibPolyCodec: Бібліотека стиснення даних',
         role: 'Архітектор C++ програмного забезпечення',
