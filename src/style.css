@@ -131,7 +131,66 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 .sidebar-actions .sidebar-item i{color:var(--muted)}
 .sidebar-actions .sidebar-item:hover i,.sidebar-actions .sidebar-item:focus-visible i{color:var(--accent)}
 
+/* Compact scaled timeline at the left; company details remain readable at the right. */
+.career-layout{display:grid;grid-template-columns:minmax(180px,220px) minmax(0,1fr);align-items:start;gap:clamp(28px,3.5vw,52px)}
+#career-chart{position:sticky;top:24px;min-width:0}
+.career-visual{padding:16px 12px 14px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 88%,transparent),transparent);overflow:hidden}
+.career-chart-grid{display:grid;grid-template-columns:40px minmax(0,1fr)}
+.career-lanes{display:grid;grid-template-columns:repeat(var(--lane-count),minmax(0,1fr))}
+.career-axis,.career-plot{position:relative;height:540px}
+.career-axis{border-right:1px solid var(--line);color:var(--muted);font:600 10px Manrope,sans-serif}
+.career-axis>strong{position:absolute;right:8px;top:-4px;color:var(--accent-copy);font-size:8px;letter-spacing:.04em;text-transform:uppercase}
+.career-axis-tick{position:absolute;right:8px;top:var(--tick-top);transform:translateY(-50%);font-size:9px}
+.career-plot{min-width:0}
+.career-now-line,.career-grid-line{position:absolute;left:0;right:0;top:var(--tick-top);height:1px;background:var(--line);pointer-events:none}
+.career-now-line{top:0;background:linear-gradient(90deg,var(--accent),rgba(var(--accent-rgb),.08))}
+.career-lanes{position:absolute;inset:0}
+.career-lane{position:relative;min-width:0}.career-lane:last-child{border-right:0}
+.career-bar{position:absolute;z-index:2;top:var(--bar-top);left:2px;right:2px;height:max(var(--bar-height),10px);padding:0;border:0;background:transparent;cursor:pointer;filter:saturate(.9)}
+.career-bar-core{position:absolute;inset:0 auto 0 50%;width:5px;border:1px solid color-mix(in srgb,var(--company-color) 82%,white);border-radius:999px;background:linear-gradient(90deg,color-mix(in srgb,var(--company-color) 76%,black),var(--company-color));box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 8px 18px color-mix(in srgb,var(--company-color) 18%,transparent);transform:translateX(-50%);transition:width .2s,filter .2s}
+.career-bar-end{position:absolute;left:50%;top:0;width:9px;height:9px;border:2px solid var(--bg);border-radius:50%;background:var(--company-color);transform:translate(-50%,-35%);box-shadow:0 0 0 2px var(--company-color)}
+.career-bar.is-current .career-bar-end:after{content:"";position:absolute;inset:-6px;border:1px solid var(--company-color);border-radius:50%;opacity:.55;animation:career-pulse 2.4s ease-out infinite}
+.career-bar:hover .career-bar-core,.career-bar:focus-visible .career-bar-core,.career-bar.is-active .career-bar-core{width:9px;filter:saturate(1.08) brightness(1.08)}
+.career-bar:focus-visible{outline:0}.career-bar:focus-visible .career-bar-end{box-shadow:0 0 0 2px var(--company-color),0 0 0 5px var(--accent)}
+.career-lane:has(.career-bar.is-active){background:linear-gradient(180deg,color-mix(in srgb,var(--company-color) 7%,transparent),transparent 75%)}
+.career-readout{min-height:76px;margin:14px 0 0;padding:12px 2px 0;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:5px 9px;border-top:1px solid var(--line);color:var(--muted);font-size:10px}
+.career-readout>i{color:var(--accent)}.career-readout strong{color:var(--text);font:700 12px Manrope,sans-serif}.career-readout>span:not(.career-readout-swatch),.career-readout small{grid-column:2}.career-readout small{font-size:8px;letter-spacing:.05em;text-transform:uppercase}
+.career-readout-swatch{width:9px;height:28px;border-radius:99px;background:var(--company-color);box-shadow:0 0 16px color-mix(in srgb,var(--company-color) 38%,transparent)}
+.career-details-label{margin:0 0 12px;padding-top:4px}
+@keyframes career-pulse{from{transform:scale(.55);opacity:.7}to{transform:scale(1.8);opacity:0}}
+
+.experience-list{border-top:2px solid var(--text)}
+.experience-summary{grid-template-columns:54px minmax(0,1fr) auto;padding:20px 0;align-items:center;gap:18px}
+.experience-body{padding:0 32px 28px 74px}
+.experience-period{margin:0 0 16px;color:var(--accent-copy);font:700 10px Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.experience-item{transition:background .2s,border-color .2s}
+.experience-item.is-active{background:linear-gradient(90deg,color-mix(in srgb,var(--company-color,var(--accent)) 5%,transparent),transparent)}
+.experience-item.is-active .experience-company{color:var(--accent-copy)}
+
 @media(hover:none) and (min-width:769px){
   .sidebar-profile{grid-template-columns:48px minmax(0,1fr) 32px}
   .sidebar-pin{display:grid;place-items:center}
+}
+
+@media(max-width:900px){
+  .career-layout{grid-template-columns:180px minmax(0,1fr);gap:24px}
+  .career-axis,.career-plot{height:500px}
+}
+@media(max-width:768px){
+  .career-layout{grid-template-columns:1fr;gap:42px}
+  #career-chart{position:static;width:min(100%,220px)}
+  .career-visual{padding:18px 14px 16px;border-radius:16px}
+  .career-axis,.career-plot{height:500px}
+  .experience-summary{grid-template-columns:54px minmax(0,1fr) auto;gap:14px}
+  .experience-body{padding:0 0 24px 68px}
+}
+@media(max-width:520px){
+  #career-chart{width:100%}
+  .career-visual{padding-inline:12px}
+  .career-chart-grid{grid-template-columns:40px minmax(0,1fr)}
+  .career-axis,.career-plot{height:480px}
+  .career-axis-tick.is-minor,.career-grid-line.is-minor{display:none}
+  .career-axis>strong,.career-axis-tick{right:6px;font-size:8px}
+  .experience-summary{grid-template-columns:46px minmax(0,1fr) auto;gap:12px}
+  .experience-body{padding-left:0}
 }
