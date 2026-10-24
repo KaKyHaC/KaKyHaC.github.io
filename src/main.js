@@ -72,8 +72,61 @@ function renderExperience(data){
   $$('.experience-item').forEach(item=>{const activate=()=>setActive(item.dataset.experienceIndex);item.addEventListener('mouseenter',activate);item.querySelector('summary').addEventListener('focus',activate);item.addEventListener('toggle',()=>{if(item.open)activate()})});
   $$('.company-projects').forEach(b=>b.addEventListener('click',()=>{activeCompany=b.dataset.company;syncUrl();renderProjects();$('#projects').scrollIntoView()}));
 }
-function renderSkills(data,details,ui){const categories=data.skills_profile.categories;const icons=['fa-code','fa-mobile-alt','fa-sitemap','fa-network-wired','fa-database','fa-cloud','fa-cube','fa-camera','fa-bug','fa-chart-line','fa-microchip','fa-globe','fa-satellite-dish','fa-shield-alt','fa-gamepad','fa-robot'];$('#skills-container').innerHTML=Object.entries(categories).map(([key,items],i)=>`<button class="skill-card reveal" data-key="${key}"><i class="fas ${icons[i%icons.length]}"></i><h3>${safe(ui.skills[key]||key)}</h3><div class="skill-preview">${items.slice(0,4).map(safe).join(' · ')}</div></button>`).join('');$$('.skill-card').forEach(b=>b.addEventListener('click',()=>openSkill(b.dataset.key,categories[b.dataset.key],details,ui)))}
-function openSkill(key,items,details,ui){const related=projects.filter(p=>items.some(skill=>[p.title,...p.technologies,...p.tags].join(' ').toLowerCase().includes(skill.toLowerCase().split(' ')[0]))).slice(0,8);$('#skill-dialog-content').innerHTML=`<p class="eyebrow">${copy().sections.skills[0]}</p><h2>${safe(ui.skills[key]||key)}</h2>${details.filter(d=>d.category===key).map(d=>`<div class="skill-detail"><strong>${safe(d.skill)}</strong><p>${safe(d.description)}</p><p>${safe(d.usage)}</p></div>`).join('')}<h3>${copy().skillProjects}</h3><div class="skill-projects">${related.map(p=>`<a href="${projectUrl(p)}">${safe(p.title)}</a>`).join('')||'—'}</div>`;$('#skill-dialog').showModal()}
+let activeSkillCategory=null;
+const SKILL_ICONS={programming_languages:'fas fa-code',ai_orchestration_and_agentic_engineering:'fas fa-robot',systems_and_cpp:'fas fa-microchip',modern_web_and_edge:'fas fa-globe',iot_and_embedded:'fas fa-satellite-dish',cybersecurity_and_research:'fas fa-shield-alt',android_core_and_ui:'fab fa-android',architecture_and_design:'fas fa-sitemap',asynchrony_and_networking:'fas fa-network-wired',databases_and_local_storage:'fas fa-database',cloud_and_backend:'fas fa-cloud',dependency_injection:'fas fa-cube',multimedia_hardware_and_camera:'fas fa-camera',testing_and_debugging:'fas fa-bug',monetization_analytics_and_devops:'fas fa-chart-line',inferred_game_dev_and_publishing:'fas fa-gamepad'};
+
+function getProjectsForSkill(skillName,usageText){
+  const sEsc=skillName.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  const regExact=new RegExp('(^|[\\s/,+()])'+sEsc+'($|[\\s/,+()])','i');
+  return projects.filter(p=>{
+    const hasTech=(p.technologies||[]).some(t=>regExact.test(t)||t.toLowerCase()===skillName.toLowerCase());
+    const hasTag=(p.tags||[]).some(t=>regExact.test(t)||t.toLowerCase()===skillName.toLowerCase());
+    const hasTitle=regExact.test(p.title);
+    const pMainTitle=p.title.split('—')[0].trim();
+    const hasUsage=usageText&&(
+      usageText.toLowerCase().includes(pMainTitle.toLowerCase())||
+      (p.id&&usageText.toLowerCase().includes(p.id.toLowerCase()))
+    );
+    return hasTech||hasTag||hasTitle||hasUsage;
+  });
+}
+
+function renderSkills(data,details,ui){
+  const categories=data.skills_profile.categories;
+  const keys=Object.keys(categories);
+  if(!activeSkillCategory||!categories[activeSkillCategory])activeSkillCategory=keys[0];
+  const uk=getLang()==='uk';
+  const updateSheet=()=>{
+    const key=activeSkillCategory;
+    const items=categories[key]||[];
+    const icon=SKILL_ICONS[key]||'fas fa-code';
+    const title=ui.skills[key]||key;
+    const catDetails=details.filter(d=>d.category===key);
+    const sheet=$('#skills-sheet');
+    if(!sheet)return;
+    sheet.innerHTML=`<header class="skills-sheet-header"><div class="skills-sheet-title-group"><div class="skills-sheet-icon"><i class="${icon}" aria-hidden="true"></i></div><div><span class="skills-sheet-eyebrow">${uk?'Розділ досьє':'Dossier chapter'} · ${items.length} ${uk?'компетенцій':'skills'}</span><h3 class="skills-sheet-title">${safe(title)}</h3></div></div></header><div class="skills-entries-list">${catDetails.map(item=>{
+      const matched=getProjectsForSkill(item.skill,item.usage);
+      const initial=matched.slice(0,3);
+      const extra=matched.slice(3);
+      const renderTag=p=>`<a href="${projectUrl(p)}" class="skills-project-tag" data-project="${safe(p.title)}"><span>${safe(p.title)}</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`;
+      return `<article class="skills-entry"><div class="skills-entry-top"><span class="skills-entry-dot" aria-hidden="true"></span><h4 class="skills-entry-name">${safe(item.skill)}</h4></div>${item.description?`<p class="skills-entry-desc">${safe(item.description)}</p>`:''}${item.usage?`<div class="skills-entry-usage"><span class="skills-usage-badge"><i class="fas fa-terminal" aria-hidden="true"></i> ${uk?'Практичне застосування':'Production usage'}</span><p class="skills-usage-text">${safe(item.usage)}</p>${matched.length?`<div class="skills-usage-projects"><span class="skills-usage-projects-label"><i class="fas fa-folder-open" aria-hidden="true"></i> ${uk?'Проєкти:':'Projects:'}</span><div class="skills-usage-tags">${initial.map(renderTag).join('')}${extra.length?`<span class="skills-extra-projects hidden">${extra.map(renderTag).join('')}</span><button type="button" class="skills-more-projects-btn" aria-label="${uk?'Показати більше проєктів':'Show more projects'}">+${extra.length} ${uk?'ще':'more'}</button>`:''}</div></div>`:''}</div>`:''}</article>`;
+    }).join('')}</div>`;
+    sheet.scrollTop=0;
+    $$('.skills-more-projects-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const extra=btn.previousElementSibling;
+        if(extra&&extra.classList.contains('skills-extra-projects')){
+          extra.classList.remove('hidden');
+          btn.remove();
+        }
+      });
+    });
+    $$('.skills-project-tag').forEach(a=>a.addEventListener('click',()=>{trackProjectView(a.dataset.project);sessionStorage.setItem('portfolioScroll',String(scrollY))}));
+  };
+  $('#skills-container').innerHTML=`<div class="skills-notebook"><div class="skills-sidebar"><div class="skills-sidebar-header"><span class="eyebrow">${uk?'Категорії':'Categories'}</span><span class="skills-total-badge">${keys.length}</span></div><nav class="skills-tabs" role="tablist" aria-label="${uk?'Категорії компетенцій':'Competency categories'}">${keys.map(key=>{const items=categories[key]||[];const isActive=key===activeSkillCategory;const icon=SKILL_ICONS[key]||'fas fa-code';const title=ui.skills[key]||key;return `<button type="button" role="tab" class="skills-tab-btn ${isActive?'active':''}" data-category="${key}" aria-selected="${isActive}"><span class="skills-tab-icon"><i class="${icon}" aria-hidden="true"></i></span><span class="skills-tab-title">${safe(title)}</span><span class="skills-tab-count">${items.length}</span></button>`}).join('')}</nav></div><div class="skills-sheet" id="skills-sheet" role="tabpanel" aria-live="polite"></div></div>`;
+  updateSheet();
+  $$('.skills-tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{if(activeSkillCategory===btn.dataset.category)return;activeSkillCategory=btn.dataset.category;$$('.skills-tab-btn').forEach(b=>{const isCurrent=b.dataset.category===activeSkillCategory;b.classList.toggle('active',isCurrent);b.setAttribute('aria-selected',String(isCurrent))});updateSheet()})});
+}
 
 function renderResearch(data){const c=copy();$('#academic-profiles').innerHTML=Object.entries(data.academic_profiles||{}).map(([name,url])=>`<a href="${url}" target="_blank" rel="noopener">${safe(name.replace('_',' '))} ↗</a>`).join('');const card=(title,entries,wide=false)=>entries?.length?`<article class="research-card ${wide?'wide':''} reveal"><h3>${title}</h3>${entries.map(e=>`<div class="research-entry"><h4>${safe(e.title||e.role)}</h4><p>${safe(e.description||e.journal||e.conference||e.event||'')} ${e.year?`(${e.year})`:''}</p>${e.doi?`<a class="text-link" href="https://doi.org/${e.doi}" target="_blank" rel="noopener">DOI ↗</a>`:''}</div>`).join('')}</article>`:'';const awards=[...(data.awards_and_honors||[]),...(data.academic_activities||[])];$('#research-container').innerHTML=card(c.researchLabels.patents,data.patents,true)+card(c.researchLabels.publications,data.scientific_publications,true)+card(c.researchLabels.conferences,data.conference_proceedings)+card(c.researchLabels.awards,awards)}
 function renderEducation(data){
@@ -125,8 +178,8 @@ document.addEventListener('DOMContentLoaded',async()=>{
   $('#clear-filter-btn').addEventListener('click',()=>{activeDomain='all';activeCompany=null;searchQuery='';$('#project-search').value='';sessionStorage.removeItem('portfolioFilters');syncUrl();renderProjectFilters();renderProjects()});
   $$('[data-track-cv]').forEach(a=>a.addEventListener('click',trackResumeDownload));
   $$('.social-links a').forEach(a=>a.addEventListener('click',()=>trackSocialClick(a.title.toLowerCase())));
-  $('.dialog-close').addEventListener('click',()=>$('#skill-dialog').close());
-  $('#skill-dialog').addEventListener('click',e=>{if(e.target===$('#skill-dialog'))$('#skill-dialog').close()});
+  $('.dialog-close')?.addEventListener('click',()=>$('#skill-dialog')?.close());
+  $('#skill-dialog')?.addEventListener('click',e=>{if(e.target===$('#skill-dialog'))$('#skill-dialog')?.close()});
   await renderAll();
   const saved=Number(sessionStorage.getItem('portfolioScroll'));
   if(saved){sessionStorage.removeItem('portfolioScroll');requestAnimationFrame(()=>scrollTo(0,saved))}
