@@ -4,6 +4,7 @@ export default {
         degrees: [
             {
                 level: "PhD (Doctor of Philosophy)",
+                institution: "Kharkiv National University of Radio Electronics (NURE)",
                 specialty: "Electronic Communications and Radio Engineering",
                 educational_program: "Telecommunications and Radio Engineering",
                 start_year: "2020",
@@ -14,6 +15,7 @@ export default {
             },
             {
                 level: "Master's Degree (With Honours)",
+                institution: "Kharkiv National University of Radio Electronics (NURE)",
                 specialty: "Computer Engineering",
                 educational_program: "Specialized Computer Systems",
                 start_year: "2018",
@@ -23,6 +25,7 @@ export default {
             },
             {
                 level: "Bachelor's Degree",
+                institution: "Kharkiv National University of Radio Electronics (NURE)",
                 specialty: "Computer Engineering",
                 start_year: "2014",
                 end_year: "2018",

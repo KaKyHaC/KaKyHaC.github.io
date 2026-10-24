@@ -57,7 +57,8 @@ export const trackProjectLinkClick = (projectName, linkUrl) => {
     trackEvent('project_link_click', { project_name: projectName, link_url: linkUrl });
 };
 
-export const trackResumeDownload = (cvType = 'staff') => {
-    const fileName = cvType === 'android' ? 'Dmytro_Barannik_Android_Developer_CV.pdf' : 'Dmytro_Barannik_Staff_Engineer_CV.pdf';
+export const trackResumeDownload = (cvType = 'android') => {
+    const files = { android: 'Dmytro_Barannik_Android_Developer_CV.pdf', software: 'Dmytro_Barannik_Software_Engineer_CV.pdf', staff: 'Dmytro_Barannik_Staff_Engineer_CV.pdf', default: 'Dmytro_Barannik_CV.pdf' };
+    const fileName = files[cvType] || files.android;
     trackEvent('resume_download', { file_name: fileName, cv_type: cvType });
 };

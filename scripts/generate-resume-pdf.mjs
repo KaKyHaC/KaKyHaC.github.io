@@ -1,4 +1,5 @@
 import puppeteer from 'puppeteer-core';
+import { renderResumeHtml } from './render-resume-html.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -40,6 +41,11 @@ async function renderResumeToPdf(browser, htmlRelativePath, outputPdfRelativePat
     }
 
     const page = await browser.newPage();
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+    await page.setViewport({ width: 1100, height: 1400 });
+    await page.emulateMediaType('print');
     const fileUrl = `file://${htmlPath}`;
     console.log(`Loading ${fileUrl}...`);
 
@@ -50,6 +56,14 @@ async function renderResumeToPdf(browser, htmlRelativePath, outputPdfRelativePat
 
     // Ensure fonts and styles are fully loaded
     await page.evaluateHandle('document.fonts.ready');
+
+    const overflow = await page.evaluate(() => [...document.querySelectorAll('.resume-page')].flatMap((sheet, index) => {
+        const content = sheet.querySelector('.page-content').getBoundingClientRect();
+        const footer = sheet.querySelector('footer').getBoundingClientRect();
+        const bounds = sheet.getBoundingClientRect();
+        return content.bottom + 8 > footer.top || footer.bottom > bounds.bottom - 20 || sheet.scrollWidth > sheet.clientWidth ? [index + 1] : [];
+    }));
+    if (errors.length || overflow.length) throw new Error(JSON.stringify({ htmlRelativePath, errors, overflowingPages: overflow }));
 
     console.log(`Generating PDF -> ${outputPdfRelativePath}...`);
     await page.pdf({
@@ -72,6 +86,7 @@ async function renderResumeToPdf(browser, htmlRelativePath, outputPdfRelativePat
 }
 
 async function main() {
+    renderResumeHtml();
     const chromeExecutable = findChromePath();
     console.log(`🚀 Using Chrome executable: ${chromeExecutable}`);
 
@@ -93,11 +108,11 @@ async function main() {
     });
 
     try {
-        // 1. Staff Software Engineer CV
+        // 1. Broader Software Engineer CV
         await renderResumeToPdf(
             browser,
             'src/resume/staff.html',
-            'public/Dmytro_Barannik_Staff_Engineer_CV.pdf'
+            'public/Dmytro_Barannik_Software_Engineer_CV.pdf'
         );
 
         // 2. Android Developer CV
@@ -107,11 +122,10 @@ async function main() {
             'public/Dmytro_Barannik_Android_Developer_CV.pdf'
         );
 
-        // 3. Default primary CV (copy of Staff Engineer CV)
-        const staffPdfPath = path.resolve(rootDir, 'public/Dmytro_Barannik_Staff_Engineer_CV.pdf');
-        const defaultPdfPath = path.resolve(rootDir, 'public/Dmytro_Barannik_CV.pdf');
-        fs.copyFileSync(staffPdfPath, defaultPdfPath);
-        console.log(`✅ Updated default download: public/Dmytro_Barannik_CV.pdf (Staff CV mirror)`);
+        // Keep the old Staff URL working; the canonical broad CV has a neutral title.
+        fs.copyFileSync(path.join(publicDir, 'Dmytro_Barannik_Software_Engineer_CV.pdf'), path.join(publicDir, 'Dmytro_Barannik_Staff_Engineer_CV.pdf'));
+        fs.copyFileSync(path.join(publicDir, 'Dmytro_Barannik_Android_Developer_CV.pdf'), path.join(publicDir, 'Dmytro_Barannik_CV.pdf'));
+        console.log('Updated default download (Android) and legacy Staff URL.');
 
         console.log('\n🎉 All resume PDFs successfully generated!');
     } finally {

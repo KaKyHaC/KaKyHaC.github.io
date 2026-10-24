@@ -32,43 +32,43 @@
     <div class="cv-dialog-box">
       <button class="dialog-close" id="cv-dialog-close" aria-label="Close dialog"><i class="fas fa-times"></i></button>
       <header class="cv-dialog-header">
-        <div class="cv-dialog-kicker"><i class="fas fa-file-pdf"></i> PDF RESUME</div>
-        <h2 id="cv-dialog-title">Download Curriculum Vitae</h2>
-        <p id="cv-dialog-subtitle">Select the resume version tailored to your review:</p>
+        <div class="cv-dialog-kicker"><i class="fas fa-file-pdf"></i> <span id="cv-kicker-label">PDF RESUME</span></div>
+        <h2 id="cv-dialog-title">Download CV</h2>
+        <p id="cv-dialog-subtitle">Choose the focus that matches the role:</p>
       </header>
       <div class="cv-cards-grid">
         <div class="cv-card">
           <div class="cv-card-top">
-            <span class="cv-card-badge staff" id="cv-staff-badge">Universal · Staff / Lead · PhD</span>
-            <h3 class="cv-card-title" id="cv-staff-title">Staff Software Engineer &amp; Tech Lead</h3>
-            <p class="cv-card-desc" id="cv-staff-desc">Autonomous AI swarms, low-level C++20 SIMD, high-load streaming (MEGOGO), multiplatform architecture, PhD &amp; patents.</p>
+            <span class="cv-card-badge android" id="cv-android-badge">Primary CV · Hands-on development</span>
+            <h3 class="cv-card-title" id="cv-android-title">Android Developer</h3>
+            <p class="cv-card-desc" id="cv-android-desc">Kotlin, Jetpack Compose, streaming, connected devices and published Google Play products.</p>
           </div>
           <div class="cv-card-meta">
-            <span><i class="far fa-file-alt"></i> 2 Pages · Vector PDF</span>
-            <span><i class="fas fa-shield-alt"></i> ATS-Compliant</span>
+            <span><i class="far fa-file-alt"></i> <span data-cv-format>2 pages · English</span></span>
+            <span><i class="fas fa-shield-alt"></i> <span data-cv-text-format>Selectable text</span></span>
           </div>
-          <a class="button primary cv-dl-btn" href="/Dmytro_Barannik_Staff_Engineer_CV.pdf" download="Dmytro_Barannik_Staff_Engineer_CV.pdf" data-track-cv="staff">
-            <i class="fas fa-download"></i> <span id="cv-staff-btn">Download Staff CV (PDF)</span>
+          <a class="button primary cv-dl-btn" href="/Dmytro_Barannik_Android_Developer_CV.pdf" download="Dmytro_Barannik_Android_Developer_CV.pdf" data-track-cv="android">
+            <i class="fas fa-download"></i> <span id="cv-android-btn">Download Android CV</span>
           </a>
         </div>
         <div class="cv-card">
           <div class="cv-card-top">
-            <span class="cv-card-badge android" id="cv-android-badge">Mobile Specialist · 9+ Years</span>
-            <h3 class="cv-card-title" id="cv-android-title">Senior / Lead Android Developer</h3>
-            <p class="cv-card-desc" id="cv-android-desc">9+ years native Android, Jetpack Compose, Coroutines &amp; Flow, Clean Architecture, ExoPlayer streaming, Room, NDK.</p>
+            <span class="cv-card-badge staff" id="cv-staff-badge">Mobile, web, systems &amp; research</span>
+            <h3 class="cv-card-title" id="cv-staff-title">Software Engineer</h3>
+            <p class="cv-card-desc" id="cv-staff-desc">Android and Flutter experience, web applications, C++ libraries, connected devices and applied research.</p>
           </div>
           <div class="cv-card-meta">
-            <span><i class="far fa-file-alt"></i> 2 Pages · Vector PDF</span>
-            <span><i class="fas fa-shield-alt"></i> ATS-Compliant</span>
+            <span><i class="far fa-file-alt"></i> <span data-cv-format>2 pages · English</span></span>
+            <span><i class="fas fa-shield-alt"></i> <span data-cv-text-format>Selectable text</span></span>
           </div>
-          <a class="button secondary cv-dl-btn" href="/Dmytro_Barannik_Android_Developer_CV.pdf" download="Dmytro_Barannik_Android_Developer_CV.pdf" data-track-cv="android">
-            <i class="fas fa-download"></i> <span id="cv-android-btn">Download Android CV (PDF)</span>
+          <a class="button secondary cv-dl-btn" href="/Dmytro_Barannik_Software_Engineer_CV.pdf" download="Dmytro_Barannik_Software_Engineer_CV.pdf" data-track-cv="software">
+            <i class="fas fa-download"></i> <span id="cv-staff-btn">Download Software Engineer CV</span>
           </a>
         </div>
       </div>
       <footer class="cv-dialog-footer">
-        <span id="cv-dialog-footer-note">Both versions are 100% ATS-compliant, vector-rendered 2-page PDFs.</span>
-        <a href="/Dmytro_Barannik_CV.pdf" download="Dmytro_Barannik_CV.pdf" data-track-cv="default" class="cv-direct-link" title="Standard direct link">Direct: /Dmytro_Barannik_CV.pdf</a>
+        <span id="cv-dialog-footer-note">Two-page PDFs in English with selectable text. The direct download opens the Android CV.</span>
+        <a href="/Dmytro_Barannik_CV.pdf" download="Dmytro_Barannik_CV.pdf" data-track-cv="default" class="cv-direct-link" title="Android CV · Direct download">Android CV · Direct download</a>
       </footer>
     </div>
   </dialog>
