@@ -6,6 +6,28 @@
  */
 export default [
     {
+        id: 'esmee-bionics',
+        domain: 'web',
+        title: 'ESMEE — Платформа біонічного протезування',
+        role: 'Провідний веб-архітектор та UI/UX інженер',
+        company: 'Solo Project',
+        date: 'Жовтень 2026',
+        description: 'Сучасна цифрова платформа та портал підтримки для виробника біонічних протезів верхніх кінцівок, кисті та пальців у Куала-Лумпурі. Реалізована на Next.js та Cloudflare Pages з інтерактивною екосистемою співфінансування 1:1, клінічними маршрутами підбору та суворими стандартами медичної доступності.',
+        tasks: [
+            'Спроєктував та розробив високонадійний веб-додаток на базі Next.js із розгортанням на Cloudflare Pages, забезпечивши миттєве завантаження та бездоганний рендеринг без зсувів макета.',
+            'Розробив інтерактивні маршрути рішень для біонічної кисті myHand 1.0 (міоелектричні сенсори, мультихват), активного протеза пальця myFinger та артикульованих систем Multi-Finger.',
+            'Спроєктував інтерактивну модель співфінансування 1:1 (Co-Funding Map) із прозорим розрахунком грантів від виробника ($8,800 за повний цикл) та трекінгом етапів протезування.',
+            'Реалізував захищені форми подання заявок для пацієнтів із дотриманням конфіденційності, структуровані медичні мікродані (JSON-LD) та повну доступність інтерфейсу за стандартом WCAG 2.1 AA.'
+        ],
+        technologies: ['Next.js', 'React', 'JavaScript', 'CSS3', 'Cloudflare Pages', 'Medical Schema / JSON-LD', 'a11y (WCAG 2.1 AA)', 'UI/UX Design'],
+        tags: ['Next.js', 'Біоніка та MedTech', 'Cloudflare Pages', 'UI/UX та CSS3', 'WCAG a11y'],
+        imagePlaceholder: 'E',
+        imageColor: 'linear-gradient(135deg, #c7ff4a, #8ebd1a)',
+        icon: 'images/projects/esmee_icon.png',
+        banner: 'images/projects/esmee_banner.jpg',
+        liveLink: 'https://esmee-site.pages.dev/'
+    },
+    {
         id: 'pro-klimat',
         domain: 'web',
         title: 'ProKlimat — Кліматичний сервіс',

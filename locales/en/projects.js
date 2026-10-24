@@ -6,6 +6,28 @@
  */
 export default [
     {
+        id: 'esmee-bionics',
+        domain: 'web',
+        title: 'ESMEE — Bionic Prosthetics Platform',
+        role: 'Lead Web Architect & UI/UX Engineer',
+        company: 'Solo Project',
+        date: 'Oct 2026',
+        description: 'An advanced digital platform and patient portal for a Kuala Lumpur-based medical manufacturer of powered upper-limb, hand, and finger bionic prosthetics. Built on Next.js and Cloudflare Pages with an interactive 1:1 matching sponsorship ecosystem, specialized clinical fitting pathways, and strict healthcare accessibility standards.',
+        tasks: [
+            'Architected and engineered a high-performance, modular Next.js web application with edge deployment on Cloudflare Pages, delivering sub-second page loads and zero layout shifts.',
+            'Designed interactive product pathways for myHand 1.0 (multi-grip bionic hand), myFinger (active single-digit mechanical prosthesis), and Multi-Finger articulated solutions.',
+            'Engineered an interactive 1:1 Co-Funding matching model and sponsorship ecosystem map, visualizing transparent manufacturer co-sponsorship ($8,800 total pathway) and zero-deduction grants.',
+            'Developed privacy-first, secure patient support application workflows with confidential intake triage, structured medical organization schema (JSON-LD), and full WCAG 2.1 AA accessibility compliance.'
+        ],
+        technologies: ['Next.js', 'React', 'JavaScript', 'CSS3', 'Cloudflare Pages', 'Medical Schema / JSON-LD', 'a11y (WCAG 2.1 AA)', 'UI/UX Design'],
+        tags: ['Next.js', 'Bionics & MedTech', 'Cloudflare Pages', 'UI/UX & CSS3', 'WCAG a11y'],
+        imagePlaceholder: 'E',
+        imageColor: 'linear-gradient(135deg, #c7ff4a, #8ebd1a)',
+        icon: 'images/projects/esmee_icon.png',
+        banner: 'images/projects/esmee_banner.jpg',
+        liveLink: 'https://esmee-site.pages.dev/'
+    },
+    {
         id: 'pro-klimat',
         domain: 'web',
         title: 'ProKlimat — HVAC Platform',
