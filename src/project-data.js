@@ -1,4 +1,4 @@
-export const DOMAIN_ORDER = ['all','android','kmp','flutter','web','iot','embedded','research'];
+export const DOMAIN_ORDER = ['all','android','flutter','web','iot','embedded','research'];
 
 export const DOMAIN_META = {
   android:{icon:'fab fa-android',en:'Android',uk:'Android'},
