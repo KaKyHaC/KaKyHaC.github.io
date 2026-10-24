@@ -68,6 +68,12 @@ function initCvModal() {
   let trigger = null;
   const openModal = event => {
     trigger = event.currentTarget;
+    const sidebar = $('#sidebar');
+    if (window.innerWidth <= 768 && sidebar?.classList.contains('open')) {
+      sidebar.classList.remove('open');
+      $('#mobile-overlay')?.classList.remove('active');
+      $('#mobile-menu-btn')?.setAttribute('aria-expanded', 'false');
+    }
     dialog.showModal();
     document.body.style.overflow = 'hidden';
     $('#cv-dialog-close').focus();
