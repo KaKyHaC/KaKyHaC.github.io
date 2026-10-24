@@ -11,8 +11,8 @@ document.addEventListener('click',event=>{if(event.target.closest('[data-project
 const safe=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 const COPY={
-  en:{sidebarRole:'Software Engineer · Tech Lead · PhD',download:'Download CV',language:'Українська',light:'Light theme',dark:'Dark theme',nav:{about:'About',directions:'Directions',projects:'Projects',experience:'Experience',skills:'Skills',research:'Research',education:'Education',contact:'Contact'},hero:{kicker:'Software Engineer · Tech Lead · PhD',title:'I turn complex ideas into reliable products.',lead:'I understand the problem, choose an architecture, build, verify and support the result — across mobile, web, systems, IoT and applied research.',projects:'Explore projects',contact:'Start a conversation',cv:'Download CV',years:'years in software',directions:'technology directions',research:'research & engineering',place:'Based in Ukraine · Working internationally'},sections:{directions:['Capabilities','One engineering mindset. Different technological contexts.','Choose a direction to see related work. Every project receives the same attention to context, decisions and delivery.'],projects:['Project archive','Work across products, platforms and research.','Equal presentation, clear responsibilities and enough technical detail to understand the work.'],experience:['Experience & approach','From problem framing to long-term support.','Commercial work, independent products, technical leadership and teaching form one continuous engineering practice.'],skills:['Competencies','Tools connected to real work.','Select a competency to see its practical use and the projects where it appears.'],research:['Research & R&D','Research translated into engineering value.'],education:['Education','A foundation for continuous learning.'],contact:['Let’s work together','A team role, a product idea or a research challenge?','Tell me what you are building and what makes it difficult. I will be glad to discuss where my experience can help.']},filters:{all:'All',search:'Search projects and technologies…',reset:'Reset filters',found:n=>`${n} project${n===1?'':'s'}`,empty:'No projects match these filters.'},directionText:{android:'Native mobile products, TV experiences and platform integrations.',kmp:'Shared Kotlin foundations for products across platforms.',flutter:'Cross-platform apps, product UI and application architecture.',web:'Fast, accessible platforms deployed at the edge.',iot:'Connected devices, telemetry and reliable radio communication.',embedded:'Native libraries, hardware integration and constrained systems.',research:'Applied algorithms, publications, patents, grants and technical competitions.'},approach:[{num:'01',title:'Understand',icon:'fas fa-compass'},{num:'02',title:'Design',icon:'fas fa-sitemap'},{num:'03',title:'Build',icon:'fas fa-code'},{num:'04',title:'Verify',icon:'fas fa-shield-alt'},{num:'05',title:'Support',icon:'fas fa-sync-alt'}],project:'View project',companyProjects:'Related projects',skillProjects:'Related projects',current:'Current',educationHigher:'Higher education',educationFoundation:'Secondary education',educationFoundationIntro:'Earlier milestones that established the academic foundation for engineering study.',educationDetails:'Degree details',educationProgram:'Programme',educationDiploma:'Diploma',researchLabels:{patents:'Patents',publications:'Scientific publications',conferences:'Conference proceedings',awards:'Awards & activities'},educationFocus:'Research focus:'},
-  uk:{sidebarRole:'Software Engineer · Tech Lead · PhD',download:'Завантажити CV',language:'English',light:'Світла тема',dark:'Темна тема',nav:{about:'Про мене',directions:'Напрями',projects:'Проєкти',experience:'Досвід',skills:'Компетенції',research:'Дослідження',education:'Освіта',contact:'Контакти'},hero:{kicker:'Software Engineer · Tech Lead · PhD',title:'Перетворюю складні ідеї на надійні продукти.',lead:'Розбираюся в задачі, обираю архітектуру, створюю, перевіряю та підтримую результат — у mobile, web, системній розробці, IoT і прикладних дослідженнях.',projects:'Переглянути проєкти',contact:'Обговорити співпрацю',cv:'Завантажити CV',years:'років у розробці',directions:'технологічних напрямів',research:'дослідження та інженерія',place:'Україна · Міжнародна співпраця'},sections:{directions:['Можливості','Один інженерний підхід. Різні технологічні контексти.','Оберіть напрям, щоб побачити пов’язані роботи. Кожен проєкт отримує однакову увагу до контексту, рішень і реалізації.'],projects:['Архів проєктів','Продукти, платформи та дослідження.','Рівноправна подача, чітка відповідальність і достатньо технічних деталей, щоб зрозуміти виконану роботу.'],experience:['Досвід і підхід','Від формулювання задачі до довгострокової підтримки.','Комерційна розробка, власні продукти, технічне лідерство й викладання формують єдину інженерну практику.'],skills:['Компетенції','Інструменти, пов’язані з реальною роботою.','Оберіть компетенцію, щоб побачити практичне застосування та пов’язані проєкти.'],research:['Дослідження та R&D','Наукові результати з практичною інженерною цінністю.'],education:['Освіта','Основа для безперервного розвитку.'],contact:['Поговорімо про співпрацю','Роль у команді, продуктова ідея чи дослідницький виклик?','Розкажіть, що ви створюєте і в чому складність. Обговоримо, як мій досвід може допомогти.']},filters:{all:'Усі',search:'Пошук за проєктами й технологіями…',reset:'Скинути фільтри',found:n=>`${n} проєктів`,empty:'За цими фільтрами проєктів не знайдено.'},directionText:{android:'Нативні мобільні продукти, TV-досвід та інтеграції з платформою.',kmp:'Спільна Kotlin-основа для продуктів на різних платформах.',flutter:'Кросплатформні застосунки, продуктовий UI та архітектура.',web:'Швидкі доступні платформи з edge-розгортанням.',iot:'Підключені пристрої, телеметрія та надійний радіозв’язок.',embedded:'Нативні бібліотеки, інтеграція з обладнанням та обмежені системи.',research:'Прикладні алгоритми, публікації, патенти, гранти й технічні конкурси.'},approach:[{num:'01',title:'Зрозуміти',icon:'fas fa-compass'},{num:'02',title:'Спроєктувати',icon:'fas fa-sitemap'},{num:'03',title:'Створити',icon:'fas fa-code'},{num:'04',title:'Перевірити',icon:'fas fa-shield-alt'},{num:'05',title:'Підтримувати',icon:'fas fa-sync-alt'}],project:'Відкрити проєкт',companyProjects:'Пов’язані проєкти',skillProjects:'Пов’язані проєкти',current:'Зараз',educationHigher:'Вища освіта',educationFoundation:'Середня освіта',educationFoundationIntro:'Ранні освітні етапи, що заклали академічну основу для подальшого інженерного навчання.',educationDetails:'Деталі диплома',educationProgram:'Освітня програма',educationDiploma:'Диплом',researchLabels:{patents:'Патенти',publications:'Наукові публікації',conferences:'Матеріали конференцій',awards:'Нагороди та діяльність'},educationFocus:'Напрям досліджень:'}
+  en:{sidebarRole:'Software Engineer · Tech Lead · PhD',download:'Download CV',language:'Українська',light:'Light theme',dark:'Dark theme',nav:{about:'About',directions:'Directions',projects:'Projects',experience:'Experience',skills:'Skills',research:'Research',education:'Education',contact:'Contact'},hero:{kicker:'Software Engineer · Tech Lead · PhD',title:'I turn complex ideas into reliable products.',lead:'I understand the problem, choose an architecture, build, verify and support the result — across mobile, web, systems, IoT and applied research.',projects:'Explore projects',contact:'Start a conversation',cv:'Download CV',years:'years in software',directions:'technology directions',research:'research & engineering',place:'Based in Ukraine · Working internationally'},sections:{directions:['Capabilities','One engineering mindset. Different technological contexts.','Choose a direction to see related work. Every project receives the same attention to context, decisions and delivery.'],projects:['Project archive','Work across products, platforms and research.','Equal presentation, clear responsibilities and enough technical detail to understand the work.'],experience:['Experience & approach','From problem framing to long-term support.','Commercial work, independent products, technical leadership and teaching form one continuous engineering practice.'],skills:['Competencies','Tools connected to real work.','Select a competency to see its practical use and the projects where it appears.'],research:['Research & R&D','Research translated into engineering value.'],education:['Education','A foundation for continuous learning.'],contact:['Let’s work together','A team role, a product idea or a research challenge?','Tell me what you are building and what makes it difficult. I will be glad to discuss where my experience can help.']},filters:{all:'All',search:'Search projects and technologies…',reset:'Reset filters',found:n=>`${n} project${n===1?'':'s'}`,empty:'No projects match these filters.'},directionText:{android:'Native mobile products, TV experiences and platform integrations.',kmp:'Shared Kotlin foundations for products across platforms.',flutter:'Cross-platform apps, product UI and application architecture.',web:'Fast, accessible platforms deployed at the edge.',iot:'Connected devices, telemetry and reliable radio communication.',embedded:'Native libraries, hardware integration and constrained systems.',research:'Applied algorithms, publications, patents, grants and technical competitions.'},approach:[{num:'01',title:'Understand',icon:'fas fa-compass'},{num:'02',title:'Design',icon:'fas fa-sitemap'},{num:'03',title:'Build',icon:'fas fa-code'},{num:'04',title:'Verify',icon:'fas fa-shield-alt'},{num:'05',title:'Support',icon:'fas fa-sync-alt'}],project:'View project',companyProjects:'Related projects',skillProjects:'Related projects',current:'Current',educationHigher:'Higher education',educationFoundation:'Secondary education',educationFoundationIntro:'Earlier milestones that established the academic foundation for engineering study.',educationDetails:'Degree details',educationProgram:'Programme',educationDiploma:'Diploma',researchLabels:{patents:'Patents',publications:'Scientific publications',conferences:'Conference proceedings',awards:'Awards & activities'},researchHub:{phdBadge:'PhD Dissertation',patentBadge:'Utility Model Patent',monographBadge:'Academic Monograph',coreMilestones:'Core Research Milestones',archiveTitle:'Scientific Publications Archive',archiveSubtitle:'68 peer-reviewed publications and conference proceedings across 12 years of research.',searchPlaceholder:'Search publications, topics, authors, or venues…',allYears:'All years',allPublishers:'All venues',copyCitation:'Copy citation',copied:'Copied!',viewDoi:'Open DOI',publications:'publications',empty:'No publications match your search criteria.',awardsTitle:'Academic Honors & Activities'},educationFocus:'Research focus:'},
+  uk:{sidebarRole:'Software Engineer · Tech Lead · PhD',download:'Завантажити CV',language:'English',light:'Світла тема',dark:'Темна тема',nav:{about:'Про мене',directions:'Напрями',projects:'Проєкти',experience:'Досвід',skills:'Компетенції',research:'Дослідження',education:'Освіта',contact:'Контакти'},hero:{kicker:'Software Engineer · Tech Lead · PhD',title:'Перетворюю складні ідеї на надійні продукти.',lead:'Розбираюся в задачі, обираю архітектуру, створюю, перевіряю та підтримую результат — у mobile, web, системній розробці, IoT і прикладних дослідженнях.',projects:'Переглянути проєкти',contact:'Обговорити співпрацю',cv:'Завантажити CV',years:'років у розробці',directions:'технологічних напрямів',research:'дослідження та інженерія',place:'Україна · Міжнародна співпраця'},sections:{directions:['Можливості','Один інженерний підхід. Різні технологічні контексти.','Оберіть напрям, щоб побачити пов’язані роботи. Кожен проєкт отримує однакову увагу до контексту, рішень і реалізації.'],projects:['Архів проєктів','Продукти, платформи та дослідження.','Рівноправна подача, чітка відповідальність і достатньо технічних деталей, щоб зрозуміти виконану роботу.'],experience:['Досвід і підхід','Від формулювання задачі до довгострокової підтримки.','Комерційна розробка, власні продукти, технічне лідерство й викладання формують єдину інженерну практику.'],skills:['Компетенції','Інструменти, пов’язані з реальною роботою.','Оберіть компетенцію, щоб побачити практичне застосування та пов’язані проєкти.'],research:['Дослідження та R&D','Наукові результати з практичною інженерною цінністю.'],education:['Освіта','Основа для безперервного розвитку.'],contact:['Поговорімо про співпрацю','Роль у команді, продуктова ідея чи дослідницький виклик?','Розкажіть, що ви створюєте і в чому складність. Обговоримо, як мій досвід може допомогти.']},filters:{all:'Усі',search:'Пошук за проєктами й технологіями…',reset:'Скинути фільтри',found:n=>`${n} проєктів`,empty:'За цими фільтрами проєктів не знайдено.'},directionText:{android:'Нативні мобільні продукти, TV-досвід та інтеграції з платформою.',kmp:'Спільна Kotlin-основа для продуктів на різних платформах.',flutter:'Кросплатформні застосунки, продуктовий UI та архітектура.',web:'Швидкі доступні платформи з edge-розгортанням.',iot:'Підключені пристрої, телеметрія та надійний радіозв’язок.',embedded:'Нативні бібліотеки, інтеграція з обладнанням та обмежені системи.',research:'Прикладні алгоритми, публікації, патенти, гранти й технічні конкурси.'},approach:[{num:'01',title:'Зрозуміти',icon:'fas fa-compass'},{num:'02',title:'Спроєктувати',icon:'fas fa-sitemap'},{num:'03',title:'Створити',icon:'fas fa-code'},{num:'04',title:'Перевірити',icon:'fas fa-shield-alt'},{num:'05',title:'Підтримувати',icon:'fas fa-sync-alt'}],project:'Відкрити проєкт',companyProjects:'Пов’язані проєкти',skillProjects:'Пов’язані проєкти',current:'Зараз',educationHigher:'Вища освіта',educationFoundation:'Середня освіта',educationFoundationIntro:'Ранні освітні етапи, що заклали академічну основу для подальшого інженерного навчання.',educationDetails:'Деталі диплома',educationProgram:'Освітня програма',educationDiploma:'Диплом',researchLabels:{patents:'Патенти',publications:'Наукові публікації',conferences:'Матеріали конференцій',awards:'Нагороди та діяльність'},researchHub:{phdBadge:'Дисертація PhD',patentBadge:'Патент на корисну модель',monographBadge:'Академічна монографія',coreMilestones:'Ключові наукові досягнення',archiveTitle:'Реєстр наукових праць',archiveSubtitle:'68 рецензованих публікацій у наукових журналах та матеріалах конференцій за 12 років досліджень.',searchPlaceholder:'Пошук публікацій, тем, авторів або видань…',allYears:'Всі роки',allPublishers:'Всі видання',copyCitation:'Скопіювати цитування',copied:'Скопійовано!',viewDoi:'Відкрити DOI',publications:'публікацій',empty:'За цим запитом публікацій не знайдено.',awardsTitle:'Відзнаки та академічна діяльність'},educationFocus:'Напрям досліджень:'}
 };
 const copy=()=>COPY[getLang()];
 function renderProfile(ui){
@@ -128,7 +128,318 @@ function renderSkills(data,details,ui){
   $$('.skills-tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{if(activeSkillCategory===btn.dataset.category)return;activeSkillCategory=btn.dataset.category;$$('.skills-tab-btn').forEach(b=>{const isCurrent=b.dataset.category===activeSkillCategory;b.classList.toggle('active',isCurrent);b.setAttribute('aria-selected',String(isCurrent))});updateSheet()})});
 }
 
-function renderResearch(data){const c=copy();$('#academic-profiles').innerHTML=Object.entries(data.academic_profiles||{}).map(([name,url])=>`<a href="${url}" target="_blank" rel="noopener">${safe(name.replace('_',' '))} ↗</a>`).join('');const card=(title,entries,wide=false)=>entries?.length?`<article class="research-card ${wide?'wide':''} reveal"><h3>${title}</h3>${entries.map(e=>`<div class="research-entry"><h4>${safe(e.title||e.role)}</h4><p>${safe(e.description||e.journal||e.conference||e.event||'')} ${e.year?`(${e.year})`:''}</p>${e.doi?`<a class="text-link" href="https://doi.org/${e.doi}" target="_blank" rel="noopener">DOI ↗</a>`:''}</div>`).join('')}</article>`:'';const awards=[...(data.awards_and_honors||[]),...(data.academic_activities||[])];$('#research-container').innerHTML=card(c.researchLabels.patents,data.patents,true)+card(c.researchLabels.publications,data.scientific_publications,true)+card(c.researchLabels.conferences,data.conference_proceedings)+card(c.researchLabels.awards,awards)}
+let activeResearchYear='2026';
+let activeResearchPublisher='all';
+let researchSearchQuery='';
+
+function getApaCitation(p){
+  const authorsStr=(p.authors||[]).join(', ');
+  const titleStr=p.title.endsWith('.')?p.title:p.title+'.';
+  const sourceStr=p.source?`${p.source}${p.details?', '+p.details:''}.`:'';
+  const doiStr=p.doi?` https://doi.org/${p.doi}`:'';
+  return `${authorsStr} (${p.year}). ${titleStr} ${sourceStr}${doiStr}`.trim();
+}
+
+function renderResearch(data){
+  const uk=getLang()==='uk';
+  const c=copy();
+  const rl=c.researchHub||{};
+  const profileIcons={Scopus:'fas fa-graduation-cap',ORCID:'fas fa-id-card',Google_Scholar:'fas fa-search'};
+  $('#academic-profiles').innerHTML=Object.entries(data.academic_profiles||{}).map(([name,url])=>{
+    const icon=profileIcons[name]||'fas fa-external-link-alt';
+    const label=name.replace('_',' ');
+    return `<a href="${url}" target="_blank" rel="noopener" class="academic-profile-link"><i class="${icon}" aria-hidden="true"></i> <span>${safe(label)}</span> ↗</a>`;
+  }).join('');
+
+  const container=$('#research-container');
+  if(!container)return;
+
+  const diss=data.dissertation||{};
+  const patent=(data.patents||[])[0]||{};
+  const monograph=(data.monographs||[])[0]||{};
+  const allPubs=data.publications||[];
+  const awards=data.awards_and_honors||[];
+
+  const availableYears=[...new Set(allPubs.map(p=>String(p.year)))].sort((a,b)=>Number(b)-Number(a));
+  const yearChips=['2026',...availableYears.filter(y=>y!=='2026'),'all'];
+
+  const publisherCounts={
+    all:allPubs.length,
+    IEEE:allPubs.filter(p=>p.publisher==='IEEE').length,
+    Springer:allPubs.filter(p=>p.publisher==='Springer').length,
+    Journal:allPubs.filter(p=>p.type==='Journal').length
+  };
+
+  const renderPubsList=()=>{
+    const listEl=$('#research-pubs-list');
+    const countEl=$('#research-count-label');
+    if(!listEl)return;
+
+    let filtered=allPubs.filter(p=>{
+      if(activeResearchYear!=='all'&&String(p.year)!==String(activeResearchYear))return false;
+      if(activeResearchPublisher!=='all'){
+        if(activeResearchPublisher==='IEEE'&&p.publisher!=='IEEE')return false;
+        if(activeResearchPublisher==='Springer'&&p.publisher!=='Springer')return false;
+        if(activeResearchPublisher==='Journal'&&p.type!=='Journal')return false;
+      }
+      if(researchSearchQuery){
+        const q=researchSearchQuery.toLowerCase();
+        const text=[p.title,p.source,p.details,...(p.authors||[]),String(p.year)].join(' ').toLowerCase();
+        if(!text.includes(q))return false;
+      }
+      return true;
+    });
+
+    if(countEl)countEl.textContent=`${filtered.length} / ${allPubs.length}`;
+
+    if(filtered.length===0){
+      listEl.innerHTML=`<div class="research-empty-state"><i class="fas fa-search" aria-hidden="true"></i><p>${safe(rl.empty||'No publications match your search criteria.')}</p></div>`;
+      return;
+    }
+
+    const renderLedgerRow=(p,showYearBadge=true)=>{
+      const pubClass=p.publisher==='IEEE'?'pub-badge-ieee':p.publisher==='Springer'?'pub-badge-springer':'pub-badge-journal';
+      const pubIcon=p.publisher==='IEEE'?'fas fa-microchip':p.publisher==='Springer'?'fas fa-book':'fas fa-scroll';
+      const citation=getApaCitation(p);
+      const authorsPreview=(p.authors||[]).map(a=>{
+        const isMe=/Barannik D|Бараннік Д|Баранник Д/i.test(a);
+        return isMe?`<strong class="pub-author-me">${safe(a)}</strong>`:`<span>${safe(a)}</span>`;
+      }).join(', ');
+
+      return `
+        <article class="ledger-item" data-id="${p.id}">
+          <div class="ledger-row" role="button" tabindex="0" aria-expanded="false" aria-controls="ledger-drawer-${p.id}">
+            <div class="ledger-col-meta">
+              <span class="ledger-id">#${p.id}</span>
+              ${showYearBadge?`<span class="ledger-year-pill">${p.year}</span>`:''}
+              <span class="pub-badge ${pubClass}"><i class="${pubIcon}" aria-hidden="true"></i> ${safe(p.publisher)}</span>
+            </div>
+            <div class="ledger-col-main">
+              <h4 class="ledger-title">${safe(p.title)}</h4>
+              <div class="ledger-authors-preview">${authorsPreview}</div>
+            </div>
+            <div class="ledger-col-actions">
+              ${p.doi?`<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener" class="ledger-doi-link" title="${safe(rl.viewDoi||'Open DOI')}" onclick="event.stopPropagation()"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`:''}
+              <span class="ledger-expand-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+            </div>
+          </div>
+          <div id="ledger-drawer-${p.id}" class="ledger-drawer" hidden>
+            <div class="ledger-drawer-content">
+              <div class="ledger-detail-row">
+                <span class="ledger-detail-label"><i class="fas fa-users" aria-hidden="true"></i> ${uk?'Співавтори:':'Authors:'}</span>
+                <p class="ledger-detail-value">${authorsPreview}</p>
+              </div>
+              <div class="ledger-detail-row">
+                <span class="ledger-detail-label"><i class="fas fa-bookmark" aria-hidden="true"></i> ${uk?'Видання:':'Venue:'}</span>
+                <p class="ledger-detail-value"><em>${safe(p.source)}</em>${p.details?', '+safe(p.details):''}</p>
+              </div>
+              <div class="ledger-drawer-actions">
+                <button type="button" class="ledger-copy-citation-btn" data-citation="${safe(citation)}">
+                  <i class="fas fa-quote-right" aria-hidden="true"></i> <span>${safe(rl.copyCitation||'Copy citation')}</span>
+                </button>
+                ${p.doi?`<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener" class="ledger-doi-btn"><span>${safe(rl.viewDoi||'Open DOI')}</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`:''}
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    };
+
+    if(activeResearchYear==='all'&&!researchSearchQuery){
+      let html='';
+      availableYears.forEach(yr=>{
+        const yrPubs=filtered.filter(p=>String(p.year)===yr);
+        if(!yrPubs.length)return;
+        html+=`
+          <div class="ledger-year-divider">
+            <div class="ledger-year-divider-inner">
+              <span class="ledger-year-heading">${yr}</span>
+              <span class="ledger-year-count">${yrPubs.length} ${safe(rl.publications||'publications')}</span>
+            </div>
+          </div>
+          ${yrPubs.map(p=>renderLedgerRow(p,false)).join('')}
+        `;
+      });
+      listEl.innerHTML=html;
+    }else{
+      listEl.innerHTML=filtered.map(p=>renderLedgerRow(p,true)).join('');
+    }
+
+    listEl.querySelectorAll('.ledger-row').forEach(row=>{
+      const item=row.closest('.ledger-item');
+      const drawer=item.querySelector('.ledger-drawer');
+      const toggle=()=>{
+        const isExpanded=row.getAttribute('aria-expanded')==='true';
+        row.setAttribute('aria-expanded',String(!isExpanded));
+        row.classList.toggle('is-expanded',!isExpanded);
+        if(drawer)drawer.hidden=isExpanded;
+      };
+      row.addEventListener('click',e=>{
+        if(e.target.closest('a'))return;
+        toggle();
+      });
+      row.addEventListener('keydown',e=>{
+        if(e.key==='Enter'||e.key===' '){
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+
+    listEl.querySelectorAll('.ledger-copy-citation-btn').forEach(btn=>{
+      btn.addEventListener('click',async e=>{
+        e.stopPropagation();
+        const citation=btn.dataset.citation;
+        try{
+          await navigator.clipboard.writeText(citation);
+          const span=btn.querySelector('span');
+          const orig=span.textContent;
+          span.textContent=rl.copied||'Copied!';
+          btn.classList.add('is-copied');
+          setTimeout(()=>{
+            span.textContent=orig;
+            btn.classList.remove('is-copied');
+          },2000);
+        }catch(err){
+          console.error(err);
+        }
+      });
+    });
+  };
+
+  container.innerHTML=`
+    <div class="research-flagships-heading">
+      <span class="eyebrow">${safe(rl.coreMilestones||'Core Research Milestones')}</span>
+      <div class="research-metrics-ribbon">
+        <span><i class="fas fa-graduation-cap"></i> <strong>PhD</strong> 2025</span>
+        <span><i class="fas fa-certificate"></i> <strong>1</strong> ${uk?'Патент':'Patent'}</span>
+        <span><i class="fas fa-book"></i> <strong>1</strong> ${uk?'Монографія':'Monograph'}</span>
+        <span><i class="fas fa-file-alt"></i> <strong>68</strong> ${uk?'Публікацій':'Publications'}</span>
+      </div>
+    </div>
+    <div class="research-flagships-grid">
+      <article class="flagship-card flagship-phd reveal">
+        <div class="flagship-header">
+          <div class="flagship-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+          <span class="flagship-badge">${safe(rl.phdBadge||'PhD Dissertation')} · 2025</span>
+        </div>
+        <h3 class="flagship-title">${safe(diss.title)}</h3>
+        <p class="flagship-institution"><i class="fas fa-university" aria-hidden="true"></i> ${safe(diss.institution)}</p>
+        <p class="flagship-specialty">${safe(diss.specialty)}</p>
+        <p class="flagship-desc">${safe(diss.description)}</p>
+      </article>
+
+      <article class="flagship-card flagship-patent reveal">
+        <div class="flagship-header">
+          <div class="flagship-icon"><i class="fas fa-award" aria-hidden="true"></i></div>
+          <span class="flagship-badge">${safe(rl.patentBadge||'Utility Model Patent')} · ${patent.year}</span>
+        </div>
+        <h3 class="flagship-title">${safe(patent.title)}</h3>
+        <p class="flagship-patent-num"><i class="fas fa-stamp" aria-hidden="true"></i> <strong>${safe(patent.patent_number)}</strong> (${safe(patent.issue_date)})</p>
+        <p class="flagship-desc">${safe(patent.description)}</p>
+        <div class="flagship-project-link">
+          <a href="/projects/libpolycodec/" class="skills-project-tag">
+            <i class="fas fa-microchip" aria-hidden="true"></i> <span>LibPolyCodec Case Study</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="flagship-card flagship-monograph reveal">
+        <div class="flagship-header">
+          <div class="flagship-icon"><i class="fas fa-book" aria-hidden="true"></i></div>
+          <span class="flagship-badge">${safe(rl.monographBadge||'Academic Monograph')} · ${monograph.year}</span>
+        </div>
+        <h3 class="flagship-title">${safe(monograph.title)}</h3>
+        <p class="flagship-publisher"><i class="fas fa-building" aria-hidden="true"></i> ${safe(monograph.publisher)}</p>
+        <p class="flagship-authors">${safe((monograph.authors||[]).join(', '))}</p>
+        <p class="flagship-desc">${safe(monograph.description)}</p>
+      </article>
+    </div>
+
+    <div class="research-archive-block reveal">
+      <div class="research-archive-header">
+        <div>
+          <span class="eyebrow">${uk?'Реєстр наукових праць':'Scientific Works Registry'}</span>
+          <h3 class="research-archive-title">${safe(rl.archiveTitle||'Scientific Publications Archive')}</h3>
+          <p class="research-archive-subtitle">${safe(rl.archiveSubtitle||'68 peer-reviewed publications across 12 years of research.')}</p>
+        </div>
+        <div class="research-archive-count-badge">
+          <i class="fas fa-file-alt"></i> <span id="research-count-label">11 / 68</span>
+        </div>
+      </div>
+
+      <div class="research-toolbar">
+        <label class="research-search">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="search" id="research-search-input" placeholder="${safe(rl.searchPlaceholder||'Search publications, topics, authors, or venues…')}" value="${safe(researchSearchQuery)}" autocomplete="off">
+        </label>
+        <div class="research-filter-pills">
+          <div class="research-years-pills" role="tablist" aria-label="${uk?'Фільтр за роками':'Filter by year'}">
+            ${yearChips.map(yr=>{
+              const label=yr==='all'?(rl.allYears||'All years'):yr;
+              const count=yr==='all'?allPubs.length:allPubs.filter(p=>String(p.year)===yr).length;
+              const isActive=activeResearchYear===yr;
+              return `<button type="button" class="research-chip ${isActive?'active':''}" data-year="${yr}"><span>${label}</span> <span class="research-chip-count">${count}</span></button>`;
+            }).join('')}
+          </div>
+          <div class="research-publisher-pills" role="tablist" aria-label="${uk?'Фільтр видавництв':'Filter by publisher'}">
+            ${['all','IEEE','Springer','Journal'].map(pub=>{
+              const label=pub==='all'?(rl.allPublishers||'All venues'):pub;
+              const count=publisherCounts[pub]||0;
+              const isActive=activeResearchPublisher===pub;
+              return `<button type="button" class="research-chip ${isActive?'active':''}" data-pub="${pub}"><span>${label}</span> <span class="research-chip-count">${count}</span></button>`;
+            }).join('')}
+          </div>
+        </div>
+      </div>
+
+      <div id="research-pubs-list" class="research-pubs-list" aria-live="polite"></div>
+    </div>
+
+    ${awards.length?`
+    <div class="research-awards-block reveal">
+      <span class="eyebrow">${safe(rl.awardsTitle||'Academic Honors & Activities')}</span>
+      <div class="research-awards-grid">
+        ${awards.map(a=>`
+          <div class="research-award-card">
+            <div class="research-award-top">
+              <span class="research-award-role"><i class="fas fa-medal"></i> ${safe(a.role)}</span>
+              <span class="research-award-year">${a.year||''}</span>
+            </div>
+            <h4 class="research-award-title">${safe(a.title)}</h4>
+            ${a.description?`<p class="research-award-desc">${safe(a.description)}</p>`:''}
+          </div>
+        `).join('')}
+      </div>
+    </div>`:''}
+  `;
+
+  renderPubsList();
+
+  const searchInput=$('#research-search-input');
+  if(searchInput){
+    searchInput.addEventListener('input',e=>{
+      researchSearchQuery=e.target.value.trim();
+      renderPubsList();
+    });
+  }
+
+  $$('.research-years-pills .research-chip').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      activeResearchYear=btn.dataset.year;
+      $$('.research-years-pills .research-chip').forEach(b=>b.classList.toggle('active',b.dataset.year===activeResearchYear));
+      renderPubsList();
+    });
+  });
+
+  $$('.research-publisher-pills .research-chip').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      activeResearchPublisher=btn.dataset.pub;
+      $$('.research-publisher-pills .research-chip').forEach(b=>b.classList.toggle('active',b.dataset.pub===activeResearchPublisher));
+      renderPubsList();
+    });
+  });
+}
 function renderEducation(data){
   const c=copy();
   const degrees=[...(data.higher_education?.degrees||[])].reverse();
