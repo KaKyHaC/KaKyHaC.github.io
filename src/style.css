@@ -34,3 +34,81 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 .experience-list{border-top:2px solid var(--text)}.experience-summary{padding:28px 0}.experience-summary h3{font-size:22px}.experience-item[open] .experience-summary h3{color:var(--accent)}
 @media(max-width:980px){.directions-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.profile-note-scope,.profile-note-agentic,.profile-note-product,.profile-note-research{grid-column:span 12}.approach-block{grid-template-columns:1fr}.timeline-intro{align-items:flex-start;flex-direction:column}.timeline-stats{width:100%}}
 @media(max-width:600px){.directions-grid{grid-template-columns:1fr}.profile-note{padding:24px}.profile-note h3{margin-top:32px}.approach-block .approach-strip{grid-template-columns:1fr 1fr}.timeline-stats{overflow-x:auto}.timeline-stats div{min-width:105px}.timeline-intro{margin-top:64px}}
+
+/* Editorial profile, branded career timeline and academic journey */
+.profile-note-scope .profile-note-body p+p{position:relative;margin-top:26px;padding:24px 0 0 22px;border-top:1px solid var(--line);color:var(--text)}
+.profile-note-scope .profile-note-body p+p:before{content:"";position:absolute;left:0;top:29px;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(231,189,89,.1)}
+
+.experience-summary{grid-template-columns:140px 54px minmax(0,1fr) auto;align-items:center;gap:24px}
+.experience-logo{width:54px;height:54px;display:grid;place-items:center;padding:8px;border:1px solid color-mix(in srgb,var(--company-color) 35%,var(--line));border-radius:14px;background:color-mix(in srgb,var(--company-color) 7%,var(--surface));overflow:hidden;transition:transform .2s ease,border-color .2s ease}
+.experience-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.experience-logo i{font-size:20px;color:var(--company-color)}
+.experience-item[open] .experience-logo i{transform:none}
+.experience-summary:hover .experience-logo{transform:translateY(-2px);border-color:color-mix(in srgb,var(--company-color) 70%,var(--line))}
+.experience-position{display:flex;flex-direction:column;min-width:0}
+.experience-company{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font:700 21px/1.2 Manrope,sans-serif;letter-spacing:-.02em}
+.experience-role{margin-top:5px;color:var(--muted);font-size:13px}
+.current-badge{display:inline-flex;align-items:center;min-height:22px;padding:3px 8px;border:1px solid rgba(231,189,89,.32);border-radius:999px;background:rgba(231,189,89,.08);color:var(--accent);font:700 9px/1 Manrope,sans-serif;letter-spacing:.09em;text-transform:uppercase}
+.experience-chevron{justify-self:end;color:var(--muted);transition:transform .2s ease,color .2s ease}
+.experience-item[open] .experience-chevron{transform:rotate(180deg);color:var(--accent)}
+.experience-body{padding-left:242px}
+
+.education-journey{position:relative}
+.education-foundation{display:grid;grid-template-columns:minmax(240px,.85fr) minmax(0,1.15fr);gap:42px;align-items:center;padding:28px 32px;margin-bottom:72px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(231,189,89,.06),transparent 56%)}
+.foundation-heading{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:center}
+.foundation-heading .eyebrow{margin:0 0 4px}.foundation-heading p:last-child{margin:0;color:var(--muted);font-size:13px}
+.foundation-icon{width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(231,189,89,.32);border-radius:50%;color:var(--accent)}
+.foundation-milestones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-left:1px solid var(--line)}
+.foundation-milestones>div{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;padding:4px 24px;border-right:1px solid var(--line)}
+.foundation-milestones strong{grid-row:1/3;color:var(--accent);font:700 28px/1 Manrope,sans-serif}
+.foundation-milestones span{color:var(--muted);font-size:12px;line-height:1.35}
+.foundation-milestones em{color:var(--text);font-size:11px;font-style:normal}.foundation-milestones em i{color:var(--accent);margin-right:4px}
+
+.education-path{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,64px);padding:0 8px 72px}
+.education-connector{position:absolute;left:0;top:7px;width:100%;height:150px;overflow:visible;pointer-events:none}
+.education-connector path{fill:none;stroke:var(--accent);stroke-width:2;vector-effect:non-scaling-stroke;opacity:.7}
+.education-stage{position:relative;min-width:0}.education-stage:nth-of-type(2){margin-top:49px}.education-stage:nth-of-type(3){margin-top:98px}
+.education-node{position:relative;z-index:2;width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--accent);border-radius:50%;background:var(--bg);color:var(--accent);font:700 11px Manrope,sans-serif;box-shadow:0 0 0 8px var(--bg)}
+.education-stage-content{padding:32px 0 0;border-top:1px solid var(--line)}
+.education-date{display:block;margin-bottom:12px;color:var(--accent);font:700 11px Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.education-stage h3{max-width:360px;margin-bottom:10px;font-size:clamp(22px,2.2vw,31px);letter-spacing:-.035em}
+.education-specialty{min-height:44px;color:var(--muted);font-size:14px}
+.education-focus{margin:24px 0 0;padding:18px;border-left:2px solid var(--accent);background:linear-gradient(90deg,rgba(231,189,89,.09),transparent)}
+.education-focus span{display:block;margin-bottom:6px;color:var(--accent);font:700 10px Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.education-focus p{margin:0;color:var(--muted);font-size:12px}
+.education-details{margin-top:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.education-details summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0;list-style:none;cursor:pointer;color:var(--text);font:650 12px Manrope,sans-serif}
+.education-details summary::-webkit-details-marker{display:none}.education-details summary i{color:var(--muted);transition:transform .2s ease}.education-details[open] summary i{transform:rotate(180deg)}
+.education-details>div{padding:4px 0 16px;color:var(--muted);font-size:12px}.education-details p{margin:0 0 10px}.education-details p:last-child{margin-bottom:0}.education-details strong{color:var(--text)}.diploma-id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:.04em}
+
+@media(max-width:900px){
+  .education-foundation{grid-template-columns:1fr;gap:24px;margin-bottom:52px}
+  .education-path{display:block;padding:0 0 0 34px}
+  .education-path:before{content:"";position:absolute;left:15px;top:22px;bottom:20px;width:1px;background:linear-gradient(var(--accent),var(--line))}
+  .education-connector{display:none}
+  .education-stage,.education-stage:nth-of-type(2),.education-stage:nth-of-type(3){margin:0 0 50px}
+  .education-node{position:absolute;left:-42px;top:0;width:46px;height:46px;box-shadow:0 0 0 6px var(--bg)}
+  .education-stage-content{padding:6px 0 0 28px;border-top:0}
+  .education-specialty{min-height:0}
+}
+@media(max-width:768px){
+  .hero,.hero-copy,.hero-actions,.hero-proof,.hero-portrait{min-width:0;max-width:100%}
+  .hero-proof{width:100%}
+  .experience-summary{grid-template-columns:54px minmax(0,1fr) auto;gap:14px}
+  .experience-date{grid-column:1/-1;margin-bottom:4px}
+  .experience-body{padding:0 0 24px 68px}
+  .experience-company{font-size:18px}
+}
+@media(max-width:560px){
+  .education-foundation{padding:24px 0;background:transparent}
+  .foundation-milestones{grid-template-columns:1fr;border-left:0}
+  .foundation-milestones>div{padding:16px 0;border-right:0;border-top:1px solid var(--line)}
+  .education-path{padding-left:26px}
+  .education-path:before{left:11px}
+  .education-node{left:-34px;width:38px;height:38px;box-shadow:0 0 0 5px var(--bg)}
+  .education-stage-content{padding-left:20px}
+  .experience-summary{grid-template-columns:46px minmax(0,1fr) auto;gap:12px}
+  .experience-logo{width:46px;height:46px;border-radius:12px}
+  .experience-body{padding-left:0}
+  .current-badge{width:max-content;margin-top:4px}
+}

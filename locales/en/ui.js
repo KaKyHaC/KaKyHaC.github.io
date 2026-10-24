@@ -31,6 +31,7 @@ export default {
     about: {
         title1: 'Senior / Staff Software Engineer | Tech Lead | PhD',
         bio1: 'I am a Senior / Staff Software Engineer and Tech Lead with over 9 years of commercial experience architecting and delivering high-load, resilient software systems. My foundation is built on deep technological maturity: from high-throughput mobile streaming architectures (Kotlin, Clean Architecture, Coroutines) and low-level algorithmic engines (C++20, SIMD vectorization, zero-allocation memory models) to distributed IoT firmware and modern edge web platforms.',
+        bio4: 'Across these domains, I work beyond implementation: I translate product and operational constraints into technical decisions, connect application, backend, hardware and delivery concerns, and stay accountable for maintainability after release. The technology changes with the problem; the standard of ownership does not.',
         bio2: '<strong>Agentic Software Engineering:</strong> AI orchestration is a central pillar of my engineering workflow. Operating as a Tech Lead over autonomous coding agents (Google Antigravity with Gemini, GPT/Codex), I drive spec-driven development, define strict architectural guardrails, and enforce zero-trust test-driven verification loops.',
         bio3: '<i>I champion product craftsmanship, pragmatic system design, and transparent Agile/Scrum cultures that foster rapid innovation, healthy peer reviews, and engineering excellence.</i>',
         title2: 'Product & Leadership',
