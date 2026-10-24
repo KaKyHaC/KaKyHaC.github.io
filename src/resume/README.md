@@ -22,8 +22,10 @@ version, and check extracted text and clickable links. Do not claim universal
 ATS compatibility.
 
 Editorial safeguards: no invented percentages, crash rates, delivery multipliers,
-mentee counts, seniority upgrades or language levels. Add quantified outcomes only
-when the candidate can explain and substantiate them. Current degree dates follow
+mentee counts or seniority upgrades. Add quantified outcomes only when the
+candidate can explain and substantiate them. Current degree dates follow
 the structured site records (including diploma issue dates); institution names are
-also corroborated by the archived January 2025 CV. English is listed without a
-level pending the candidate's confirmation.
+also corroborated by the archived January 2025 CV. English B2 and the product
+download totals are candidate-confirmed; the public 10K+ Tic-Tac-Toe milestone
+was checked against its Google Play listing on 2026-10-24. Metric provenance is
+kept in `content.mjs` and should be refreshed when figures change.
