@@ -96,6 +96,7 @@ npm run preview
 
 For detailed guides and architecture specifications, consult the [`docs/`](file:///Users/dima_barannik/Documents/GitHub/dvbarannik.github.io/docs) folder:
 
+- 🤖 [**AGENTS.md**](file:///Users/dima_barannik/Documents/GitHub/dvbarannik.github.io/AGENTS.md): Directive and North Star benchmark for AI coding agents (Antigravity, Cursor, Copilot).
 - 📐 [**ARCHITECTURE.md**](file:///Users/dima_barannik/Documents/GitHub/dvbarannik.github.io/docs/ARCHITECTURE.md): Multi-page strategy, lazy-loaded i18n system, Firebase analytics, and deployment details.
 - 🎨 [**DESIGN.md**](file:///Users/dima_barannik/Documents/GitHub/dvbarannik.github.io/docs/DESIGN.md): Visual principles, theme tokens, typography, motion philosophy, and WCAG AA accessibility.
 - ✍️ [**CONTENT_GUIDE.md**](file:///Users/dima_barannik/Documents/GitHub/dvbarannik.github.io/docs/CONTENT_GUIDE.md): Content creation guidelines, STAR achievement framing, adding companies/projects, and legacy archive role.

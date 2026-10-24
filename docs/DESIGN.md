@@ -4,6 +4,17 @@ This document establishes the visual philosophy, design tokens, typography, layo
 
 ---
 
+## 0. The North Star: Objective & Aesthetic Benchmark
+
+> [!IMPORTANT]
+> **The Ultimate Portfolio Goal:**
+> *"Anyone who opens this portfolio — whether a recruiter, VP of Engineering, tech founder, grant committee, or client — must see it and immediately want to hire Dmytro, partner with him, or be inspired by his engineering professionalism."*
+>
+> **The Design Directive for Developers & AI Agents:**
+> Make the portfolio look sleeker, more modern, and cooler, while being **at least as informative — and ideally even more informative through superior visual design**. Be bold with layout restructuring, spatial composition, interactive state transitions, and meaningful micro-animations.
+
+---
+
 ## 1. Core Design Philosophy
 
 ### 1.1 The Cardinal Rule: Visual Over Text ("Visual First, Details on Demand")
