@@ -60,7 +60,7 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 .education-path{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,64px);padding:0 8px 72px}
 .education-connector{position:absolute;left:0;top:7px;width:100%;height:150px;overflow:visible;pointer-events:none}
 .education-connector path{fill:none;stroke:var(--accent);stroke-width:2;vector-effect:non-scaling-stroke;opacity:.7}
-.education-stage{position:relative;min-width:0}.education-stage:nth-of-type(2){margin-top:49px}.education-stage:nth-of-type(3){margin-top:98px}
+.education-stage{position:relative;min-width:0;margin-top:98px}.education-stage:nth-of-type(2){margin-top:49px}.education-stage:nth-of-type(3){margin-top:0}
 .education-node{position:relative;z-index:2;width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--accent);border-radius:50%;background:var(--bg);color:var(--accent);font:700 11px Manrope,sans-serif;box-shadow:0 0 0 8px var(--bg)}
 .education-stage-content{padding:32px 0 0;border-top:1px solid var(--line)}
 .education-date{display:block;margin-bottom:12px;color:var(--accent);font:700 11px Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase}
@@ -77,8 +77,8 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 .secondary-education{display:grid;grid-template-columns:minmax(210px,.32fr) minmax(0,.68fr);gap:clamp(36px,6vw,88px);padding:42px 8px 18px;border-top:1px solid var(--line)}
 .secondary-heading .eyebrow{margin-bottom:10px}.secondary-heading>p:last-child{max-width:310px;margin:0;color:var(--muted);font-size:13px}
 .secondary-path{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(34px,6vw,86px)}
-.secondary-path:before{content:"";position:absolute;left:17px;top:17px;width:55%;height:1px;background:var(--accent);opacity:.32;transform:rotate(4deg);transform-origin:left center}
-.secondary-stage{position:relative;z-index:1;display:grid;grid-template-columns:36px 1fr;gap:16px;min-width:0}.secondary-stage:nth-child(2){margin-top:38px}
+.secondary-path:before{content:"";position:absolute;left:17px;top:55px;width:55%;height:1px;background:var(--accent);opacity:.32;transform:rotate(-4deg);transform-origin:left center}
+.secondary-stage{position:relative;z-index:1;display:grid;grid-template-columns:36px 1fr;gap:16px;min-width:0;margin-top:38px}.secondary-stage:nth-child(2){margin-top:0}
 .secondary-node{width:36px;height:36px;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--accent) 55%,var(--line));border-radius:50%;background:var(--bg);color:var(--muted);font:700 9px Manrope,sans-serif;box-shadow:0 0 0 6px var(--bg)}
 .secondary-date{display:block;margin-bottom:7px;color:var(--accent);font:700 10px Manrope,sans-serif;letter-spacing:.1em}
 .secondary-stage h3{margin:0 0 7px;font-size:17px;letter-spacing:-.02em}.secondary-stage p{margin:0;color:var(--muted);font-size:11px}
@@ -120,3 +120,18 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 
 /* Bright gold surfaces with a contrast-safe companion for compact copy */
 .eyebrow,.text-link,.direction-card .direction-count,.project-meta,.company-projects,.current-badge,.education-date,.education-focus span,.secondary-date{color:var(--accent-copy)}
+
+/* One reusable row treatment for navigation and utility actions */
+.sidebar-profile{grid-template-columns:48px minmax(0,1fr)}
+.sidebar-pin{display:none}
+.sidebar-item{width:100%;min-width:0;appearance:none;-webkit-appearance:none;font:inherit}
+.sidebar-item span{font-size:14px;font-weight:500}
+.sidebar-actions{display:flex;flex-direction:column;gap:4px}
+.sidebar-item:hover,.sidebar-item:focus-visible{background:var(--surface);color:var(--text)}
+.sidebar-actions .sidebar-item i{color:var(--muted)}
+.sidebar-actions .sidebar-item:hover i,.sidebar-actions .sidebar-item:focus-visible i{color:var(--accent)}
+
+@media(hover:none) and (min-width:769px){
+  .sidebar-profile{grid-template-columns:48px minmax(0,1fr) 32px}
+  .sidebar-pin{display:grid;place-items:center}
+}
