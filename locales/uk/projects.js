@@ -79,7 +79,7 @@ export default [
         title: 'LibPolyCodec: Бібліотека стиснення даних',
         role: 'Архітектор C++ програмного забезпечення',
         company: 'MITI',
-        date: 'Червень 2026 – по теперішній час',
+        date: 'Червень 2026 – дотепер',
         description: 'Високопродуктивна кросплатформна C++ бібліотека для статичної та потокової обробки зображень (стиснення, криптографія, стеганографія). Розроблена для максимальної швидкості та ефективності на різних архітектурах — від десктоп/мобільних платформ до мікроконтролерів БПЛА — з використанням поліадичного алгоритму кодування (OPC).',
         tasks: [
             'Спроєктовано 4-рівневий конвеєр з управлінням даними (Data, Pipeline, Modules, Session) з незалежними модулями та симетричними ланцюжками кодування/декодування.',
@@ -155,7 +155,8 @@ export default [
         technologies: ['Kotlin', 'Java', 'Jetpack Compose', 'RxJava', 'Dagger 2', 'Android TV (Leanback)', 'ExoPlayer', 'Retrofit', 'OkHttp', 'Glide', 'WorkManager', 'Navigation Component', 'JUnit', 'Mockito', 'Robolectric'],
         tags: ['Kotlin', 'Jetpack Compose', 'Android TV', 'ExoPlayer', 'Retrofit', 'Dagger 2'],
         imagePlaceholder: 'M',
-        imageColor: 'linear-gradient(135deg, #43A047, #2E7D32)'
+        imageColor: 'linear-gradient(135deg, #43A047, #2E7D32)',
+        banner: 'images/projects/megogo_banner.jpg'
     },
     {
         id: 'tic-tac-toe',
@@ -163,7 +164,7 @@ export default [
         title: 'Tic-Tac-Toe: Гра для 3 гравців',
         role: 'Самостійний Android-розробник',
         company: 'Solo Project',
-        date: 'Березень 2025 – по теперішній час',
+        date: 'Березень 2025 – дотепер',
         description: 'Інноваційна багатокористувацька версія класичних хрестиків-нуликів для 3 гравців (X, O, ∆) з понад 10,000+ завантажень та бездоганним рейтингом 5.0★. Містить масштабоване поле (від 3x3 до 7x7), 5 рівнів складності ШІ, рейтингові онлайн-матчі, динамічні анімовані фони та тактильний відгук.',
         tasks: [
             'Спроєктовано унікальне ігрове поле для 3 гравців з кастомною логікою виграшу/блокування та 5 рівнями складності для ШІ.',
@@ -185,7 +186,7 @@ export default [
         title: 'People Notes: AI Agent CRM',
         role: 'Самостійний Android-розробник',
         company: 'Solo Project',
-        date: 'Січень 2025 – по теперішній час',
+        date: 'Січень 2025 – дотепер',
         description: 'Комплексний персональний CRM-застосунок для керування контактами з ідеальним рейтингом 5.0/5. Дозволяє формувати детальні профілі, відстежувати важливі дати, контролювати спільні фінанси та структурувати соціальні зв\'язки у зручному кастомізованому дашборді.',
         tasks: [
             'Спроєктовано та розроблено архітектуру застосунку з нуля на основі сучасних принципів Jetpack Compose.',
@@ -207,7 +208,7 @@ export default [
         role: 'Продуктовий архітектор та Lead Engineer',
         company: 'Solo Project',
         domain: 'web',
-        date: 'Січень 2025 – по теперішній час',
+        date: 'Січень 2025 – дотепер',
         description: 'Високопродуктивне персональне портфоліо та інтерактивна інженерна вітрина на базі Vite та сучасних веб-стандартів. Спроєктоване з використанням гласморфізму, сітки Bento Grid, надшвидкого завантаження, динамічної нульової i18n-локалізації (EN/UK) та безшовного перемикання тем.',
         tasks: [
             'Спроєктував модульний клієнтський рушій динамічної інтернаціоналізації (i18n) з чанкуванням просторів імен, кешуванням та автовизначенням мови без сторонніх залежностей.',
@@ -219,6 +220,7 @@ export default [
         tags: ['Vite', 'Architecture', 'UI/UX & CSS3', 'i18n Engine', 'Performance 100'],
         imagePlaceholder: 'D',
         imageColor: 'linear-gradient(135deg, #FFD700, #FFA000)',
+        banner: 'images/projects/portfolio_showcase_banner.jpg',
         icon: 'images/favicon.png',
         liveLink: 'https://dvbarannik.github.io/',
         githubLink: 'https://github.com/KaKyHaC/KaKyHaC.github.io'
@@ -229,7 +231,7 @@ export default [
         title: 'Resistance: Мультиплеєр',
         role: 'Самостійний Android-розробник',
         company: 'Solo Project',
-        date: 'Грудень 2024 – по теперішній час',
+        date: 'Грудень 2024 – дотепер',
         description: 'Онлайн-гра в жанрі соціальної дедукції у стилі «Холодної війни», натхненна The Resistance: Avalon. Гравці отримують секретні ролі (Детектив, Кілер, Крот) та мають використовувати стратегію, обман та чат у реальному часі для виконання або зриву місій.',
         tasks: [
             'Розроблено ігрову логіку онлайн-мультиплеєра та синхронізацію станів у реальному часі через Firebase Firestore.',
@@ -261,7 +263,8 @@ export default [
         technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'AWS Cognito', 'Retrofit', 'Google Maps', 'CameraX', 'Coil', 'Hilt', 'Coroutines', 'Flow', 'Navigation Component'],
         tags: ['CameraX', 'Google Maps', 'AWS Cognito', 'Room', 'Retrofit'],
         imagePlaceholder: 'S',
-        imageColor: 'linear-gradient(135deg, #4CAF50, #2E7D32)'
+        imageColor: 'linear-gradient(135deg, #4CAF50, #2E7D32)',
+        banner: 'images/projects/symmetry_banner.jpg'
     },
     {
         id: 'epic-clicker',
@@ -269,7 +272,7 @@ export default [
         title: 'Brainrot Clicker: Aura Farming',
         role: 'Самостійний Android-розробник',
         company: 'Solo Project',
-        date: 'Лютий 2024 – по теперішній час',
+        date: 'Лютий 2024 – дотепер',
         description: 'Вірусний idle-клікер із понад 10,000+ завантажень та рейтингом 5.0★, де гравці відкривають персонажів, накопичують повагу (Respect) та змагаються у глобальних сезонних лідербордах. Містить офлайн-прогрес, систему унікальних здібностей, синергії та мультиязичну локалізацію.',
         tasks: [
             'Провів проєкт через повний цикл: від дизайну гри та балансу до розробки та публікації у Google Play.',
@@ -302,7 +305,8 @@ export default [
         technologies: ['Kotlin', 'MVP', 'Koin', 'RxJava2', 'Room', 'Glide', 'JUnit', 'CI/CD pipelines'],
         tags: ['Kotlin', 'MVP', 'Koin', 'RxJava2', 'CI/CD'],
         imagePlaceholder: 'S',
-        imageColor: 'linear-gradient(135deg, #3949AB, #283593)'
+        imageColor: 'linear-gradient(135deg, #3949AB, #283593)',
+        banner: 'images/projects/smarthome_banner.jpg'
     },
     {
         id: 'healthcare',
@@ -320,7 +324,8 @@ export default [
         technologies: ['Kotlin', 'MVVM', 'Dagger-Android', 'RxJava2', 'Room', 'Navigation Component'],
         tags: ['Kotlin', 'MVVM', 'Dagger-Android', 'RxJava2', 'Room'],
         imagePlaceholder: 'H',
-        imageColor: 'linear-gradient(135deg, #00897B, #00695C)'
+        imageColor: 'linear-gradient(135deg, #00897B, #00695C)',
+        banner: 'images/projects/healthcare_banner.jpg'
     },
     {
         id: 'car-plate',
@@ -338,7 +343,8 @@ export default [
         technologies: ['Kotlin', 'C++', 'NDK', 'Dagger 2', 'Retrofit 2', 'Room', 'RxJava', 'Jetpack', 'Camera 2', 'JNI'],
         tags: ['Kotlin', 'C++', 'NDK', 'Camera 2', 'JNI'],
         imagePlaceholder: 'C',
-        imageColor: 'linear-gradient(135deg, #607D8B, #455A64)'
+        imageColor: 'linear-gradient(135deg, #607D8B, #455A64)',
+        banner: 'images/projects/carplate_banner.jpg'
     },
     {
         id: 'music-streaming-2020',
@@ -357,7 +363,8 @@ export default [
         technologies: ['Java', 'ExoPlayer', 'Android Auto', 'Dagger 2', 'Fetch 2', 'RxJava'],
         tags: ['Java', 'ExoPlayer', 'Android Auto', 'Dagger 2'],
         imagePlaceholder: 'M',
-        imageColor: 'linear-gradient(135deg, #EC407A, #C2185B)'
+        imageColor: 'linear-gradient(135deg, #EC407A, #C2185B)',
+        banner: 'images/projects/musicstreaming2020_banner.jpg'
     },
     {
         id: 'image-compression',
@@ -375,7 +382,8 @@ export default [
         technologies: ['Kotlin', 'Spring Framework', 'Custom Image Processing Algorithms'],
         tags: ['Kotlin', 'Spring Framework', 'Steganography'],
         imagePlaceholder: 'I',
-        imageColor: 'linear-gradient(135deg, #7E57C2, #512DA8)'
+        imageColor: 'linear-gradient(135deg, #7E57C2, #512DA8)',
+        banner: 'images/projects/imagecompression_banner.jpg'
     },
     {
         id: 'music-platform-2019',
@@ -394,7 +402,8 @@ export default [
         technologies: ['Kotlin', 'ExoPlayer', 'Dagger 2', 'Fetch 2', 'Retrofit 2', 'Room', 'RxJava', 'Jetpack', 'Firebase Dynamic Links'],
         tags: ['Kotlin', 'Clean Architecture', 'ExoPlayer', 'MVVM'],
         imagePlaceholder: 'M',
-        imageColor: 'linear-gradient(135deg, #AB47BC, #7B1FA2)'
+        imageColor: 'linear-gradient(135deg, #AB47BC, #7B1FA2)',
+        banner: 'images/projects/musicplatform2019_banner.jpg'
     },
     {
         id: 'card-game-calculator',
@@ -412,7 +421,8 @@ export default [
         technologies: ['Dart', 'Flutter', 'flutter_svg', 'vibration', 'shared_preferences', 'json_serializable', 'firebase_admob', 'package_info', 'firebase_core', 'firebase_crashlytics', 'flutter_inapp_purchase'],
         tags: ['Dart', 'Flutter', 'Cross-Platform', 'Firebase'],
         imagePlaceholder: 'C',
-        imageColor: 'linear-gradient(135deg, #26A69A, #00695C)'
+        imageColor: 'linear-gradient(135deg, #26A69A, #00695C)',
+        banner: 'images/projects/cardgame_banner.jpg'
     },
     {
         id: 'media-streaming-2018',
@@ -430,7 +440,8 @@ export default [
         technologies: ['Kotlin', 'ExoPlayer', 'VLC', 'Dagger 2', 'Fetch 2', 'Retrofit 2', 'Room', 'RxJava', 'Jetpack', 'Android Leanback'],
         tags: ['Kotlin', 'ExoPlayer', 'VLC', 'Android TV'],
         imagePlaceholder: 'M',
-        imageColor: 'linear-gradient(135deg, #5C6BC0, #283593)'
+        imageColor: 'linear-gradient(135deg, #5C6BC0, #283593)',
+        banner: 'images/projects/mediastreaming2018_banner.jpg'
     },
     {
         id: 'liftapp-remote',
@@ -447,7 +458,8 @@ export default [
         technologies: ['Java', 'Wi-Fi Direct'],
         tags: ['Java', 'Wi-Fi Direct', 'Networking'],
         imagePlaceholder: 'L',
-        imageColor: 'linear-gradient(135deg, #8D6E63, #5D4037)'
+        imageColor: 'linear-gradient(135deg, #8D6E63, #5D4037)',
+        banner: 'images/projects/liftapp_remote_banner.jpg'
     },
     {
         id: 'liftapp-bootloader',
@@ -464,7 +476,8 @@ export default [
         technologies: ['Java', 'Root Access', 'Android System Permissions'],
         tags: ['Java', 'Root Access', 'System Administration'],
         imagePlaceholder: 'L',
-        imageColor: 'linear-gradient(135deg, #424242, #212121)'
+        imageColor: 'linear-gradient(135deg, #424242, #212121)',
+        banner: 'images/projects/liftapp_bootloader_banner.jpg'
     },
     {
         id: 'resistance-local',
@@ -502,6 +515,7 @@ export default [
         technologies: ['Java', 'Android NDK', 'C++', 'SerialPort library'],
         tags: ['Java', 'Android NDK', 'C++', 'Hardware Integration'],
         imagePlaceholder: 'L',
-        imageColor: 'linear-gradient(135deg, #FF7043, #D84315)'
+        imageColor: 'linear-gradient(135deg, #FF7043, #D84315)',
+        banner: 'images/projects/liftapp_banner.jpg'
     }
 ];

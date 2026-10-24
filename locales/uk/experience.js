@@ -2,23 +2,23 @@
 export default [
     {
         company_name: "DᎥᗰᗩᒪᎥᑎᗩ",
-        role: "Самостійний Android-розробник / Видавець",
+        role: "Засновник & Lead Mobile Engineer / Видавець",
         start_date: "09.2017",
-        end_date: "по теперішній час",
+        end_date: "дотепер",
         is_current: true,
         category: "Незалежна розробка",
         tasks: [
-            "Управління повним циклом мобільних застосунків: від концепції та UI/UX дизайну до публікації у Google Play Store.",
-            "Розробка та публікація успішних інді-проєктів: «People Notes» та «Resistance: Nightfall».",
-            "Інтеграція різноманітних SDK: Firebase, AdMob та Google Play Billing — для монетизації та аналітики.",
-            "Застосування сучасних технологічних стеків: Jetpack Compose, MVVM та Room — для надійної архітектури застосунків."
+            "Управління повним життєвим циклом мобільних продуктів: від концептуалізації та дизайну у Figma до публікації в Google Play Store.",
+            "Проєктування та реліз комерційних інді-флагманів із сумарно 25k+ завантажень та бездоганним рейтингом 5.0★ («Хрестики-нулики: 3 гравці», «Brainrot Clicker», «People Notes CRM»).",
+            "Інтеграція бекендів на Cloud Firestore у реальному часі, офлайн-first синхронізація, Google Play Billing (IAP) та оптимізація AdMob медіації.",
+            "Застосування сучасного нативного стека: Jetpack Compose, Clean Architecture, Kotlin Coroutines та Room для високопродуктивної архітектури застосунків."
         ]
     },
     {
         company_name: "ХНУВС",
         role: "Доцент кафедри протидії кіберзлочинності",
         start_date: "09.2026",
-        end_date: "по теперішній час",
+        end_date: "дотепер",
         is_current: true,
         category: "Освіта / Академічна діяльність",
         tasks: [
