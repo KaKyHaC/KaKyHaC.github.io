@@ -131,6 +131,19 @@ Content is strictly decoupled from layout logic and resides in `locales/{en,uk}/
 - In-depth skill narratives: [`locales/{en,uk}/skillsDetails.js`](file:///Users/dima_barannik/Documents/GitHub/dvbarannik.github.io/locales/en/skillsDetails.js)
 - Academic publications and research: [`locales/{en,uk}/research.js`](file:///Users/dima_barannik/Documents/GitHub/dvbarannik.github.io/locales/en/research.js)
 
+### 4.4 Project Visual Asset Standards ("No Blank Placeholders")
+
+> [!IMPORTANT]
+> **Every Project Must Have a High-Quality Visual Banner.**
+> In accordance with the *Visual First* and *Project Parity* principles, no project card may rely on plain colored gradient fallback rectangles. Every single one of the 25+ projects must have:
+> 1. **Visual Cover Banner (`banner`):** 16:9 aspect ratio, minimum 1200×675px resolution, optimized WebP/JPEG (`public/images/projects/<id>_banner.jpg`).
+>    - *Client / Consumer Apps (Mobile, Web):* Polished product interface mockups, real app screenshots, or responsive device frames.
+>    - *Low-Level / Backend / Systems (C++, Compression):* Clean technical architecture diagrams, SIMD data flow schematics, or benchmark graphs.
+>    - *IoT & Hardware (ESP32, LoRa):* Real hardware board photography, circuit wiring diagrams, or telemetry network topology maps.
+>    - *Research & Grants:* Academic poster headers, patent figure schematics, or publication visual abstracts.
+> 2. **Project Icon (`icon`):** 1:1 aspect ratio square vector SVG or PNG (`public/images/projects/<id>_icon.png`).
+> 3. **Result:** Eliminates the visual perception of "abandoned" or "less important" projects. Every card commands equal visual dignity and executive credibility.
+
 ---
 
 ## 5. Bilingual Consistency Checklist
@@ -138,6 +151,7 @@ Content is strictly decoupled from layout logic and resides in `locales/{en,uk}/
 Before committing changes:
 - [ ] English and Ukrainian entries have matching keys and IDs.
 - [ ] Dates and timelines align across both languages.
+- [ ] Every project has a dedicated icon and a 16:9 visual cover banner (no plain color boxes).
 - [ ] Links and media URLs resolve without 404 errors.
 - [ ] Technical terms in Ukrainian use natural engineering terminology rather than transliteration.
 - [ ] Running `npm run build` generates all static project landing pages without warnings.
