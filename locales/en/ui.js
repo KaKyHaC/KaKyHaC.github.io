@@ -40,6 +40,120 @@ export default {
         title3: 'Research & Academic',
         research1: '<strong>Academic Status:</strong> PhD in Electronic Communications and Radio Engineering (NURE, 2025). Associate Professor at the Department of Combating Cybercrime at Kharkiv National University of Internal Affairs (KhNUIA).',
         research2: '<strong>Achievements:</strong> Holder of a patent for non-equilibrium positional video stream coding. Author of multiple peer-reviewed publications in Scopus-indexed journals (Q3). Recipient of the Cabinet of Ministers of Ukraine Scholarship for Young Scientists (2025).',
+        bento: [
+            {
+                kind: 'scope',
+                index: '01',
+                isWide: true,
+                color: 'var(--accent)',
+                rgb: 'var(--accent-rgb)',
+                icon: 'fas fa-sitemap',
+                metric: '9+',
+                metricLabel: 'years commercial engineering',
+                title: 'Systems Architecture & Tech Lead',
+                points: [
+                    {
+                        lead: 'High-Throughput Streaming',
+                        text: 'Architected multi-million user streaming ecosystems with Kotlin, Clean Architecture, ExoPlayer, and custom buffering pipelines for zero-stutter playback under low-latency constraints.'
+                    },
+                    {
+                        lead: 'Low-Level SIMD & C++20',
+                        text: 'Authored high-performance algorithmic modules with C++20, SIMD vectorization (AVX2/NEON), and zero-allocation memory pools for real-time video/audio codec operations.'
+                    },
+                    {
+                        lead: 'Multiplatform & IoT Telemetry',
+                        text: 'Engineered end-to-end architectures spanning KMP shared business logic, distributed ESP32/LoRa telemetry networks, and modern edge web interfaces.'
+                    },
+                    {
+                        lead: 'Production Reliability & Ownership',
+                        text: 'Enforced strict memory leak elimination, CI/CD quality gates, and automated test suites, taking full accountability for system stability post-release.'
+                    }
+                ],
+                tags: ['High-Load Mobile', 'Clean Architecture', 'C++20 & SIMD', 'IoT & Edge']
+            },
+            {
+                kind: 'agentic',
+                index: '02',
+                isWide: false,
+                color: 'var(--domain-iot)',
+                rgb: 'var(--domain-iot-rgb)',
+                icon: 'fas fa-robot',
+                metric: '10x',
+                metricLabel: 'velocity via autonomous agents',
+                title: 'Agentic AI & Swarm Orchestration',
+                points: [
+                    {
+                        lead: 'Autonomous Swarm Leadership',
+                        text: 'Directing autonomous coding agent swarms (Antigravity, Gemini, Claude, Codex) with explicit architectural guardrails and zero-drift directives.'
+                    },
+                    {
+                        lead: 'Spec-Driven Engineering',
+                        text: 'Formulating formal technical specifications, strict type contracts, and comprehensive acceptance criteria before executing code generation.'
+                    },
+                    {
+                        lead: 'Zero-Trust Verification Loops',
+                        text: 'Enforcing automated AST/linter validations, contract test suites, and strict human-in-the-loop gates to eliminate hallucinations completely.'
+                    }
+                ],
+                tags: ['Autonomous Swarms', 'Spec-Driven Dev', 'Zero-Trust TDD']
+            },
+            {
+                kind: 'product',
+                index: '03',
+                isWide: false,
+                color: 'var(--domain-android)',
+                rgb: 'var(--domain-android-rgb)',
+                icon: 'fas fa-rocket',
+                metric: '25k+',
+                metricLabel: 'downloads · 5.0★ rating',
+                title: 'Product Ownership & Indie Scale',
+                points: [
+                    {
+                        lead: 'DᎥᗰᗩᒪᎥᑎᗩ Studio',
+                        text: 'Bootstrapped and shipped independent commercial products with 10k+ downloads each (Tic-Tac-Toe 3-Player, Brainrot Clicker, People Notes CRM).'
+                    },
+                    {
+                        lead: 'End-to-End Execution',
+                        text: 'Owned complete product lifecycles solo: UX/UI Figma design, Kotlin/Android architecture, Google Play store deployment, and ASO optimization.'
+                    },
+                    {
+                        lead: 'Cloud & Monetization',
+                        text: 'Integrated real-time Cloud Firestore backends, offline-first synchronization, Google Play In-App Purchases, and optimized AdMob mediation.'
+                    }
+                ],
+                tags: ['DᎥᗰᗩᒪᎥᑎᗩ Studio', 'Google Play 5.0★', 'Realtime Firestore']
+            },
+            {
+                kind: 'research',
+                index: '04',
+                isWide: true,
+                color: 'var(--domain-research)',
+                rgb: 'var(--domain-research-rgb)',
+                icon: 'fas fa-microscope',
+                metric: 'PhD',
+                metricLabel: '1 patent · 68 peer-reviewed pubs',
+                title: 'Applied Research & Deep Tech',
+                points: [
+                    {
+                        lead: 'Academic Status & Teaching',
+                        text: 'PhD in Electronic Communications (NURE, 2025). Associate Professor at the Department of Combating Cybercrime (KhNUIA), lecturing on cybersecurity.'
+                    },
+                    {
+                        lead: 'Patented Video Compression',
+                        text: 'Inventor of a patented non-equilibrium positional video stream coding method optimized for severe bandwidth constraints and noisy tactical links.'
+                    },
+                    {
+                        lead: 'Scopus Publications',
+                        text: 'Published 68+ academic papers, including Q3 Scopus-indexed research on combinatorial data compression, cryptographic resilience, and streaming protocols.'
+                    },
+                    {
+                        lead: 'State Honors & Recognition',
+                        text: 'Awarded the prestigious Cabinet of Ministers of Ukraine Scholarship for Young Scientists (2025) for exceptional contributions to applied defense tech.'
+                    }
+                ],
+                tags: ['PhD in Telecom', 'Positional Video Patent', 'Scopus Q3', 'Cybercrime Dept']
+            }
+        ],
     },
     skills: {
         programming_languages: 'Languages',

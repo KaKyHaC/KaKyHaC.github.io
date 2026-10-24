@@ -16,60 +16,11 @@ const COPY={
 };
 const copy=()=>COPY[getLang()];
 function renderProfile(ui){
-  const uk=getLang()==='uk';
-  const sections=[
-    {
-      kind:'scope',
-      index:'01',
-      color:'var(--accent)',
-      rgb:'var(--accent-rgb)',
-      icon:'fas fa-sitemap',
-      metric:'9+',
-      metricLabel:uk?'років комерційного досвіду':'years commercial engineering',
-      title:uk?'Системна архітектура & Tech Lead':'Systems Architecture & Tech Lead',
-      desc:uk?'Проєктування відмовостійких систем: від високонавантаженого стрімінгу (Kotlin, Clean Arch) і C++20/SIMD алгоритмів до IoT та Edge Web.':'Architecting resilient systems: from high-throughput streaming (Kotlin, Clean Arch) and C++20/SIMD engines to distributed IoT and Edge Web.',
-      tags:['High-Load Mobile','Clean Architecture','C++20 & SIMD','IoT & Edge']
-    },
-    {
-      kind:'agentic',
-      index:'02',
-      color:'var(--domain-iot)',
-      rgb:'var(--domain-iot-rgb)',
-      icon:'fas fa-robot',
-      metric:'10x',
-      metricLabel:uk?'швидкість з автономними агентами':'velocity via autonomous agents',
-      title:uk?'Agentic AI інженерія & оркестрація':'Agentic AI & Swarm Orchestration',
-      desc:uk?'ШІ-оркестрація як основа процесу: керування автономними агентами (Antigravity, Gemini, Codex), spec-driven розробка та суворий TDD-контроль.':'AI orchestration as a core multiplier: leading autonomous agent swarms (Antigravity, Gemini, Codex), spec-driven dev, and zero-trust TDD verification.',
-      tags:['Autonomous Swarms','Spec-Driven Dev','Zero-Trust TDD','Antigravity']
-    },
-    {
-      kind:'product',
-      index:'03',
-      color:'var(--domain-android)',
-      rgb:'var(--domain-android-rgb)',
-      icon:'fas fa-rocket',
-      metric:'25k+',
-      metricLabel:uk?'завантажень · рейтинг 5.0★':'downloads · 5.0★ rating',
-      title:uk?'Продуктовий цикл & Інді-масштаб':'Product Ownership & Indie Scale',
-      desc:uk?'Повний життєвий цикл комерційних продуктів (DᎥᗰᗩᒪᎥᑎᗩ): від UI/UX і Realtime-бекендів (Firestore) до паблішингу в Google Play та монетизації.':'Full commercial product lifecycle (DᎥᗰᗩᒪᎥᑎᗩ): from UI/UX and realtime backends (Firestore) to global store publishing and monetization.',
-      tags:['DᎥᗰᗩᒪᎥᑎᗩ Studio','Google Play 5.0★','Realtime Firestore','Full Lifecycle']
-    },
-    {
-      kind:'research',
-      index:'04',
-      color:'var(--domain-research)',
-      rgb:'var(--domain-research-rgb)',
-      icon:'fas fa-microscope',
-      metric:'PhD',
-      metricLabel:uk?'1 патент · 68 публікацій':'1 patent · 68 peer-reviewed pubs',
-      title:uk?'Академічний R&D & Кібербезпека':'Applied Research & Deep Tech',
-      desc:uk?'Кандидат наук (PhD, 2025), доцент кафедри протидії кіберзлочинності ХНУВС. Патент на позиційне кодування відеопотоків, стипендіат КМУ для молодих вчених.':'PhD in Telecom (2025), Associate Professor at Cybercrime Dept (KhNUIA). Patent holder in positional video coding, Cabinet of Ministers scholarship.',
-      tags:['PhD in Telecom','Positional Video Patent','Scopus Q3','Cybercrime Dept']
-    }
-  ];
+  if(!ui?.about?.bento) return;
+  const sections = ui.about.bento;
 
   $('#profile-notes').innerHTML=sections.map(s=>`
-    <article class="profile-note profile-note-${s.kind} reveal" style="--card-color:${s.color};--card-rgb:${s.rgb}">
+    <article class="profile-note profile-note-${s.kind}${s.isWide ? ' profile-note-wide' : ''} reveal" style="--card-color:${s.color};--card-rgb:${s.rgb}">
       <div class="profile-note-top">
         <span class="profile-note-index">${s.index}</span>
         <span class="profile-note-icon"><i class="${s.icon}" aria-hidden="true"></i></span>
@@ -79,7 +30,9 @@ function renderProfile(ui){
         <span class="profile-note-metric-label">${s.metricLabel}</span>
       </div>
       <h3 class="profile-note-title">${s.title}</h3>
-      <p class="profile-note-desc">${s.desc}</p>
+      <ul class="profile-note-points">
+        ${s.points.map(p=>`<li><strong>${safe(p.lead)}:</strong> ${safe(p.text)}</li>`).join('')}
+      </ul>
       <div class="profile-note-tags">
         ${s.tags.map(t=>`<span class="profile-note-tag">${safe(t)}</span>`).join('')}
       </div>
