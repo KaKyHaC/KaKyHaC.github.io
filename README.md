@@ -106,7 +106,7 @@ For detailed guides and architecture specifications, consult the [`docs/`](file:
 
 ## 💎 Core Principles
 
-1. **Visual First, Details on Demand:** Important facts, progression, and scope are visible immediately through composition and typography before long paragraphs.
+1. **Visual Dominance over Text ("Visual First, Details on Demand"):** Visual perception dominates text. Scale, company logos, badges, timeline geometry, and metrics communicate seniority and scope within the first 3–5 seconds. Long-form copy is strictly a secondary tier (*details on demand*) for visitors who choose to dive deeper.
 2. **Honest Engineering & Verifiable Outcomes:** Timelines reflect real dates; projects highlight architectural decisions and measurable impact rather than generic buzzwords.
 3. **Decoupled Content & Localization:** Content is isolated into bilingual data modules (`locales/`), allowing effortless updates without modifying presentation code.
 4. **Performance & Sustainability:** Zero unnecessary libraries. Native web platform capabilities are preferred whenever possible.

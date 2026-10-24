@@ -14,6 +14,14 @@ Rather than pigeonholing the profile as exclusively a mobile developer, the cont
 2. **Applied Research & Engineering Rigor:** Academic foundation (PhD), cryptographic and information security research, algorithmic optimization.
 3. **Engineering Leadership:** Mentorship, cross-functional collaboration, technical decision-making, and CI/CD quality standards.
 
+### 1.1 The Golden Rule: Visuals First, Copy Second
+> [!IMPORTANT]
+> **Write content for eyes that scan, not eyes that read.**
+> Visitors will not read paragraphs on initial encounter. Every content addition must be structured around visual anchoring:
+> - **Visual anchors come first:** Bold metrics (`9+ years`, `35% faster`, `10M+ users`), company logos, technology pills, and high-quality banners/GIFs.
+> - **Headings and lead sentences must deliver 80% of the value:** If a reader skims only the bold words and titles, they must still grasp the full accomplishment.
+> - **Paragraphs are strictly "details on demand":** Detailed prose belongs inside expandable drawers, modals, or dedicated project pages.
+
 ---
 
 ## 2. Role of Archived Resumes (`archive/resume/`)

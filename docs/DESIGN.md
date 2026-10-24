@@ -6,9 +6,16 @@ This document establishes the visual philosophy, design tokens, typography, layo
 
 ## 1. Core Design Philosophy
 
-### 1.1 Visual First, Details on Demand
-The portfolio communicates primary qualifications and achievements before a visitor reads paragraphs of text:
-- **Immediate Hierarchy:** Visual composition, spatial scale, badges, and company branding communicate role levels and career progression in seconds.
+### 1.1 The Cardinal Rule: Visual Over Text ("Visual First, Details on Demand")
+
+> [!IMPORTANT]
+> **Visual perception dominates text.** 
+> Nobody reads paragraphs or walls of text during the first scan. Recruiters, engineering leaders, and collaborators form their opinion in the first **3 to 5 seconds** purely through visual composition, company logos, badges, spatial scale, timeline geometry, and screenshots. 
+> 
+> **If an achievement or capability is not obvious visually at a glance, for 90% of visitors it does not exist.** 
+> Long-form text is strictly a secondary tier (*details on demand*), reserved for visitors who have already been visually hooked and choose to inspect deeper via modals or project deep-dive pages.
+
+- **Immediate Hierarchy:** Visual composition, spatial scale, badges, and company branding communicate role levels, scope, and career progression in seconds.
 - **Progressive Disclosure:** Deep technical discussions, code architectures, and comprehensive project metrics are available on demand (via expandable timeline items, interactive modal dialogs, and dedicated project URLs).
 
 ### 1.2 Honest Representation & Data Accuracy
