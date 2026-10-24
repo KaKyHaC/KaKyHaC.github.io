@@ -11,9 +11,15 @@ const firebaseConfig = {
   measurementId: "G-JERJ8LGWFN"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// Analytics must never prevent the portfolio UI from rendering. Browsers can
+// disable storage, tracking or the Analytics API (especially on localhost).
+let analytics = null;
+try {
+  const app = initializeApp(firebaseConfig);
+  if (typeof window !== 'undefined') analytics = getAnalytics(app);
+} catch (error) {
+  console.warn('[Analytics] Initialization skipped', error);
+}
 
 /**
  * Tracks a custom event.
@@ -21,6 +27,7 @@ const analytics = getAnalytics(app);
  * @param {object} params 
  */
 export const trackEvent = (eventName, params = {}) => {
+    if (!analytics) return;
     try {
         logEvent(analytics, eventName, params);
         // Uncomment the line below for local debugging if needed
