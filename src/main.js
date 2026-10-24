@@ -36,7 +36,56 @@ function trapFocus(e,container){const focus=$$('a[href],button,input').filter(el
 function initTheme(){const btn=$('#theme-toggle');btn.addEventListener('click',()=>{const light=document.documentElement.dataset.theme==='light';if(light){delete document.documentElement.dataset.theme;localStorage.setItem('theme','dark');trackThemeSwitch('dark')}else{document.documentElement.dataset.theme='light';localStorage.setItem('theme','light');trackThemeSwitch('light')}updateThemeLabel()});updateThemeLabel()}
 function updateThemeLabel(){const light=document.documentElement.dataset.theme==='light';$('#theme-label').textContent=light?copy().dark:copy().light;$('#theme-icon').className=light?'fas fa-moon':'fas fa-sun'}
 
-function renderDirections(){const c=copy();$('#directions-grid').innerHTML=DOMAIN_ORDER.slice(1).map(key=>{const count=projects.filter(p=>p.domains.includes(key)).length;return `<button class="direction-card reveal" data-domain="${key}"><i class="${DOMAIN_META[key].icon}"></i><h3>${DOMAIN_META[key][getLang()]}</h3><p>${c.directionText[key]}</p><span class="direction-count">${c.filters.found(count)} →</span></button>`}).join('');$$('.direction-card').forEach(btn=>btn.addEventListener('click',()=>{activeDomain=btn.dataset.domain;syncUrl();renderProjectFilters();renderProjects();$('#projects').scrollIntoView()}))}
+function renderDirections(){
+  const c=copy();
+  const domainColors = {
+    android: { hex: '#10b981', rgb: '16, 185, 129' },
+    flutter: { hex: '#38bdf8', rgb: '56, 189, 248' },
+    web: { hex: '#818cf8', rgb: '129, 140, 248' },
+    iot: { hex: '#22d3ee', rgb: '34, 211, 238' },
+    embedded: { hex: '#f59e0b', rgb: '245, 158, 11' },
+    research: { hex: '#f43f5e', rgb: '244, 63, 94' }
+  };
+  $('#directions-grid').innerHTML=DOMAIN_ORDER.slice(1).map((key, idx)=>{
+    const count=projects.filter(p=>p.domains.includes(key)).length;
+    const colors = domainColors[key] || { hex: 'var(--accent)', rgb: 'var(--accent-rgb)' };
+    const idxFormatted = String(idx + 1).padStart(2, '0');
+    return `<button class="direction-card reveal direction-${key}" data-domain="${key}" style="--domain-color:${colors.hex};--domain-rgb:${colors.rgb}">
+      <div class="direction-card-header">
+        <i class="${DOMAIN_META[key].icon}" aria-hidden="true"></i>
+        <span class="direction-card-index">${idxFormatted}</span>
+      </div>
+      <h3>${DOMAIN_META[key][getLang()]}</h3>
+      <p>${c.directionText[key]}</p>
+      <span class="direction-count">${c.filters.found(count)} <span class="arrow" aria-hidden="true">→</span></span>
+    </button>`;
+  }).join('');
+
+  $$('.direction-card').forEach(btn=>{
+    btn.addEventListener('mousemove', e=>{
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      btn.style.setProperty('--spotlight-x', `${x}px`);
+      btn.style.setProperty('--spotlight-y', `${y}px`);
+      btn.style.setProperty('--spotlight-opacity', '1');
+    });
+    btn.addEventListener('mouseleave', ()=>{
+      btn.style.setProperty('--spotlight-opacity', '0');
+    });
+    btn.addEventListener('click',()=>{
+      activeDomain=btn.dataset.domain;
+      syncUrl();
+      renderProjectFilters();
+      renderProjects();
+      const projectsEl = $('#projects');
+      if(projectsEl){
+        const isReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        projectsEl.scrollIntoView({ behavior: isReduced ? 'auto' : 'smooth' });
+      }
+    });
+  });
+}
 function renderProjectFilters(){const c=copy(),lang=getLang();$('#domain-filters').innerHTML=DOMAIN_ORDER.map(key=>{const isActive=key===activeDomain;if(key==='all'){return `<button type="button" class="filter-chip filter-chip-all ${isActive?'active':''}" data-domain="all"><span>${c.filters.all}</span></button>`}const meta=DOMAIN_META[key]||{};const label=meta[lang]||key;return `<button type="button" class="filter-chip ${isActive?'active':''}" data-domain="${key}" aria-label="${safe(label)}" title="${safe(label)}"><i class="${safe(meta.icon||'fas fa-tag')}" aria-hidden="true"></i><span class="filter-chip-label">${safe(label)}</span></button>`}).join('');$$('.filter-chip').forEach(btn=>btn.addEventListener('click',()=>{activeDomain=btn.dataset.domain;syncUrl();renderProjectFilters();renderProjects()}))}
 function filteredProjects(){const q=searchQuery.trim().toLowerCase();return projects.filter(p=>(activeDomain==='all'||p.domains.includes(activeDomain))&&(!activeCompany||getCompanyConfig(p.company).shortName===getCompanyConfig(activeCompany).shortName)&&(!q||[p.title,p.description,p.role,...p.technologies,...p.tags].join(' ').toLowerCase().includes(q)))}
 function renderProjects(){const c=copy(),list=filteredProjects();$('#project-count').textContent=c.filters.found(list.length);$('#clear-filter-btn').classList.toggle('hidden',activeDomain==='all'&&!activeCompany&&!searchQuery);$('#projects-container').innerHTML=list.length?list.map(p=>`<a class="project-card reveal" href="${projectUrl(p)}" data-project="${safe(p.title)}"><div class="project-cover">${p.banner?`<img src="/${p.banner}" alt="" loading="lazy">`:`<div class="project-fallback" style="background:${p.imageColor}">${safe(p.title)}</div>`}</div><div class="project-body"><span class="project-meta">${safe(p.role)} · ${safe(p.date)}</span><h3>${safe(p.title)}</h3><p>${safe(p.description)}</p><div class="project-footer"><div class="project-domains">${p.domains.map(d=>`<span class="project-domain">${DOMAIN_META[d][getLang()]}</span>`).join('')}</div><span aria-label="${c.project}">↗</span></div></div></a>`).join(''):`<div class="empty-state">${c.filters.empty}<br><a href="#contact" class="text-link">${c.nav.contact} →</a></div>`;$$('[data-project]').forEach(a=>a.addEventListener('click',()=>{trackProjectView(a.dataset.project);sessionStorage.setItem('portfolioScroll',String(scrollY))}));observeReveals()}
