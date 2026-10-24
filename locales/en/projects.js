@@ -6,28 +6,6 @@
  */
 export default [
     {
-        id: 'portfolio-showcase',
-        title: 'Dmytro Barannik — Portfolio & Showcase',
-        role: 'Product Architect & Lead Engineer',
-        company: 'Solo Project',
-        domain: 'web',
-        date: 'Oct 2026',
-        description: 'A high-performance personal portfolio and interactive engineering showcase built with Vite and modern vanilla web standards. Engineered with a glassmorphic Bento UI, sub-second edge delivery, dynamic zero-dependency internationalization (EN/UK), and persistent zero-FOUC theming.',
-        tasks: [
-            'Architected a modular client-side internationalization (i18n) engine with dynamic namespace chunking, caching, and automatic locale detection without third-party runtime overhead.',
-            'Engineered a glassmorphic Bento Grid design system with persistent Dark/Light theming, zero FOUC, and GPU-accelerated micro-interactions.',
-            'Achieved a perfect 100 Google Lighthouse score across Performance, Accessibility, and Best Practices with zero layout shifts (zero CLS).',
-            'Implemented client-side multi-tier project filtering by engineering domain and affiliated company, unified modal overlays, and custom analytics event tracking via Firebase.'
-        ],
-        technologies: ['Vite', 'JavaScript (ES6+)', 'CSS3 Custom Tokens', 'HTML5', 'i18n Engine', 'Firebase Analytics', 'GitHub Pages'],
-        tags: ['Vite', 'Architecture', 'UI/UX & CSS3', 'i18n Engine', 'Performance 100'],
-        imagePlaceholder: 'D',
-        imageColor: 'linear-gradient(135deg, #FFD700, #FFA000)',
-        icon: 'images/favicon.png',
-        liveLink: 'https://dvbarannik.github.io/',
-        githubLink: 'https://github.com/KaKyHaC/KaKyHaC.github.io'
-    },
-    {
         id: 'pro-klimat',
         domain: 'web',
         title: 'ProKlimat — HVAC Platform',
@@ -98,7 +76,7 @@ export default [
     {
         id: 'lucky-loot-boxes',
         domain: 'mobile',
-        title: '67 Lucky Loot Boxes',
+        title: 'Lucky Loot Boxes',
         role: 'Solo Android Developer',
         company: 'Solo Project',
         date: 'May 2026',
@@ -200,6 +178,28 @@ export default [
         icon: 'images/projects/peoplenotes_icon.png',
         banner: 'images/projects/peoplenotes_banner.png',
         playStoreLink: 'https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes'
+    },
+    {
+        id: 'portfolio-showcase',
+        title: 'Dmytro Barannik — Portfolio & Showcase',
+        role: 'Product Architect & Lead Engineer',
+        company: 'Solo Project',
+        domain: 'web',
+        date: 'Jan 2025 – Present',
+        description: 'A high-performance personal portfolio and interactive engineering showcase built with Vite and modern vanilla web standards. Engineered with a glassmorphic Bento UI, sub-second edge delivery, dynamic zero-dependency internationalization (EN/UK), and persistent zero-FOUC theming.',
+        tasks: [
+            'Architected a modular client-side internationalization (i18n) engine with dynamic namespace chunking, caching, and automatic locale detection without third-party runtime overhead.',
+            'Engineered a glassmorphic Bento Grid design system with persistent Dark/Light theming, zero FOUC, and GPU-accelerated micro-interactions.',
+            'Achieved a perfect 100 Google Lighthouse score across Performance, Accessibility, and Best Practices with zero layout shifts (zero CLS).',
+            'Implemented client-side multi-tier project filtering by engineering domain and affiliated company, unified modal overlays, and custom analytics event tracking via Firebase.'
+        ],
+        technologies: ['Vite', 'JavaScript (ES6+)', 'CSS3 Custom Tokens', 'HTML5', 'i18n Engine', 'Firebase Analytics', 'GitHub Pages'],
+        tags: ['Vite', 'Architecture', 'UI/UX & CSS3', 'i18n Engine', 'Performance 100'],
+        imagePlaceholder: 'D',
+        imageColor: 'linear-gradient(135deg, #FFD700, #FFA000)',
+        icon: 'images/favicon.png',
+        liveLink: 'https://dvbarannik.github.io/',
+        githubLink: 'https://github.com/KaKyHaC/KaKyHaC.github.io'
     },
     {
         id: 'resistance-multiplayer',

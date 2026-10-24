@@ -25,8 +25,8 @@ export default [
   {
     "skill": "Python",
     "category": "programming_languages",
-    "description": "A high-level programming language excellent for automation, LLM orchestration, and scientific scripting.",
-    "usage": "Used to write automation pipelines, specifically integrating Gemini and OpenAI APIs to automate multi-lingual app localization into 15+ languages and research data processing."
+    "description": "High-level programming language used for script reading, automation review, and algorithm analysis.",
+    "usage": "Reading and inspecting automation scripts, utility tooling, and algorithmic workflows."
   },
   {
     "skill": "Dart",
@@ -71,10 +71,10 @@ export default [
     "usage": "Enforcing zero-trust quality gates: automated test suite verification, static linting, memory leak profiling, and edge-case validation."
   },
   {
-    "skill": "Python LLM Pipelines (15+ languages)",
+    "skill": "AI-Driven Workflow Automation",
     "category": "ai_orchestration_and_agentic_engineering",
-    "description": "Custom Python pipelines integrating with LLM APIs for automated, highly contextual domain transformations.",
-    "usage": "Developed end-to-end automation parsing Android strings.xml to generate contextual translations in 15+ languages while preserving formatting and adapting cultural slang."
+    "description": "Automated engineering pipelines and synthetic validation workflows driven by LLMs and autonomous tool orchestration.",
+    "usage": "Automating repetitive project workflows, structured transformations, boilerplate generation, and synthetic testing scenarios."
   },
   {
     "skill": "Agent Skills (SKILL.md)",

@@ -3,7 +3,7 @@ export default {
     skills_profile: {
         categories: {
             programming_languages: ["Kotlin", "Java", "C++", "Python", "Dart", "JavaScript"],
-            ai_orchestration_and_agentic_engineering: ["Autonomous Coding Agents", "Google Antigravity & Gemini", "GPT / Codex Integration", "Spec-Driven Prompting", "Tech Lead Code Verification", "Python LLM Pipelines (15+ languages)", "Agent Skills (SKILL.md)"],
+            ai_orchestration_and_agentic_engineering: ["Autonomous Coding Agents", "Google Antigravity & Gemini", "GPT / Codex Integration", "Spec-Driven Prompting", "Tech Lead Code Verification", "AI-Driven Workflow Automation", "Agent Skills (SKILL.md)"],
             systems_and_cpp: ["C++20", "SIMD (AVX2 / NEON)", "CMake", "Zero-Allocation Architecture", "Polyadic Coding (OPC)", "Data Compression Algorithms"],
             modern_web_and_edge: ["Astro Islands", "Vite", "Semantic CSS3 & Tokens", "Cloudflare Pages", "Technical SEO & Schema.org JSON-LD", "Web Accessibility (WCAG 2.1 AA)"],
             iot_and_embedded: ["ESP32 (LilyGO)", "LoRa (SX1276)", "LoRaWAN", "MQTT Broker", "Node-RED", "SerialPort / UART"],
