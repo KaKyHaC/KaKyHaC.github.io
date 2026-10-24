@@ -167,9 +167,11 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 .ledger-authors-preview strong.pub-author-me{color:var(--accent);font-weight:700}
 
 /* Right Column: Actions & Chevron */
-.ledger-col-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.ledger-doi-link{width:28px;height:28px;border-radius:6px;display:grid;place-items:center;background:rgba(var(--accent-rgb),.08);border:1px solid rgba(var(--accent-rgb),.25);color:var(--accent-copy);font-size:11px;transition:all .18s ease;text-decoration:none}
-.ledger-doi-link:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.ledger-col-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-width:84px;flex-shrink:0}
+.ledger-doi-pill{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 9px;border-radius:6px;font:700 11px/1 var(--font-mono,"SF Mono",Monaco,Consolas,monospace);letter-spacing:.03em;background:rgba(var(--accent-rgb),.1);border:1px solid rgba(var(--accent-rgb),.28);color:var(--accent-copy);text-decoration:none;transition:all .18s cubic-bezier(0.16,1,0.3,1);white-space:nowrap}
+.ledger-doi-pill:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:translateY(-1px);box-shadow:0 2px 8px rgba(var(--accent-rgb),.25)}
+.ledger-doi-pill i{font-size:9px;opacity:.85;transition:transform .18s ease}
+.ledger-doi-pill:hover i{transform:translate(1px,-1px);opacity:1}
 .ledger-expand-icon{width:24px;height:24px;display:grid;place-items:center;color:var(--muted);font-size:11px;transition:transform .22s cubic-bezier(0.16,1,0.3,1)}
 .ledger-row.is-expanded .ledger-expand-icon{transform:rotate(180deg);color:var(--accent)}
 
@@ -190,8 +192,8 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 .ledger-copy-citation-btn{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;border-radius:8px;background:var(--surface);border:1px solid var(--line);color:var(--text);font:600 12px/1 Manrope,sans-serif;cursor:pointer;transition:all .18s ease}
 .ledger-copy-citation-btn:hover{background:rgba(var(--accent-rgb),.12);border-color:var(--accent);color:var(--accent-strong)}
 .ledger-copy-citation-btn.is-copied{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.ledger-doi-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:8px;background:rgba(var(--accent-rgb),.08);border:1px solid rgba(var(--accent-rgb),.25);color:var(--accent-copy);font:600 12px/1 Manrope,sans-serif;text-decoration:none;transition:all .18s ease}
-.ledger-doi-btn:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.ledger-doi-drawer-btn{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:8px;background:rgba(var(--accent-rgb),.1);border:1px solid rgba(var(--accent-rgb),.28);color:var(--accent-copy);font:600 12px/1 Manrope,sans-serif;text-decoration:none;transition:all .18s ease}
+.ledger-doi-drawer-btn:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:translateY(-1px);box-shadow:0 3px 10px rgba(var(--accent-rgb),.25)}
 
 .research-empty-state{text-align:center;padding:48px 20px;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
 .research-empty-state i{font-size:28px;color:var(--accent);margin-bottom:12px;opacity:.7}

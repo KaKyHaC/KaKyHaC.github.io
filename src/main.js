@@ -160,8 +160,25 @@ function renderResearch(data){
   const allPubs=data.publications||[];
   const awards=data.awards_and_honors||[];
 
-  const availableYears=[...new Set(allPubs.map(p=>String(p.year)))].sort((a,b)=>Number(b)-Number(a));
-  const yearChips=['2026',...availableYears.filter(y=>y!=='2026'),'all'];
+  const recentYears=['2026','2025','2024','2023','2022','2021'];
+  const olderPubsCount=allPubs.filter(p=>p.year<=2020).length;
+  const yearChips=[
+    ...recentYears.map(yr=>({
+      id:yr,
+      label:yr,
+      count:allPubs.filter(p=>String(p.year)===yr).length
+    })),
+    {
+      id:'2014-2020',
+      label:'2014–2020',
+      count:olderPubsCount
+    },
+    {
+      id:'all',
+      label:rl.allYears||'All years',
+      count:allPubs.length
+    }
+  ];
 
   const publisherCounts={
     all:allPubs.length,
@@ -176,7 +193,13 @@ function renderResearch(data){
     if(!listEl)return;
 
     let filtered=allPubs.filter(p=>{
-      if(activeResearchYear!=='all'&&String(p.year)!==String(activeResearchYear))return false;
+      if(activeResearchYear!=='all'){
+        if(activeResearchYear==='2014-2020'){
+          if(p.year>2020)return false;
+        }else if(String(p.year)!==String(activeResearchYear)){
+          return false;
+        }
+      }
       if(activeResearchPublisher!=='all'){
         if(activeResearchPublisher==='IEEE'&&p.publisher!=='IEEE')return false;
         if(activeResearchPublisher==='Springer'&&p.publisher!=='Springer')return false;
@@ -219,7 +242,7 @@ function renderResearch(data){
               <div class="ledger-authors-preview">${authorsPreview}</div>
             </div>
             <div class="ledger-col-actions">
-              ${p.doi?`<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener" class="ledger-doi-link" title="${safe(rl.viewDoi||'Open DOI')}" onclick="event.stopPropagation()"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`:''}
+              ${p.doi?`<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener" class="ledger-doi-pill" title="DOI: ${safe(p.doi)}" onclick="event.stopPropagation()"><span>DOI</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`:''}
               <span class="ledger-expand-icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
             </div>
           </div>
@@ -237,7 +260,7 @@ function renderResearch(data){
                 <button type="button" class="ledger-copy-citation-btn" data-citation="${safe(citation)}">
                   <i class="fas fa-quote-right" aria-hidden="true"></i> <span>${safe(rl.copyCitation||'Copy citation')}</span>
                 </button>
-                ${p.doi?`<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener" class="ledger-doi-btn"><span>${safe(rl.viewDoi||'Open DOI')}</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`:''}
+                ${p.doi?`<a href="https://doi.org/${p.doi}" target="_blank" rel="noopener" class="ledger-doi-drawer-btn"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> <span>${safe(rl.viewDoi||'Open DOI')} (${safe(p.doi)})</span></a>`:''}
               </div>
             </div>
           </div>
@@ -247,7 +270,7 @@ function renderResearch(data){
 
     if(activeResearchYear==='all'&&!researchSearchQuery){
       let html='';
-      availableYears.forEach(yr=>{
+      recentYears.forEach(yr=>{
         const yrPubs=filtered.filter(p=>String(p.year)===yr);
         if(!yrPubs.length)return;
         html+=`
@@ -260,9 +283,22 @@ function renderResearch(data){
           ${yrPubs.map(p=>renderLedgerRow(p,false)).join('')}
         `;
       });
+      const olderPubs=filtered.filter(p=>p.year<=2020);
+      if(olderPubs.length){
+        html+=`
+          <div class="ledger-year-divider">
+            <div class="ledger-year-divider-inner">
+              <span class="ledger-year-heading">2014–2020</span>
+              <span class="ledger-year-count">${olderPubs.length} ${safe(rl.publications||'publications')} · ${uk?'Ранні наукові праці':'Foundational Research'}</span>
+            </div>
+          </div>
+          ${olderPubs.map(p=>renderLedgerRow(p,true)).join('')}
+        `;
+      }
       listEl.innerHTML=html;
     }else{
-      listEl.innerHTML=filtered.map(p=>renderLedgerRow(p,true)).join('');
+      const showYearBadge=activeResearchYear==='2014-2020'||Boolean(researchSearchQuery);
+      listEl.innerHTML=filtered.map(p=>renderLedgerRow(p,showYearBadge)).join('');
     }
 
     listEl.querySelectorAll('.ledger-row').forEach(row=>{
@@ -375,11 +411,9 @@ function renderResearch(data){
         </label>
         <div class="research-filter-pills">
           <div class="research-years-pills" role="tablist" aria-label="${uk?'Фільтр за роками':'Filter by year'}">
-            ${yearChips.map(yr=>{
-              const label=yr==='all'?(rl.allYears||'All years'):yr;
-              const count=yr==='all'?allPubs.length:allPubs.filter(p=>String(p.year)===yr).length;
-              const isActive=activeResearchYear===yr;
-              return `<button type="button" class="research-chip ${isActive?'active':''}" data-year="${yr}"><span>${label}</span> <span class="research-chip-count">${count}</span></button>`;
+            ${yearChips.map(chip=>{
+              const isActive=activeResearchYear===chip.id;
+              return `<button type="button" class="research-chip ${isActive?'active':''}" data-year="${chip.id}"><span>${chip.label}</span> <span class="research-chip-count">${chip.count}</span></button>`;
             }).join('')}
           </div>
           <div class="research-publisher-pills" role="tablist" aria-label="${uk?'Фільтр видавництв':'Filter by publisher'}">
