@@ -2,16 +2,16 @@
 export default [
     {
         company_name: "DᎥᗰᗩᒪᎥᑎᗩ",
-        role: "Solo Android Developer / Publisher",
+        role: "Founder & Lead Mobile Engineer / Publisher",
         start_date: "09.2017",
         end_date: "Present",
         is_current: true,
         category: "Independent Development",
         tasks: [
-            "Handled the full mobile app lifecycle from conceptualization and UI/UX design to Google Play Store publication.",
-            "Developed and published successful indie projects such as 'People Notes' and 'Resistance: Nightfall'.",
-            "Integrated various SDKs including Firebase, AdMob, and Google Play Billing for monetization and analytics.",
-            "Employed modern tech stacks like Jetpack Compose, MVVM, and Room for robust app architectures."
+            "Handled the full mobile product lifecycle from conceptualization and Figma UI/UX design to Google Play Store publication.",
+            "Architected and shipped commercial indie flagships with 25k+ total downloads and a flawless 5.0★ rating (Tic-Tac-Toe: 3 Player, Brainrot Clicker, People Notes CRM).",
+            "Integrated real-time Cloud Firestore backends, offline-first synchronization, Google Play Billing (IAP), and optimized AdMob mediation.",
+            "Employed modern native tech stacks: Jetpack Compose, Clean Architecture, Kotlin Coroutines, and Room for high-performance architectures."
         ]
     },
     {
