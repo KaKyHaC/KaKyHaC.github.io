@@ -6,7 +6,30 @@
  */
 export default [
     {
+        id: 'portfolio-showcase',
+        title: 'Dmytro Barannik — Portfolio & Showcase',
+        role: 'Product Architect & Lead Engineer',
+        company: 'Solo Project',
+        domain: 'web',
+        date: 'Oct 2026',
+        description: 'A high-performance personal portfolio and interactive engineering showcase built with Vite and modern vanilla web standards. Engineered with a glassmorphic Bento UI, sub-second edge delivery, dynamic zero-dependency internationalization (EN/UK), and persistent zero-FOUC theming.',
+        tasks: [
+            'Architected a modular client-side internationalization (i18n) engine with dynamic namespace chunking, caching, and automatic locale detection without third-party runtime overhead.',
+            'Engineered a glassmorphic Bento Grid design system with persistent Dark/Light theming, zero FOUC, and GPU-accelerated micro-interactions.',
+            'Achieved a perfect 100 Google Lighthouse score across Performance, Accessibility, and Best Practices with zero layout shifts (zero CLS).',
+            'Implemented client-side multi-tier project filtering by engineering domain and affiliated company, unified modal overlays, and custom analytics event tracking via Firebase.'
+        ],
+        technologies: ['Vite', 'JavaScript (ES6+)', 'CSS3 Custom Tokens', 'HTML5', 'i18n Engine', 'Firebase Analytics', 'GitHub Pages'],
+        tags: ['Vite', 'Architecture', 'UI/UX & CSS3', 'i18n Engine', 'Performance 100'],
+        imagePlaceholder: 'D',
+        imageColor: 'linear-gradient(135deg, #FFD700, #FFA000)',
+        icon: 'images/favicon.png',
+        liveLink: 'https://dvbarannik.github.io/',
+        githubLink: 'https://github.com/KaKyHaC/KaKyHaC.github.io'
+    },
+    {
         id: 'pro-klimat',
+        domain: 'web',
         title: 'ProKlimat — HVAC Platform',
         role: 'Lead Frontend Engineer & UI/UX Architect',
         company: 'Solo Project',
@@ -29,6 +52,7 @@ export default [
     },
     {
         id: 'klinik-bangsar-south',
+        domain: 'web',
         title: 'Klinik Bangsar South — Medical Portal',
         role: 'Lead Frontend Engineer & UI/UX Architect',
         company: 'Solo Project',
@@ -51,6 +75,7 @@ export default [
     },
     {
         id: 'libpolycodec',
+        domain: 'systems',
         title: 'LibPolyCodec: Data Compression Library',
         role: 'C++ Software Architect',
         company: 'MITI',
@@ -72,6 +97,7 @@ export default [
     },
     {
         id: 'lucky-loot-boxes',
+        domain: 'mobile',
         title: '67 Lucky Loot Boxes',
         role: 'Solo Android Developer',
         company: 'Solo Project',
@@ -92,6 +118,7 @@ export default [
     },
     {
         id: 'lora-iot-network',
+        domain: 'iot',
         title: 'Distributed IoT LoRa Sensor Network',
         role: 'IoT Firmware Engineer',
         company: 'MITI',
@@ -113,6 +140,7 @@ export default [
     },
     {
         id: 'megogo',
+        domain: 'mobile',
         title: 'Megogo Mobile/ATV App',
         role: 'Android Developer',
         company: 'Megogo',
@@ -131,11 +159,12 @@ export default [
     },
     {
         id: 'tic-tac-toe',
-        title: 'Tic-Tac-Toe 3 Player: X O D',
+        domain: 'mobile',
+        title: 'Tic-Tac-Toe: 3 Player Game',
         role: 'Solo Android Developer',
         company: 'Solo Project',
         date: 'Mar 2025 – Present',
-        description: 'An innovative and chaotic multiplayer twist on classic tic-tac-toe designed for 3 players (X, O, ∆). Features a scalable board (from 3x3 up to 7x7), unique AI opponents, ranked online matchmaking, custom dynamic backgrounds (Aurora, Neon), and immersive haptics.',
+        description: 'An innovative multiplayer twist on classic tic-tac-toe designed for 3 players (X, O, ∆) with 10,000+ downloads and a 5.0★ rating. Features a scalable board (from 3x3 up to 7x7), 5 difficulty levels of AI opponents, ranked online matchmaking, custom dynamic backgrounds, and immersive haptics.',
         tasks: [
             'Designed a unique 3-player game board with custom winning/blocking logic and developed 5 difficulty levels for AI opponents.',
             'Integrated Google Play Games Services to power the achievement system, leaderboards, and user authentication.',
@@ -152,11 +181,12 @@ export default [
     },
     {
         id: 'people-notes',
-        title: 'People Notes (MyPeople)',
+        domain: 'mobile',
+        title: 'People Notes: AI Agent CRM',
         role: 'Solo Android Developer',
         company: 'Solo Project',
         date: 'Jan 2025 – Present',
-        description: 'A comprehensive personal CRM and contact management application (rated 4.6/5). It enables users to organize detailed profiles, track important dates and events, monitor shared finances, and categorize social connections using a clean, customizable dashboard.',
+        description: 'A comprehensive personal CRM and contact management application with a perfect 5.0/5 rating. It enables users to organize detailed profiles, track important dates and events, monitor shared finances, and categorize social connections using a clean, customizable dashboard.',
         tasks: [
             'Designed and developed the entire application architecture from scratch using modern Jetpack Compose principles.',
             'Implemented a robust database layer with Firebase Firestore to ensure seamless cross-device data synchronization.',
@@ -173,6 +203,7 @@ export default [
     },
     {
         id: 'resistance-multiplayer',
+        domain: 'mobile',
         title: 'Resistance: Multiplayer Game',
         role: 'Solo Android Developer',
         company: 'Solo Project',
@@ -194,6 +225,7 @@ export default [
     },
     {
         id: 'symmetry',
+        domain: 'mobile',
         title: 'Symmetry',
         role: 'Android Developer',
         company: 'CHI Software',
@@ -211,11 +243,12 @@ export default [
     },
     {
         id: 'epic-clicker',
-        title: '67 Brainrot Clicker',
+        domain: 'mobile',
+        title: 'Brainrot Clicker: Aura Farming',
         role: 'Solo Android Developer',
         company: 'Solo Project',
         date: 'Feb 2024 – Present',
-        description: 'A meme-fueled idle clicker game where players tap to unlock characters, earn Respect, and climb global leaderboards. The game features seasonal leaderboards, unlockable hero abilities, offline progress, and deep combo synergies.',
+        description: 'A viral idle clicker game with 10,000+ downloads and a 5.0★ rating, where players tap to unlock characters, earn Respect, and climb seasonal leaderboards. Features offline progress, modular hero abilities, combo synergies, and multi-lingual localization.',
         tasks: [
             'Drove the project through the full lifecycle: from core game design, balance, and UI/UX to engineering and Google Play publishing.',
             'Built a modular hero and skin system with unique abilities (e.g., hold-to-auto-tap, x10 critical taps, investment scaling).',
@@ -232,6 +265,7 @@ export default [
     },
     {
         id: 'smart-home',
+        domain: 'mobile',
         title: 'Smart Home',
         role: 'Lead Android Developer',
         company: 'CHI Software',
@@ -250,6 +284,7 @@ export default [
     },
     {
         id: 'healthcare',
+        domain: 'mobile',
         title: 'Healthcare',
         role: 'Android Developer',
         company: 'CHI Software',
@@ -267,6 +302,7 @@ export default [
     },
     {
         id: 'car-plate',
+        domain: 'systems',
         title: 'Car Plate Recognition',
         role: 'Android Developer',
         company: 'CHI Software',
@@ -284,6 +320,7 @@ export default [
     },
     {
         id: 'music-streaming-2020',
+        domain: 'mobile',
         title: 'Music Streaming',
         role: 'Android Developer',
         company: 'Nitrix Studio',
@@ -302,6 +339,7 @@ export default [
     },
     {
         id: 'image-compression',
+        domain: 'systems',
         title: 'Image Compression & Steganography',
         role: 'Android Developer',
         company: 'Nitrix Studio',
@@ -319,6 +357,7 @@ export default [
     },
     {
         id: 'music-platform-2019',
+        domain: 'mobile',
         title: 'Music Streaming Platform',
         role: 'Android Developer',
         company: 'Nitrix Studio',
@@ -337,6 +376,7 @@ export default [
     },
     {
         id: 'card-game-calculator',
+        domain: 'mobile',
         title: 'Card Game Score Calculator',
         role: 'Flutter Developer',
         company: 'Nitrix Studio',
@@ -354,6 +394,7 @@ export default [
     },
     {
         id: 'media-streaming-2018',
+        domain: 'mobile',
         title: 'Media Streaming Service',
         role: 'Android Developer',
         company: 'Nitrix Studio',
@@ -371,6 +412,7 @@ export default [
     },
     {
         id: 'liftapp-remote',
+        domain: 'iot',
         title: 'LiftApp Remote Setup',
         role: 'Android Developer',
         company: 'IT Company',
@@ -387,6 +429,7 @@ export default [
     },
     {
         id: 'liftapp-bootloader',
+        domain: 'iot',
         title: 'LiftApp Bootloader',
         role: 'Android Developer',
         company: 'IT Company',
@@ -403,6 +446,7 @@ export default [
     },
     {
         id: 'resistance-local',
+        domain: 'mobile',
         title: 'Resistance: Local Game',
         role: 'Flutter Developer / Solo Developer',
         company: 'DᎥᗰᗩᒪᎥᑎᗩ',
@@ -423,6 +467,7 @@ export default [
     },
     {
         id: 'liftapp',
+        domain: 'systems',
         title: 'LiftApp',
         role: 'Android Developer',
         company: 'IT Company',

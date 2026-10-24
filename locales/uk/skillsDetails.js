@@ -1,84 +1,625 @@
 /**
  * Skills details — Ukrainian
  * Fields translated: description, usage
- * Fields NOT translated: skill, category (technical terms / identifiers)
+ * Fields NOT translated: skill, category (technical identifiers)
  */
 export default [
-  { "skill": "Kotlin", "category": "programming_languages", "description": "Сучасна статично типізована мова програмування, офіційний стандарт для розробки під Android.", "usage": "Основна мова розробки в усіх сучасних комерційних проєктах (Megogo, Smart Home, Healthcare, Symmetry, Car Plate Recognition) та особистих проєктах DᎥᗰᗩᒪᎥᑎᗩ (Epic Clicker, Tic-Tac-Toe, People Notes, Resistance)." },
-  { "skill": "Java", "category": "programming_languages", "description": "Об\'єктно-орієнтована мова програмування, що традиційно використовується в Android, особливо для низькорівневих API та застарілих кодових баз.", "usage": "Використовується в проєктах з інтеграцією заліза — LiftApp (SerialPort, Wi-Fi Direct, root-доступ), а також у Music Streaming (2020) та частково в Megogo." },
-  { "skill": "C++", "category": "programming_languages", "description": "Висококомпілована мова програмування з максимальною продуктивністю.", "usage": "Використовується для інтеграції ресурсоємних нативних бібліотек через JNI: бібліотека розпізнавання номерних знаків (ALPR OCR) в Car Plate Recognition та прямі операції з портом (SerialPort) у LiftApp." },
-  { "skill": "Dart", "category": "programming_languages", "description": "Клієнтоорієнтована мова програмування для швидких застосунків на різних платформах, яка використовується переважно з фреймворком Flutter.", "usage": "Застосовується в кросплатформній розробці на Flutter: Card Game Score Calculator та Resistance: Local Game." },
-  { "skill": "Python", "category": "programming_languages", "description": "Мова програмування високого рівня, яка чудово підходить для автоматизації та написання скриптів.", "usage": "Використовується для написання скриптів автоматизації, зокрема скрипта з Gemini API для парсингу strings.xml та локалізації гри Epic Clicker на 15+ мов зі збереженням XML-тегів та адаптацією сленгу." },
-  { "skill": "Android SDK", "category": "android_core_and_ui", "description": "Основний набір інструментів та API для розробки застосунків під операційну систему Android.", "usage": "Використовується в абсолютно всіх Android-проєктах для управління життєвими циклами компонентів, системними сервісами, дозволами та доступом до заліза." },
-  { "skill": "Jetpack Compose", "category": "android_core_and_ui", "description": "Сучасний декларативний UI-тулкіт від Google для побудови нативних Android-інтерфейсів.", "usage": "Активно застосовується для міграції застарілих XML-екранів у Megogo та побудови UI з нуля в Symmetry, Epic Clicker, Tic-Tac-Toe, People Notes та Resistance Multiplayer." },
-  { "skill": "Material 3", "category": "android_core_and_ui", "description": "Остання версія дизайн-системи Google з динамічними кольорами та оновленими компонентами.", "usage": "Застосовується в UI особистих проєктів (Tic-Tac-Toe, Epic Clicker, People Notes, Resistance) для забезпечення сучасного та привабливого UX." },
-  { "skill": "Android TV (Leanback)", "category": "android_core_and_ui", "description": "Набір бібліотек для побудови UI, оптимізованого для телевізійних екранів.", "usage": "Використовується у Megogo та Media Streaming Service (2018) для розробки навігації з пульта та оптимізації відеоплеєрів для великих екранів." },
-  { "skill": "Android NDK", "category": "android_core_and_ui", "description": "Набір інструментів для вбудовування C/C++-коду в Android-застосунки.", "usage": "Застосовується для інтеграції C++-логіки з Java/Kotlin: обробка розпізнавання номерів авто (Car Plate Recognition) та пряме зчитування сигналів ліфтового заліза (LiftApp)." },
-  { "skill": "Kotlin Multiplatform", "category": "android_core_and_ui", "description": "Технологія для написання спільного Kotlin-коду, який компілюється для різних платформ (iOS, Android, Web, Desktop).", "usage": "Використовується як одна з основних технологій для спільного використання бізнес-логіки між різними платформами." },
-  { "skill": "Flutter", "category": "android_core_and_ui", "description": "Кросплатформний фреймворк від Google для побудови нативно компільованих мобільних застосунків з єдиної кодової бази.", "usage": "Використовувався під час роботи в Nitrix Studio для створення мультиплеєрних ігор та кросплатформних утиліт (Card Game Calculator, Resistance: Local Game)." },
-  { "skill": "Clean Architecture", "category": "architecture_and_design", "description": "Архітектурний підхід, що розділяє застосунок на шари зі строгими правилами залежностей (Presentation, Domain, Data).", "usage": "Застосовується у складних багатомодульних проєктах (Healthcare, Media Streaming, Smart Home) для забезпечення тестованості та незалежності від UI або фреймворків." },
-  { "skill": "MVVM", "category": "architecture_and_design", "description": "Патерн Model-View-ViewModel — де-факто стандарт для Android при роботі з реактивними UI-станами через LiveData або Flow.", "usage": "Використовується у більшості сучасних проєктів (Healthcare, Media Streaming та всіх особистих) для з\'єднання UI та бізнес-логіки через реактивні потоки." },
-  { "skill": "MVP", "category": "architecture_and_design", "description": "Патерн Model-View-Presenter — класичний архітектурний підхід для відділення логіки презентації від шару UI.", "usage": "Основне архітектурне рішення під час розробки системи керування Smart Home, де виступав Lead Android Developer." },
-  { "skill": "MVI", "category": "architecture_and_design", "description": "Model-View-Intent — архітектура зі строгим однонаправленим потоком даних.", "usage": "Застосовується разом з Jetpack Compose для створення передбачуваних машин станів на екранах зі складними взаємодіями." },
-  { "skill": "BLoC", "category": "architecture_and_design", "description": "Business Logic Component — популярний патерн управління станом в екосистемі Flutter.", "usage": "Застосовано під час розробки Resistance: Local Game на Flutter для чіткого відділення UI-логіки від ігрових бізнес-процесів." },
-  { "skill": "Redux", "category": "architecture_and_design", "description": "Архітектура з однонаправленим потоком даних та єдиним джерелом правди (Store).", "usage": "Освоєний підхід для управління надскладними станами застосунків." },
-  { "skill": "SOLID", "category": "architecture_and_design", "description": "П\'ять фундаментальних принципів ООП для підвищення зрозумілості та масштабованості програмного забезпечення.", "usage": "Застосовується під час code review (як Lead на проєкті Smart Home) та при проєктуванні архітектури (включаючи строгі промпти для ШІ-асистентів) для чистого, масштабованого коду." },
-  { "skill": "GoF Patterns", "category": "architecture_and_design", "description": "Патерни проєктування «Банди чотирьох» (породжуючі, структурні та поведінкові шаблони).", "usage": "Використовуються для вирішення класичних архітектурних задач у всіх комерційних проєктах: фабрики, синглтони, будівельники та спостерігачі." },
-  { "skill": "Coroutines", "category": "asynchrony_and_networking", "description": "Легкі потоки в Kotlin для написання асинхронного, неблокуючого коду в послідовному стилі.", "usage": "Широко застосовуються в сучасних проєктах (Megogo, Tic-Tac-Toe, Epic Clicker, Resistance, Symmetry) для мережевих запитів та операцій з базами даних." },
-  { "skill": "Flow", "category": "asynchrony_and_networking", "description": "API для асинхронних потоків даних на основі Kotlin Coroutines.", "usage": "Використовується для реактивних оновлень UI (через StateFlow/SharedFlow) при прослуховуванні змін у базах даних (Room/Firestore) в Symmetry, People Notes та Resistance." },
-  { "skill": "RxJava / RxKotlin", "category": "asynchrony_and_networking", "description": "Бібліотеки реактивного програмування та компонування асинхронних подій для Java та Kotlin.", "usage": "Використовуються у великих комерційних проєктах (Megogo, Smart Home, Healthcare, Car Plate Recognition) для обробки складних ланцюжків подій. Активно мігрується на Coroutines/Flow." },
-  { "skill": "Retrofit 2", "category": "asynchrony_and_networking", "description": "Широко використовувана бібліотека для створення типобезпечних HTTP-клієнтів на Android.", "usage": "Основний інструмент для інтеграції REST API. Використовується в Megogo, Symmetry (синхронізація метаданих), Car Plate Recognition та Media Streaming." },
-  { "skill": "OkHttp", "category": "asynchrony_and_networking", "description": "HTTP-клієнт, що використовується під капотом Retrofit для управління мережевими з\'єднаннями та кешуванням.", "usage": "Використовується в Megogo та інших мережевих проєктах для налаштування мережевих інтерцепторів (логування, додавання токенів автентифікації, повторні спроби)." },
-  { "skill": "WebSockets", "category": "asynchrony_and_networking", "description": "Повнодуплексний протокол зв\'язку для двонаправлених операцій у реальному часі.", "usage": "Застосовується для реалізації онлайн-мультиплеєра в реальному часі, чатів телемедицини (Healthcare) та живого управління системами «розумного» дому." },
-  { "skill": "WorkManager", "category": "asynchrony_and_networking", "description": "Бібліотека Android Jetpack для гарантованого виконання відкладених та фонових завдань.", "usage": "Використовується в Megogo та People Notes для реалізації надійних систем сповіщень (нагадування про дні народження та події), що переживають перезавантаження системи." },
-  { "skill": "Fetch 2", "category": "asynchrony_and_networking", "description": "Потужна бібліотека для надійного фонового завантаження файлів.", "usage": "Використовується в Music Streaming (2020) та Media Streaming (2019) для реалізації надійного офлайн-завантаження медіа." },
-  { "skill": "Room", "category": "databases_and_local_storage", "description": "Бібліотека абстракції над SQLite як частина Android Jetpack.", "usage": "Основне рішення для локального зберігання даних. Використовується в Symmetry, Smart Home, Healthcare та Car Plate Recognition." },
-  { "skill": "Firebase Firestore", "category": "databases_and_local_storage", "description": "Гнучка та масштабована хмарна NoSQL база даних з можливістю синхронізації в реальному часі.", "usage": "Архітектурна основа особистих застосунків (Resistance Multiplayer, Tic-Tac-Toe, Epic Clicker, People Notes) для синхронізації станів матчів, лідербордів та хмарних резервних копій." },
-  { "skill": "Firebase Realtime Database", "category": "databases_and_local_storage", "description": "Оригінальна NoSQL хмарна база даних від Firebase з синхронізацією в реальному часі.", "usage": "Використовується в ранніх мережевих застосунках для блискавичної передачі стану між клієнтами (живі чати, активні статуси)." },
-  { "skill": "SQLite", "category": "databases_and_local_storage", "description": "Легка реляційна база даних, вбудована нативно в Android.", "usage": "Використовується для написання raw SQL-запитів і складних міграцій, що дає глибоке розуміння роботи Room та Realm." },
-  { "skill": "Proto DataStore", "category": "databases_and_local_storage", "description": "Сучасне рішення Jetpack для асинхронного зберігання типізованих об\'єктів.", "usage": "Використовується як безпечніша та асинхронна (Coroutines/Flow) заміна SharedPreferences для зберігання налаштувань користувача." },
-  { "skill": "SharedPreferences", "category": "databases_and_local_storage", "description": "Синхронний механізм зберігання ключ-значення для невеликих обсягів примітивних даних.", "usage": "Широко використовується у Flutter-застосунках (через пакет shared_preferences) та ранніх Android-утилітах для збереження прапорців локалізації, тем та прогресу в іграх." },
-  { "skill": "Realm", "category": "databases_and_local_storage", "description": "Об\'єктно-орієнтована локальна мобільна база даних (NoSQL-альтернатива SQLite).", "usage": "Використовується як альтернатива Room у проєктах, що потребують зберігання складних об\'єктних графів та виключно високої швидкості транзакцій." },
-  { "skill": "Firebase Authentication", "category": "cloud_and_backend", "description": "Безпечний бекенд-сервіс для автентифікації користувачів через різних провайдерів.", "usage": "Використовується в Resistance: Multiplayer Game для реалізації анонімної та безпечної автентифікації, пов\'язуючи гравців з їхніми ігровими сесіями у Firestore." },
-  { "skill": "Firebase Storage", "category": "cloud_and_backend", "description": "Хмарний сервіс для зберігання та обслуговування файлів, згенерованих користувачем (фото, відео).", "usage": "Використовується в People Notes для завантаження та безпечного зберігання кастомних аватарів та медіафайлів контактів." },
-  { "skill": "AWS Cognito", "category": "cloud_and_backend", "description": "Сервіс Amazon для управління ідентифікацією та доступом.", "usage": "Інтегровано в корпоративний застосунок Symmetry для забезпечення безпечної автентифікації інспекторів та клієнтів." },
-  { "skill": "Dagger 2", "category": "dependency_injection", "description": "Потужний фреймворк для ін\'єкції залежностей під час компіляції.", "usage": "Використовується у великих корпоративних проєктах зі складними графами залежностей: Megogo, Healthcare, Car Plate Recognition та Music & Media Streaming." },
-  { "skill": "Hilt", "category": "dependency_injection", "description": "Обгортка над Dagger, розроблена спеціально для спрощення DI в Android Jetpack проєктах.", "usage": "Застосовується в усіх нових інді-проєктах (Resistance, Tic-Tac-Toe, Epic Clicker, People Notes) та в Symmetry для швидкої та стандартизованої ін\'єкції залежностей." },
-  { "skill": "Koin", "category": "dependency_injection", "description": "Легкий runtime DI-фреймворк, розроблений виключно для Kotlin-розробників.", "usage": "Обраний як основний DI-контейнер у проєкті Smart Home завдяки лаконічному синтаксису та швидкому налаштуванню." },
-  { "skill": "CameraX", "category": "multimedia_hardware_and_camera", "description": "Бібліотека Android Jetpack для значного спрощення розробки застосунків із камерою.", "usage": "Реалізовано в застосунку Symmetry для побудови надійного інтерфейсу камери, яким польові інспектори знімають та обробляють фото витоків газу." },
-  { "skill": "Camera 2 API", "category": "multimedia_hardware_and_camera", "description": "Низькорівневий Android API, що надає детальний контроль над апаратним забезпеченням камери та відеопотоками.", "usage": "Використовується в Car Plate Recognition для захоплення та управління відеопотоками з великою частотою кадрів, подаючи кадри в C++ ALPR-бібліотеку." },
-  { "skill": "ExoPlayer", "category": "multimedia_hardware_and_camera", "description": "Розширений рушій медіаплеєра з відкритим кодом від Google.", "usage": "Основний рушій відтворення відео/аудіо в Megogo (включаючи Leanback для Android TV), Music Streaming та Media Streaming Platform." },
-  { "skill": "VLC", "category": "multimedia_hardware_and_camera", "description": "Надзвичайно гнучка кросплатформна бібліотека медіаплеєра.", "usage": "Інтегровано в Media Streaming Service (2018) разом з ExoPlayer для декодування рідкісних та складних форматів відео (наприклад, AVI)." },
-  { "skill": "JNI (Java Native Interface)", "category": "multimedia_hardware_and_camera", "description": "Фреймворк, що дозволяє Java/Kotlin-коду в JVM викликати нативні застосунки (C/C++) та викликатися ними.", "usage": "Використовується в Car Plate Recognition для інтеграції нативної OCR (ALPR) бібліотеки, створюючи ефективний міст між Camera 2 та C++-рушієм." },
-  { "skill": "SerialPort API", "category": "multimedia_hardware_and_camera", "description": "API та набір бібліотек для прямої комунікації з фізичними послідовними портами (RS-232, UART).", "usage": "Застосовується в проєкті LiftApp (Android-планшети в кабінах ліфтів). C++ SerialPort бібліотека перехоплює та декодує сирі апаратні сигнали з порту FT232." },
-  { "skill": "Wi-Fi Direct", "category": "multimedia_hardware_and_camera", "description": "Технологія peer-to-peer з\'єднання пристроїв без централізованого роутера.", "usage": "Використовується в LiftApp Remote Setup для встановлення захищеного бездротового з\'єднання між пристроєм техніка та головним дисплеєм ліфта для відправки конфігурацій." },
-  { "skill": "Glide", "category": "multimedia_hardware_and_camera", "description": "Швидка та ефективна бібліотека завантаження та кешування зображень для Android.", "usage": "Застосовується в Megogo, Smart Home та ранніх проєктах для безперебійного завантаження, декодування та кешування мережевих медіафайлів." },
-  { "skill": "Coil", "category": "multimedia_hardware_and_camera", "description": "Сучасна бібліотека завантаження зображень на основі Kotlin Coroutines.", "usage": "Використовується в проєкті Symmetry (бездоганно поєднується з Jetpack Compose) для відображення динамічно завантажених та локально збережених фото інспекцій." },
-  { "skill": "JUnit 5", "category": "testing_and_debugging", "description": "Широко використовуваний тестовий фреймворк для написання Unit-тестів на Java та Kotlin.", "usage": "Регулярно використовується для тестування основної бізнес-логіки в Megogo, Smart Home, Tic-Tac-Toe та Resistance. Генерація тестів та покриття граничних випадків часто автоматизуються через ШІ." },
-  { "skill": "Mockito", "category": "testing_and_debugging", "description": "Популярний фреймворк мокування для Unit-тестів на Java/Kotlin.", "usage": "Активно використовується в Megogo та інших проєктах для мокування зовнішніх залежностей та ізоляції тестованого шару від мережі та баз даних." },
-  { "skill": "Mockk", "category": "testing_and_debugging", "description": "Спеціалізована бібліотека мокування, повністю побудована навколо Kotlin-функцій.", "usage": "Застосовується в Resistance: Multiplayer Game та активно використовується з Gemini для автогенерації складних mock-середовищ для Kotlin (включаючи Coroutines/Flow)." },
-  { "skill": "Espresso", "category": "testing_and_debugging", "description": "Нативний фреймворк тестування Android для написання надійних автоматизованих UI-тестів.", "usage": "Використовується для написання інструментальних тестів, що симулюють дії користувача та перевіряють очікувані переходи між екранами." },
-  { "skill": "Firebase Test Lab", "category": "testing_and_debugging", "description": "Хмарна інфраструктура тестування для запуску тестів на широкому спектрі реальних пристроїв.", "usage": "Інтегровано в CI/CD-пайплайни для перевірки стабільності застосунку на фізичних пристроях різних версій ОС перед публічним релізом." },
-  { "skill": "Timber", "category": "testing_and_debugging", "description": "Гнучка бібліотека логування з покращеним тегуванням та безпекою.", "usage": "Реалізовано в Resistance: Multiplayer Game для детального налагодження складних станів онлайн-мультиплеєра без ризику відображення логів у релізній збірці." },
-  { "skill": "LeakCanary", "category": "testing_and_debugging", "description": "Потужний інструмент виявлення витоків пам\'яті для Android-розробників.", "usage": "Використовується в складних проєктах для профілювання та виявлення об\'єктів (Activities, Views), що утримуються в пам\'яті та перешкоджають збору сміття." },
-  { "skill": "Android Profiler", "category": "testing_and_debugging", "description": "Вбудований набір інструментів профілювання Android Studio для аналізу CPU, пам\'яті, мережі та акумулятора в реальному часі.", "usage": "Застосовується для оптимізації вимогливих задач: моніторинг споживання пам\'яті та навантаження CPU при обробці безперервного відеопотоку в Car Plate Recognition." },
-  { "skill": "Google Play Billing (In-App Purchases)", "category": "monetization_analytics_and_devops", "description": "Офіційна бібліотека Google для безпечної обробки внутрішньоігрових транзакцій (покупок та підписок).", "usage": "Інтегровано в особисті інді-застосунки (People Notes, Lucky Loot Boxes) для продажу преміум-функцій: постійне прибирання реклами або особливі косметичні предмети." },
-  { "skill": "AdMob", "category": "monetization_analytics_and_devops", "description": "Флагманська платформа Google для монетизації мобільних застосунків через різні формати реклами.", "usage": "Основна монетизаційна основа для інді-проєктів (Tic-Tac-Toe, Epic Clicker, People Notes, Lucky Loot Boxes, Resistance Local). Налаштовані банери, міжсторінкові оголошення та реклама з нагородою." },
-  { "skill": "Firebase Analytics", "category": "monetization_analytics_and_devops", "description": "Потужний сервіс аналітики для розуміння використання застосунку та залучення користувачів.", "usage": "Активно використовується в Epic Clicker та інших іграх для відстеження кастомних подій (престиж, покупки, завершення туторіалу) з метою аналізу утримання та воронки." },
-  { "skill": "Crashlytics", "category": "monetization_analytics_and_devops", "description": "Інструмент звітування про збої в реальному часі з дієвими інсайтами для вирішення проблем.", "usage": "Застосовується практично в усіх особистих та комерційних проєктах для моніторингу стабільності. Виявився ключовим для швидкого виявлення та виправлення збою в Tic-Tac-Toe 3 Player." },
-  { "skill": "Remote Config (A/B Testing)", "category": "monetization_analytics_and_devops", "description": "Хмарний сервіс для зміни поведінки та вигляду застосунку без нового оновлення — ідеально для A/B-тестування.", "usage": "Використовується в Epic Clicker для тонкого налаштування балансу ігрової економіки на льоту та тестування продуктових гіпотез на різних когортах користувачів." },
-  { "skill": "CI/CD Pipelines", "category": "monetization_analytics_and_devops", "description": "Практика DevOps безперервної інтеграції та доставки для автоматизації збірок, тестування та розгортання.", "usage": "Як Lead Developer на проєкті Smart Home налаштував автоматизовані пайплайни для компіляції, запуску тестів та деплою релізів, що суттєво оптимізувало процес команди." },
-  { "skill": "Git Flow", "category": "monetization_analytics_and_devops", "description": "Популярна структурована модель гілкування Git (feature, develop та release-гілки).", "usage": "Стандартний процес командної розробки, що застосовувався в CHI Software, Megogo та Nitrix Studio для чистого, організованого версіонування коду." },
-  { "skill": "Game Loop & Economy Design", "category": "inferred_game_dev_and_publishing", "description": "Навичка проєктування основного ігрового циклу, балансування систем нагород, прогресії гравця та віртуальних економік.", "usage": "Продемонстровано під час самостійної розробки Epic Clicker (розрахунок експоненційного масштабування, вартості покращень та механіки престижу) та Lucky Loot Boxes (налаштування ймовірностей падіння предметів)." },
-  { "skill": "AI Opponent Logic (Tic-Tac-Toe algorithm design)", "category": "inferred_game_dev_and_publishing", "description": "Розробка алгоритмів штучного інтелекту для виступу в ролі компетентних ігрових суперників.", "usage": "Реалізовано в Tic-Tac-Toe 3 Player: розроблено 5 рівнів складності для ШІ-ботів, що грають на нестандартному хаотичному полі 5x5 серед трьох гравців." },
-  { "skill": "Real-time Multiplayer Matchmaking", "category": "inferred_game_dev_and_publishing", "description": "Побудова бекенд-систем для з\'єднання гравців онлайн та надійної синхронізації їхніх ігрових станів.", "usage": "Розроблено з Firebase Firestore в Tic-Tac-Toe 3 Player та Resistance: Multiplayer Game для лобі, рейтингового матчмейкінгу та блискавичної синхронізації ходів." },
-  { "skill": "Procedural Audio", "category": "inferred_game_dev_and_publishing", "description": "Синтетична або алгоритмічна генерація аудіо на льоту, а не просто відтворення записаних звуків.", "usage": "Інтегровано у масштабне оновлення v2.0 для Resistance: Multiplayer Game для посилення кіберпанк-атмосфери та напруженості гри." },
-  { "skill": "Haptics & Tactile Feedback Optimization", "category": "inferred_game_dev_and_publishing", "description": "Програмування та оптимізація вібраційного заліза пристрою для значущих тактильних відгуків на екранні дії.", "usage": "Ключова функція для підвищення залучення гравців у Tic-Tac-Toe 3 Player (v4.0) та під час потужних критичних ударів в Epic Clicker." },
-  { "skill": "App Store Optimization (ASO)", "category": "inferred_game_dev_and_publishing", "description": "Процес оптимізації списків у Google Play для максимальної видимості та збільшення органічних встановлень.", "usage": "Як незалежний видавець (DᎥᗰᗩᒪᎥᑎᗩ) особисто розробив усі візуальні матеріали, скріншоти, іконки та фічер-графіки, а також оптимізовані промо-тексти." },
-  { "skill": "Product Management & End-to-end Publishing", "category": "inferred_game_dev_and_publishing", "description": "Управління повним життєвим циклом застосунку: від початкового концепту до монетизації, релізу та підтримки користувачів.", "usage": "Успішно продемонстровано в портфоліо DᎥᗰᗩᒪᎥᑎᗩ (People Notes, Epic Clicker тощо): аналіз метрик, відповіді на відгуки, регулярні оновлення та живі A/B-тести." },
-  { "skill": "LLM Prompt Engineering", "category": "inferred_ai_and_automation", "description": "Технічна навичка складання точних, контекстних промптів для отримання якісних результатів від великих мовних моделей.", "usage": "Постійно використовується для делегування складних архітектурних задач (дотримання SOLID та Clean Architecture) «віртуальному джуну» (Gemini), що дає якісний, готовий до продакшену код." },
-  { "skill": "Gemini API Integration", "category": "inferred_ai_and_automation", "description": "Реалізація та комунікація з API для розширених мовних моделей Gemini від Google.", "usage": "API використовувався у кастомному Python-скрипті для автоматичного парсингу strings.xml файлів та генерації контекстних перекладів для гри Epic Clicker." },
-  { "skill": "Python Scripting for Workflow Automation", "category": "inferred_ai_and_automation", "description": "Написання утилітних скриптів на Python для повної автоматизації нудних або повторюваних задач розробки.", "usage": "Написано складний скрипт для автоматизації перекладу тисяч XML-рядків Epic Clicker зі строгим збереженням форматування та структури XML-тегів." },
-  { "skill": "AI-assisted App Localization (15+ languages)", "category": "inferred_ai_and_automation", "description": "Використання ШІ-моделей для перекладу та локалізації програмних продуктів десятками мовами з урахуванням контексту та культурного сленгу.", "usage": "Успішно локалізовано мем-гру Epic Clicker на 15+ мов (включаючи німецьку, іспанську та гінді), де ШІ адаптував культурно специфічний сленг та гумор." },
-  { "skill": "AI-assisted Code Generation & Refactoring", "category": "inferred_ai_and_automation", "description": "Використання ШІ нативно в IDE (Gemini в Android Studio) для написання, рефакторингу та тестування коду застосунку.", "usage": "Щоденно делегуються рутинні задачі: генерація вичерпних Mockk-тестів, виявлення витоків пам\'яті та безпечна міграція застарілих RxJava-кодових баз на Coroutines/Flow." }
+  {
+    "skill": "Kotlin",
+    "category": "programming_languages",
+    "description": "Сучасна статично типізована мова програмування, офіційний стандарт розробки під Android.",
+    "usage": "Основна мова розробки у всіх сучасних комерційних проєктах (Megogo, Smart Home, Healthcare, Symmetry, Car Plate Recognition) та інді-проєктах DᎥᗰᗩᒪᎥᑎᗩ (Tic-Tac-Toe, Brainrot Clicker, People Notes, Resistance)."
+  },
+  {
+    "skill": "Java",
+    "category": "programming_languages",
+    "description": "Об'єктно-орієнтована мова програмування, традиційна для Android, низькорівневої взаємодії та legacy-систем.",
+    "usage": "Застосовувалася в апаратно-інтегрованих проєктах на кшталт LiftApp (робота через SerialPort, Wi-Fi Direct, root-доступ), а також у Music Streaming (2020) та частково в Megogo."
+  },
+  {
+    "skill": "C++",
+    "category": "programming_languages",
+    "description": "Високопродуктивна компільована мова програмування.",
+    "usage": "Використовується для інтеграції ресурсомістких нативних бібліотек через JNI (розпізнавання номерів у Car Plate Recognition, LiftApp SerialPort) та проєктування високошвидкісної бібліотеки компресії LibPolyCodec."
+  },
+  {
+    "skill": "Python",
+    "category": "programming_languages",
+    "description": "Високорівнева мова програмування, ідеальна для автоматизації, ШІ-оркестрації та наукових скриптів.",
+    "usage": "Застосовується для написання пайплайнів автоматизації з інтеграцією Gemini та OpenAI API для контекстного мультиязичного перекладу застосунків на 15+ мов та обробки даних досліджень."
+  },
+  {
+    "skill": "Dart",
+    "category": "programming_languages",
+    "description": "Клієнт-орієнтована мова для швидких додатків на різних платформах, основа фреймворку Flutter.",
+    "usage": "Застосовувалася у кросплатформній розробці на Flutter: Card Game Score Calculator та Resistance: Local Game."
+  },
+  {
+    "skill": "JavaScript",
+    "category": "programming_languages",
+    "description": "Гнучка мова сценаріїв та технологічний фундамент сучасного клієнтського вебу.",
+    "usage": "Застосовується для клієнтського скриптингу та логіки інтерактивних інтерфейсів у веб-платформах (ProKlimat, Klinik Bangsar South та це інтерактивне портфоліо), оркеструючись за допомогою сучасних ШІ-інструментів."
+  },
+  {
+    "skill": "Autonomous Coding Agents",
+    "category": "ai_orchestration_and_agentic_engineering",
+    "description": "Автономні ШІ-агенти, здатні аналізувати повний контекст репозиторію, планувати багатокрокові архітектурні зміни та виконувати код.",
+    "usage": "Робота в ролі AI Tech Lead з координації паралельних автономних агентів (Google Antigravity з Gemini, GPT/Codex) із забезпеченням суворої верифікації та архітектурного контролю."
+  },
+  {
+    "skill": "Google Antigravity & Gemini",
+    "category": "ai_orchestration_and_agentic_engineering",
+    "description": "Передове агентне середовище розробки від Google, що поєднує глибокий контекст репозиторію, двоетапний робочий процес (Manager/Editor) та моделі Gemini.",
+    "usage": "Основна платформа щоденної розробки для декомпозиції архітектури, складних міграцій, автоматичної генерації тестів та реалізації багатофайлових фіч."
+  },
+  {
+    "skill": "GPT / Codex Integration",
+    "category": "ai_orchestration_and_agentic_engineering",
+    "description": "Флагманські моделі міркування, генерації коду та агентні фреймворки.",
+    "usage": "Застосовуються для перехресної валідації архітектурних рішень, швидкого прототипування API та побудови надійних скриптів автоматизації."
+  },
+  {
+    "skill": "Spec-Driven Prompting",
+    "category": "ai_orchestration_and_agentic_engineering",
+    "description": "Інженерна методологія формування точних технічних специфікацій, інтерфейсних контрактів та обмежень для ШІ-агентів.",
+    "usage": "Формулювання атомарних рамок завдань, опис архітектури та інваріантів перед делегуванням генерації для усунення галюцинацій та дрейфу коду."
+  },
+  {
+    "skill": "Tech Lead Code Verification",
+    "category": "ai_orchestration_and_agentic_engineering",
+    "description": "Суворий контроль якості та архітектурне рев'ю згенерованого ШІ-агентами коду людиною перед інтеграцією в продакшн.",
+    "usage": "Впровадження шлюзів нульової довіри: прогін тестових сьютів, статичний лінтинг, профілювання витоків пам'яті та тестування граничних сценаріїв."
+  },
+  {
+    "skill": "Python LLM Pipelines (15+ languages)",
+    "category": "ai_orchestration_and_agentic_engineering",
+    "description": "Власні пайплайни автоматизації на Python з інтеграцією LLM API для спеціалізованих трансформацій контенту.",
+    "usage": "Розроблено наскрізну автоматизацію парсингу Android strings.xml для генерації контекстного перекладу на 15+ мов зі збереженням форматування та адаптацією культурного сленгу."
+  },
+  {
+    "skill": "Agent Skills (SKILL.md)",
+    "category": "ai_orchestration_and_agentic_engineering",
+    "description": "Модульні пакети інструкцій і правил для стандартизації поведінки агентів, інструментів та чеклистів контролю якості.",
+    "usage": "Створення та підтримка репозиторних скілів, що стандартизують архітектурні патерни, правила code review та критерії готовності (definition of done)."
+  },
+  {
+    "skill": "C++20",
+    "category": "systems_and_cpp",
+    "description": "Сучасний стандарт C++ з концептами, корутинами, діапазонами та потужними можливостями метапрограмування.",
+    "usage": "Використано для проектування кросплатформної бібліотеки LibPolyCodec із застосуванням compile-time AllocPolicy моделей для максимальної швидкодії."
+  },
+  {
+    "skill": "SIMD (AVX2 / NEON)",
+    "category": "systems_and_cpp",
+    "description": "Апаратна векторизація для паралельних математичних обчислень на десктопах (AVX2/SSE) та мобільних платформах (NEON).",
+    "usage": "Впроваджено в математичний рушій LibPolyCodec для паралелізації циклів поліадичного кодування/декодування з кардинальним зростанням пропускної здатності."
+  },
+  {
+    "skill": "CMake",
+    "category": "systems_and_cpp",
+    "description": "Кросплатформний генератор систем збирання з відкритим вихідним кодом.",
+    "usage": "Налаштування конфігурації мультитаргетного компілювання LibPolyCodec під десктопні ОС, Android NDK та вбудовані системи."
+  },
+  {
+    "skill": "Zero-Allocation Architecture",
+    "category": "systems_and_cpp",
+    "description": "Інженерний принцип повного виключення динамічного виділення пам'яті в купі (heap) на критичних шляхах виконання.",
+    "usage": "Реалізовано в LibPolyCodec через пули статичних буферів (StaticPoolPolicy) та гарантію роботи без виключень (No-Exceptions) для БПЛА та вбудованих пристроїв."
+  },
+  {
+    "skill": "Polyadic Coding (OPC)",
+    "category": "systems_and_cpp",
+    "description": "Алгоритмічна методологія кодування інформації у нерівноважних позиційних просторах числення.",
+    "usage": "Ключовий математичний алгоритм у LibPolyCodec та дисертаційних дослідженнях для структурного стиснення зображень і відеопотоків із захистом даних."
+  },
+  {
+    "skill": "Data Compression Algorithms",
+    "category": "systems_and_cpp",
+    "description": "Алгоритмічні методи зменшення обсягу даних зі збереженням структури та інформативності.",
+    "usage": "Розроблено методи адаптивного визначення базису та стеганографічного приховування для інфокомунікаційних мереж з обмеженою пропускною здатністю."
+  },
+  {
+    "skill": "Astro Islands",
+    "category": "modern_web_and_edge",
+    "description": "Сучасна веб-архітектура з генерацією чистого HTML та ізольованими компонентами з гідратацією за вимогою.",
+    "usage": "Спроєктовано та реалізовано через ШІ-агентів для комерційного порталу ProKlimat з досягненням 100 балів у рейтингу Google Lighthouse."
+  },
+  {
+    "skill": "Vite",
+    "category": "modern_web_and_edge",
+    "description": "Швидкий інструмент збирання фронтенду нового покоління з миттєвим гарячим оновленням модулів (HMR).",
+    "usage": "Використано як основу розробки та збірки медичного порталу Klinik Bangsar South та цього інтерактивного портфоліо."
+  },
+  {
+    "skill": "Semantic CSS3 & Tokens",
+    "category": "modern_web_and_edge",
+    "description": "Системи дизайн-токенів та кастомних властивостей CSS для гнучкої адаптивної стилізації.",
+    "usage": "Реалізовано гласморфічні інтерфейси, адаптивне перемикання тем без мерехтіння (FOUC) та GPU-прискорені анімації."
+  },
+  {
+    "skill": "Cloudflare Pages",
+    "category": "modern_web_and_edge",
+    "description": "Глобальна edge-платформа хостингу з швидкою доставкою статичного та динамічного контенту через CDN.",
+    "usage": "Застосовано для публікації, безпеки та автоматизованого CI/CD деплою проектів ProKlimat та Klinik Bangsar South."
+  },
+  {
+    "skill": "Technical SEO & Schema.org JSON-LD",
+    "category": "modern_web_and_edge",
+    "description": "Структурування семантичних метаданих для оптимізації індексації пошуковими системами.",
+    "usage": "Впроваджено розширені схеми розмітки JSON-LD (LocalBusiness, MedicalClinic, OfferCatalog), OpenGraph-протоколи та генерацію sitemap."
+  },
+  {
+    "skill": "Web Accessibility (WCAG 2.1 AA)",
+    "category": "modern_web_and_edge",
+    "description": "Міжнародні стандарти веб-доступності цифрових продуктів для користувачів з різними потребами.",
+    "usage": "Реалізовано повну клавіатурну навігацію, стандарти контрастності та ARIA live-регіони для порталу Klinik Bangsar South."
+  },
+  {
+    "skill": "ESP32 (LilyGO)",
+    "category": "iot_and_embedded",
+    "description": "Функціональні мікроконтролери з низьким енергоспоживанням та інтегрованими модулями Wi-Fi, Bluetooth і LoRa.",
+    "usage": "Використано для створення вузлів периметрального моніторингу та сенсорних станцій у розподіленій LoRa-мережі."
+  },
+  {
+    "skill": "LoRa (SX1276)",
+    "category": "iot_and_embedded",
+    "description": "Енергоефективна бездротова технологія радіозв'язку великого радіуса дії для передачі телеметрії.",
+    "usage": "Оптимізовано параметри фізичного рівня (SF, BW, CR) для максимальної дальності передачі в умовах радіоперешкод."
+  },
+  {
+    "skill": "LoRaWAN",
+    "category": "iot_and_embedded",
+    "description": "Протокол низькоенергетичних глобальних мереж для масштабних систем збору даних.",
+    "usage": "Досліджено та реалізовано топологію шлюзів і безпечну передачу пакетів для агрегації сенсорних показників."
+  },
+  {
+    "skill": "MQTT Broker",
+    "category": "iot_and_embedded",
+    "description": "Легковагий мережевий протокол для передачі повідомлень за схемою публікація/підписка.",
+    "usage": "Налаштовано брокер Mosquitto MQTT для передачі телеметрії з польових датчиків на сервери обробки в реальному часі."
+  },
+  {
+    "skill": "Node-RED",
+    "category": "iot_and_embedded",
+    "description": "Інструмент потокового візуального програмування для взаємодії апаратних пристроїв, API та онлайн-сервісів.",
+    "usage": "Побудовано автоматизовані пайплайни обробки даних, дашборди моніторингу та сповіщення про небезпеку."
+  },
+  {
+    "skill": "SerialPort / UART",
+    "category": "iot_and_embedded",
+    "description": "Апаратний інтерфейс послідовного зв'язку для прямої взаємодії з мікросхемами.",
+    "usage": "Декодування сирих апаратних пакетів через FT232 USB-to-Serial у проекті ліфтового інформаційного табло LiftApp."
+  },
+  {
+    "skill": "Steganography",
+    "category": "cybersecurity_and_research",
+    "description": "Технологія прихованого вбудовування конфіденційної інформації у цифрові медіаконтейнери.",
+    "usage": "Основа кандидатської дисертації: розроблено алгоритми стеганографічного приховування у психовізуальному просторі зображень та відеопотоків."
+  },
+  {
+    "skill": "Cryptocompression",
+    "category": "cybersecurity_and_research",
+    "description": "Одночасне стиснення та криптографічне перетворення інформаційних потоків.",
+    "usage": "Досліджено та опубліковано наукові праці щодо збереження та скремблювання службових компонентів кодограм у критичній інфраструктурі."
+  },
+  {
+    "skill": "Digital Forensics",
+    "category": "cybersecurity_and_research",
+    "description": "Методологія пошуку, вилучення, фіксації та аналізу цифрових слідів у розслідуванні кіберзлочинів.",
+    "usage": "Розробка навчальних дисциплін та викладання для курсантів і студентів кафедри протидії кіберзлочинності ХНУВС."
+  },
+  {
+    "skill": "Cybercrime Countermeasures",
+    "category": "cybersecurity_and_research",
+    "description": "Комплекс правових, організаційних та технічних заходів захисту від протиправних дій у цифровому середовищі.",
+    "usage": "Викладацька практика, наукове керівництво дослідженнями та тренінги з кібербезпеки у ХНУВС."
+  },
+  {
+    "skill": "Information Security",
+    "category": "cybersecurity_and_research",
+    "description": "Захист інформації та телекомунікаційних мереж від несанкціонованого доступу, витоку чи модифікації.",
+    "usage": "Власник патенту UA № 144599; прикладні R&D дослідження захищених інфокомунікаційних технологій."
+  },
+  {
+    "skill": "Android SDK",
+    "category": "android_core_and_ui",
+    "description": "Базовий набір інструментів та API для розробки додатків під ОС Android.",
+    "usage": "Застосовується в абсолютно всіх Android-проєктах для керування життєвим циклом, сервісами, дозволами та системним API."
+  },
+  {
+    "skill": "Jetpack Compose",
+    "category": "android_core_and_ui",
+    "description": "Сучасний декларативний UI-тулкіт від Google для створення нативних інтерфейсів Android.",
+    "usage": "Міграція застарілих XML-екранів у Megogo, створення UI з нуля в Symmetry, Brainrot Clicker, Tic-Tac-Toe, People Notes та Resistance Multiplayer."
+  },
+  {
+    "skill": "Material 3",
+    "category": "android_core_and_ui",
+    "description": "Остання версія дизайн-системи Google з динамічними кольорами та оновленими компонентами.",
+    "usage": "Застосовано в UI власних проєктів (Tic-Tac-Toe, Brainrot Clicker, People Notes, Resistance) для сучасного користувацького досвіду."
+  },
+  {
+    "skill": "Android TV (Leanback)",
+    "category": "android_core_and_ui",
+    "description": "Набір бібліотек для побудови інтерфейсів, оптимізованих під екрани телевізорів.",
+    "usage": "Застосовувався в Megogo та Media Streaming Service (2018) для оптимізації відеоплеєрів та пульта дистанційного керування."
+  },
+  {
+    "skill": "Android NDK",
+    "category": "android_core_and_ui",
+    "description": "Інструментарій для інтеграції коду C/C++ в Android-додатки.",
+    "usage": "Застосовано для зв'язування C++ логіки: розпізнавання номерних знаків (Car Plate Recognition) та читання апаратних сигналів (LiftApp)."
+  },
+  {
+    "skill": "Kotlin Multiplatform",
+    "category": "android_core_and_ui",
+    "description": "Технологія спільного використання коду на Kotlin між різними платформами (iOS, Android, Web, Desktop).",
+    "usage": "Вказано в резюме як одна з ключових технологій для кросплатформного спільного використання бізнес-логіки."
+  },
+  {
+    "skill": "Flutter",
+    "category": "android_core_and_ui",
+    "description": "Кросплатформний фреймворк Google для створення компільованих мобільних додатків з єдиної кодової бази.",
+    "usage": "Застосовувався під час роботи в Nitrix Studio для створення ігор та кросплатформних утиліт (Card Game Calculator, Resistance: Local Game)."
+  },
+  {
+    "skill": "Clean Architecture",
+    "category": "architecture_and_design",
+    "description": "Архітектурний підхід із суворим розділенням системи на шари (Presentation, Domain, Data).",
+    "usage": "Використовується в багатомодульних проєктах (Healthcare, Media Streaming, Smart Home) для ізоляції логіки від UI та фреймворків."
+  },
+  {
+    "skill": "MVVM",
+    "category": "architecture_and_design",
+    "description": "Патерн Model-View-ViewModel — де-факто стандарт для Android з реактивним станом через LiveData або Flow.",
+    "usage": "Застосовується у більшості сучасних проєктів (Healthcare, Media Streaming та всіх соло-проєктах) для безшовного зв'язку UI та логіки."
+  },
+  {
+    "skill": "MVP",
+    "category": "architecture_and_design",
+    "description": "Патерн Model-View-Presenter — класичний підхід для відокремлення логіки відображення від UI.",
+    "usage": "Слугував основним архітектурним рішенням під час розробки системи Smart Home, де виконував роль Lead Android Developer."
+  },
+  {
+    "skill": "MVI",
+    "category": "architecture_and_design",
+    "description": "Model-View-Intent — архітектура із суворим односпрямованим потоком даних.",
+    "usage": "Застосовується разом із Jetpack Compose для побудови стійких машин станів для складних екранів."
+  },
+  {
+    "skill": "BLoC",
+    "category": "architecture_and_design",
+    "description": "Business Logic Component — популярний патерн керування станом в екосистемі Flutter.",
+    "usage": "Застосовувався при розробці гри Resistance: Local Game на Flutter для чистого розділення UI від ігрової логіки."
+  },
+  {
+    "skill": "Redux",
+    "category": "architecture_and_design",
+    "description": "Архітектура з єдиним джерелом істини (Store) та незмінним станом.",
+    "usage": "Один із підходів, що використовується для керування складними станами великих додатків."
+  },
+  {
+    "skill": "SOLID",
+    "category": "architecture_and_design",
+    "description": "П'ять фундаментальних принципів об'єктно-орієнтованого програмування для масштабованого дизайну.",
+    "usage": "Впроваджується на code review та архітектурному проєктуванні для забезпечення чистоти та розширюваності коду."
+  },
+  {
+    "skill": "GoF Patterns",
+    "category": "architecture_and_design",
+    "description": "Класичні шаблони проектування Gang of Four (породжувальні, структурні, поведінкові).",
+    "usage": "Застосовуються для вирішення типових інженерних задач: фабрики, одинаки, білдери, спостерігачі."
+  },
+  {
+    "skill": "Coroutines",
+    "category": "asynchrony_and_networking",
+    "description": "Легковажні потоки в Kotlin для асинхронного неблокуючого коду.",
+    "usage": "Масово використовуються в проєктах (Megogo, Tic-Tac-Toe, Brainrot Clicker, Resistance, Symmetry) для мережевих та дискових операцій."
+  },
+  {
+    "skill": "Flow",
+    "category": "asynchrony_and_networking",
+    "description": "API асинхронних холодних та гарячих потоків даних поверх корутин.",
+    "usage": "Використовується для реактивних оновлень UI (StateFlow/SharedFlow) при змінах у Room та Firestore."
+  },
+  {
+    "skill": "RxJava / RxKotlin",
+    "category": "asynchrony_and_networking",
+    "description": "Бібліотеки реактивного програмування та обробки потоків подій.",
+    "usage": "Застосовувалися у великих комерційних системах (Megogo, Smart Home, Healthcare, Car Plate Recognition). Активно мігруються на Coroutines/Flow."
+  },
+  {
+    "skill": "Retrofit 2",
+    "category": "asynchrony_and_networking",
+    "description": "Типобезпечний HTTP-клієнт для взаємодії з REST API.",
+    "usage": "Основний інструмент мережевої взаємодії в Megogo, Symmetry, Car Plate Recognition та Media Streaming."
+  },
+  {
+    "skill": "OkHttp",
+    "category": "asynchrony_and_networking",
+    "description": "HTTP-клієнт для конфігурації з'єднань, інтерцепторів, авторизації та кешування.",
+    "usage": "Застосовується у поєднанні з Retrofit для логування, підстановки токенів та повторних спроб."
+  },
+  {
+    "skill": "WebSockets",
+    "category": "asynchrony_and_networking",
+    "description": "Повнодуплексний протокол для двостороннього зв'язку в реальному часі.",
+    "usage": "Застосовувався для мультиплеєрних ігор, телемедичних чатів (Healthcare) та взаємодії зі Smart Home."
+  },
+  {
+    "skill": "WorkManager",
+    "category": "asynchrony_and_networking",
+    "description": "Бібліотека Android Jetpack для гарантованого фонового виконання задач.",
+    "usage": "Використано в Megogo та People Notes для створення надійної системи сповіщень та нагадувань, що зберігаються після перезавантаження."
+  },
+  {
+    "skill": "Fetch 2",
+    "category": "asynchrony_and_networking",
+    "description": "Бібліотека для стабільного завантаження файлів у фоновому режимі.",
+    "usage": "Застосовувалася в проєктах Music Streaming (2020) та Media Streaming (2019) для завантаження медіа офлайн."
+  },
+  {
+    "skill": "Room",
+    "category": "databases_and_local_storage",
+    "description": "Обгортка над SQLite з бібліотек Android Jetpack.",
+    "usage": "Основне локальне сховище: застосовано в Symmetry (збереження метаданих інспекцій газу), Smart Home, Healthcare та Car Plate Recognition."
+  },
+  {
+    "skill": "Firebase Firestore",
+    "category": "databases_and_local_storage",
+    "description": "Гнучка NoSQL хмарна база даних з підтримкою синхронізації в реальному часі.",
+    "usage": "Архітектурний фундамент інді-додатків (Resistance Multiplayer, Tic-Tac-Toe, Brainrot Clicker, People Notes) для збереження матчів та лідербордів."
+  },
+  {
+    "skill": "Firebase Realtime Database",
+    "category": "databases_and_local_storage",
+    "description": "Хмарна база даних NoSQL з миттєвою синхронізацією стану.",
+    "usage": "Застосовувалася в мережевих додатках для передачі статусів активності та чатів."
+  },
+  {
+    "skill": "SQLite",
+    "category": "databases_and_local_storage",
+    "description": "Вбудована реляційна база даних в Android.",
+    "usage": "Написання прямих SQL-запитів та складних міграцій, глибоке розуміння внутрішніх механізмів Room."
+  },
+  {
+    "skill": "Proto DataStore",
+    "category": "databases_and_local_storage",
+    "description": "Сучасне асинхронне рішення для збереження типізованих об'єктів конфігурації.",
+    "usage": "Безпечна заміна SharedPreferences на основі Coroutines/Flow для користувацьких налаштувань."
+  },
+  {
+    "skill": "SharedPreferences",
+    "category": "databases_and_local_storage",
+    "description": "Синхронне сховище ключ-значення для простих примітивних даних.",
+    "usage": "Широко використовувалося у Flutter-додатках та утилітах для збереження прапорців теми та прогресу."
+  },
+  {
+    "skill": "Realm",
+    "category": "databases_and_local_storage",
+    "description": "Об'єктно-орієнтована мобільна база даних NoSQL.",
+    "usage": "Застосовувалася як альтернатива Room у проєктах зі складною вкладеною структурою моделей."
+  },
+  {
+    "skill": "Firebase Authentication",
+    "category": "cloud_and_backend",
+    "description": "Хмарний сервіс безпечної авторизації користувачів через різні провайдери.",
+    "usage": "Використано в Resistance: Multiplayer Game для анонімної та захищеної авторизації гравців."
+  },
+  {
+    "skill": "Firebase Storage",
+    "category": "cloud_and_backend",
+    "description": "Хмарне сховище для користувацького контенту (фото, медіа).",
+    "usage": "Застосовано в додатку People Notes для збереження аватарів та прикріплених файлів контактів."
+  },
+  {
+    "skill": "AWS Cognito",
+    "category": "cloud_and_backend",
+    "description": "Сервіс Amazon для керування ідентифікацією та доступом користувачів.",
+    "usage": "Інтегровано в enterprise-додаток Symmetry для авторизації інспекторів та клієнтів."
+  },
+  {
+    "skill": "Dagger 2",
+    "category": "dependency_injection",
+    "description": "Фреймворк для compile-time впровадження залежностей.",
+    "usage": "Застосовувався у великих корпоративних проєктах зі складними графами (Megogo, Healthcare, Car Plate Recognition, Streaming)."
+  },
+  {
+    "skill": "Hilt",
+    "category": "dependency_injection",
+    "description": "Офіційна обгортка над Dagger для спрощення DI в проєктах Android Jetpack.",
+    "usage": "Застосовано у всіх останніх інді-проєктах (Resistance, Tic-Tac-Toe, Brainrot Clicker, People Notes) та в Symmetry."
+  },
+  {
+    "skill": "Koin",
+    "category": "dependency_injection",
+    "description": "Легковажний DI-фреймворк для мови Kotlin.",
+    "usage": "Обрано основним DI-контейнером у проєкті Smart Home завдяки лаконічному синтаксису."
+  },
+  {
+    "skill": "CameraX",
+    "category": "multimedia_hardware_and_camera",
+    "description": "Бібліотека Android Jetpack для спрощення розробки функцій камери.",
+    "usage": "Реалізовано в Symmetry для фіксації та збереження якісних фотографій місць витоку газу."
+  },
+  {
+    "skill": "Camera 2 API",
+    "category": "multimedia_hardware_and_camera",
+    "description": "Низькорівневе Android API для повного контролю апаратних потоків камери.",
+    "usage": "Використовувалося в Car Plate Recognition для захоплення високошвидкісного потоку кадрів для C++ бібліотеки."
+  },
+  {
+    "skill": "ExoPlayer",
+    "category": "multimedia_hardware_and_camera",
+    "description": "Потужний медіаплеєр від Google з відкритим кодом.",
+    "usage": "Основний рушій відтворення аудіо та відео в Megogo (включно з Android TV) та стрімінгових додатках."
+  },
+  {
+    "skill": "VLC",
+    "category": "multimedia_hardware_and_camera",
+    "description": "Універсальна бібліотека медіаплеєра для роботи зі складними форматами.",
+    "usage": "Інтегровано в Media Streaming Service (2018) для програмного декодування рідкісних форматів (AVI)."
+  },
+  {
+    "skill": "JNI (Java Native Interface)",
+    "category": "multimedia_hardware_and_camera",
+    "description": "Міст для виклику нативного коду C/C++ з Java/Kotlin та навпаки.",
+    "usage": "Застосовано в Car Plate Recognition для передачі відеокадрів у нативну бібліотеку OCR (ALPR)."
+  },
+  {
+    "skill": "SerialPort API",
+    "category": "multimedia_hardware_and_camera",
+    "description": "API для роботи з апаратними послідовними портами (RS-232, UART).",
+    "usage": "Застосовано в LiftApp для читання сигналів з чіпа FT232 щодо переміщення ліфта."
+  },
+  {
+    "skill": "Wi-Fi Direct",
+    "category": "multimedia_hardware_and_camera",
+    "description": "Технологія прямого бездротового з'єднання між пристроями без роутера.",
+    "usage": "Використано в утиліті LiftApp Remote Setup для налаштування конфігурації ліфтових табло."
+  },
+  {
+    "skill": "Glide",
+    "category": "multimedia_hardware_and_camera",
+    "description": "Швидка бібліотека завантаження та кешування зображень.",
+    "usage": "Застосовувалася в Megogo та Smart Home для плавної обробки мережевих картинок."
+  },
+  {
+    "skill": "Coil",
+    "category": "multimedia_hardware_and_camera",
+    "description": "Сучасна бібліотека завантаження зображень, оптимізована під Kotlin Coroutines.",
+    "usage": "Використано в проєкті Symmetry разом із Jetpack Compose для відображення фотографій інспекцій."
+  },
+  {
+    "skill": "JUnit 5",
+    "category": "testing_and_debugging",
+    "description": "Популярний фреймворк для написання Unit-тестів на Java та Kotlin.",
+    "usage": "Покриття бізнес-логіки в Megogo, Smart Home, Tic-Tac-Toe та Resistance, генерація тест-кейсів за допомогою ШІ."
+  },
+  {
+    "skill": "Mockito",
+    "category": "testing_and_debugging",
+    "description": "Фреймворк створення мок-об'єктів для тестування Java/Kotlin.",
+    "usage": "Застосовувався в Megogo для ізоляції тестованих шарів від зовнішніх сервісів."
+  },
+  {
+    "skill": "Mockk",
+    "category": "testing_and_debugging",
+    "description": "Спеціалізована бібліотека мокінгу, орієнтована на ідіоми Kotlin.",
+    "usage": "Використано в Resistance: Multiplayer Game для тестування корутин та Flow."
+  },
+  {
+    "skill": "Espresso",
+    "category": "testing_and_debugging",
+    "description": "Фреймворк для автоматизації UI-тестів інтерфейсу Android.",
+    "usage": "Написання інструментальних тестів симуляції взаємодії користувача з екраном."
+  },
+  {
+    "skill": "Firebase Test Lab",
+    "category": "testing_and_debugging",
+    "description": "Хмарна інфраструктура тестування додатків на пулі реальних пристроїв.",
+    "usage": "Інтеграція в CI/CD для перевірки стабільності білдів на різних версіях Android перед релізом."
+  },
+  {
+    "skill": "Timber",
+    "category": "testing_and_debugging",
+    "description": "Зручний логер з підтримкою безпечного тегування та вимкнення в релізних збірках.",
+    "usage": "Застосовано в Resistance: Multiplayer Game для відлагодження онлайн-станів."
+  },
+  {
+    "skill": "LeakCanary",
+    "category": "testing_and_debugging",
+    "description": "Інструмент виявлення витоків оперативної пам'яті в Android.",
+    "usage": "Профілювання пам'яті для запобігання утриманню Activity та View після їх знищення."
+  },
+  {
+    "skill": "Android Profiler",
+    "category": "testing_and_debugging",
+    "description": "Вбудовані інструменти Android Studio для аналізу CPU, пам'яті та мережі.",
+    "usage": "Оптимізація роботи з камерою та запобігання просіданням FPS у Car Plate Recognition."
+  },
+  {
+    "skill": "Google Play Billing (In-App Purchases)",
+    "category": "monetization_analytics_and_devops",
+    "description": "Офіційна бібліотека Google для здійснення покупок та підписок у додатках.",
+    "usage": "Інтегровано в People Notes та Lucky Loot Boxes для продажу преміум-функцій та відключення реклами."
+  },
+  {
+    "skill": "AdMob",
+    "category": "monetization_analytics_and_devops",
+    "description": "Платформа Google для монетизації додатків через різні формати реклами.",
+    "usage": "Основна модель монетизації інді-проєктів (Tic-Tac-Toe, Brainrot Clicker, People Notes, Lucky Loot Boxes, Resistance Local)."
+  },
+  {
+    "skill": "Firebase Analytics",
+    "category": "monetization_analytics_and_devops",
+    "description": "Сервіс збору та аналізу поведінкових метрик користувачів.",
+    "usage": "Відстеження кастомних подій (покупки, проходження туторіалу, ретеншн) у Brainrot Clicker."
+  },
+  {
+    "skill": "Crashlytics",
+    "category": "monetization_analytics_and_devops",
+    "description": "Сервіс моніторингу та діагностики крашів у режимі реального часу.",
+    "usage": "Застосовується у всіх комерційних та інді-проєктах для швидкого локалізування та усунення багів."
+  },
+  {
+    "skill": "Remote Config (A/B Testing)",
+    "category": "monetization_analytics_and_devops",
+    "description": "Сервіс динамічного керування конфігурацією додатків без випуску оновлень.",
+    "usage": "Застосовувався в Brainrot Clicker для тонкого налаштування внутрішньоігрової економіки та A/B тестів."
+  },
+  {
+    "skill": "CI/CD Pipelines",
+    "category": "monetization_analytics_and_devops",
+    "description": "Практика безперервної інтеграції та доставки збірок.",
+    "usage": "Налаштування автоматизованих пайплайнів збірки, тестів та релізу в Smart Home."
+  },
+  {
+    "skill": "Git Flow",
+    "category": "monetization_analytics_and_devops",
+    "description": "Структурована методологія розгалуження в Git (feature, develop, release).",
+    "usage": "Корпоративний стандарт командної розробки в CHI Software, Megogo та Nitrix Studio."
+  },
+  {
+    "skill": "Game Loop & Economy Design",
+    "category": "inferred_game_dev_and_publishing",
+    "description": "Проєктування ігрового циклу, балансу нагород, прогресії та економіки.",
+    "usage": "Реалізовано в Brainrot Clicker (експоненційне масштабування, престижі) та Lucky Loot Boxes (дроп-рейт предметів)."
+  },
+  {
+    "skill": "AI Opponent Logic (Tic-Tac-Toe)",
+    "category": "inferred_game_dev_and_publishing",
+    "description": "Створення алгоритмів штучного інтелекту для віртуальних суперників.",
+    "usage": "Розроблено 5 рівнів складності ШІ-ботів для нетипового поля 5x5 на трьох гравців у Tic-Tac-Toe 3 Player."
+  },
+  {
+    "skill": "Real-time Multiplayer Matchmaking",
+    "category": "inferred_game_dev_and_publishing",
+    "description": "Створення бекенду пошуку гравців та синхронізації матчів.",
+    "usage": "Реалізовано через Firestore в Tic-Tac-Toe 3 Player та Resistance: Multiplayer Game."
+  },
+  {
+    "skill": "Procedural Audio",
+    "category": "inferred_game_dev_and_publishing",
+    "description": "Синтетична або алгоритмічна генерація аудіо під час гри.",
+    "usage": "Впроваджено в Resistance: Multiplayer Game для створення напруженої кіберпанк-атмосфери."
+  },
+  {
+    "skill": "Haptics & Tactile Feedback",
+    "category": "inferred_game_dev_and_publishing",
+    "description": "Програмування вібровідгуку для підсилення відчуттів від дій у грі.",
+    "usage": "Застосовано для підвищення залученості гравців у Tic-Tac-Toe 3 Player та Brainrot Clicker."
+  },
+  {
+    "skill": "App Store Optimization (ASO)",
+    "category": "inferred_game_dev_and_publishing",
+    "description": "Оптимізація сторінок у Google Play для зростання органічних встановлень.",
+    "usage": "Створення скріншотів, іконок, фічер-графіки та оптимізованих локалізованих описів для продуктів DᎥᗰᗩᒪᎥᑎᗩ."
+  },
+  {
+    "skill": "Product Management & Publishing",
+    "category": "inferred_game_dev_and_publishing",
+    "description": "Керування повним циклом застосунків: від концепції до підтримки та аналітики.",
+    "usage": "Успішно продемонстровано на портфоліо DᎥᗰᗩᒪᎥᑎᗩ (People Notes, Brainrot Clicker, Tic-Tac-Toe): реакція на відгуки, релізи та A/B тести."
+  }
 ];

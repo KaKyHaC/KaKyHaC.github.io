@@ -49,3 +49,7 @@ export const trackProjectView = (projectName) => {
 export const trackProjectLinkClick = (projectName, linkUrl) => {
     trackEvent('project_link_click', { project_name: projectName, link_url: linkUrl });
 };
+
+export const trackResumeDownload = () => {
+    trackEvent('resume_download', { file_name: 'Dmytro_Barannik_CV.pdf' });
+};

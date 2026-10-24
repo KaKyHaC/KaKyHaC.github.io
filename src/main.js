@@ -5,13 +5,15 @@ import {
     trackNavigationClick,
     trackThemeSwitch,
     trackProjectView,
-    trackProjectLinkClick
+    trackProjectLinkClick,
+    trackResumeDownload
 } from './analytics.js'
 import { loadNamespace, getLang, setLang, getSupportedLangs } from './i18n/index.js'
 
 // ─── Global state ────────────────────────────────────────────────────────────
 let projectsData = [];
 let currentFilter = null;
+let currentDomain = 'all';
 
 // Intersection observer for fade-in elements (initialized once)
 const observer = new IntersectionObserver((entries) => {
@@ -174,6 +176,22 @@ function applyUI(ui) {
         clearBtn.appendChild(document.createTextNode(' ' + ui.projects.clearFilter));
     }
 
+    // CV Download button
+    const cvBtnText = el('cv-btn-text');
+    if (cvBtnText && ui.profile?.downloadCV) {
+        setText(cvBtnText, ui.profile.downloadCV);
+    }
+
+    // Domain filter tabs
+    if (ui.projects?.domainFilters) {
+        document.querySelectorAll('.domain-tab').forEach(tab => {
+            const dom = tab.getAttribute('data-domain');
+            if (dom && ui.projects.domainFilters[dom]) {
+                tab.textContent = ui.projects.domainFilters[dom];
+            }
+        });
+    }
+
     // Research section title (inline, before badges)
     setText(el('section-title-research'), ui.sections.research);
 
@@ -205,7 +223,12 @@ function renderSkills(skills, skillsDetails, ui) {
         multimedia_hardware_and_camera: { key: 'multimedia_hardware_and_camera', icon: 'fas fa-camera',        span: 1 },
         testing_and_debugging:          { key: 'testing_and_debugging',          icon: 'fas fa-bug',           span: 1 },
         monetization_analytics_and_devops: { key: 'monetization_analytics_and_devops', icon: 'fas fa-chart-line', span: 1 },
+        systems_and_cpp:                { key: 'systems_and_cpp',                icon: 'fas fa-microchip',     span: 1 },
+        modern_web_and_edge:            { key: 'modern_web_and_edge',            icon: 'fas fa-globe',         span: 1 },
+        iot_and_embedded:               { key: 'iot_and_embedded',               icon: 'fas fa-satellite-dish',span: 1 },
+        cybersecurity_and_research:     { key: 'cybersecurity_and_research',     icon: 'fas fa-user-shield',   span: 1 },
         inferred_game_dev_and_publishing:  { key: 'inferred_game_dev_and_publishing',  icon: 'fas fa-gamepad',    span: 2 },
+        ai_orchestration_and_agentic_engineering: { key: 'ai_orchestration_and_agentic_engineering', icon: 'fas fa-robot', span: 2 },
         inferred_ai_and_automation:        { key: 'inferred_ai_and_automation',        icon: 'fas fa-robot',      span: 2 },
     };
 
@@ -282,13 +305,14 @@ function initSkillModal(skillsDetails) {
 }
 
 // ─── Projects ─────────────────────────────────────────────────────────────────
-function renderProjects(filterCompany = null) {
+function renderProjects(filterCompany = currentFilter, domain = currentDomain) {
     const projectsContainer = document.getElementById('projects-container');
     const filterLabel = document.getElementById('projects-filter-label');
     const clearFilterBtn = document.getElementById('clear-filter-btn');
     if (!projectsContainer) return;
 
     currentFilter = filterCompany;
+    currentDomain = domain;
     projectsContainer.innerHTML = '';
 
     if (filterCompany) {
@@ -300,13 +324,28 @@ function renderProjects(filterCompany = null) {
         clearFilterBtn.classList.add('hidden');
     }
 
-    const filtered = filterCompany
+    let filtered = filterCompany
         ? projectsData.filter(p => {
             const pShort = getCompanyConfig(p.company).shortName;
             const filterShort = getCompanyConfig(filterCompany).shortName;
             return pShort === filterShort;
           })
         : projectsData;
+
+    if (domain && domain !== 'all') {
+        filtered = filtered.filter(p => p.domain === domain);
+    }
+
+    if (filtered.length === 0) {
+        const ui = window._ui || {};
+        projectsContainer.innerHTML = `
+            <div class="no-projects glass" style="grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--text-secondary);">
+                <i class="fas fa-folder-open" style="font-size: 2rem; margin-bottom: 12px; opacity: 0.6; display: block;"></i>
+                <p>${ui.projects?.noProjects || 'No projects found matching the selected filter.'}</p>
+            </div>
+        `;
+        return;
+    }
 
     filtered.forEach(proj => {
         const originalIndex = projectsData.indexOf(proj);
@@ -513,7 +552,11 @@ function initExperienceAccordion() {
             filterBtn.addEventListener('click', e => {
                 e.stopPropagation();
                 const comp = item.getAttribute('data-company');
-                renderProjects(comp);
+                currentDomain = 'all';
+                document.querySelectorAll('.domain-tab').forEach(t => {
+                    t.classList.toggle('active', t.getAttribute('data-domain') === 'all');
+                });
+                renderProjects(comp, 'all');
                 document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         }
@@ -732,11 +775,35 @@ function initActiveNavLink() {
     updateActiveLink();
 }
 
+// ─── Domain filter tabs ───────────────────────────────────────────────────────
+function initDomainFilters() {
+    const tabs = document.querySelectorAll('.domain-tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const selectedDomain = tab.getAttribute('data-domain') || 'all';
+            currentDomain = selectedDomain;
+            renderProjects(currentFilter, currentDomain);
+        });
+    });
+}
+
+// ─── CV Download tracking ─────────────────────────────────────────────────────
+function initCVDownload() {
+    const cvBtn = document.getElementById('download-cv-btn');
+    if (cvBtn) {
+        cvBtn.addEventListener('click', () => {
+            trackResumeDownload();
+        });
+    }
+}
+
 // ─── Clear filter button ──────────────────────────────────────────────────────
 function initClearFilter() {
     const clearFilterBtn = document.getElementById('clear-filter-btn');
     if (clearFilterBtn) {
-        clearFilterBtn.addEventListener('click', () => renderProjects(null));
+        clearFilterBtn.addEventListener('click', () => renderProjects(null, currentDomain));
     }
 }
 
@@ -772,7 +839,7 @@ export async function renderAll() {
 
     // Re-render all dynamic sections
     renderSkills(skills, skillsDetails, ui);
-    renderProjects(currentFilter);
+    renderProjects(currentFilter, currentDomain);
     renderExperience(experience, ui);
     renderEducation(education, ui);
     renderResearch(research, ui);
@@ -786,6 +853,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     initTheme();
     initMobileMenu();
     initLangSwitcher();
+    initDomainFilters();
+    initCVDownload();
     initClearFilter();
     initEscapeKey();
     initActiveNavLink();

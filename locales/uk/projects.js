@@ -6,7 +6,30 @@
  */
 export default [
     {
+        id: 'portfolio-showcase',
+        title: 'Дмитро Баранник — Портфоліо та вітрина',
+        role: 'Продуктовий архітектор та Lead Engineer',
+        company: 'Solo Project',
+        domain: 'web',
+        date: 'Жовтень 2026',
+        description: 'Високопродуктивне персональне портфоліо та інтерактивна інженерна вітрина на базі Vite та сучасних веб-стандартів. Спроєктоване з використанням гласморфізму, сітки Bento Grid, надшвидкого завантаження, динамічної нульової i18n-локалізації (EN/UK) та безшовного перемикання тем.',
+        tasks: [
+            'Спроєктував модульний клієнтський рушій динамічної інтернаціоналізації (i18n) з чанкуванням просторів імен, кешуванням та автовизначенням мови без сторонніх залежностей.',
+            'Розробив гласморфічну дизайн-систему Bento Grid з персистентною темною/світлою темою без мерехтіння (FOUC) та GPU-прискореними мікро-анімаціями.',
+            'Досягнув максимального показника Google Lighthouse 100 у категоріях Performance, Accessibility та Best Practices без зсувів макета (zero CLS).',
+            'Реалізував багаторівневу клієнтську фільтрацію за доменами та компаніями, уніфіковані модальні вікна та трекінг користувацьких подій через Firebase Analytics.'
+        ],
+        technologies: ['Vite', 'JavaScript (ES6+)', 'CSS3 Custom Tokens', 'HTML5', 'i18n Engine', 'Firebase Analytics', 'GitHub Pages'],
+        tags: ['Vite', 'Architecture', 'UI/UX & CSS3', 'i18n Engine', 'Performance 100'],
+        imagePlaceholder: 'D',
+        imageColor: 'linear-gradient(135deg, #FFD700, #FFA000)',
+        icon: 'images/favicon.png',
+        liveLink: 'https://dvbarannik.github.io/',
+        githubLink: 'https://github.com/KaKyHaC/KaKyHaC.github.io'
+    },
+    {
         id: 'pro-klimat',
+        domain: 'web',
         title: 'ProKlimat — Кліматичний сервіс',
         role: 'Провідний фронтенд-інженер та UI/UX архітектор',
         company: 'Solo Project',
@@ -29,6 +52,7 @@ export default [
     },
     {
         id: 'klinik-bangsar-south',
+        domain: 'web',
         title: 'Klinik Bangsar South — Медичний портал',
         role: 'Провідний фронтенд-інженер та UI/UX архітектор',
         company: 'Solo Project',
@@ -51,6 +75,7 @@ export default [
     },
     {
         id: 'libpolycodec',
+        domain: 'systems',
         title: 'LibPolyCodec: Бібліотека стиснення даних',
         role: 'Архітектор C++ програмного забезпечення',
         company: 'MITI',
@@ -72,6 +97,7 @@ export default [
     },
     {
         id: 'lucky-loot-boxes',
+        domain: 'mobile',
         title: '67 Lucky Loot Boxes',
         role: 'Самостійний Android-розробник',
         company: 'Solo Project',
@@ -92,6 +118,7 @@ export default [
     },
     {
         id: 'lora-iot-network',
+        domain: 'iot',
         title: 'Розподілена IoT LoRa сенсорна мережа',
         role: 'Інженер вбудованого ПЗ IoT',
         company: 'MITI',
@@ -113,6 +140,7 @@ export default [
     },
     {
         id: 'megogo',
+        domain: 'mobile',
         title: 'Megogo Mobile/ATV застосунок',
         role: 'Android-розробник',
         company: 'Megogo',
@@ -131,11 +159,12 @@ export default [
     },
     {
         id: 'tic-tac-toe',
-        title: 'Хрестики-нулики 3 гравці: X O D',
+        domain: 'mobile',
+        title: 'Tic-Tac-Toe: Гра для 3 гравців',
         role: 'Самостійний Android-розробник',
         company: 'Solo Project',
         date: 'Березень 2025 – по теперішній час',
-        description: 'Інноваційний та хаотичний мультиплеєрний варіант класичних хрестиків-нуликів для 3 гравців (X, O, ∆). Масштабоване поле (від 3x3 до 7x7), унікальні ШІ-суперники, рейтинговий онлайн-матчмейкінг, кастомні динамічні фони (Аврора, Неон) та захоплива тактильна взаємодія.',
+        description: 'Інноваційна багатокористувацька версія класичних хрестиків-нуликів для 3 гравців (X, O, ∆) з понад 10,000+ завантажень та бездоганним рейтингом 5.0★. Містить масштабоване поле (від 3x3 до 7x7), 5 рівнів складності ШІ, рейтингові онлайн-матчі, динамічні анімовані фони та тактильний відгук.',
         tasks: [
             'Спроєктовано унікальне ігрове поле для 3 гравців з кастомною логікою виграшу/блокування та 5 рівнями складності для ШІ.',
             'Інтегровано Google Play Games Services для системи досягнень, таблиць лідерів та автентифікації.',
@@ -152,11 +181,12 @@ export default [
     },
     {
         id: 'people-notes',
-        title: 'People Notes (MyPeople)',
+        domain: 'mobile',
+        title: 'People Notes: AI Agent CRM',
         role: 'Самостійний Android-розробник',
         company: 'Solo Project',
         date: 'Січень 2025 – по теперішній час',
-        description: 'Комплексний персональний CRM та застосунок управління контактами (рейтинг 4.6/5). Дозволяє організовувати детальні профілі, відстежувати важливі дати та події, контролювати спільні фінанси та категоризувати соціальні зв\'язки через зручний дашборд.',
+        description: 'Комплексний персональний CRM-застосунок для керування контактами з ідеальним рейтингом 5.0/5. Дозволяє формувати детальні профілі, відстежувати важливі дати, контролювати спільні фінанси та структурувати соціальні зв\'язки у зручному кастомізованому дашборді.',
         tasks: [
             'Спроєктовано та розроблено архітектуру застосунку з нуля на основі сучасних принципів Jetpack Compose.',
             'Реалізовано надійний шар бази даних з Firebase Firestore для безперебійної синхронізації між пристроями.',
@@ -173,6 +203,7 @@ export default [
     },
     {
         id: 'resistance-multiplayer',
+        domain: 'mobile',
         title: 'Resistance: Мультиплеєр',
         role: 'Самостійний Android-розробник',
         company: 'Solo Project',
@@ -194,6 +225,7 @@ export default [
     },
     {
         id: 'symmetry',
+        domain: 'mobile',
         title: 'Symmetry',
         role: 'Android-розробник',
         company: 'CHI Software',
@@ -211,11 +243,12 @@ export default [
     },
     {
         id: 'epic-clicker',
-        title: '67 Brainrot Clicker',
+        domain: 'mobile',
+        title: 'Brainrot Clicker: Aura Farming',
         role: 'Самостійний Android-розробник',
         company: 'Solo Project',
         date: 'Лютий 2024 – по теперішній час',
-        description: 'Мем-кликер у стилі idle-гри, де гравці тапають, щоб розблокувати персонажів, заробляти Повагу та підніматися в глобальних рейтингах. Гра має сезонні таблиці лідерів, здібності героїв, офлайн-прогрес та глибокі синергії комбо.',
+        description: 'Вірусний idle-клікер із понад 10,000+ завантажень та рейтингом 5.0★, де гравці відкривають персонажів, накопичують повагу (Respect) та змагаються у глобальних сезонних лідербордах. Містить офлайн-прогрес, систему унікальних здібностей, синергії та мультиязичну локалізацію.',
         tasks: [
             'Провів проєкт через повний цикл: від дизайну гри та балансу до розробки та публікації у Google Play.',
             'Побудовано модульну систему героїв та скінів з унікальними здібностями (авто-тап, x10 критичних тапів, інвестиційне масштабування).',
@@ -232,6 +265,7 @@ export default [
     },
     {
         id: 'smart-home',
+        domain: 'mobile',
         title: 'Розумний Дім',
         role: 'Lead Android Developer',
         company: 'CHI Software',
@@ -250,6 +284,7 @@ export default [
     },
     {
         id: 'healthcare',
+        domain: 'mobile',
         title: 'Healthcare',
         role: 'Android-розробник',
         company: 'CHI Software',
@@ -267,6 +302,7 @@ export default [
     },
     {
         id: 'car-plate',
+        domain: 'systems',
         title: 'Розпізнавання автомобільних номерів',
         role: 'Android-розробник',
         company: 'CHI Software',
@@ -284,6 +320,7 @@ export default [
     },
     {
         id: 'music-streaming-2020',
+        domain: 'mobile',
         title: 'Music Streaming',
         role: 'Android-розробник',
         company: 'Nitrix Studio',
@@ -302,6 +339,7 @@ export default [
     },
     {
         id: 'image-compression',
+        domain: 'systems',
         title: 'Стиснення та стеганографія зображень',
         role: 'Android-розробник',
         company: 'Nitrix Studio',
@@ -319,6 +357,7 @@ export default [
     },
     {
         id: 'music-platform-2019',
+        domain: 'mobile',
         title: 'Платформа потокової музики',
         role: 'Android-розробник',
         company: 'Nitrix Studio',
@@ -337,6 +376,7 @@ export default [
     },
     {
         id: 'card-game-calculator',
+        domain: 'mobile',
         title: 'Калькулятор очок карткових ігор',
         role: 'Flutter-розробник',
         company: 'Nitrix Studio',
@@ -354,6 +394,7 @@ export default [
     },
     {
         id: 'media-streaming-2018',
+        domain: 'mobile',
         title: 'Сервіс медіастрімінгу',
         role: 'Android-розробник',
         company: 'Nitrix Studio',
@@ -371,6 +412,7 @@ export default [
     },
     {
         id: 'liftapp-remote',
+        domain: 'iot',
         title: 'LiftApp Дистанційне налаштування',
         role: 'Android-розробник',
         company: 'IT Company',
@@ -387,6 +429,7 @@ export default [
     },
     {
         id: 'liftapp-bootloader',
+        domain: 'iot',
         title: 'LiftApp Завантажувач',
         role: 'Android-розробник',
         company: 'IT Company',
@@ -403,6 +446,7 @@ export default [
     },
     {
         id: 'resistance-local',
+        domain: 'mobile',
         title: 'Resistance: Локальна гра',
         role: 'Flutter-розробник / Самостійний розробник',
         company: 'DᎥᗰᗩᒪᎥᑎᗩ',
@@ -423,6 +467,7 @@ export default [
     },
     {
         id: 'liftapp',
+        domain: 'systems',
         title: 'LiftApp',
         role: 'Android-розробник',
         company: 'IT Company',
