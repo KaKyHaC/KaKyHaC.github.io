@@ -18,13 +18,88 @@ const copy=()=>COPY[getLang()];
 function renderProfile(ui){
   const uk=getLang()==='uk';
   const sections=[
-    {kind:'scope',index:'01',title:uk?'Інженерний профіль':'Engineering scope',body:[ui.about.bio1,ui.about.bio4]},
-    {kind:'agentic',index:'02',title:uk?'Agentic-розробка':'Agentic engineering',body:[ui.about.bio2,ui.about.bio3]},
-    {kind:'product',index:'03',title:ui.about.title2,body:[ui.about.leadership1,ui.about.leadership2]},
-    {kind:'research',index:'04',title:ui.about.title3,body:[ui.about.research1,ui.about.research2]}
+    {
+      kind:'scope',
+      index:'01',
+      color:'var(--accent)',
+      rgb:'var(--accent-rgb)',
+      icon:'fas fa-sitemap',
+      metric:'9+',
+      metricLabel:uk?'років комерційного досвіду':'years commercial engineering',
+      title:uk?'Системна архітектура & Tech Lead':'Systems Architecture & Tech Lead',
+      desc:uk?'Проєктування відмовостійких систем: від високонавантаженого стрімінгу (Kotlin, Clean Arch) і C++20/SIMD алгоритмів до IoT та Edge Web.':'Architecting resilient systems: from high-throughput streaming (Kotlin, Clean Arch) and C++20/SIMD engines to distributed IoT and Edge Web.',
+      tags:['High-Load Mobile','Clean Architecture','C++20 & SIMD','IoT & Edge']
+    },
+    {
+      kind:'agentic',
+      index:'02',
+      color:'var(--domain-iot)',
+      rgb:'var(--domain-iot-rgb)',
+      icon:'fas fa-robot',
+      metric:'10x',
+      metricLabel:uk?'швидкість з автономними агентами':'velocity via autonomous agents',
+      title:uk?'Agentic AI інженерія & оркестрація':'Agentic AI & Swarm Orchestration',
+      desc:uk?'ШІ-оркестрація як основа процесу: керування автономними агентами (Antigravity, Gemini, Codex), spec-driven розробка та суворий TDD-контроль.':'AI orchestration as a core multiplier: leading autonomous agent swarms (Antigravity, Gemini, Codex), spec-driven dev, and zero-trust TDD verification.',
+      tags:['Autonomous Swarms','Spec-Driven Dev','Zero-Trust TDD','Antigravity']
+    },
+    {
+      kind:'product',
+      index:'03',
+      color:'var(--domain-android)',
+      rgb:'var(--domain-android-rgb)',
+      icon:'fas fa-rocket',
+      metric:'25k+',
+      metricLabel:uk?'завантажень · рейтинг 5.0★':'downloads · 5.0★ rating',
+      title:uk?'Продуктовий цикл & Інді-масштаб':'Product Ownership & Indie Scale',
+      desc:uk?'Повний життєвий цикл комерційних продуктів (DᎥᗰᗩᒪᎥᑎᗩ): від UI/UX і Realtime-бекендів (Firestore) до паблішингу в Google Play та монетизації.':'Full commercial product lifecycle (DᎥᗰᗩᒪᎥᑎᗩ): from UI/UX and realtime backends (Firestore) to global store publishing and monetization.',
+      tags:['DᎥᗰᗩᒪᎥᑎᗩ Studio','Google Play 5.0★','Realtime Firestore','Full Lifecycle']
+    },
+    {
+      kind:'research',
+      index:'04',
+      color:'var(--domain-research)',
+      rgb:'var(--domain-research-rgb)',
+      icon:'fas fa-microscope',
+      metric:'PhD',
+      metricLabel:uk?'1 патент · 68 публікацій':'1 patent · 68 peer-reviewed pubs',
+      title:uk?'Академічний R&D & Кібербезпека':'Applied Research & Deep Tech',
+      desc:uk?'Кандидат наук (PhD, 2025), доцент кафедри протидії кіберзлочинності ХНУВС. Патент на позиційне кодування відеопотоків, стипендіат КМУ для молодих вчених.':'PhD in Telecom (2025), Associate Professor at Cybercrime Dept (KhNUIA). Patent holder in positional video coding, Cabinet of Ministers scholarship.',
+      tags:['PhD in Telecom','Positional Video Patent','Scopus Q3','Cybercrime Dept']
+    }
   ];
-  const icon={scope:'fas fa-sitemap',agentic:'fas fa-robot',product:'fas fa-rocket',research:'fas fa-microscope'};
-  $('#profile-notes').innerHTML=sections.map(section=>'<article class="profile-note profile-note-'+section.kind+' reveal"><div class="profile-note-top"><span>'+section.index+'</span><i class="'+icon[section.kind]+'"></i></div><h3>'+section.title+'</h3><div class="profile-note-body">'+section.body.map(text=>'<p>'+text+'</p>').join('')+'</div></article>').join('');
+
+  $('#profile-notes').innerHTML=sections.map(s=>`
+    <article class="profile-note profile-note-${s.kind} reveal" style="--card-color:${s.color};--card-rgb:${s.rgb}">
+      <div class="profile-note-top">
+        <span class="profile-note-index">${s.index}</span>
+        <span class="profile-note-icon"><i class="${s.icon}" aria-hidden="true"></i></span>
+      </div>
+      <div class="profile-note-metric-group">
+        <span class="profile-note-metric">${s.metric}</span>
+        <span class="profile-note-metric-label">${s.metricLabel}</span>
+      </div>
+      <h3 class="profile-note-title">${s.title}</h3>
+      <p class="profile-note-desc">${s.desc}</p>
+      <div class="profile-note-tags">
+        ${s.tags.map(t=>`<span class="profile-note-tag">${safe(t)}</span>`).join('')}
+      </div>
+    </article>
+  `).join('');
+
+  $$('.profile-note').forEach(card=>{
+    card.addEventListener('mousemove', e=>{
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--spotlight-x', `${x}px`);
+      card.style.setProperty('--spotlight-y', `${y}px`);
+      card.style.setProperty('--spotlight-opacity', '1');
+    });
+    card.addEventListener('mouseleave', ()=>{
+      card.style.setProperty('--spotlight-opacity', '0');
+    });
+  });
+
   $('#approach-kicker').textContent=uk?'Робочий цикл':'Delivery loop';
   $('#approach-title').textContent=uk?'Як я рухаю технологічний проєкт уперед.':'How I move a technical project forward.';
 }
