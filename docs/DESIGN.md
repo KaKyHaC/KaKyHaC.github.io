@@ -27,6 +27,17 @@ This document establishes the visual philosophy, design tokens, typography, layo
 - Avoid gratuitous animation or 3D canvas noise that distracts from technical competence or slows down mobile devices.
 - Every visual device must serve the portfolio narrative: demonstrating engineering rigor, clarity of thought, and technical leadership.
 
+### 1.4 Project Parity: All Projects Are of Utmost Importance ("No Second-Class Projects")
+
+> [!IMPORTANT]
+> **Equal Engineering Stature Across All Products.**
+> There is no artificial division into "important commercial projects" vs. "minor side projects". 
+> Whether a product is a streaming giant with millions of active users (like MEGOGO), an enterprise client solution (CHI), an IoT LoRa mesh network, a patent-holding low-level codec (C++20), an academic grant/competition, or an indie consumer utility (DᎥᗰᗩᒪᎥᑎᗩ) — **every single project receives the exact same standard of architectural rigor, craftsmanship, and accountability.**
+>
+> **Client Assurance:** Any prospective client or partner looking at this portfolio must immediately understand: *Whatever project I bring to Dmytro — large or small — it will be treated with the highest priority, deep technical care, and uncompromising quality.*
+>
+> **Multi-Disciplinary Spectrum:** No technological domain is relegated to secondary status. Android, KMP, Flutter, Web & Edge, Embedded/C++, IoT, and Applied Scientific Research/Grants stand on equal footing, showcasing comprehensive capabilities to architect, build, verify, and lead diverse technology initiatives end-to-end.
+
 ---
 
 ## 2. Color System & Theming

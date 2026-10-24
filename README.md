@@ -107,9 +107,11 @@ For detailed guides and architecture specifications, consult the [`docs/`](file:
 ## 💎 Core Principles
 
 1. **Visual Dominance over Text ("Visual First, Details on Demand"):** Visual perception dominates text. Scale, company logos, badges, timeline geometry, and metrics communicate seniority and scope within the first 3–5 seconds. Long-form copy is strictly a secondary tier (*details on demand*) for visitors who choose to dive deeper.
-2. **Honest Engineering & Verifiable Outcomes:** Timelines reflect real dates; projects highlight architectural decisions and measurable impact rather than generic buzzwords.
-3. **Decoupled Content & Localization:** Content is isolated into bilingual data modules (`locales/`), allowing effortless updates without modifying presentation code.
-4. **Performance & Sustainability:** Zero unnecessary libraries. Native web platform capabilities are preferred whenever possible.
+2. **Equal Engineering Stature (All Projects Are Paramount):** No artificial division into "important" vs "minor" projects. Whether a streaming giant with millions of users (MEGOGO), an enterprise architecture (CHI), a boutique startup, a low-level C++ codec, an IoT hardware network, or a scientific grant — every product receives the exact same uncompromising standard of architectural care, craft, and accountability. Prospective clients see that whatever product they bring, it is treated with the highest priority.
+3. **Versatile Multi-Disciplinary Spectrum:** Engineering leadership across native Android, KMP, Flutter, Modern Web & Edge, Embedded / C++, IoT, and applied research grants and competitions without being confined to a single narrow silo.
+4. **Honest Engineering & Verifiable Outcomes:** Timelines reflect real dates; projects highlight architectural decisions and measurable impact rather than generic buzzwords.
+5. **Decoupled Content & Localization:** Content is isolated into bilingual data modules (`locales/`), allowing effortless updates without modifying presentation code.
+6. **Performance & Sustainability:** Zero unnecessary libraries. Native web platform capabilities are preferred whenever possible.
 
 ---
 

@@ -9,6 +9,7 @@ This document outlines the architectural patterns, component design, routing mec
 - **Zero-Dependency Core:** The user interface runs on standard web technologies (HTML5, ES2022+ modules, modern CSS). It avoids heavyweight frontend frameworks (React, Angular, Vue) to guarantee minimal bundle size, instant First Contentful Paint (FCP), and optimal Core Web Vitals (CWV).
 - **Static First with Dynamic Enhancements:** The main page loads statically and progressively enhances with interactivity (theme switching, filter buttons, deep-dive modal dialogs).
 - **Search Engine & Social Media Optimization (SEO & SMO):** Individual project pages are pre-rendered at build time with specific OpenGraph and Twitter card metadata for optimal sharing.
+- **Architectural Parity Across Domains & Projects:** The architecture treats every project and technological domain (Android, KMP, Flutter, Web, Embedded, IoT, Applied Research & Grants) as a first-class citizen. There are no "minor" or downgraded components; every project enjoys the same rigorous presentation, pre-rendered static routes, and deep technical articulation.
 
 ---
 

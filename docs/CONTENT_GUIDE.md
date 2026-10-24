@@ -22,6 +22,23 @@ Rather than pigeonholing the profile as exclusively a mobile developer, the cont
 > - **Headings and lead sentences must deliver 80% of the value:** If a reader skims only the bold words and titles, they must still grasp the full accomplishment.
 > - **Paragraphs are strictly "details on demand":** Detailed prose belongs inside expandable drawers, modals, or dedicated project pages.
 
+### 1.2 The Principle of Parity: All Projects Are of Paramount Importance
+
+> [!IMPORTANT]
+> **Never divide projects into "major" vs "minor". Every project is the most important one.**
+> For Dmytro, every client and product is equally vital:
+> - A massive commercial streaming service with 10M+ users (MEGOGO)
+> - An enterprise client mobile architecture (CHI Software)
+> - An indie bionic medical portal or HVAC platform (ESMEE, ProKlimat)
+> - A low-level C++20 algorithmic codec or patent (LibPolyCodec)
+> - An IoT telemetry system (LoRa, ESP32)
+> - An indie game or productivity tool (Tic-Tac-Toe 5.0★, People Notes)
+> - A scientific research grant, state competition, or peer-reviewed publication
+>
+> **The Content Rule:** Every project receives the exact same tier of narrative respect, clear architectural framing, and verified results. We never write "just a pet project" or "a small side tool". Potential clients must see that whatever problem they bring, it will be treated with absolute focus, senior craftsmanship, and long-term accountability.
+>
+> **Multi-Domain Breadth:** The portfolio demonstrates versatile capabilities across the entire technological spectrum — Android, KMP, Flutter, Web & Edge, Embedded, IoT, and R&D/Grants — showing a versatile engineering leader capable of steering any technology project to success.
+
 ---
 
 ## 2. Role of Archived Resumes (`archive/resume/`)
