@@ -88,7 +88,35 @@ export default {
                         text: 'Enforced strict memory leak elimination, CI/CD quality gates, and automated test suites, taking full accountability for system stability post-release.'
                     }
                 ],
-                tags: ['High-Load Mobile', 'Clean Architecture', 'C++20 & SIMD', 'IoT & Edge']
+                tags: ['High-Load Mobile', 'Clean Architecture', 'C++20 & SIMD', 'IoT & Edge'],
+                back: {
+                    badge: 'CLEAN ARCHITECTURE BLUEPRINT',
+                    flipLabel: '3D Architecture',
+                    flipAria: 'Flip card to view universal clean architecture blueprint',
+                    frontHint: '3D Blueprint: Universal Clean Architecture Topology',
+                    icon: 'fas fa-layer-group',
+                    title: 'Universal 3-Layer Clean Architecture',
+                    subtitle: 'Strict dependency inversion: Domain Core is 100% decoupled from frameworks & SDKs',
+                    callouts: [
+                        {
+                            lead: 'Dependency Inversion',
+                            text: 'Outer layers depend inward on Domain Core interfaces.'
+                        },
+                        {
+                            lead: 'Pure Domain Isolation',
+                            text: '100% pure Kotlin with zero third-party SDK dependencies.'
+                        },
+                        {
+                            lead: 'Unidirectional MVI',
+                            text: 'UI Intent ➔ UseCase ➔ deterministic 60 FPS StateFlow.'
+                        }
+                    ],
+                    diagramLabels: {
+                        title: 'Enterprise Clean Architecture Topology & Dependency Rule',
+                        dependencyRule: 'Dependencies Point Inward → Domain',
+                        flow: 'Unidirectional StateFlow'
+                    }
+                }
             },
             {
                 kind: 'agentic',
@@ -97,8 +125,8 @@ export default {
                 color: 'var(--domain-iot)',
                 rgb: 'var(--domain-iot-rgb)',
                 icon: 'fas fa-robot',
-                metric: '10x',
-                metricLabel: 'velocity via autonomous agents',
+                metric: '8x',
+                metricLabel: 'velocity via parallel swarms',
                 title: 'Agentic AI & Swarm Orchestration',
                 points: [
                     {
@@ -114,7 +142,34 @@ export default {
                         text: 'Enforcing automated AST/linter validations, contract test suites, and strict human-in-the-loop gates to eliminate hallucinations completely.'
                     }
                 ],
-                tags: ['Autonomous Swarms', 'Spec-Driven Dev', 'Zero-Trust TDD']
+                tags: ['Autonomous Swarms', 'Spec-Driven Dev', 'Zero-Trust TDD'],
+                back: {
+                    badge: 'PARALLEL SWARM PIPELINE',
+                    flipLabel: '3D Swarm',
+                    flipAria: 'Flip card to view parallel agentic swarm workflow',
+                    frontHint: '3D Topology: 4x Parallel Swarm & Quality Gate',
+                    icon: 'fas fa-network-wired',
+                    title: 'Parallel Multi-Agent Swarm Orchestration',
+                    subtitle: 'Orchestrator dispatches 4 parallel worker agents directly into an AST & TDD quality gate',
+                    callouts: [
+                        {
+                            lead: 'Contract Decomposition',
+                            text: 'Strict type contracts and formal acceptance specs prior to codegen.'
+                        },
+                        {
+                            lead: '4x Parallel Swarm',
+                            text: 'Simultaneous code, test suites, AST linting, and CI pipelines.'
+                        },
+                        {
+                            lead: 'Zero-Hallucination Gate',
+                            text: '100% test pass on verification loops with zero drift.'
+                        }
+                    ],
+                    diagramLabels: {
+                        title: 'Parallel Swarm Topology & Quality Gate',
+                        verified: '100% Verified · 0 Drift'
+                    }
+                }
             },
             {
                 kind: 'product',
@@ -124,12 +179,12 @@ export default {
                 rgb: 'var(--domain-android-rgb)',
                 icon: 'fas fa-rocket',
                 metric: '25k+',
-                metricLabel: 'downloads · 5.0★ rating',
+                metricLabel: 'downloads · 6 published apps',
                 title: 'Product Ownership & Indie Scale',
                 points: [
                     {
                         lead: 'DᎥᗰᗩᒪᎥᑎᗩ Studio',
-                        text: 'Bootstrapped and shipped independent commercial products with 10k+ downloads each (Tic-Tac-Toe 3-Player, Brainrot Clicker, People Notes CRM).'
+                        text: 'Bootstrapped and shipped 6 independent Android products with 25,000+ total downloads on Google Play, owning product design, architecture, and deployment.'
                     },
                     {
                         lead: 'End-to-End Execution',
@@ -140,7 +195,76 @@ export default {
                         text: 'Integrated real-time Cloud Firestore backends, offline-first synchronization, Google Play In-App Purchases, and optimized AdMob mediation.'
                     }
                 ],
-                tags: ['DᎥᗰᗩᒪᎥᑎᗩ Studio', 'Google Play 5.0★', 'Realtime Firestore']
+                tags: ['DᎥᗰᗩᒪᎥᑎᗩ Studio', '6 Google Play Apps', '25,000+ Downloads'],
+                back: {
+                    badge: 'GOOGLE PLAY PORTFOLIO (6 APPS)',
+                    flipLabel: '3D Apps',
+                    flipAria: 'Flip card to view published Google Play apps',
+                    frontHint: '3D Showcase: 6 Published Google Play Android Apps',
+                    icon: 'fab fa-google-play',
+                    title: 'DᎥᗰᗩᒪᎥᑎᗩ Studio: Published Apps',
+                    subtitle: 'Full solo cycle: from UI/UX in Figma to Google Play production',
+                    apps: [
+                        {
+                            id: 'tictactoe',
+                            name: 'Tic-Tac-Toe: 3 Player',
+                            tag: '10K+ DL · Multiplayer',
+                            icon: 'images/projects/tictactoe_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.tictactoy'
+                        },
+                        {
+                            id: 'peoplenotes',
+                            name: 'People Notes: AI CRM',
+                            tag: 'Gemini AI · Offline CRM',
+                            icon: 'images/projects/peoplenotes_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes'
+                        },
+                        {
+                            id: 'lucky',
+                            name: 'Lucky Loot Boxes',
+                            tag: 'Loot Simulator · Casual',
+                            icon: 'images/projects/lucky_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.luckylootbox'
+                        },
+                        {
+                            id: 'brainrot',
+                            name: 'Brainrot Clicker: Aura',
+                            tag: 'Viral Arcade · Reactive UI',
+                            icon: 'images/projects/brainrotclicker_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.brainrotclicker2'
+                        },
+                        {
+                            id: 'nightfall',
+                            name: 'Operation Nightfall',
+                            tag: 'Tactical Action · Compose',
+                            icon: 'images/projects/resistance_multiplayer_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall'
+                        },
+                        {
+                            id: 'resistance',
+                            name: 'The Resistance',
+                            tag: 'Social Deduction · BLoC',
+                            icon: 'images/projects/resistance_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.divan.theresistance'
+                        }
+                    ],
+                    callouts: [
+                        {
+                            lead: 'Solo Engineering',
+                            text: 'Figma UI/UX design, native Android, Firestore, and Google Play IAP.'
+                        },
+                        {
+                            lead: 'Stability & ASO',
+                            text: 'Zero crash rate, rapid OTA releases, and organic store discovery.'
+                        }
+                    ],
+                    primaryAction: {
+                        label: 'Google Play Developer Profile',
+                        href: 'https://play.google.com/store/apps/dev?id=7572188664286438813',
+                        icon: 'fab fa-google-play',
+                        external: true
+                    }
+                }
             },
             {
                 kind: 'research',
@@ -170,7 +294,46 @@ export default {
                         text: 'Awarded the prestigious Cabinet of Ministers of Ukraine Scholarship for Young Scientists (2025) for exceptional contributions to applied defense tech.'
                     }
                 ],
-                tags: ['PhD in Telecom', 'Positional Video Patent', 'Scopus Q3', 'Cybercrime Dept']
+                tags: ['PhD in Telecom', 'Positional Video Patent', 'Scopus Q3', 'Cybercrime Dept'],
+                back: {
+                    badge: 'PATENT SPEC & 5-AXIS RADAR BENCHMARK',
+                    flipLabel: '3D Radar',
+                    flipAria: 'Flip card to view LibPolyCodec 5-axis performance radar chart',
+                    frontHint: '3D Radar: 5-Axis Multi-Metric LibPolyCodec Benchmark',
+                    icon: 'fas fa-certificate',
+                    title: 'LibPolyCodec vs. Standard Codecs',
+                    subtitle: 'Patented non-equilibrium positional compression and C++20 zero-allocation engine',
+                    callouts: [
+                        {
+                            lead: 'Zero-Alloc Heap',
+                            text: '0 bytes dynamic allocations on static memory pools'
+                        },
+                        {
+                            lead: 'SIMD AVX2 / NEON',
+                            text: '4.2x hardware vector stream acceleration'
+                        },
+                        {
+                            lead: 'Patent & Scopus Q3',
+                            text: 'State patent of Ukraine and 68+ scientific publications'
+                        }
+                    ],
+                    primaryAction: {
+                        label: 'LibPolyCodec Case Study & Repository',
+                        href: '/projects/libpolycodec/',
+                        icon: 'fas fa-arrow-right',
+                        external: false
+                    },
+                    radarLabels: {
+                        title: 'LibPolyCodec vs. Standard Codecs (5-Axis Multi-Metric Radar)',
+                        legendLib: 'LibPolyCodec (C++20)',
+                        legendGen: 'Standard Codecs (Zstd / Gzip)',
+                        axis1: 'Speed (SIMD)',
+                        axis2: 'Compression',
+                        axis3: 'Zero-Alloc',
+                        axis4: 'UAV / IoT',
+                        axis5: 'Security'
+                    }
+                }
             }
         ],
     },

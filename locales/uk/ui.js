@@ -88,7 +88,35 @@ export default {
                         text: 'Забезпечення надійності: повне усунення витоків пам\'яті (LeakCanary/Profiler), суворі CI/CD quality gates та наскрізна відповідальність за стабільність після релізу.'
                     }
                 ],
-                tags: ['High-Load Mobile', 'Clean Architecture', 'C++20 & SIMD', 'IoT & Edge']
+                tags: ['High-Load Mobile', 'Clean Architecture', 'C++20 & SIMD', 'IoT & Edge'],
+                back: {
+                    badge: 'АРХІТЕКТУРНИЙ CLEAN BLUEPRINT',
+                    flipLabel: '3D Архітектура',
+                    flipAria: 'Перевернути картку для перегляду універсальної архітектурної схеми Clean Architecture',
+                    frontHint: '3D-схема: Clean Architecture та інверсія залежностей',
+                    icon: 'fas fa-layer-group',
+                    title: 'Універсальна 3-рівнева Clean Architecture',
+                    subtitle: 'Сувора інверсія залежностей: Domain Core повністю ізольований від фреймворків та SDK',
+                    callouts: [
+                        {
+                            lead: 'Інверсія залежностей',
+                            text: 'Зовнішні шари залежать від Domain Core, а не навпаки.'
+                        },
+                        {
+                            lead: 'Ізоляція Domain Core',
+                            text: '100% чистий Kotlin без сторонніх SDK і фреймворків.'
+                        },
+                        {
+                            lead: 'Односпрямований MVI',
+                            text: 'UI Intent ➔ UseCase ➔ детермінований StateFlow 60 FPS.'
+                        }
+                    ],
+                    diagramLabels: {
+                        title: 'Топологія Clean Architecture та правило залежностей',
+                        dependencyRule: 'Залежності спрямовані всередину → Domain',
+                        flow: 'Односпрямований StateFlow'
+                    }
+                }
             },
             {
                 kind: 'agentic',
@@ -97,8 +125,8 @@ export default {
                 color: 'var(--domain-iot)',
                 rgb: 'var(--domain-iot-rgb)',
                 icon: 'fas fa-robot',
-                metric: '10x',
-                metricLabel: 'інженерна продуктивність з AI',
+                metric: '8x',
+                metricLabel: 'прискорення за рахунок AI-роїв',
                 title: 'Agentic AI інженерія & оркестрація',
                 points: [
                     {
@@ -114,7 +142,34 @@ export default {
                         text: 'Запровадження автоматичних AST/linter перевірок, контрактних тест-сьютів та верифікаційних циклів, що повністю унеможливлюють галюцинації.'
                     }
                 ],
-                tags: ['Autonomous Swarms', 'Spec-Driven Dev', 'Zero-Trust TDD']
+                tags: ['Autonomous Swarms', 'Spec-Driven Dev', 'Zero-Trust TDD'],
+                back: {
+                    badge: 'ПАРАЛЕЛЬНИЙ AI-РІЙ ТА ШЛЮЗ ЯКОСТІ',
+                    flipLabel: '3D Рій',
+                    flipAria: 'Перевернути картку для перегляду конвеєра паралельних AI-агентів',
+                    frontHint: '3D-топологія: Паралельний AI-рій 4x & Шлюз якості',
+                    icon: 'fas fa-network-wired',
+                    title: 'Оркестрація паралельного AI-рою',
+                    subtitle: 'Оркестратор синхронно координує 4 спеціалізованих агенти через строгий верифікаційний шлюз',
+                    callouts: [
+                        {
+                            lead: 'Декомпозиція контракту',
+                            text: 'Строгі типи й формальні критерії прийомки до генерації коду.'
+                        },
+                        {
+                            lead: 'Паралельний 4x-рій',
+                            text: 'Синхронна генерація коду, TDD-тестів, AST-лінтера та CI/CD.'
+                        },
+                        {
+                            lead: 'Zero-Hallucination Gate',
+                            text: '100% проходження верифікаційних тестів без дрейфу архітектури.'
+                        }
+                    ],
+                    diagramLabels: {
+                        title: 'Топологія паралельного рою та шлюз якості',
+                        verified: '100% Верифіковано · 0 Drift'
+                    }
+                }
             },
             {
                 kind: 'product',
@@ -124,12 +179,12 @@ export default {
                 rgb: 'var(--domain-android-rgb)',
                 icon: 'fas fa-rocket',
                 metric: '25k+',
-                metricLabel: 'завантажень · рейтинг 5.0★',
+                metricLabel: 'завантажень · 6 додатків',
                 title: 'Продуктовий цикл & Інді-масштаб',
                 points: [
                     {
                         lead: 'Студія DᎥᗰᗩᒪᎥᑎᗩ',
-                        text: 'Самостійний запуск та паблішинг комерційних продуктів із 10k+ завантажень кожен (Tic-Tac-Toe: 3 Player, Brainrot Clicker, People Notes CRM) із рейтингом 5.0★.'
+                        text: 'Створення та реліз 6 комерційних Android-додатків із 25,000+ сумарних завантажень у Google Play з повним володінням архітектурою та релізом.'
                     },
                     {
                         lead: 'Повний життєвий цикл',
@@ -140,7 +195,76 @@ export default {
                         text: 'Інтеграція бекенду реального часу (Firestore), офлайн-синхронізації, платіжних систем Google Play (IAP) та оптимізації монетизації AdMob.'
                     }
                 ],
-                tags: ['DᎥᗰᗩᒪᎥᑎᗩ Studio', 'Google Play 5.0★', 'Realtime Firestore']
+                tags: ['DᎥᗰᗩᒪᎥᑎᗩ Studio', '6 додатків Google Play', '25,000+ завантажень'],
+                back: {
+                    badge: 'ПОРТФОЛІО GOOGLE PLAY (6 ДОДАТКІВ)',
+                    flipLabel: '3D Додатки',
+                    flipAria: 'Перевернути картку для перегляду опублікованих додатків Google Play',
+                    frontHint: '3D-вітрина: 6 комерційних додатків Google Play',
+                    icon: 'fab fa-google-play',
+                    title: 'DᎥᗰᗩᒪᎥᑎᗩ Studio: Опубліковані додатки',
+                    subtitle: 'Повний solo-цикл: від UI/UX концепту у Figma до релізу в Google Play',
+                    apps: [
+                        {
+                            id: 'tictactoe',
+                            name: 'Tic-Tac-Toe: 3 Player',
+                            tag: '10K+ DL · Мультиплеєр',
+                            icon: 'images/projects/tictactoe_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.tictactoy'
+                        },
+                        {
+                            id: 'peoplenotes',
+                            name: 'People Notes: AI CRM',
+                            tag: 'Gemini AI · Офлайн-CRM',
+                            icon: 'images/projects/peoplenotes_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes'
+                        },
+                        {
+                            id: 'lucky',
+                            name: 'Lucky Loot Boxes',
+                            tag: 'Симулятор лутбоксів · Casual',
+                            icon: 'images/projects/lucky_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.luckylootbox'
+                        },
+                        {
+                            id: 'brainrot',
+                            name: 'Brainrot Clicker: Aura',
+                            tag: 'Вірусний аркадний клікер',
+                            icon: 'images/projects/brainrotclicker_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.brainrotclicker2'
+                        },
+                        {
+                            id: 'nightfall',
+                            name: 'Operation Nightfall',
+                            tag: 'Тактичний екшен · Compose',
+                            icon: 'images/projects/resistance_multiplayer_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall'
+                        },
+                        {
+                            id: 'resistance',
+                            name: 'The Resistance',
+                            tag: 'Соціальна дедукція · BLoC',
+                            icon: 'images/projects/resistance_icon.png',
+                            playUrl: 'https://play.google.com/store/apps/details?id=com.divan.theresistance'
+                        }
+                    ],
+                    callouts: [
+                        {
+                            lead: 'Solo-розробка',
+                            text: 'UI/UX дизайн у Figma, нативна архітектура, Firestore та Google Play IAP.'
+                        },
+                        {
+                            lead: 'Стабільність & ASO',
+                            text: '0% крашів, регулярні OTA-оновлення та високий рейтинг у сторі.'
+                        }
+                    ],
+                    primaryAction: {
+                        label: 'Профіль розробника у Google Play',
+                        href: 'https://play.google.com/store/apps/dev?id=7572188664286438813',
+                        icon: 'fab fa-google-play',
+                        external: true
+                    }
+                }
             },
             {
                 kind: 'research',
@@ -170,7 +294,46 @@ export default {
                         text: 'Стипендіат Кабінету Міністрів України для молодих вчених (2025) за вагомий внесок у прикладні наукові розробки та технології захисту інформації.'
                     }
                 ],
-                tags: ['PhD у телекомі', 'Патент на відеокодек', 'Scopus Q3', 'Кафедра кіберзлочинності']
+                tags: ['PhD у телекомі', 'Патент на відеокодек', 'Scopus Q3', 'Кафедра кіберзлочинності'],
+                back: {
+                    badge: 'ПАТЕНТ І 5-ОСЬОВИЙ РАДАРНИЙ БЕНЧМАРК',
+                    flipLabel: '3D Радар',
+                    flipAria: 'Перевернути картку для перегляду 5-осьової радарної діаграми бенчмарку LibPolyCodec',
+                    frontHint: '3D-радар: 5-осьовий бенчмарк продуктивності LibPolyCodec',
+                    icon: 'fas fa-certificate',
+                    title: 'LibPolyCodec vs. Стандартні кодеки',
+                    subtitle: 'Запатентоване нерівноважне позиційне стиснення та C++20 zero-allocation рушій',
+                    callouts: [
+                        {
+                            lead: 'Zero-Alloc Heap',
+                            text: '0 байт динамічної пам\'яті на статичних пулах'
+                        },
+                        {
+                            lead: 'SIMD AVX2 / NEON',
+                            text: '4.2x апаратне векторне прискорення'
+                        },
+                        {
+                            lead: 'Патент & Scopus Q3',
+                            text: 'Державний патент та 68+ наукових праць'
+                        }
+                    ],
+                    primaryAction: {
+                        label: 'Кейс дослідження та репозиторій LibPolyCodec',
+                        href: '/projects/libpolycodec/',
+                        icon: 'fas fa-arrow-right',
+                        external: false
+                    },
+                    radarLabels: {
+                        title: 'LibPolyCodec проти стандартних кодеків (5-осьовий радар)',
+                        legendLib: 'LibPolyCodec (C++20)',
+                        legendGen: 'Стандартні кодеки (Zstd / Gzip)',
+                        axis1: 'Швидкість (SIMD)',
+                        axis2: 'Стиснення',
+                        axis3: 'Zero-Alloc',
+                        axis4: 'БПЛА / IoT',
+                        axis5: 'Захист даних'
+                    }
+                }
             }
         ],
     },

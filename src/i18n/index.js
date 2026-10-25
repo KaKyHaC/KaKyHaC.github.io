@@ -29,6 +29,16 @@ let currentLang = detectInitialLang();
 
 const cache = {};
 
+export function clearLocaleCache() {
+    Object.keys(cache).forEach(k => delete cache[k]);
+}
+
+if (import.meta.hot) {
+    import.meta.hot.accept(() => {
+        clearLocaleCache();
+    });
+}
+
 /**
  * Dynamically load a locale namespace file.
  * Returns the default export of locales/{lang}/{ns}.js
@@ -39,7 +49,7 @@ const cache = {};
  */
 export async function loadNamespace(ns, lang = currentLang) {
     const key = `${lang}/${ns}`;
-    if (cache[key]) return cache[key];
+    if (!import.meta.env?.DEV && cache[key]) return cache[key];
 
     // Vite resolves dynamic imports and creates chunks automatically
     const mod = await import(`../../locales/${lang}/${ns}.js`);
