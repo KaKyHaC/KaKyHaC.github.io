@@ -97,13 +97,60 @@ export default {
                     icon: 'fas fa-network-wired',
                     title: '360° Архітектурна карта цифрових продуктів',
                     subtitle: 'Від користувацьких інтерфейсів та спільного SDK-ядра до хмарних сервісів та IoT',
-                    callouts: [],
+                    callouts: [
+                        {
+                            lead: 'Єдине джерело правди (KMP & C++)',
+                            text: 'До 40% економії бюджету та гарантія повної узгодженості логіки на iOS, Android, десктопі й вебі.'
+                        },
+                        {
+                            lead: 'Offline-First надійність',
+                            text: 'Миттєвий відгук UI, локальне кешування в SQLite/Room та бекграундна синхронізація без втрат даних.'
+                        },
+                        {
+                            lead: 'End-to-End масштабування',
+                            text: 'Єдина звʼязка від апаратних датчиків (ESP32/BLE) до високонавантажених хмарних API та мікросервісів.'
+                        }
+                    ],
                     diagramLabels: {
-                        title: 'Глобальна карта екосистеми: Multi-Platform ➔ Shared SDK ➔ Cloud & Edge',
-                        liveBadge: '360° ECOSYSTEM',
-                        chip1: '2x Швидший Time-to-Market',
-                        chip2: 'Єдине джерело правди (Shared SDK)',
-                        chip3: 'Omnichannel & Offline-First'
+                        title: '360° Архітектурна карта цифрових продуктів',
+                        swipeHint: 'Свайпайте схему по горизонталі для деталей',
+                        mobileHeader: '📱 МОБІЛЬНІ (ANDROID & iOS)',
+                        mobileTech: 'Jetpack Compose · Flutter',
+                        mobileSub1: '60/120 FPS Плавні інтерфейси',
+                        mobileSub2: 'Offline-First та реактивний стан',
+                        desktopHeader: '💻 ДЕСКТОП (macOS & WIN)',
+                        desktopTech: 'Compose Multiplatform · C++',
+                        desktopSub1: 'Високопродуктивний нативний софт',
+                        desktopSub2: 'Прямий доступ до OS та памʼяті',
+                        webHeader: '🌐 СУЧАСНИЙ ВЕБ ТА ПОРТАЛИ',
+                        webTech: 'React · Astro · Edge SSR',
+                        webSub1: 'SaaS-дашборди та B2B-портали',
+                        webSub2: 'Миттєвий LCP · Нульовий CLS',
+                        flowMvi: '▲▼ ЄДИНИЙ MVI-СТАН ТА РЕАКТИВНИЙ ПОТІК ДАНИХ',
+                        coreHeader: '⚡ СПІЛЬНЕ БІЗНЕС-ЯДРО ТА REUSABLE SDKs',
+                        coreTruth: '✓ 100% ЄДИНЕ ДЖЕРЕЛО ПРАВДИ',
+                        kmpTitle: 'Чистий KMP Domain Engine',
+                        kmpSub1: 'Повна ізоляція від платформ',
+                        kmpSub2: 'Детермінована бізнес-логіка',
+                        sdkTitle: 'Кросплатформні Client SDKs',
+                        sdkSub1: 'Спільні для всіх фронтендів',
+                        sdkSub2: 'Вдвічі швидший Time-to-Market',
+                        cppTitle: 'Алгоритмічне C++20 ядро',
+                        cppSub1: 'SIMD та Zero-Alloc пули памʼяті',
+                        cppSub2: 'Максимальна швидкість обробки',
+                        flowTransport: '🔒 ЗАХИЩЕНИЙ REST · WEBSOCKETS · GRPC · EVENT BUS · HAL',
+                        cloudHeader: '☁️ ХМАРНИЙ BACKEND ТА APIs',
+                        cloudTech: 'Serverless · Ktor · Microservices',
+                        cloudSub1: 'Високонавантажена архітектура',
+                        cloudSub2: 'Розподілена Auth та Edge Gateways',
+                        dataHeader: '🗄️ OFFLINE-FIRST СИНХРОНІЗАЦІЯ',
+                        dataTech: 'Room · SQLite · Realtime DB',
+                        dataSub1: 'Гарантія збереження даних',
+                        dataSub2: 'Автоматичне вирішення конфліктів',
+                        iotHeader: '📡 ПІДКЛЮЧЕНИЙ IOT ТА EDGE',
+                        iotTech: 'ESP32 · BLE 5.0 · LoRaWAN',
+                        iotSub1: 'Сенсори телеметрії та мікроцикли',
+                        iotSub2: 'Hardware Abstraction Layer (HAL)'
                     }
                 }
             },

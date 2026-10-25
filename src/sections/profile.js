@@ -2,8 +2,13 @@ import { $, $$, safe } from '../utils/dom.js';
 import { getLang } from '../i18n/index.js';
 
 function renderScopeIllustration(b, color, rgb) {
+  const d = b.diagramLabels || {};
   return `
   <div class="profile-back-visual profile-visual-scope">
+    <div class="scope-mobile-hint" aria-hidden="true">
+      <i class="fas fa-arrows-alt-h"></i>
+      <span>${safe(d.swipeHint || 'Swipe horizontally to explore layers')}</span>
+    </div>
     <div class="visual-svg-wrap">
       <svg viewBox="0 0 640 416" fill="none" xmlns="http://www.w3.org/2000/svg" class="blueprint-svg clean-arch-svg">
         <!-- Subtle Blueprint Guidelines -->
@@ -17,30 +22,30 @@ function renderScopeIllustration(b, color, rgb) {
         <g transform="translate(14, 6)">
           <rect width="188" height="86" rx="9" fill="rgba(var(--accent-rgb), 0.05)" stroke="rgba(var(--accent-rgb), 0.38)" stroke-width="1.3"/>
           <rect x="8" y="7" width="172" height="22" rx="5" fill="rgba(var(--accent-rgb), 0.14)" stroke="rgba(var(--accent-rgb), 0.32)" stroke-width="0.9"/>
-          <text x="94" y="22" font-size="9.8" fill="var(--accent)" font-weight="900" text-anchor="middle" font-family="monospace">📱 MOBILE (ANDROID &amp; iOS)</text>
-          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Jetpack Compose · Flutter</text>
-          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">60/120 FPS Fluid Runtimes</text>
-          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Offline-First &amp; Reactive State</text>
+          <text x="94" y="22" font-size="9.3" fill="var(--accent)" font-weight="900" text-anchor="middle" font-family="monospace">${safe(d.mobileHeader || '📱 MOBILE (ANDROID & iOS)')}</text>
+          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.mobileTech || 'Jetpack Compose · Flutter')}</text>
+          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.mobileSub1 || '60/120 FPS Fluid Runtimes')}</text>
+          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.mobileSub2 || 'Offline-First & Reactive State')}</text>
         </g>
 
         <!-- 1.2 Desktop Apps -->
         <g transform="translate(226, 6)">
           <rect width="188" height="86" rx="9" fill="rgba(56, 189, 248, 0.04)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.3"/>
           <rect x="8" y="7" width="172" height="22" rx="5" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="0.9"/>
-          <text x="94" y="22" font-size="9.8" fill="#38bdf8" font-weight="900" text-anchor="middle" font-family="monospace">💻 DESKTOP (macOS &amp; WIN)</text>
-          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Compose Multiplatform · C++</text>
-          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">High-Performance Native Tools</text>
-          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Direct OS &amp; Memory Access</text>
+          <text x="94" y="22" font-size="9.3" fill="#38bdf8" font-weight="900" text-anchor="middle" font-family="monospace">${safe(d.desktopHeader || '💻 DESKTOP (macOS & WIN)')}</text>
+          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.desktopTech || 'Compose Multiplatform · C++')}</text>
+          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.desktopSub1 || 'High-Performance Native Tools')}</text>
+          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.desktopSub2 || 'Direct OS & Memory Access')}</text>
         </g>
 
         <!-- 1.3 Modern Web -->
         <g transform="translate(438, 6)">
           <rect width="188" height="86" rx="9" fill="rgba(34, 197, 94, 0.04)" stroke="rgba(34, 197, 94, 0.35)" stroke-width="1.3"/>
           <rect x="8" y="7" width="172" height="22" rx="5" fill="rgba(34, 197, 94, 0.12)" stroke="rgba(34, 197, 94, 0.3)" stroke-width="0.9"/>
-          <text x="94" y="22" font-size="9.8" fill="#4ade80" font-weight="900" text-anchor="middle" font-family="monospace">🌐 MODERN WEB &amp; PORTALS</text>
-          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">React · Astro · Edge SSR</text>
-          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">SaaS Dashboards &amp; B2B Portals</text>
-          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Sub-Second LCP · Zero Layout Shift</text>
+          <text x="94" y="22" font-size="9.3" fill="#4ade80" font-weight="900" text-anchor="middle" font-family="monospace">${safe(d.webHeader || '🌐 MODERN WEB & PORTALS')}</text>
+          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.webTech || 'React · Astro · Edge SSR')}</text>
+          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.webSub1 || 'SaaS Dashboards & B2B Portals')}</text>
+          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.webSub2 || 'Sub-Second LCP · Zero Layout Shift')}</text>
         </g>
 
         <!-- Flow Connector 1: Top Frontends to Central Core (y = 92 to 152, generous 60px gap) -->
@@ -49,7 +54,7 @@ function renderScopeIllustration(b, color, rgb) {
           <path d="M 320 92 L 320 152" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="3 2" class="flow-link"/>
           <path d="M 532 92 L 532 152" stroke="#4ade80" stroke-width="1.8" stroke-dasharray="3 2" class="flow-link"/>
           <rect x="145" y="110" width="350" height="24" rx="12" fill="rgba(15, 23, 42, 0.96)" stroke="rgba(56, 189, 248, 0.55)" stroke-width="1.1"/>
-          <text x="320" y="125.5" font-size="9.5" fill="#38bdf8" font-weight="800" text-anchor="middle" font-family="monospace">▲▼ UNIFIED MVI STATE &amp; REACTIVE DATA FLOW</text>
+          <text x="320" y="125.5" font-size="9.3" fill="#38bdf8" font-weight="800" text-anchor="middle" font-family="monospace">${safe(d.flowMvi || '▲▼ UNIFIED MVI STATE & REACTIVE DATA FLOW')}</text>
         </g>
 
         <!-- TIER 2: HERO CENTER — SHARED BUSINESS CORE & REUSABLE SDKs (y = 152, h = 112, w = 612) -->
@@ -57,31 +62,31 @@ function renderScopeIllustration(b, color, rgb) {
           <rect width="612" height="112" rx="12" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="2"/>
           
           <rect x="14" y="9" width="340" height="22" rx="5" fill="rgba(56, 189, 248, 0.25)" stroke="#38bdf8" stroke-width="1"/>
-          <text x="184" y="23.5" font-size="10.2" fill="#38bdf8" font-weight="900" text-anchor="middle" font-family="monospace">⚡ SHARED BUSINESS CORE &amp; REUSABLE SDKs</text>
+          <text x="184" y="23.5" font-size="10" fill="#38bdf8" font-weight="900" text-anchor="middle" font-family="monospace">${safe(d.coreHeader || '⚡ SHARED BUSINESS CORE & REUSABLE SDKs')}</text>
           
           <rect x="378" y="9" width="220" height="22" rx="5" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-width="1"/>
-          <text x="488" y="23.5" font-size="9.8" fill="#4ade80" font-weight="850" text-anchor="middle" font-family="monospace">✓ 100% SINGLE SOURCE OF TRUTH</text>
+          <text x="488" y="23.5" font-size="9.5" fill="#4ade80" font-weight="850" text-anchor="middle" font-family="monospace">${safe(d.coreTruth || '✓ 100% SINGLE SOURCE OF TRUTH')}</text>
 
           <!-- 3 Internal Sub-Modules with generous 22px gaps -->
           <g transform="translate(14, 44)">
             <rect width="180" height="56" rx="7" fill="rgba(255,255,255,0.03)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="0.9"/>
-            <text x="90" y="19" font-size="10" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Pure KMP Domain Engine</text>
-            <text x="90" y="34" font-size="8.8" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Zero Platform / SDK Coupling</text>
-            <text x="90" y="47" font-size="8.2" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Deterministic Business Rules</text>
+            <text x="90" y="19" font-size="10" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.kmpTitle || 'Pure KMP Domain Engine')}</text>
+            <text x="90" y="34" font-size="8.8" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.kmpSub1 || 'Zero Platform / SDK Coupling')}</text>
+            <text x="90" y="47" font-size="8.2" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.kmpSub2 || 'Deterministic Business Rules')}</text>
           </g>
 
           <g transform="translate(216, 44)">
             <rect width="180" height="56" rx="7" fill="rgba(255,255,255,0.03)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="0.9"/>
-            <text x="90" y="19" font-size="10" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Cross-Platform Client SDKs</text>
-            <text x="90" y="34" font-size="8.8" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Reusable Across All Frontends</text>
-            <text x="90" y="47" font-size="8.2" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">2x Faster Feature Turnaround</text>
+            <text x="90" y="19" font-size="10" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.sdkTitle || 'Cross-Platform Client SDKs')}</text>
+            <text x="90" y="34" font-size="8.8" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.sdkSub1 || 'Reusable Across All Frontends')}</text>
+            <text x="90" y="47" font-size="8.2" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.sdkSub2 || '2x Faster Feature Turnaround')}</text>
           </g>
 
           <g transform="translate(418, 44)">
             <rect width="180" height="56" rx="7" fill="rgba(255,255,255,0.03)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="0.9"/>
-            <text x="90" y="19" font-size="10" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Algorithmic C++20 Core</text>
-            <text x="90" y="34" font-size="8.8" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">SIMD &amp; Zero-Alloc Memory Pools</text>
-            <text x="90" y="47" font-size="8.2" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Maximum Real-Time Throughput</text>
+            <text x="90" y="19" font-size="10" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.cppTitle || 'Algorithmic C++20 Core')}</text>
+            <text x="90" y="34" font-size="8.8" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.cppSub1 || 'SIMD & Zero-Alloc Memory Pools')}</text>
+            <text x="90" y="47" font-size="8.2" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.cppSub2 || 'Maximum Real-Time Throughput')}</text>
           </g>
         </g>
 
@@ -91,7 +96,7 @@ function renderScopeIllustration(b, color, rgb) {
           <path d="M 320 264 L 320 324" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="3 2" class="flow-link"/>
           <path d="M 532 264 L 532 324" stroke="#fb7185" stroke-width="1.8" stroke-dasharray="3 2" class="flow-link"/>
           <rect x="105" y="282" width="430" height="24" rx="12" fill="rgba(15, 23, 42, 0.96)" stroke="rgba(255, 255, 255, 0.32)" stroke-width="1.1"/>
-          <text x="320" y="297.5" font-size="9.5" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="monospace">🔒 ENCRYPTED REST · WEBSOCKETS · GRPC · EVENT BUS · HAL</text>
+          <text x="320" y="297.5" font-size="9.3" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="monospace">${safe(d.flowTransport || '🔒 ENCRYPTED REST · WEBSOCKETS · GRPC · EVENT BUS · HAL')}</text>
         </g>
 
         <!-- TIER 3: BACKEND, DATA SYNC & SMART HARDWARE (y = 324, h = 86, w = 188, gaps = 24) -->
@@ -99,30 +104,30 @@ function renderScopeIllustration(b, color, rgb) {
         <g transform="translate(14, 324)">
           <rect width="188" height="86" rx="9" fill="rgba(168, 85, 247, 0.04)" stroke="rgba(168, 85, 247, 0.35)" stroke-width="1.3"/>
           <rect x="8" y="7" width="172" height="22" rx="5" fill="rgba(168, 85, 247, 0.12)" stroke="rgba(168, 85, 247, 0.3)" stroke-width="0.9"/>
-          <text x="94" y="22" font-size="9.8" fill="#c084fc" font-weight="900" text-anchor="middle" font-family="monospace">☁️ CLOUD BACKEND &amp; APIs</text>
-          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Serverless · Ktor · Microservices</text>
-          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">High-Load Scalable Architecture</text>
-          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Distributed Auth &amp; Edge Gateways</text>
+          <text x="94" y="22" font-size="9.3" fill="#c084fc" font-weight="900" text-anchor="middle" font-family="monospace">${safe(d.cloudHeader || '☁️ CLOUD BACKEND & APIs')}</text>
+          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.cloudTech || 'Serverless · Ktor · Microservices')}</text>
+          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.cloudSub1 || 'High-Load Scalable Architecture')}</text>
+          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.cloudSub2 || 'Distributed Auth & Edge Gateways')}</text>
         </g>
 
         <!-- 3.2 Offline-First Data & Sync -->
         <g transform="translate(226, 324)">
           <rect width="188" height="86" rx="9" fill="rgba(56, 189, 248, 0.04)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.3"/>
           <rect x="8" y="7" width="172" height="22" rx="5" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="0.9"/>
-          <text x="94" y="22" font-size="9.8" fill="#38bdf8" font-weight="900" text-anchor="middle" font-family="monospace">🗄️ OFFLINE-FIRST DATA &amp; SYNC</text>
-          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Room · SQLite · Realtime DB</text>
-          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Zero Data Loss Guarantee</text>
-          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Automated Conflict Resolution</text>
+          <text x="94" y="22" font-size="9.3" fill="#38bdf8" font-weight="900" text-anchor="middle" font-family="monospace">${safe(d.dataHeader || '🗄️ OFFLINE-FIRST DATA & SYNC')}</text>
+          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.dataTech || 'Room · SQLite · Realtime DB')}</text>
+          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.dataSub1 || 'Zero Data Loss Guarantee')}</text>
+          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.dataSub2 || 'Automated Conflict Resolution')}</text>
         </g>
 
         <!-- 3.3 Smart Hardware & IoT -->
         <g transform="translate(438, 324)">
           <rect width="188" height="86" rx="9" fill="rgba(244, 63, 94, 0.04)" stroke="rgba(244, 63, 94, 0.35)" stroke-width="1.3"/>
           <rect x="8" y="7" width="172" height="22" rx="5" fill="rgba(244, 63, 94, 0.12)" stroke="rgba(244, 63, 94, 0.3)" stroke-width="0.9"/>
-          <text x="94" y="22" font-size="9.8" fill="#fb7185" font-weight="900" text-anchor="middle" font-family="monospace">📡 CONNECTED IOT &amp; EDGE</text>
-          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">ESP32 · BLE 5.0 · LoRaWAN</text>
-          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Telemetry Sensors &amp; Micro-loops</text>
-          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Hardware Abstraction Layer (HAL)</text>
+          <text x="94" y="22" font-size="9.3" fill="#fb7185" font-weight="900" text-anchor="middle" font-family="monospace">${safe(d.iotHeader || '📡 CONNECTED IOT & EDGE')}</text>
+          <text x="94" y="46" font-size="10.8" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.iotTech || 'ESP32 · BLE 5.0 · LoRaWAN')}</text>
+          <text x="94" y="63" font-size="9.2" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.iotSub1 || 'Telemetry Sensors & Micro-loops')}</text>
+          <text x="94" y="77" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">${safe(d.iotSub2 || 'Hardware Abstraction Layer (HAL)')}</text>
         </g>
       </svg>
     </div>

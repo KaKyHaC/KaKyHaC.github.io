@@ -97,13 +97,60 @@ export default {
                     icon: 'fas fa-network-wired',
                     title: '360° Digital Product Architecture',
                     subtitle: 'From user-facing clients and shared SDK engines to scalable cloud services and IoT',
-                    callouts: [],
+                    callouts: [
+                        {
+                            lead: 'Single Source of Truth (KMP & C++)',
+                            text: 'Up to 40% development savings and guaranteed behavioral parity across iOS, Android, Desktop, and Web.'
+                        },
+                        {
+                            lead: 'Offline-First Resilience',
+                            text: 'Instant UI responsiveness with SQLite/Room local caching and background sync with zero data loss.'
+                        },
+                        {
+                            lead: 'End-to-End Scalability',
+                            text: 'Seamless telemetry pipeline from low-level hardware (ESP32/BLE) to high-load Ktor cloud microservices.'
+                        }
+                    ],
                     diagramLabels: {
-                        title: 'Global Ecosystem Map: Multi-Platform ➔ Shared SDK ➔ Cloud & Edge',
-                        liveBadge: '360° ECOSYSTEM',
-                        chip1: '2x Faster Time-to-Market',
-                        chip2: 'Single Source of Truth (Shared SDK)',
-                        chip3: 'Omnichannel & Offline-First'
+                        title: '360° Digital Product Architecture',
+                        swipeHint: 'Swipe horizontally to explore architecture layers',
+                        mobileHeader: '📱 MOBILE (ANDROID & iOS)',
+                        mobileTech: 'Jetpack Compose · Flutter',
+                        mobileSub1: '60/120 FPS Fluid Runtimes',
+                        mobileSub2: 'Offline-First & Reactive State',
+                        desktopHeader: '💻 DESKTOP (macOS & WIN)',
+                        desktopTech: 'Compose Multiplatform · C++',
+                        desktopSub1: 'High-Performance Native Tools',
+                        desktopSub2: 'Direct OS & Memory Access',
+                        webHeader: '🌐 MODERN WEB & PORTALS',
+                        webTech: 'React · Astro · Edge SSR',
+                        webSub1: 'SaaS Dashboards & B2B Portals',
+                        webSub2: 'Sub-Second LCP · Zero Layout Shift',
+                        flowMvi: '▲▼ UNIFIED MVI STATE & REACTIVE DATA FLOW',
+                        coreHeader: '⚡ SHARED BUSINESS CORE & REUSABLE SDKs',
+                        coreTruth: '✓ 100% SINGLE SOURCE OF TRUTH',
+                        kmpTitle: 'Pure KMP Domain Engine',
+                        kmpSub1: 'Zero Platform / SDK Coupling',
+                        kmpSub2: 'Deterministic Business Rules',
+                        sdkTitle: 'Cross-Platform Client SDKs',
+                        sdkSub1: 'Reusable Across All Frontends',
+                        sdkSub2: '2x Faster Feature Turnaround',
+                        cppTitle: 'Algorithmic C++20 Core',
+                        cppSub1: 'SIMD & Zero-Alloc Memory Pools',
+                        cppSub2: 'Maximum Real-Time Throughput',
+                        flowTransport: '🔒 ENCRYPTED REST · WEBSOCKETS · GRPC · EVENT BUS · HAL',
+                        cloudHeader: '☁️ CLOUD BACKEND & APIs',
+                        cloudTech: 'Serverless · Ktor · Microservices',
+                        cloudSub1: 'High-Load Scalable Architecture',
+                        cloudSub2: 'Distributed Auth & Edge Gateways',
+                        dataHeader: '🗄️ OFFLINE-FIRST DATA & SYNC',
+                        dataTech: 'Room · SQLite · Realtime DB',
+                        dataSub1: 'Zero Data Loss Guarantee',
+                        dataSub2: 'Automated Conflict Resolution',
+                        iotHeader: '📡 CONNECTED IOT & EDGE',
+                        iotTech: 'ESP32 · BLE 5.0 · LoRaWAN',
+                        iotSub1: 'Telemetry Sensors & Micro-loops',
+                        iotSub2: 'Hardware Abstraction Layer (HAL)'
                     }
                 }
             },
