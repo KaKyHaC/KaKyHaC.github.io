@@ -68,54 +68,42 @@ export default {
                 rgb: 'var(--accent-rgb)',
                 icon: 'fas fa-sitemap',
                 metric: '9+',
-                metricLabel: 'years of system engineering',
-                title: 'End-to-End System Architecture & Full-Spectrum Engineering',
+                metricLabel: 'years of systems architecture',
+                title: 'End-to-End Enterprise Software Architecture',
                 points: [
                     {
-                        lead: 'Client Ecosystems',
-                        text: 'Architecting ultra-responsive native and cross-platform UI across Android (Jetpack Compose), Flutter, and modern web with deterministic MVI state.'
+                        lead: 'Omnichannel Platforms',
+                        text: 'Architecting fluid multi-platform frontends across Android (Jetpack Compose), iOS, Desktop (Compose Multiplatform), and modern web with deterministic MVI state.'
                     },
                     {
-                        lead: 'Pure Shared Core (KMP)',
-                        text: 'Building 100% decoupled domain engines with Kotlin Multiplatform, keeping core business invariants strictly independent from platform SDKs.'
+                        lead: 'Shared Core & Reusable SDKs',
+                        text: 'Engineering single-source-of-truth business logic with Kotlin Multiplatform and C++, cutting development budgets by up to 40% and eliminating platform logic drift.'
                     },
                     {
-                        lead: 'Embedded & IoT Telemetry',
-                        text: 'Integrating microcontrollers (ESP32), low-power protocols (BLE, LoRaWAN), and sensor telemetry into unified distributed networks.'
+                        lead: 'Cloud, Data Sync & IoT',
+                        text: 'Building high-load serverless APIs, offline-first local databases (Room/SQLite), and telemetry bridges for connected hardware (ESP32/BLE).'
                     },
                     {
-                        lead: 'System Reliability & CI/CD',
-                        text: 'Enforcing zero memory leaks, automated static verification gates, and long-term production resilience across platforms.'
+                        lead: 'Enterprise Reliability & Velocity',
+                        text: 'Enforcing zero crashes, automated CI/CD verification gates, and fast feature turnaround for high-growth digital products.'
                     }
                 ],
-                tags: ['Full-Spectrum Architecture', 'Kotlin & KMP', 'Embedded & IoT', 'Multi-Client UI'],
+                tags: ['Enterprise Architecture', 'Mobile · Desktop · Web', 'KMP & SDK Core', 'Cloud & IoT'],
                 back: {
-                    badge: 'END-TO-END SYSTEM TOPOLOGY',
-                    flipLabel: '3D Pipeline',
-                    flipAria: 'Flip card to view end-to-end full-spectrum system architecture',
-                    frontHint: '3D Pipeline: Edge & IoT ➔ Data ➔ KMP Core ➔ Multi-Client',
-                    icon: 'fas fa-project-diagram',
-                    title: 'Full-Spectrum Architectural Pipeline',
-                    subtitle: 'From hardware IoT sensors to unified KMP business logic and multi-client UI runtimes',
-                    callouts: [
-                        {
-                            lead: 'Decoupled Core (KMP)',
-                            text: 'Pure Kotlin shared business engine with zero platform SDK coupling.'
-                        },
-                        {
-                            lead: 'Hardware Interop (Edge & IoT)',
-                            text: 'Robust sensor acquisition via BLE and WebSockets with deterministic buffering.'
-                        },
-                        {
-                            lead: 'Multi-Client UI Ecosystems',
-                            text: 'Native Compose, Flutter, and Web frontends bound to single reactive MVI StateFlow.'
-                        }
-                    ],
+                    badge: 'ENTERPRISE PRODUCT TOPOLOGY',
+                    flipLabel: '3D Ecosystem',
+                    flipAria: 'Flip card to view 360-degree software and product ecosystem architecture',
+                    frontHint: '3D Map: Mobile, Desktop, Web, Shared SDK & Cloud Backend',
+                    icon: 'fas fa-network-wired',
+                    title: '360° Digital Product Architecture',
+                    subtitle: 'From user-facing clients and shared SDK engines to scalable cloud services and IoT',
+                    callouts: [],
                     diagramLabels: {
-                        title: 'Ecosystem Topology: Edge ➔ Data ➔ KMP Core ➔ Clients',
-                        typeSafety: 'End-to-End Type Safety',
-                        pureCore: 'Zero SDK Coupling in Core',
-                        sync: '60/120 FPS Reactive Sync'
+                        title: 'Global Ecosystem Map: Multi-Platform ➔ Shared SDK ➔ Cloud & Edge',
+                        liveBadge: '360° ECOSYSTEM',
+                        chip1: '2x Faster Time-to-Market',
+                        chip2: 'Single Source of Truth (Shared SDK)',
+                        chip3: 'Omnichannel & Offline-First'
                     }
                 }
             },

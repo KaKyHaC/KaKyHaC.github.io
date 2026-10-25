@@ -68,54 +68,42 @@ export default {
                 rgb: 'var(--accent-rgb)',
                 icon: 'fas fa-sitemap',
                 metric: '9+',
-                metricLabel: 'років системної інженерії',
-                title: 'Наскрізна системна архітектура & Full-Spectrum Інженерія',
+                metricLabel: 'років системної архітектури',
+                title: 'Наскрізна архітектура цифрових продуктів',
                 points: [
                     {
-                        lead: 'Клієнтські екосистеми',
-                        text: 'Проєктування чуйних нативних та кросплатформних інтерфейсів на Android (Jetpack Compose), Flutter та сучасному вебі з детермінованим MVI-станом.'
+                        lead: 'Клієнтські платформи',
+                        text: 'Проєктування чуйних інтерфейсів на Android (Jetpack Compose), iOS, десктопі (Compose Multiplatform) та сучасному вебі з детермінованим MVI-станом.'
                     },
                     {
-                        lead: 'Чиста бізнес-логіка (KMP)',
-                        text: 'Створення на 100% ізольованих ядер предметної області (Domain Core) на Kotlin Multiplatform без жодної прив\'язки до платформених SDK.'
+                        lead: 'Спільний Core & Власні SDK',
+                        text: 'Створення єдиного джерела правди на Kotlin Multiplatform та C++, що заощаджує до 40% бюджету та виключає розсинхрон логіки між платформами.'
                     },
                     {
-                        lead: 'Embedded & IoT телеметрія',
-                        text: 'Інтеграція мікроконтролерів (ESP32), низькорівневих інтерфейсів (BLE, LoRaWAN) та збору сенсорних даних у єдину розподілену мережу.'
+                        lead: 'Хмара, Дата-Синхронізація & IoT',
+                        text: 'Побудова високонавантажених серверних API, локальних offline-first баз даних (Room/SQLite) та телеметричних мостів до IoT-пристроїв (ESP32/BLE).'
                     },
                     {
-                        lead: 'Наскрізна надійність & CI/CD',
-                        text: 'Забезпечення нульових крашів і витоків пам\'яті, впровадження суворих верифікаційних контрактів та системна стабільність після релізу.'
+                        lead: 'Ентерпрайз-надійність & Швидкість',
+                        text: 'Забезпечення нульових крашів, автоматизованих шлюзів перевірки CI/CD та швидкого виходу продуктів на ринок (Time-to-Market).'
                     }
                 ],
-                tags: ['Full-Spectrum Architecture', 'Kotlin & KMP', 'Embedded & IoT', 'Multi-Client UI'],
+                tags: ['Enterprise Architecture', 'Mobile · Desktop · Web', 'KMP & SDK Core', 'Cloud & IoT'],
                 back: {
-                    badge: 'НАСКРІЗНА СИСТЕМНА ТОПОЛОГІЯ',
-                    flipLabel: '3D Пайплайн',
-                    flipAria: 'Перевернути картку для перегляду наскрізного архітектурного пайплайна',
-                    frontHint: '3D-пайплайн: Edge & IoT ➔ Data ➔ KMP Core ➔ Multi-Client',
-                    icon: 'fas fa-project-diagram',
-                    title: 'Наскрізний архітектурний пайплайн',
-                    subtitle: 'Від апаратного рівня та IoT до спільного KMP-ядра й багатоплатформних UI-інтерфейсів',
-                    callouts: [
-                        {
-                            lead: 'Ізоляція бізнес-правил (KMP)',
-                            text: 'Спільна логіка на чистому Kotlin без прив\'язки до ОС чи сторонніх SDK.'
-                        },
-                        {
-                            lead: 'Апаратна інтеграція (Edge & IoT)',
-                            text: 'Надійний збір телеметрії через BLE та WebSockets з детермінованою обробкою.'
-                        },
-                        {
-                            lead: 'Багатоплатформний UI',
-                            text: 'Нативні Compose, Flutter та Web-клієнти, підключені до єдиного MVI StateFlow.'
-                        }
-                    ],
+                    badge: 'ЕНТЕРПРАЙЗ-ТОПОЛОГІЯ ПРОДУКТУ',
+                    flipLabel: '3D Екосистема',
+                    flipAria: 'Перевернути картку для перегляду 360-градусної карти архітектури цифрових продуктів',
+                    frontHint: '3D-мапа: Mobile, Desktop, Web, Shared SDK & Cloud Backend',
+                    icon: 'fas fa-network-wired',
+                    title: '360° Архітектурна карта цифрових продуктів',
+                    subtitle: 'Від користувацьких інтерфейсів та спільного SDK-ядра до хмарних сервісів та IoT',
+                    callouts: [],
                     diagramLabels: {
-                        title: 'Топологія екосистеми: Edge ➔ Data ➔ KMP Core ➔ Clients',
-                        typeSafety: 'End-to-End Type Safety',
-                        pureCore: 'Zero SDK Coupling in Core',
-                        sync: '60/120 FPS Reactive Sync'
+                        title: 'Глобальна карта екосистеми: Multi-Platform ➔ Shared SDK ➔ Cloud & Edge',
+                        liveBadge: '360° ECOSYSTEM',
+                        chip1: '2x Швидший Time-to-Market',
+                        chip2: 'Єдине джерело правди (Shared SDK)',
+                        chip3: 'Omnichannel & Offline-First'
                     }
                 }
             },

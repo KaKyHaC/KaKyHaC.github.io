@@ -458,7 +458,7 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 .live-dot.live-rose{background:#f43f5e;box-shadow:0 0 8px #f43f5e}
 .visual-svg-wrap{width:100%;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .blueprint-svg{width:100%;height:auto;display:block}
-.clean-arch-svg{max-height:175px;height:166px}
+.clean-arch-svg{max-height:405px;height:395px}
 .swarm-svg{max-height:104px;height:98px}
 .radar-svg{max-height:195px;height:186px}
 .visual-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:2px}
@@ -468,9 +468,8 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 .rating-chip i{font-size:8.5px;color:#facc15}
 
 /* Wide cards visual breathing room */
-.profile-visual-scope,
+.profile-visual-scope{margin:4px 0 0;padding:0;background:transparent;border:none;border-radius:0;box-shadow:none}
 .profile-visual-research{padding:10px 14px 12px;margin:2px 0 6px}
-.profile-visual-scope .visual-chips,
 .profile-visual-research .visual-chips{margin-top:4px;gap:6px}
 
 /* DᎥᗰᗩᒪᎥᑎᗩ Studio 6-Apps Grid */
