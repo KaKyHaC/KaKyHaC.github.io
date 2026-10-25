@@ -234,95 +234,90 @@ function renderResearchRadarIllustration(b, color, rgb) {
       <span class="visual-live-tag"><span class="live-dot live-rose"></span> BENCHMARK</span>
     </div>
     <div class="visual-svg-wrap">
-      <svg viewBox="0 0 570 188" fill="none" xmlns="http://www.w3.org/2000/svg" class="blueprint-svg radar-svg">
-        <!-- Center (122, 94), R=66 -->
-        <!-- Level 1 (33%): R=22 -->
-        <polygon points="122,72 143,87 135,112 109,112 101,87" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
-        <!-- Level 2 (66%): R=44 -->
-        <polygon points="122,50 164,80 148,130 96,130 80,80" stroke="rgba(255,255,255,0.11)" stroke-width="1" fill="none"/>
-        <!-- Level 3 (100%): R=66 -->
-        <polygon points="122,28 185,74 161,147 83,147 59,74" stroke="rgba(255,255,255,0.16)" stroke-width="1.3" fill="none"/>
+      <svg viewBox="0 0 650 205" fill="none" xmlns="http://www.w3.org/2000/svg" class="blueprint-svg radar-svg">
+        <!-- Center (135, 102), R=72 -->
+        <!-- Level 1 (33%): R=24 -->
+        <polygon points="135,78 158,95 149,121 121,121 112,95" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+        <!-- Level 2 (66%): R=48 -->
+        <polygon points="135,54 181,87 163,141 107,141 89,87" stroke="rgba(255,255,255,0.11)" stroke-width="1" fill="none"/>
+        <!-- Level 3 (100%): R=72 -->
+        <polygon points="135,30 204,80 177,160 93,160 66,80" stroke="rgba(255,255,255,0.16)" stroke-width="1.3" fill="none"/>
 
-        <!-- 5 Axis Spokes from center (122, 94) to outer vertices -->
-        <line x1="122" y1="94" x2="122" y2="28" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <line x1="122" y1="94" x2="185" y2="74" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <line x1="122" y1="94" x2="161" y2="147" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <line x1="122" y1="94" x2="83" y2="147" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <line x1="122" y1="94" x2="59" y2="74" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <!-- 5 Axis Spokes from center (135, 102) to outer vertices -->
+        <line x1="135" y1="102" x2="135" y2="30" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <line x1="135" y1="102" x2="204" y2="80" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <line x1="135" y1="102" x2="177" y2="160" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <line x1="135" y1="102" x2="93" y2="160" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <line x1="135" y1="102" x2="66" y2="80" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
 
-        <!-- Generic Codecs Polygon (Zstd/Gzip) -->
-        <polygon points="122,59 168,79 133,109 105,116 93,84" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.38)" stroke-width="1.3" stroke-dasharray="3 2"/>
+        <!-- Standard Visual Codecs Baseline (JPEG / HEVC Intra) -->
+        <polygon points="135,59 183,86 146,117 118,125 90,87" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.38)" stroke-width="1.3" stroke-dasharray="3 2"/>
 
-        <!-- LibPolyCodec Glowing Polygon -->
-        <polygon points="122,31 178,75 161,147 87,142 66,75" fill="rgba(${rgb}, 0.28)" stroke="${color}" stroke-width="2.4"/>
-        <circle cx="122" cy="31" r="3.5" fill="${color}"/>
-        <circle cx="178" cy="75" r="3.5" fill="${color}"/>
-        <circle cx="161" cy="147" r="3.5" fill="${color}"/>
-        <circle cx="87" cy="142" r="3.5" fill="${color}"/>
-        <circle cx="66" cy="75" r="3.5" fill="${color}"/>
+        <!-- LibPolyCodec High-Performance Polygon -->
+        <polygon points="135,33 195,82 177,160 96,155 73,82" fill="rgba(${rgb}, 0.28)" stroke="${color}" stroke-width="2.4"/>
+        <circle cx="135" cy="33" r="3.5" fill="${color}"/>
+        <circle cx="195" cy="82" r="3.5" fill="${color}"/>
+        <circle cx="177" cy="160" r="3.5" fill="${color}"/>
+        <circle cx="96" cy="155" r="3.5" fill="${color}"/>
+        <circle cx="73" cy="82" r="3.5" fill="${color}"/>
 
-        <!-- Axis Labels: Collision-Free and Bold -->
-        <text x="122" y="16" font-size="9" fill="${color}" font-weight="750" text-anchor="middle" font-family="monospace">${safe(lbl.axis1 || 'Speed (SIMD)')}</text>
-        <text x="193" y="78" font-size="9" fill="var(--text)" font-weight="700" text-anchor="start" font-family="monospace">${safe(lbl.axis2 || 'Ratio')}</text>
-        <text x="165" y="162" font-size="9" fill="#4ade80" font-weight="750" text-anchor="start" font-family="monospace">${safe(lbl.axis3 || 'Zero-Alloc')}</text>
-        <text x="79" y="162" font-size="9" fill="var(--text)" font-weight="700" text-anchor="end" font-family="monospace">${safe(lbl.axis4 || 'UAV / IoT')}</text>
-        <text x="51" y="78" font-size="9" fill="var(--text)" font-weight="700" text-anchor="end" font-family="monospace">${safe(lbl.axis5 || 'Security')}</text>
+        <!-- Axis Labels: Collision-Free, Centered and Bold -->
+        <text x="135" y="18" font-size="9" fill="${color}" font-weight="750" text-anchor="middle" font-family="monospace">${safe(lbl.axis1 || 'Speed (SIMD)')}</text>
+        <text x="208" y="83" font-size="9" fill="var(--text)" font-weight="700" text-anchor="start" font-family="monospace">${safe(lbl.axis2 || 'Ratio')}</text>
+        <text x="177" y="176" font-size="9" fill="#4ade80" font-weight="750" text-anchor="middle" font-family="monospace">${safe(lbl.axis3 || 'Zero-Alloc')}</text>
+        <text x="93" y="176" font-size="9" fill="var(--text)" font-weight="700" text-anchor="middle" font-family="monospace">${safe(lbl.axis4 || 'UAV & Avionics')}</text>
+        <text x="60" y="83" font-size="9" fill="var(--text)" font-weight="700" text-anchor="end" font-family="monospace">${safe(lbl.axis5 || 'Reliability')}</text>
 
         <!-- Right Side: Comparative Metrics Table -->
         <!-- Legend -->
-        <g transform="translate(250, 8)">
+        <g transform="translate(280, 10)">
           <rect width="11" height="11" rx="2.5" fill="${color}"/>
           <text x="17" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">${safe(lbl.legendLib || 'LibPolyCodec (C++20)')}</text>
           
-          <rect x="150" y="1" width="11" height="9" rx="2" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-dasharray="2 2"/>
-          <text x="168" y="9.5" font-size="9.5" fill="var(--muted)" font-family="monospace">${safe(lbl.legendGen || 'Standard (Zstd / Gzip)')}</text>
+          <rect x="156" y="1" width="11" height="9" rx="2" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <text x="174" y="9.5" font-size="9.5" fill="var(--muted)" font-family="monospace">${safe(lbl.legendGen || 'Standard (JPEG / HEVC Intra)')}</text>
         </g>
 
         <!-- Metric 1: Throughput -->
-        <g transform="translate(250, 36)">
-          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">⚡ Throughput (SIMD)</text>
-          <rect x="145" y="1" width="112" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
-          <rect x="145" y="1" width="107" height="10" rx="3" fill="${color}"/>
-          <text x="266" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">95% (4.2x)</text>
+        <g transform="translate(280, 38)">
+          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">${safe(lbl.metric1Label || '⚡ Throughput (SIMD)')}</text>
+          <rect x="140" y="1" width="84" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="140" y="1" width="80" height="10" rx="3" fill="${color}"/>
+          <text x="232" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">${safe(lbl.metric1Val || '4.2x (60+ FPS)')}</text>
         </g>
 
         <!-- Metric 2: Compression Ratio -->
-        <g transform="translate(250, 64)">
-          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">📦 Compression Ratio</text>
-          <rect x="145" y="1" width="112" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
-          <rect x="145" y="1" width="99" height="10" rx="3" fill="${color}"/>
-          <text x="266" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">88% (+28%)</text>
+        <g transform="translate(280, 68)">
+          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">${safe(lbl.metric2Label || '📦 Compression Ratio')}</text>
+          <rect x="140" y="1" width="84" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="140" y="1" width="74" height="10" rx="3" fill="${color}"/>
+          <text x="232" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">${safe(lbl.metric2Val || '+28% (Radio Link)')}</text>
         </g>
 
         <!-- Metric 3: Memory Determinism -->
-        <g transform="translate(250, 92)">
-          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">🧠 Memory Determinism</text>
-          <rect x="145" y="1" width="112" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
-          <rect x="145" y="1" width="112" height="10" rx="3" fill="#4ade80"/>
-          <text x="266" y="9.5" font-size="9.5" fill="#4ade80" font-weight="850" font-family="monospace">100% (0B)</text>
+        <g transform="translate(280, 98)">
+          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">${safe(lbl.metric3Label || '🧠 Memory Determinism')}</text>
+          <rect x="140" y="1" width="84" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="140" y="1" width="84" height="10" rx="3" fill="#4ade80"/>
+          <text x="232" y="9.5" font-size="9.5" fill="#4ade80" font-weight="850" font-family="monospace">${safe(lbl.metric3Val || '0B Heap (Zero-Alloc)')}</text>
         </g>
 
-        <!-- Metric 4: Embedded & UAV -->
-        <g transform="translate(250, 120)">
-          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">🛸 Embedded &amp; UAV</text>
-          <rect x="145" y="1" width="112" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
-          <rect x="145" y="1" width="103" height="10" rx="3" fill="${color}"/>
-          <text x="266" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">92%</text>
+        <!-- Metric 4: Avionics & UAV -->
+        <g transform="translate(280, 128)">
+          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">${safe(lbl.metric4Label || '🛸 Avionics & UAV')}</text>
+          <rect x="140" y="1" width="84" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="140" y="1" width="77" height="10" rx="3" fill="${color}"/>
+          <text x="232" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">${safe(lbl.metric4Val || '64KB Static Pool')}</text>
         </g>
 
-        <!-- Metric 5: Data Security -->
-        <g transform="translate(250, 148)">
-          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">🔒 Positional Entropy</text>
-          <rect x="145" y="1" width="112" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
-          <rect x="145" y="1" width="101" height="10" rx="3" fill="${color}"/>
-          <text x="266" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">90%</text>
+        <!-- Metric 5: Data Security & Reliability -->
+        <g transform="translate(280, 158)">
+          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">${safe(lbl.metric5Label || '🔒 Reliability & Safety')}</text>
+          <rect x="140" y="1" width="84" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="140" y="1" width="76" height="10" rx="3" fill="${color}"/>
+          <text x="232" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">${safe(lbl.metric5Val || 'poly::Status / .BAR')}</text>
         </g>
       </svg>
-    </div>
-    <div class="visual-chips">
-      <span class="blueprint-chip verified"><i class="fas fa-graduation-cap"></i> Scopus Q3 · 68+ Pubs</span>
-      <span class="blueprint-chip"><i class="fas fa-certificate"></i> State Patent of Ukraine</span>
-      <span class="blueprint-chip"><i class="fas fa-microchip"></i> 0 Bytes Dynamic Alloc</span>
     </div>
   </div>`;
 }

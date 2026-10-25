@@ -332,25 +332,25 @@ export default {
                 ],
                 tags: ['PhD in Telecom', 'Positional Video Patent', 'Scopus Q3', 'Cybercrime Dept'],
                 back: {
-                    badge: 'PATENT SPEC & 5-AXIS RADAR BENCHMARK',
+                    badge: 'PATENT SPEC & PERFORMANCE BENCHMARK',
                     flipLabel: '3D Radar',
-                    flipAria: 'Flip card to view LibPolyCodec 5-axis performance radar chart',
-                    frontHint: '3D Radar: 5-Axis Multi-Metric LibPolyCodec Benchmark',
+                    flipAria: 'Flip card to view LibPolyCodec performance radar chart',
+                    frontHint: '3D Radar: LibPolyCodec performance and reliability benchmark',
                     icon: 'fas fa-certificate',
                     title: 'LibPolyCodec vs. Standard Codecs',
-                    subtitle: 'Patented non-equilibrium positional compression and C++20 zero-allocation engine',
+                    subtitle: 'High-performance C++20 engine for low-bandwidth streaming and UAV avionics',
                     callouts: [
                         {
-                            lead: 'Zero-Alloc Heap',
-                            text: '0 bytes dynamic allocations on static memory pools'
+                            lead: 'SIMD Hardware Acceleration',
+                            text: '4.2x throughput speedup via AVX2 and ARM NEON for 60+ FPS video streams'
                         },
                         {
-                            lead: 'SIMD AVX2 / NEON',
-                            text: '4.2x hardware vector stream acceleration'
+                            lead: 'Absolute Zero-Allocation',
+                            text: '0 bytes heap allocation on hot path, 64KB static memory pool for UAV avionics'
                         },
                         {
-                            lead: 'Patent & Scopus Q3',
-                            text: 'State patent of Ukraine and 68+ scientific publications'
+                            lead: 'State Patent & Reliability',
+                            text: 'State Patent of Ukraine, zero C++ exceptions (poly::Status), secure .BAR stream'
                         }
                     ],
                     primaryAction: {
@@ -362,12 +362,22 @@ export default {
                     radarLabels: {
                         title: 'LibPolyCodec vs. Standard Codecs (5-Axis Multi-Metric Radar)',
                         legendLib: 'LibPolyCodec (C++20)',
-                        legendGen: 'Standard (Zstd / Gzip)',
+                        legendGen: 'Standard (JPEG / HEVC Intra)',
                         axis1: 'Speed (SIMD)',
-                        axis2: 'Compression',
+                        axis2: 'Ratio',
                         axis3: 'Zero-Alloc',
-                        axis4: 'UAV / IoT',
-                        axis5: 'Security'
+                        axis4: 'UAV & Avionics',
+                        axis5: 'Reliability',
+                        metric1Label: '⚡ Throughput (SIMD)',
+                        metric1Val: '4.2x (60+ FPS)',
+                        metric2Label: '📦 Compression Ratio',
+                        metric2Val: '+28% (Radio Link)',
+                        metric3Label: '🧠 Memory Determinism',
+                        metric3Val: '0B Heap (Zero-Alloc)',
+                        metric4Label: '🛸 Avionics & UAV',
+                        metric4Val: '64KB Static Pool',
+                        metric5Label: '🔒 Reliability & Safety',
+                        metric5Val: 'poly::Status / .BAR'
                     }
                 }
             }

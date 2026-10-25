@@ -332,25 +332,25 @@ export default {
                 ],
                 tags: ['PhD у телекомі', 'Патент на відеокодек', 'Scopus Q3', 'Кафедра кіберзлочинності'],
                 back: {
-                    badge: 'ПАТЕНТ І 5-ОСЬОВИЙ РАДАРНИЙ БЕНЧМАРК',
+                    badge: 'ПАТЕНТ ТА БЕНЧМАРК ПРОДУКТИВНОСТІ',
                     flipLabel: '3D Радар',
-                    flipAria: 'Перевернути картку для перегляду 5-осьової радарної діаграми бенчмарку LibPolyCodec',
-                    frontHint: '3D-радар: 5-осьовий бенчмарк продуктивності LibPolyCodec',
+                    flipAria: 'Перевернути картку для перегляду радарної діаграми бенчмарку LibPolyCodec',
+                    frontHint: '3D-радар: бенчмарк продуктивності та надійності LibPolyCodec',
                     icon: 'fas fa-certificate',
-                    title: 'LibPolyCodec vs. Стандартні кодеки',
-                    subtitle: 'Запатентоване нерівноважне позиційне стиснення та C++20 zero-allocation рушій',
+                    title: 'LibPolyCodec vs. Графічні кодеки',
+                    subtitle: 'Високопродуктивний C++20 рушій для потокового стиснення та авіоніки БПЛА',
                     callouts: [
                         {
-                            lead: 'Zero-Alloc Heap',
-                            text: '0 байт динамічної пам\'яті на статичних пулах'
+                            lead: 'Апаратне прискорення SIMD',
+                            text: '4.2x прискорення обробки завдяки AVX2 та ARM NEON для 60+ FPS потоків'
                         },
                         {
-                            lead: 'SIMD AVX2 / NEON',
-                            text: '4.2x апаратне векторне прискорення'
+                            lead: 'Абсолютний Zero-Allocation',
+                            text: '0 байт динамічного heap на гарячому шляху, 64KB статичний пул для БПЛА'
                         },
                         {
-                            lead: 'Патент & Scopus Q3',
-                            text: 'Державний патент та 68+ наукових праць'
+                            lead: 'Патент та Надійність',
+                            text: 'Державний патент України, нуль C++ exceptions (poly::Status), захищений .BAR'
                         }
                     ],
                     primaryAction: {
@@ -362,12 +362,22 @@ export default {
                     radarLabels: {
                         title: 'LibPolyCodec проти стандартних кодеків (5-осьовий радар)',
                         legendLib: 'LibPolyCodec (C++20)',
-                        legendGen: 'Стандартні (Zstd / Gzip)',
+                        legendGen: 'Стандартні (JPEG / HEVC Intra)',
                         axis1: 'Швидкість (SIMD)',
                         axis2: 'Стиснення',
                         axis3: 'Zero-Alloc',
-                        axis4: 'БПЛА / IoT',
-                        axis5: 'Безпека'
+                        axis4: 'БПЛА / Авіоніка',
+                        axis5: 'Надійність',
+                        metric1Label: '⚡ Пропускна здатність',
+                        metric1Val: '4.2x (60+ FPS)',
+                        metric2Label: '📦 Коефіцієнт стиснення',
+                        metric2Val: '+28% (Радіоканал)',
+                        metric3Label: '🧠 Детермінізм пам\'яті',
+                        metric3Val: '0B Heap (Zero-Alloc)',
+                        metric4Label: '🛸 Авіоніка та БПЛА',
+                        metric4Val: '64KB Статичний пул',
+                        metric5Label: '🔒 Надійність та Захист',
+                        metric5Val: 'poly::Status / .BAR'
                     }
                 }
             }
