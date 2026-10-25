@@ -68,53 +68,54 @@ export default {
                 rgb: 'var(--accent-rgb)',
                 icon: 'fas fa-sitemap',
                 metric: '9+',
-                metricLabel: 'years commercial engineering',
-                title: 'Systems Architecture & Tech Lead',
+                metricLabel: 'years of system engineering',
+                title: 'End-to-End System Architecture & Full-Spectrum Engineering',
                 points: [
                     {
-                        lead: 'High-Throughput Streaming',
-                        text: 'Architected multi-million user streaming ecosystems with Kotlin, Clean Architecture, ExoPlayer, and custom buffering pipelines for zero-stutter playback under low-latency constraints.'
+                        lead: 'Client Ecosystems',
+                        text: 'Architecting ultra-responsive native and cross-platform UI across Android (Jetpack Compose), Flutter, and modern web with deterministic MVI state.'
                     },
                     {
-                        lead: 'Low-Level SIMD & C++20',
-                        text: 'Authored high-performance algorithmic modules with C++20, SIMD vectorization (AVX2/NEON), and zero-allocation memory pools for real-time video/audio codec operations.'
+                        lead: 'Pure Shared Core (KMP)',
+                        text: 'Building 100% decoupled domain engines with Kotlin Multiplatform, keeping core business invariants strictly independent from platform SDKs.'
                     },
                     {
-                        lead: 'Multiplatform & IoT Telemetry',
-                        text: 'Engineered end-to-end architectures spanning KMP shared business logic, distributed ESP32/LoRa telemetry networks, and modern edge web interfaces.'
+                        lead: 'Embedded & IoT Telemetry',
+                        text: 'Integrating microcontrollers (ESP32), low-power protocols (BLE, LoRaWAN), and sensor telemetry into unified distributed networks.'
                     },
                     {
-                        lead: 'Production Reliability & Ownership',
-                        text: 'Enforced strict memory leak elimination, CI/CD quality gates, and automated test suites, taking full accountability for system stability post-release.'
+                        lead: 'System Reliability & CI/CD',
+                        text: 'Enforcing zero memory leaks, automated static verification gates, and long-term production resilience across platforms.'
                     }
                 ],
-                tags: ['High-Load Mobile', 'Clean Architecture', 'C++20 & SIMD', 'IoT & Edge'],
+                tags: ['Full-Spectrum Architecture', 'Kotlin & KMP', 'Embedded & IoT', 'Multi-Client UI'],
                 back: {
-                    badge: 'CLEAN ARCHITECTURE BLUEPRINT',
-                    flipLabel: '3D Architecture',
-                    flipAria: 'Flip card to view universal clean architecture blueprint',
-                    frontHint: '3D Blueprint: Universal Clean Architecture Topology',
-                    icon: 'fas fa-layer-group',
-                    title: 'Universal 3-Layer Clean Architecture',
-                    subtitle: 'Strict dependency inversion: Domain Core is 100% decoupled from frameworks & SDKs',
+                    badge: 'END-TO-END SYSTEM TOPOLOGY',
+                    flipLabel: '3D Pipeline',
+                    flipAria: 'Flip card to view end-to-end full-spectrum system architecture',
+                    frontHint: '3D Pipeline: Edge & IoT ➔ Data ➔ KMP Core ➔ Multi-Client',
+                    icon: 'fas fa-project-diagram',
+                    title: 'Full-Spectrum Architectural Pipeline',
+                    subtitle: 'From hardware IoT sensors to unified KMP business logic and multi-client UI runtimes',
                     callouts: [
                         {
-                            lead: 'Dependency Inversion',
-                            text: 'Outer layers depend inward on Domain Core interfaces.'
+                            lead: 'Decoupled Core (KMP)',
+                            text: 'Pure Kotlin shared business engine with zero platform SDK coupling.'
                         },
                         {
-                            lead: 'Pure Domain Isolation',
-                            text: '100% pure Kotlin with zero third-party SDK dependencies.'
+                            lead: 'Hardware Interop (Edge & IoT)',
+                            text: 'Robust sensor acquisition via BLE and WebSockets with deterministic buffering.'
                         },
                         {
-                            lead: 'Unidirectional MVI',
-                            text: 'UI Intent ➔ UseCase ➔ deterministic 60 FPS StateFlow.'
+                            lead: 'Multi-Client UI Ecosystems',
+                            text: 'Native Compose, Flutter, and Web frontends bound to single reactive MVI StateFlow.'
                         }
                     ],
                     diagramLabels: {
-                        title: 'Enterprise Clean Architecture Topology & Dependency Rule',
-                        dependencyRule: 'Dependencies Point Inward → Domain',
-                        flow: 'Unidirectional StateFlow'
+                        title: 'Ecosystem Topology: Edge ➔ Data ➔ KMP Core ➔ Clients',
+                        typeSafety: 'End-to-End Type Safety',
+                        pureCore: 'Zero SDK Coupling in Core',
+                        sync: '60/120 FPS Reactive Sync'
                     }
                 }
             },

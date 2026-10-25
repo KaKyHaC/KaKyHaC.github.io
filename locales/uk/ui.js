@@ -68,53 +68,54 @@ export default {
                 rgb: 'var(--accent-rgb)',
                 icon: 'fas fa-sitemap',
                 metric: '9+',
-                metricLabel: 'років комерційної інженерії',
-                title: 'Системна архітектура & Техлід',
+                metricLabel: 'років системної інженерії',
+                title: 'Наскрізна системна архітектура & Full-Spectrum Інженерія',
                 points: [
                     {
-                        lead: 'Високонавантажений потоковий стрімінг',
-                        text: 'Проєктування стрімінгових екосистем для мільйонів користувачів на Kotlin, Clean Architecture, ExoPlayer та кастомних буферах для безшовного відтворення при жорстких обмеженнях затримок.'
+                        lead: 'Клієнтські екосистеми',
+                        text: 'Проєктування чуйних нативних та кросплатформних інтерфейсів на Android (Jetpack Compose), Flutter та сучасному вебі з детермінованим MVI-станом.'
                     },
                     {
-                        lead: 'Низькорівневий SIMD & C++20',
-                        text: 'Розробка високонавантажених алгоритмічних модулів на C++20, SIMD-векторизації (AVX2/NEON) та zero-allocation пулах пам’яті для операцій відео/аудіо кодеків у реальному часі.'
+                        lead: 'Чиста бізнес-логіка (KMP)',
+                        text: 'Створення на 100% ізольованих ядер предметної області (Domain Core) на Kotlin Multiplatform без жодної прив\'язки до платформених SDK.'
                     },
                     {
-                        lead: 'Мультиплатформа & IoT телеметрія',
-                        text: 'Побудова наскрізних систем: від спільної бізнес-логіки на KMP до розподілених IoT-мереж телеметрії (ESP32/LoRa) та сучасних edge веб-інтерфейсів.'
+                        lead: 'Embedded & IoT телеметрія',
+                        text: 'Інтеграція мікроконтролерів (ESP32), низькорівневих інтерфейсів (BLE, LoRaWAN) та збору сенсорних даних у єдину розподілену мережу.'
                     },
                     {
-                        lead: 'Наскрізна відповідальність за надійність',
-                        text: 'Забезпечення надійності: повне усунення витоків пам\'яті (LeakCanary/Profiler), суворі CI/CD quality gates та наскрізна відповідальність за стабільність після релізу.'
+                        lead: 'Наскрізна надійність & CI/CD',
+                        text: 'Забезпечення нульових крашів і витоків пам\'яті, впровадження суворих верифікаційних контрактів та системна стабільність після релізу.'
                     }
                 ],
-                tags: ['High-Load Mobile', 'Clean Architecture', 'C++20 & SIMD', 'IoT & Edge'],
+                tags: ['Full-Spectrum Architecture', 'Kotlin & KMP', 'Embedded & IoT', 'Multi-Client UI'],
                 back: {
-                    badge: 'АРХІТЕКТУРНИЙ CLEAN BLUEPRINT',
-                    flipLabel: '3D Архітектура',
-                    flipAria: 'Перевернути картку для перегляду універсальної архітектурної схеми Clean Architecture',
-                    frontHint: '3D-схема: Clean Architecture та інверсія залежностей',
-                    icon: 'fas fa-layer-group',
-                    title: 'Універсальна 3-рівнева Clean Architecture',
-                    subtitle: 'Сувора інверсія залежностей: Domain Core повністю ізольований від фреймворків та SDK',
+                    badge: 'НАСКРІЗНА СИСТЕМНА ТОПОЛОГІЯ',
+                    flipLabel: '3D Пайплайн',
+                    flipAria: 'Перевернути картку для перегляду наскрізного архітектурного пайплайна',
+                    frontHint: '3D-пайплайн: Edge & IoT ➔ Data ➔ KMP Core ➔ Multi-Client',
+                    icon: 'fas fa-project-diagram',
+                    title: 'Наскрізний архітектурний пайплайн',
+                    subtitle: 'Від апаратного рівня та IoT до спільного KMP-ядра й багатоплатформних UI-інтерфейсів',
                     callouts: [
                         {
-                            lead: 'Інверсія залежностей',
-                            text: 'Зовнішні шари залежать від Domain Core, а не навпаки.'
+                            lead: 'Ізоляція бізнес-правил (KMP)',
+                            text: 'Спільна логіка на чистому Kotlin без прив\'язки до ОС чи сторонніх SDK.'
                         },
                         {
-                            lead: 'Ізоляція Domain Core',
-                            text: '100% чистий Kotlin без сторонніх SDK і фреймворків.'
+                            lead: 'Апаратна інтеграція (Edge & IoT)',
+                            text: 'Надійний збір телеметрії через BLE та WebSockets з детермінованою обробкою.'
                         },
                         {
-                            lead: 'Односпрямований MVI',
-                            text: 'UI Intent ➔ UseCase ➔ детермінований StateFlow 60 FPS.'
+                            lead: 'Багатоплатформний UI',
+                            text: 'Нативні Compose, Flutter та Web-клієнти, підключені до єдиного MVI StateFlow.'
                         }
                     ],
                     diagramLabels: {
-                        title: 'Топологія Clean Architecture та правило залежностей',
-                        dependencyRule: 'Залежності спрямовані всередину → Domain',
-                        flow: 'Односпрямований StateFlow'
+                        title: 'Топологія екосистеми: Edge ➔ Data ➔ KMP Core ➔ Clients',
+                        typeSafety: 'End-to-End Type Safety',
+                        pureCore: 'Zero SDK Coupling in Core',
+                        sync: '60/120 FPS Reactive Sync'
                     }
                 }
             },

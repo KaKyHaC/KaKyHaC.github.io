@@ -3,15 +3,15 @@ import { getLang } from '../i18n/index.js';
 
 function renderScopeIllustration(b, color, rgb) {
   const lbl = b.diagramLabels || {};
-  const gradId = 'clean-arch-grad-' + String(color).replace(/[^a-zA-Z0-9]/g, '');
+  const gradId = 'full-spectrum-grad-' + String(color).replace(/[^a-zA-Z0-9]/g, '');
   return `
   <div class="profile-back-visual profile-visual-scope">
     <div class="visual-header">
-      <span class="visual-title"><i class="fas fa-layer-group" aria-hidden="true"></i> ${safe(lbl.title || 'Enterprise Clean Architecture Topology')}</span>
-      <span class="visual-live-tag"><span class="live-dot"></span> CLEAN CORE</span>
+      <span class="visual-title"><i class="fas fa-project-diagram" aria-hidden="true"></i> ${safe(lbl.title || 'Ecosystem Topology: Edge ➔ Data ➔ KMP Core ➔ Clients')}</span>
+      <span class="visual-live-tag"><span class="live-dot"></span> FULL SPECTRUM</span>
     </div>
     <div class="visual-svg-wrap">
-      <svg viewBox="0 0 540 162" fill="none" xmlns="http://www.w3.org/2000/svg" class="blueprint-svg clean-arch-svg">
+      <svg viewBox="0 0 550 162" fill="none" xmlns="http://www.w3.org/2000/svg" class="blueprint-svg clean-arch-svg">
         <defs>
           <linearGradient id="${gradId}" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="${color}" stop-opacity="0.8"/>
@@ -19,62 +19,81 @@ function renderScopeIllustration(b, color, rgb) {
           </linearGradient>
         </defs>
 
-        <!-- Layer 1: Presentation (Outer Tier) -->
-        <g transform="translate(10, 6)">
-          <rect width="156" height="150" rx="11" fill="rgba(${rgb}, 0.08)" stroke="${color}" stroke-width="1.4"/>
-          <rect x="11" y="8" width="134" height="26" rx="5" fill="rgba(${rgb}, 0.22)" stroke="${color}" stroke-width="1"/>
-          <text x="78" y="25" font-size="11" fill="${color}" font-weight="850" text-anchor="middle" font-family="monospace">01 PRESENTATION</text>
-          <text x="78" y="55" font-size="10.5" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Jetpack Compose · MVI</text>
-          <rect x="14" y="69" width="128" height="24" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
-          <text x="78" y="85" font-size="9.5" fill="var(--text)" font-weight="650" text-anchor="middle" font-family="monospace">StateFlow · 60 FPS</text>
-          <rect x="14" y="99" width="128" height="22" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.07)"/>
-          <text x="78" y="114" font-size="8.8" fill="var(--muted)" font-weight="650" text-anchor="middle" font-family="monospace">Zero Business Logic</text>
-          <text x="78" y="140" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">UI State &amp; Intent Pipeline</text>
+        <!-- Stage 1: Edge & IoT Hardware Tier -->
+        <g transform="translate(14, 8)">
+          <rect width="112" height="146" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(${rgb}, 0.35)" stroke-width="1.2"/>
+          <rect x="8" y="8" width="96" height="23" rx="5" fill="rgba(var(--accent-rgb), 0.12)" stroke="${color}" stroke-width="0.9"/>
+          <text x="56" y="23" font-size="9" fill="${color}" font-weight="850" text-anchor="middle" font-family="monospace">01 EDGE &amp; IOT</text>
+          <text x="56" y="50" font-size="9.5" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">ESP32 · C++20</text>
+          <rect x="10" y="62" width="92" height="20" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="56" y="76" font-size="8.5" fill="var(--muted)" font-weight="650" text-anchor="middle" font-family="monospace">BLE · Sensors</text>
+          <rect x="10" y="88" width="92" height="20" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="56" y="102" font-size="8.5" fill="var(--muted)" font-weight="650" text-anchor="middle" font-family="monospace">LoRa Telemetry</text>
+          <text x="56" y="132" font-size="8" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Hardware Layer</text>
         </g>
 
-        <!-- Inward Dependency Arrow 1 -->
-        <g transform="translate(169, 81)">
-          <path d="M 0 0 L 17 0" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="3 2" class="flow-link"/>
-          <polygon points="20,0 14,-3.5 14,3.5" fill="#38bdf8"/>
+        <!-- Flow Link 1 -> 2: Telemetry Stream -->
+        <g transform="translate(126, 81)">
+          <path d="M 0 0 L 20 0" stroke="${color}" stroke-width="2" stroke-dasharray="3 2" class="flow-link"/>
+          <polygon points="22,0 16,-3.5 16,3.5" fill="${color}"/>
         </g>
 
-        <!-- Layer 2: Domain Core (Heart of the System) -->
-        <g transform="translate(189, 4)">
-          <rect width="162" height="154" rx="13" fill="rgba(56, 189, 248, 0.14)" stroke="#38bdf8" stroke-width="2"/>
-          <rect x="10" y="8" width="142" height="28" rx="6" fill="rgba(56, 189, 248, 0.28)" stroke="#38bdf8" stroke-width="1.2"/>
-          <text x="81" y="26" font-size="11.5" fill="#38bdf8" font-weight="900" text-anchor="middle" font-family="monospace">02 DOMAIN CORE</text>
-          <text x="81" y="56" font-size="11" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">UseCases &amp; Entities</text>
-          <rect x="10" y="70" width="142" height="25" rx="5" fill="rgba(34, 197, 94, 0.16)" stroke="#22c55e" stroke-width="1.2"/>
-          <text x="81" y="86" font-size="9.5" fill="#4ade80" font-weight="800" text-anchor="middle" font-family="monospace">100% Isolated · Pure Kotlin</text>
-          <rect x="10" y="101" width="142" height="23" rx="4" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1"/>
-          <text x="81" y="116" font-size="9" fill="#38bdf8" font-weight="750" text-anchor="middle" font-family="monospace">0 SDK / Framework Deps</text>
-          <text x="81" y="142" font-size="8.8" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Business Invariants &amp; Rules</text>
+        <!-- Stage 2: Data & Sync Engine -->
+        <g transform="translate(148, 8)">
+          <rect width="114" height="146" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+          <rect x="8" y="8" width="98" height="23" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)" stroke-width="0.9"/>
+          <text x="57" y="23" font-size="9" fill="var(--text)" font-weight="850" text-anchor="middle" font-family="monospace">02 DATA &amp; SYNC</text>
+          <text x="57" y="50" font-size="9.5" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Offline-First</text>
+          <rect x="10" y="62" width="94" height="20" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="57" y="76" font-size="8.5" fill="var(--text)" font-weight="650" text-anchor="middle" font-family="monospace">WebSockets · Ktor</text>
+          <rect x="10" y="88" width="94" height="20" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="57" y="102" font-size="8.5" fill="var(--muted)" font-weight="650" text-anchor="middle" font-family="monospace">Room &amp; Cache</text>
+          <text x="57" y="132" font-size="8" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Reactive Streams</text>
         </g>
 
-        <!-- Inward Dependency Arrow 2 -->
-        <g transform="translate(354, 81)">
-          <path d="M 17 0 L 0 0" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="3 2" class="flow-link"/>
-          <polygon points="-3,0 3,-3.5 3,3.5" fill="#38bdf8"/>
+        <!-- Flow Link 2 -> 3: Reactive Contract -->
+        <g transform="translate(262, 81)">
+          <path d="M 0 0 L 20 0" stroke="#38bdf8" stroke-width="2" stroke-dasharray="3 2" class="flow-link"/>
+          <polygon points="22,0 16,-3.5 16,3.5" fill="#38bdf8"/>
         </g>
 
-        <!-- Layer 3: Data & Infrastructure -->
-        <g transform="translate(374, 6)">
-          <rect width="156" height="150" rx="11" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.22)" stroke-width="1.3"/>
-          <rect x="11" y="8" width="134" height="26" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
-          <text x="78" y="25" font-size="11" fill="var(--text)" font-weight="850" text-anchor="middle" font-family="monospace">03 DATA &amp; INFRA</text>
-          <text x="78" y="55" font-size="10.5" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Repository Pattern · Room</text>
-          <rect x="14" y="69" width="128" height="24" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
-          <text x="78" y="85" font-size="9.5" fill="var(--text)" font-weight="650" text-anchor="middle" font-family="monospace">Ktor · WebSockets · SIMD</text>
-          <rect x="14" y="99" width="128" height="22" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.07)"/>
-          <text x="78" y="114" font-size="8.8" fill="var(--muted)" font-weight="650" text-anchor="middle" font-family="monospace">Offline-First &amp; Caching</text>
-          <text x="78" y="140" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Implements Domain Interfaces</text>
+        <!-- Stage 3: Glowing Center Hero - Shared KMP Core -->
+        <g transform="translate(284, 5)">
+          <rect width="126" height="152" rx="12" fill="rgba(56, 189, 248, 0.14)" stroke="#38bdf8" stroke-width="2"/>
+          <rect x="9" y="8" width="108" height="25" rx="6" fill="rgba(56, 189, 248, 0.28)" stroke="#38bdf8" stroke-width="1.2"/>
+          <text x="63" y="24" font-size="10" fill="#38bdf8" font-weight="900" text-anchor="middle" font-family="monospace">03 SHARED CORE</text>
+          <text x="63" y="52" font-size="10" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Pure Kotlin KMP</text>
+          <rect x="10" y="65" width="106" height="23" rx="5" fill="rgba(34, 197, 94, 0.16)" stroke="#22c55e" stroke-width="1.2"/>
+          <text x="63" y="80.5" font-size="9" fill="#4ade80" font-weight="800" text-anchor="middle" font-family="monospace">100% Isolated</text>
+          <rect x="10" y="94" width="106" height="21" rx="4" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1"/>
+          <text x="63" y="108.5" font-size="8.5" fill="#38bdf8" font-weight="750" text-anchor="middle" font-family="monospace">Zero SDK Deps</text>
+          <text x="63" y="137" font-size="8.5" fill="var(--muted)" font-weight="650" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Business Invariants</text>
+        </g>
+
+        <!-- Flow Link 3 -> 4: MVI StateFlow Stream -->
+        <g transform="translate(410, 81)">
+          <path d="M 0 0 L 20 0" stroke="${color}" stroke-width="2" stroke-dasharray="3 2" class="flow-link"/>
+          <polygon points="22,0 16,-3.5 16,3.5" fill="${color}"/>
+        </g>
+
+        <!-- Stage 4: Multi-Client UI Runtimes -->
+        <g transform="translate(432, 8)">
+          <rect width="106" height="146" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(${rgb}, 0.35)" stroke-width="1.2"/>
+          <rect x="7" y="8" width="92" height="23" rx="5" fill="rgba(var(--accent-rgb), 0.12)" stroke="${color}" stroke-width="0.9"/>
+          <text x="53" y="23" font-size="9" fill="${color}" font-weight="850" text-anchor="middle" font-family="monospace">04 CLIENT UI</text>
+          <text x="53" y="50" font-size="9.5" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Compose &amp; Web</text>
+          <rect x="8" y="62" width="90" height="20" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="53" y="76" font-size="8.5" fill="var(--text)" font-weight="650" text-anchor="middle" font-family="monospace">Android · Flutter</text>
+          <rect x="8" y="88" width="90" height="20" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+          <text x="53" y="102" font-size="8.5" fill="var(--muted)" font-weight="650" text-anchor="middle" font-family="monospace">60/120 FPS UI</text>
+          <text x="53" y="132" font-size="8" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">MVI Reactive Sync</text>
         </g>
       </svg>
     </div>
     <div class="visual-chips">
-      <span class="blueprint-chip verified"><i class="fas fa-compress-arrows-alt"></i> ${safe(lbl.dependencyRule || 'Dependencies Point Inward')}</span>
-      <span class="blueprint-chip"><i class="fas fa-cube"></i> Pure Kotlin Domain</span>
-      <span class="blueprint-chip"><i class="fas fa-sync-alt"></i> ${safe(lbl.flow || 'Unidirectional MVI')}</span>
+      <span class="blueprint-chip verified"><i class="fas fa-shield-alt"></i> ${safe(lbl.typeSafety || 'End-to-End Type Safety')}</span>
+      <span class="blueprint-chip"><i class="fas fa-cube"></i> ${safe(lbl.pureCore || 'Zero SDK Coupling in Core')}</span>
+      <span class="blueprint-chip"><i class="fas fa-sync-alt"></i> ${safe(lbl.sync || '60/120 FPS Reactive Sync')}</span>
     </div>
   </div>`;
 }
