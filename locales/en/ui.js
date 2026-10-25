@@ -207,14 +207,14 @@ export default {
                     apps: [
                         {
                             id: 'tictactoe',
-                            name: 'Tic-Tac-Toe: 3 Player',
+                            name: 'Tic-Tac-Toe 3P',
                             tag: '10K+ DL · Multiplayer',
                             icon: 'images/projects/tictactoe_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.tictactoy'
                         },
                         {
                             id: 'peoplenotes',
-                            name: 'People Notes: AI CRM',
+                            name: 'People Notes AI',
                             tag: 'Gemini AI · Offline CRM',
                             icon: 'images/projects/peoplenotes_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes'
@@ -222,28 +222,28 @@ export default {
                         {
                             id: 'lucky',
                             name: 'Lucky Loot Boxes',
-                            tag: 'Loot Simulator · Casual',
+                            tag: 'Loot Box Simulator',
                             icon: 'images/projects/lucky_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.luckylootbox'
                         },
                         {
                             id: 'brainrot',
-                            name: 'Brainrot Clicker: Aura',
-                            tag: 'Viral Arcade · Reactive UI',
+                            name: 'Brainrot Clicker',
+                            tag: 'Arcade Clicker',
                             icon: 'images/projects/brainrotclicker_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.brainrotclicker2'
                         },
                         {
                             id: 'nightfall',
                             name: 'Operation Nightfall',
-                            tag: 'Tactical Action · Compose',
+                            tag: 'Tactical Action',
                             icon: 'images/projects/resistance_multiplayer_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall'
                         },
                         {
                             id: 'resistance',
                             name: 'The Resistance',
-                            tag: 'Social Deduction · BLoC',
+                            tag: 'Social Deduction',
                             icon: 'images/projects/resistance_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.divan.theresistance'
                         }
@@ -326,7 +326,7 @@ export default {
                     radarLabels: {
                         title: 'LibPolyCodec vs. Standard Codecs (5-Axis Multi-Metric Radar)',
                         legendLib: 'LibPolyCodec (C++20)',
-                        legendGen: 'Standard Codecs (Zstd / Gzip)',
+                        legendGen: 'Standard (Zstd / Gzip)',
                         axis1: 'Speed (SIMD)',
                         axis2: 'Compression',
                         axis3: 'Zero-Alloc',

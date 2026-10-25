@@ -162,7 +162,7 @@ export default {
                         },
                         {
                             lead: 'Zero-Hallucination Gate',
-                            text: '100% проходження верифікаційних тестів без дрейфу архітектури.'
+                            text: '100% верифікація тестів без дрейфу архітектури.'
                         }
                     ],
                     diagramLabels: {
@@ -207,43 +207,43 @@ export default {
                     apps: [
                         {
                             id: 'tictactoe',
-                            name: 'Tic-Tac-Toe: 3 Player',
+                            name: 'Tic-Tac-Toe 3P',
                             tag: '10K+ DL · Мультиплеєр',
                             icon: 'images/projects/tictactoe_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.tictactoy'
                         },
                         {
                             id: 'peoplenotes',
-                            name: 'People Notes: AI CRM',
-                            tag: 'Gemini AI · Офлайн-CRM',
+                            name: 'People Notes AI',
+                            tag: 'Gemini AI · Офлайн CRM',
                             icon: 'images/projects/peoplenotes_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.peoplenotes'
                         },
                         {
                             id: 'lucky',
                             name: 'Lucky Loot Boxes',
-                            tag: 'Симулятор лутбоксів · Casual',
+                            tag: 'Симулятор лутбоксів',
                             icon: 'images/projects/lucky_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.luckylootbox'
                         },
                         {
                             id: 'brainrot',
-                            name: 'Brainrot Clicker: Aura',
-                            tag: 'Вірусний аркадний клікер',
+                            name: 'Brainrot Clicker',
+                            tag: 'Аркадний клікер',
                             icon: 'images/projects/brainrotclicker_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.brainrotclicker2'
                         },
                         {
                             id: 'nightfall',
                             name: 'Operation Nightfall',
-                            tag: 'Тактичний екшен · Compose',
+                            tag: 'Тактичний екшен',
                             icon: 'images/projects/resistance_multiplayer_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.dvbarannik.operation.nightfall'
                         },
                         {
                             id: 'resistance',
                             name: 'The Resistance',
-                            tag: 'Соціальна дедукція · BLoC',
+                            tag: 'Соціальна дедукція',
                             icon: 'images/projects/resistance_icon.png',
                             playUrl: 'https://play.google.com/store/apps/details?id=com.divan.theresistance'
                         }
@@ -326,12 +326,12 @@ export default {
                     radarLabels: {
                         title: 'LibPolyCodec проти стандартних кодеків (5-осьовий радар)',
                         legendLib: 'LibPolyCodec (C++20)',
-                        legendGen: 'Стандартні кодеки (Zstd / Gzip)',
+                        legendGen: 'Стандартні (Zstd / Gzip)',
                         axis1: 'Швидкість (SIMD)',
                         axis2: 'Стиснення',
                         axis3: 'Zero-Alloc',
                         axis4: 'БПЛА / IoT',
-                        axis5: 'Захист даних'
+                        axis5: 'Безпека'
                     }
                 }
             }
