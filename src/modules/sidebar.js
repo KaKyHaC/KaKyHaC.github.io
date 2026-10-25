@@ -58,6 +58,21 @@ export function initSidebar() {
 
   overlay.addEventListener('click', closeMobile);
 
+  const returnToRoot = e => {
+    if (location.pathname === '/' || location.pathname === '/index.html') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (location.hash) {
+        history.replaceState(null, '', '/');
+      }
+      $$('.nav-link').forEach(a => a.classList.toggle('active', a.hash === '#about'));
+      if (innerWidth <= 768) closeMobile();
+    }
+  };
+
+  $('.sidebar-avatar-link')?.addEventListener('click', returnToRoot);
+  $('.sidebar-name-link')?.addEventListener('click', returnToRoot);
+
   $$('.nav-link').forEach(a => a.addEventListener('click', () => {
     trackNavigationClick(a.hash.slice(1));
     if (innerWidth <= 768) closeMobile();

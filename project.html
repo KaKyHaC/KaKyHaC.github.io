@@ -23,17 +23,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  __PROJECT_SCHEMA__
+  <!-- __PROJECT_SCHEMA__ -->
   <script>if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'</script>
 </head>
 <body>
-  <header class="project-nav">
-    <a href="/#projects" class="back-link"><i class="fas fa-arrow-left"></i> <span id="back-label">All projects</span></a>
-    <a class="brand" href="/">Dmytro Barannik</a>
-    <div>
-      <button id="lang-toggle">UA</button>
-      <button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+  <header class="project-nav" id="project-nav">
+    <div class="nav-left">
+      <a href="/#projects" class="back-link" id="nav-back-link" aria-label="Back to all projects">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> <span id="back-label">All projects</span>
+      </a>
+      <div class="nav-mobile-title" id="nav-mobile-title" aria-hidden="true"></div>
     </div>
+    <div class="nav-center" id="nav-center">
+      <a class="brand" href="/" id="nav-brand">Dmytro Barannik</a>
+      <div class="nav-scrolled-title" id="nav-scrolled-title" aria-hidden="true"></div>
+    </div>
+    <div class="nav-actions">
+      <button id="lang-toggle" aria-label="Switch language">UA</button>
+      <button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-sun" aria-hidden="true"></i></button>
+    </div>
+    <div class="nav-progress-bar" id="nav-progress-bar" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   </header>
   <main id="project-root" aria-live="polite"></main>
   <footer>

@@ -67,6 +67,7 @@ for (const project of projects) {
     .replaceAll('__PROJECT_DESCRIPTION__', attr(project.description))
     .replaceAll('__PROJECT_IMAGE__', attr(image))
     .replaceAll('__PROJECT_CANONICAL__', canonicalUrl)
+    .replaceAll('<!-- __PROJECT_SCHEMA__ -->', schemaTag)
     .replaceAll('__PROJECT_SCHEMA__', schemaTag);
 
   await writeFile(resolve(dir, 'index.html'), html);
