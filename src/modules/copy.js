@@ -34,7 +34,7 @@ export const COPY = {
     },
     sections: {
       directions: ['Capabilities', 'One engineering mindset. Different technological contexts.', 'Choose a direction to see related work. Every project receives the same attention to context, decisions and delivery.'],
-      projects: ['Project archive', 'Work across products, platforms and research.', 'Equal presentation, clear responsibilities and enough technical detail to understand the work.'],
+      projects: ['Project registry', 'Work across products, platforms and research.', 'Equal presentation, clear responsibilities and enough technical detail to understand the work.'],
       experience: ['Experience & approach', 'From problem framing to long-term support.', 'Commercial work, independent products, technical leadership and teaching form one continuous engineering practice.'],
       skills: ['Competencies', 'Tools connected to real work.', 'Select a competency to see its practical use and the projects where it appears.'],
       research: ['Research & R&D', 'Research translated into engineering value.'],
@@ -130,7 +130,7 @@ export const COPY = {
     },
     sections: {
       directions: ['Технологічні напрями', 'Один інженерний підхід. Різні технологічні контексти.', 'Оберіть напрям, щоб побачити пов’язані роботи. Кожен проєкт отримує однакову увагу до контексту, рішень і реалізації.'],
-      projects: ['Архів проєктів', 'Продукти, платформи та дослідження.', 'Рівноправна подача, чітка відповідальність і достатньо технічних деталей, щоб зрозуміти виконану роботу.'],
+      projects: ['Реєстр проєктів', 'Продукти, платформи та дослідження.', 'Рівноправна подача, чітка відповідальність і достатньо технічних деталей, щоб зрозуміти виконану роботу.'],
       experience: ['Досвід і підхід', 'Від формулювання задачі до довгострокової підтримки.', 'Комерційна розробка, власні продукти, технічне лідерство й викладання формують єдину інженерну практику.'],
       skills: ['Компетенції', 'Інструменти, пов’язані з реальною роботою.', 'Оберіть компетенцію, щоб побачити практичне застосування та пов’язані проєкти.'],
       research: ['Дослідження та R&D', 'Наукові результати з практичною інженерною цінністю.'],
