@@ -458,14 +458,20 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 .live-dot.live-rose{background:#f43f5e;box-shadow:0 0 8px #f43f5e}
 .visual-svg-wrap{width:100%;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .blueprint-svg{width:100%;height:auto;display:block}
-.clean-arch-svg{max-height:126px;height:120px}
+.clean-arch-svg{max-height:175px;height:166px}
 .swarm-svg{max-height:104px;height:98px}
-.radar-svg{max-height:148px;height:140px}
+.radar-svg{max-height:195px;height:186px}
 .visual-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:2px}
 .blueprint-chip{display:inline-flex;align-items:center;gap:4.5px;font-family:var(--font-mono,monospace);font-size:9px;font-weight:650;color:var(--muted);background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:2.5px 7px;border-radius:5px}
 .blueprint-chip.verified{color:#4ade80;background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.3)}
 .blueprint-chip.rating-chip{color:#facc15;background:rgba(250,204,21,0.1);border-color:rgba(250,204,21,0.3)}
 .rating-chip i{font-size:8.5px;color:#facc15}
+
+/* Wide cards visual breathing room */
+.profile-visual-scope,
+.profile-visual-research{padding:10px 14px 12px;margin:2px 0 6px}
+.profile-visual-scope .visual-chips,
+.profile-visual-research .visual-chips{margin-top:4px;gap:6px}
 
 /* DᎥᗰᗩᒪᎥᑎᗩ Studio 6-Apps Grid */
 .dimalina-apps-container{display:flex;flex-direction:column;margin:2px 0 5px}
@@ -487,6 +493,16 @@ main{margin-left:var(--sidebar);padding:0 clamp(24px,5vw,76px);max-width:1600px}
 .callout-body{display:flex;flex-wrap:wrap;gap:4.5px;align-items:baseline;flex:1}
 .callout-lead{color:var(--text);font-weight:700;font-size:11.5px;white-space:nowrap}
 .callout-text{color:var(--muted);font-size:11px}
+
+/* Spacious callouts specifically for wide cards */
+.profile-note-scope .profile-back-callouts,
+.profile-note-research .profile-back-callouts{gap:7px;margin:8px 0 10px}
+.profile-note-scope .callout-item,
+.profile-note-research .callout-item{font-size:11.5px;line-height:1.42}
+.profile-note-scope .callout-lead,
+.profile-note-research .callout-lead{font-size:12px}
+.profile-note-scope .callout-text,
+.profile-note-research .callout-text{font-size:11.5px}
 
 /* Single Primary Action Button */
 .profile-back-action-wrap{margin-top:auto;padding-top:6px;border-top:1px solid rgba(var(--card-rgb),0.15)}

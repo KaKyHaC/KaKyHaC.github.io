@@ -11,7 +11,7 @@ function renderScopeIllustration(b, color, rgb) {
       <span class="visual-live-tag"><span class="live-dot"></span> CLEAN CORE</span>
     </div>
     <div class="visual-svg-wrap">
-      <svg viewBox="0 0 540 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="blueprint-svg clean-arch-svg">
+      <svg viewBox="0 0 540 162" fill="none" xmlns="http://www.w3.org/2000/svg" class="blueprint-svg clean-arch-svg">
         <defs>
           <linearGradient id="${gradId}" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="${color}" stop-opacity="0.8"/>
@@ -21,47 +21,53 @@ function renderScopeIllustration(b, color, rgb) {
 
         <!-- Layer 1: Presentation (Outer Tier) -->
         <g transform="translate(10, 6)">
-          <rect width="156" height="108" rx="10" fill="rgba(${rgb}, 0.08)" stroke="${color}" stroke-width="1.4"/>
-          <rect x="11" y="8" width="134" height="23" rx="5" fill="rgba(${rgb}, 0.22)" stroke="${color}" stroke-width="1"/>
-          <text x="78" y="23" font-size="10.5" fill="${color}" font-weight="800" text-anchor="middle" font-family="monospace">01 PRESENTATION</text>
-          <text x="78" y="49" font-size="9.5" fill="var(--text)" font-weight="700" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Jetpack Compose · MVI</text>
-          <rect x="18" y="61" width="120" height="20" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
-          <text x="78" y="75" font-size="9" fill="var(--text)" font-weight="650" text-anchor="middle" font-family="monospace">StateFlow · 60 FPS</text>
-          <text x="78" y="97" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Zero Business Logic</text>
+          <rect width="156" height="150" rx="11" fill="rgba(${rgb}, 0.08)" stroke="${color}" stroke-width="1.4"/>
+          <rect x="11" y="8" width="134" height="26" rx="5" fill="rgba(${rgb}, 0.22)" stroke="${color}" stroke-width="1"/>
+          <text x="78" y="25" font-size="11" fill="${color}" font-weight="850" text-anchor="middle" font-family="monospace">01 PRESENTATION</text>
+          <text x="78" y="55" font-size="10.5" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Jetpack Compose · MVI</text>
+          <rect x="14" y="69" width="128" height="24" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="78" y="85" font-size="9.5" fill="var(--text)" font-weight="650" text-anchor="middle" font-family="monospace">StateFlow · 60 FPS</text>
+          <rect x="14" y="99" width="128" height="22" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.07)"/>
+          <text x="78" y="114" font-size="8.8" fill="var(--muted)" font-weight="650" text-anchor="middle" font-family="monospace">Zero Business Logic</text>
+          <text x="78" y="140" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">UI State &amp; Intent Pipeline</text>
         </g>
 
         <!-- Inward Dependency Arrow 1 -->
-        <g transform="translate(169, 60)">
+        <g transform="translate(169, 81)">
           <path d="M 0 0 L 17 0" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="3 2" class="flow-link"/>
           <polygon points="20,0 14,-3.5 14,3.5" fill="#38bdf8"/>
         </g>
 
         <!-- Layer 2: Domain Core (Heart of the System) -->
-        <g transform="translate(191, 4)">
-          <rect width="164" height="112" rx="12" fill="rgba(56, 189, 248, 0.14)" stroke="#38bdf8" stroke-width="2"/>
-          <rect x="11" y="8" width="142" height="24" rx="6" fill="rgba(56, 189, 248, 0.28)" stroke="#38bdf8" stroke-width="1.2"/>
-          <text x="82" y="24" font-size="11" fill="#38bdf8" font-weight="900" text-anchor="middle" font-family="monospace">02 DOMAIN CORE</text>
-          <text x="82" y="50" font-size="10" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">UseCases &amp; Entities</text>
-          <rect x="12" y="62" width="140" height="21" rx="5" fill="rgba(34, 197, 94, 0.16)" stroke="#22c55e" stroke-width="1.2"/>
-          <text x="82" y="76" font-size="8.8" fill="#4ade80" font-weight="750" text-anchor="middle" font-family="monospace">100% Isolated · Pure Kotlin</text>
-          <text x="82" y="99" font-size="8.5" fill="#38bdf8" font-weight="700" text-anchor="middle" font-family="monospace">0 SDK / Framework Deps</text>
+        <g transform="translate(189, 4)">
+          <rect width="162" height="154" rx="13" fill="rgba(56, 189, 248, 0.14)" stroke="#38bdf8" stroke-width="2"/>
+          <rect x="10" y="8" width="142" height="28" rx="6" fill="rgba(56, 189, 248, 0.28)" stroke="#38bdf8" stroke-width="1.2"/>
+          <text x="81" y="26" font-size="11.5" fill="#38bdf8" font-weight="900" text-anchor="middle" font-family="monospace">02 DOMAIN CORE</text>
+          <text x="81" y="56" font-size="11" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">UseCases &amp; Entities</text>
+          <rect x="10" y="70" width="142" height="25" rx="5" fill="rgba(34, 197, 94, 0.16)" stroke="#22c55e" stroke-width="1.2"/>
+          <text x="81" y="86" font-size="9.5" fill="#4ade80" font-weight="800" text-anchor="middle" font-family="monospace">100% Isolated · Pure Kotlin</text>
+          <rect x="10" y="101" width="142" height="23" rx="4" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1"/>
+          <text x="81" y="116" font-size="9" fill="#38bdf8" font-weight="750" text-anchor="middle" font-family="monospace">0 SDK / Framework Deps</text>
+          <text x="81" y="142" font-size="8.8" fill="var(--muted)" font-weight="600" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Business Invariants &amp; Rules</text>
         </g>
 
         <!-- Inward Dependency Arrow 2 -->
-        <g transform="translate(357, 60)">
+        <g transform="translate(354, 81)">
           <path d="M 17 0 L 0 0" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="3 2" class="flow-link"/>
           <polygon points="-3,0 3,-3.5 3,3.5" fill="#38bdf8"/>
         </g>
 
         <!-- Layer 3: Data & Infrastructure -->
-        <g transform="translate(376, 6)">
-          <rect width="154" height="108" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.22)" stroke-width="1.3"/>
-          <rect x="10" y="8" width="134" height="23" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
-          <text x="77" y="23" font-size="10.5" fill="var(--text)" font-weight="800" text-anchor="middle" font-family="monospace">03 DATA &amp; INFRA</text>
-          <text x="77" y="49" font-size="9.5" fill="var(--text)" font-weight="700" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Repository Pattern · Room</text>
-          <rect x="14" y="61" width="126" height="20" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
-          <text x="77" y="75" font-size="9" fill="var(--text)" font-weight="650" text-anchor="middle" font-family="monospace">Ktor · WebSockets · SIMD</text>
-          <text x="77" y="97" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Implements Domain Interfaces</text>
+        <g transform="translate(374, 6)">
+          <rect width="156" height="150" rx="11" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.22)" stroke-width="1.3"/>
+          <rect x="11" y="8" width="134" height="26" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+          <text x="78" y="25" font-size="11" fill="var(--text)" font-weight="850" text-anchor="middle" font-family="monospace">03 DATA &amp; INFRA</text>
+          <text x="78" y="55" font-size="10.5" fill="var(--text)" font-weight="750" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Repository Pattern · Room</text>
+          <rect x="14" y="69" width="128" height="24" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
+          <text x="78" y="85" font-size="9.5" fill="var(--text)" font-weight="650" text-anchor="middle" font-family="monospace">Ktor · WebSockets · SIMD</text>
+          <rect x="14" y="99" width="128" height="22" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.07)"/>
+          <text x="78" y="114" font-size="8.8" fill="var(--muted)" font-weight="650" text-anchor="middle" font-family="monospace">Offline-First &amp; Caching</text>
+          <text x="78" y="140" font-size="8.5" fill="var(--muted)" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Implements Domain Interfaces</text>
         </g>
       </svg>
     </div>
@@ -173,89 +179,88 @@ function renderResearchRadarIllustration(b, color, rgb) {
       <span class="visual-live-tag"><span class="live-dot live-rose"></span> BENCHMARK</span>
     </div>
     <div class="visual-svg-wrap">
-      <svg viewBox="0 0 570 148" fill="none" xmlns="http://www.w3.org/2000/svg" class="blueprint-svg radar-svg">
-        <!-- Center (116, 75), R=52 -->
-        <!-- Concentric Pentagons -->
-        <!-- Level 1 (33%): R=17 -->
-        <polygon points="116,58 132,70 126,90 106,90 100,70" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
-        <!-- Level 2 (66%): R=35 -->
-        <polygon points="116,40 149,64 137,103 95,103 83,64" stroke="rgba(255,255,255,0.11)" stroke-width="1" fill="none"/>
-        <!-- Level 3 (100%): R=52 -->
-        <polygon points="116,23 165,59 147,117 85,117 67,59" stroke="rgba(255,255,255,0.16)" stroke-width="1.3" fill="none"/>
+      <svg viewBox="0 0 570 188" fill="none" xmlns="http://www.w3.org/2000/svg" class="blueprint-svg radar-svg">
+        <!-- Center (122, 94), R=66 -->
+        <!-- Level 1 (33%): R=22 -->
+        <polygon points="122,72 143,87 135,112 109,112 101,87" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+        <!-- Level 2 (66%): R=44 -->
+        <polygon points="122,50 164,80 148,130 96,130 80,80" stroke="rgba(255,255,255,0.11)" stroke-width="1" fill="none"/>
+        <!-- Level 3 (100%): R=66 -->
+        <polygon points="122,28 185,74 161,147 83,147 59,74" stroke="rgba(255,255,255,0.16)" stroke-width="1.3" fill="none"/>
 
-        <!-- 5 Axis Spokes from center (116, 75) -->
-        <line x1="116" y1="75" x2="116" y2="23" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <line x1="116" y1="75" x2="165" y2="59" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <line x1="116" y1="75" x2="147" y2="117" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <line x1="116" y1="75" x2="85" y2="117" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <line x1="116" y1="75" x2="67" y2="59" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <!-- 5 Axis Spokes from center (122, 94) to outer vertices -->
+        <line x1="122" y1="94" x2="122" y2="28" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <line x1="122" y1="94" x2="185" y2="74" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <line x1="122" y1="94" x2="161" y2="147" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <line x1="122" y1="94" x2="83" y2="147" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+        <line x1="122" y1="94" x2="59" y2="74" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
 
         <!-- Generic Codecs Polygon (Zstd/Gzip) -->
-        <polygon points="116,48 153,63 124,86 103,91 92,67" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.38)" stroke-width="1.3" stroke-dasharray="3 2"/>
+        <polygon points="122,59 168,79 133,109 105,116 93,84" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.38)" stroke-width="1.3" stroke-dasharray="3 2"/>
 
         <!-- LibPolyCodec Glowing Polygon -->
-        <polygon points="116,25 159,61 147,117 88,113 72,61" fill="rgba(${rgb}, 0.28)" stroke="${color}" stroke-width="2.3"/>
-        <circle cx="116" cy="25" r="3.5" fill="${color}"/>
-        <circle cx="159" cy="61" r="3.5" fill="${color}"/>
-        <circle cx="147" cy="117" r="3.5" fill="${color}"/>
-        <circle cx="88" cy="113" r="3.5" fill="${color}"/>
-        <circle cx="72" cy="61" r="3.5" fill="${color}"/>
+        <polygon points="122,31 178,75 161,147 87,142 66,75" fill="rgba(${rgb}, 0.28)" stroke="${color}" stroke-width="2.4"/>
+        <circle cx="122" cy="31" r="3.5" fill="${color}"/>
+        <circle cx="178" cy="75" r="3.5" fill="${color}"/>
+        <circle cx="161" cy="147" r="3.5" fill="${color}"/>
+        <circle cx="87" cy="142" r="3.5" fill="${color}"/>
+        <circle cx="66" cy="75" r="3.5" fill="${color}"/>
 
-        <!-- Axis Labels: Collision-Free and Fully Unclipped -->
-        <text x="116" y="13" font-size="8.5" fill="${color}" font-weight="750" text-anchor="middle" font-family="monospace">${safe(lbl.axis1 || 'Speed (SIMD)')}</text>
-        <text x="172" y="62" font-size="8.5" fill="var(--text)" font-weight="700" text-anchor="start" font-family="monospace">${safe(lbl.axis2 || 'Ratio')}</text>
-        <text x="151" y="130" font-size="8.5" fill="#4ade80" font-weight="750" text-anchor="start" font-family="monospace">${safe(lbl.axis3 || 'Zero-Alloc')}</text>
-        <text x="81" y="130" font-size="8.5" fill="var(--text)" font-weight="700" text-anchor="end" font-family="monospace">${safe(lbl.axis4 || 'UAV / IoT')}</text>
-        <text x="60" y="62" font-size="8.5" fill="var(--text)" font-weight="700" text-anchor="end" font-family="monospace">${safe(lbl.axis5 || 'Security')}</text>
+        <!-- Axis Labels: Collision-Free and Bold -->
+        <text x="122" y="16" font-size="9" fill="${color}" font-weight="750" text-anchor="middle" font-family="monospace">${safe(lbl.axis1 || 'Speed (SIMD)')}</text>
+        <text x="193" y="78" font-size="9" fill="var(--text)" font-weight="700" text-anchor="start" font-family="monospace">${safe(lbl.axis2 || 'Ratio')}</text>
+        <text x="165" y="162" font-size="9" fill="#4ade80" font-weight="750" text-anchor="start" font-family="monospace">${safe(lbl.axis3 || 'Zero-Alloc')}</text>
+        <text x="79" y="162" font-size="9" fill="var(--text)" font-weight="700" text-anchor="end" font-family="monospace">${safe(lbl.axis4 || 'UAV / IoT')}</text>
+        <text x="51" y="78" font-size="9" fill="var(--text)" font-weight="700" text-anchor="end" font-family="monospace">${safe(lbl.axis5 || 'Security')}</text>
 
         <!-- Right Side: Comparative Metrics Table -->
         <!-- Legend -->
-        <g transform="translate(245, 6)">
-          <rect width="10" height="10" rx="2" fill="${color}"/>
-          <text x="15" y="8.5" font-size="8.5" fill="${color}" font-weight="800" font-family="monospace">${safe(lbl.legendLib || 'LibPolyCodec (C++20)')}</text>
+        <g transform="translate(250, 8)">
+          <rect width="11" height="11" rx="2.5" fill="${color}"/>
+          <text x="17" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">${safe(lbl.legendLib || 'LibPolyCodec (C++20)')}</text>
           
-          <rect x="145" y="1" width="10" height="8" rx="2" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-dasharray="2 2"/>
-          <text x="160" y="8.5" font-size="8.5" fill="var(--muted)" font-family="monospace">${safe(lbl.legendGen || 'Standard (Zstd / Gzip)')}</text>
+          <rect x="150" y="1" width="11" height="9" rx="2" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <text x="168" y="9.5" font-size="9.5" fill="var(--muted)" font-family="monospace">${safe(lbl.legendGen || 'Standard (Zstd / Gzip)')}</text>
         </g>
 
         <!-- Metric 1: Throughput -->
-        <g transform="translate(245, 30)">
-          <text x="0" y="8.5" font-size="8.5" fill="var(--text)" font-weight="700" font-family="monospace">⚡ Throughput (SIMD)</text>
-          <rect x="145" y="1" width="105" height="8" rx="2.5" fill="rgba(255,255,255,0.06)"/>
-          <rect x="145" y="1" width="100" height="8" rx="2.5" fill="${color}"/>
-          <text x="256" y="8.5" font-size="8.5" fill="${color}" font-weight="800" font-family="monospace">95% (4.2x)</text>
+        <g transform="translate(250, 36)">
+          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">⚡ Throughput (SIMD)</text>
+          <rect x="145" y="1" width="112" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="145" y="1" width="107" height="10" rx="3" fill="${color}"/>
+          <text x="266" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">95% (4.2x)</text>
         </g>
 
         <!-- Metric 2: Compression Ratio -->
-        <g transform="translate(245, 52)">
-          <text x="0" y="8.5" font-size="8.5" fill="var(--text)" font-weight="700" font-family="monospace">📦 Compression Ratio</text>
-          <rect x="145" y="1" width="105" height="8" rx="2.5" fill="rgba(255,255,255,0.06)"/>
-          <rect x="145" y="1" width="92" height="8" rx="2.5" fill="${color}"/>
-          <text x="256" y="8.5" font-size="8.5" fill="${color}" font-weight="800" font-family="monospace">88% (+28%)</text>
+        <g transform="translate(250, 64)">
+          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">📦 Compression Ratio</text>
+          <rect x="145" y="1" width="112" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="145" y="1" width="99" height="10" rx="3" fill="${color}"/>
+          <text x="266" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">88% (+28%)</text>
         </g>
 
         <!-- Metric 3: Memory Determinism -->
-        <g transform="translate(245, 74)">
-          <text x="0" y="8.5" font-size="8.5" fill="var(--text)" font-weight="700" font-family="monospace">🧠 Memory Determinism</text>
-          <rect x="145" y="1" width="105" height="8" rx="2.5" fill="rgba(255,255,255,0.06)"/>
-          <rect x="145" y="1" width="105" height="8" rx="2.5" fill="#4ade80"/>
-          <text x="256" y="8.5" font-size="8.5" fill="#4ade80" font-weight="850" font-family="monospace">100% (0B)</text>
+        <g transform="translate(250, 92)">
+          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">🧠 Memory Determinism</text>
+          <rect x="145" y="1" width="112" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="145" y="1" width="112" height="10" rx="3" fill="#4ade80"/>
+          <text x="266" y="9.5" font-size="9.5" fill="#4ade80" font-weight="850" font-family="monospace">100% (0B)</text>
         </g>
 
         <!-- Metric 4: Embedded & UAV -->
-        <g transform="translate(245, 96)">
-          <text x="0" y="8.5" font-size="8.5" fill="var(--text)" font-weight="700" font-family="monospace">🛸 Embedded &amp; UAV</text>
-          <rect x="145" y="1" width="105" height="8" rx="2.5" fill="rgba(255,255,255,0.06)"/>
-          <rect x="145" y="1" width="96" height="8" rx="2.5" fill="${color}"/>
-          <text x="256" y="8.5" font-size="8.5" fill="${color}" font-weight="800" font-family="monospace">92%</text>
+        <g transform="translate(250, 120)">
+          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">🛸 Embedded &amp; UAV</text>
+          <rect x="145" y="1" width="112" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="145" y="1" width="103" height="10" rx="3" fill="${color}"/>
+          <text x="266" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">92%</text>
         </g>
 
         <!-- Metric 5: Data Security -->
-        <g transform="translate(245, 118)">
-          <text x="0" y="8.5" font-size="8.5" fill="var(--text)" font-weight="700" font-family="monospace">🔒 Positional Entropy</text>
-          <rect x="145" y="1" width="105" height="8" rx="2.5" fill="rgba(255,255,255,0.06)"/>
-          <rect x="145" y="1" width="94" height="8" rx="2.5" fill="${color}"/>
-          <text x="256" y="8.5" font-size="8.5" fill="${color}" font-weight="800" font-family="monospace">90%</text>
+        <g transform="translate(250, 148)">
+          <text x="0" y="9" font-size="9.5" fill="var(--text)" font-weight="700" font-family="monospace">🔒 Positional Entropy</text>
+          <rect x="145" y="1" width="112" height="10" rx="3" fill="rgba(255,255,255,0.06)"/>
+          <rect x="145" y="1" width="101" height="10" rx="3" fill="${color}"/>
+          <text x="266" y="9.5" font-size="9.5" fill="${color}" font-weight="800" font-family="monospace">90%</text>
         </g>
       </svg>
     </div>
