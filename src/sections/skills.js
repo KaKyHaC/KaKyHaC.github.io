@@ -3,9 +3,13 @@ import { getLang } from '../i18n/index.js';
 import { trackProjectView } from '../analytics.js';
 import { DOMAIN_META, DOMAIN_ORDER, projectUrl } from '../project-data.js';
 import { getProjects } from './projects.js';
+import { getActiveDomain, setGlobalDomain, subscribeDomain } from '../modules/domain.js';
 
 let activeSkillCategory = null;
-let activeSkillDomain = 'all';
+let cachedData = null;
+let cachedDetails = null;
+let cachedUi = null;
+let isSubscribed = false;
 
 export const SKILL_ICONS = {
   programming_languages: 'fas fa-code',
@@ -108,14 +112,19 @@ export function getProjectsForSkill(skillName, usageText) {
 export const sanitizeSkillId = str => 'skill-entry-' + String(str).toLowerCase().replace(/[^a-z0-9_-]/g, '-').replace(/-+/g, '-');
 
 export function renderSkills(data, details, ui) {
+  cachedData = data;
+  cachedDetails = details;
+  cachedUi = ui;
+
   const categories = data.skills_profile.categories;
   const uk = getLang() === 'uk';
   const lang = getLang();
 
   const isCatInDomain = catKey => {
-    if (activeSkillDomain === 'all') return true;
+    const activeDomain = getActiveDomain();
+    if (activeDomain === 'all') return true;
     const doms = SKILL_CATEGORY_DOMAINS[catKey] || [];
-    return doms.includes(activeSkillDomain);
+    return doms.includes(activeDomain);
   };
 
   const allOrderedCategories = SKILL_CATEGORY_GROUPS.flatMap(g => g.categories);
@@ -253,8 +262,9 @@ export function renderSkills(data, details, ui) {
   };
 
   const renderContainer = () => {
+    const activeDomain = getActiveDomain();
     const domainChipsHtml = DOMAIN_ORDER.map(key => {
-      const isActive = key === activeSkillDomain;
+      const isActive = key === activeDomain;
       if (key === 'all') {
         return `<button type="button" class="filter-chip filter-chip-all ${isActive ? 'active' : ''}" data-skill-domain="all"><span>${ui.skillsUi?.allDomains || (uk ? 'Усі спеціалізації' : 'All Specializations')}</span></button>`;
       }
@@ -320,14 +330,7 @@ export function renderSkills(data, details, ui) {
     $$('[data-skill-domain]').forEach(btn => {
       btn.addEventListener('click', () => {
         const nextDomain = btn.dataset.skillDomain;
-        if (activeSkillDomain === nextDomain) return;
-        activeSkillDomain = nextDomain;
-
-        const nextVisible = allOrderedCategories.filter(key => categories[key] && isCatInDomain(key));
-        if (!nextVisible.includes(activeSkillCategory)) {
-          activeSkillCategory = nextVisible[0] || allOrderedCategories[0];
-        }
-        renderContainer();
+        setGlobalDomain(nextDomain, { source: 'skills' });
       });
     });
 
@@ -346,4 +349,18 @@ export function renderSkills(data, details, ui) {
   };
 
   renderContainer();
+
+  if (!isSubscribed) {
+    subscribeDomain(() => {
+      if (!cachedData || !cachedDetails || !cachedUi) return;
+      const cats = cachedData.skills_profile.categories;
+      const allOrdered = SKILL_CATEGORY_GROUPS.flatMap(g => g.categories);
+      const visible = allOrdered.filter(key => cats[key] && isCatInDomain(key));
+      if (!activeSkillCategory || !visible.includes(activeSkillCategory)) {
+        activeSkillCategory = visible[0] || allOrdered[0];
+      }
+      renderContainer();
+    });
+    isSubscribed = true;
+  }
 }

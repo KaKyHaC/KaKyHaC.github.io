@@ -198,6 +198,10 @@ export default {
         foundation: 'Engineering Foundation',
         quality: 'Quality & Delivery',
     },
+    directionsUi: {
+        activeFilter: 'Active filter · Click to reset',
+        clickToFilter: 'Filter portfolio by this direction',
+    },
     skillsUi: {
         allDomains: 'All Specializations',
         filterDomainAria: 'Filter competencies by technical domain',

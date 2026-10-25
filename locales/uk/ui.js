@@ -198,6 +198,10 @@ export default {
         foundation: 'Інженерне ядро',
         quality: 'Якість та реліз',
     },
+    directionsUi: {
+        activeFilter: 'Активний фільтр · Клікніть для скидання',
+        clickToFilter: 'Фільтрувати портфоліо за цим напрямом',
+    },
     skillsUi: {
         allDomains: 'Усі спеціалізації',
         filterDomainAria: 'Фільтрувати компетенції за доменом',
