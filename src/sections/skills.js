@@ -30,6 +30,152 @@ export const SKILL_ICONS = {
   inferred_game_dev_and_publishing: 'fas fa-gamepad'
 };
 
+export const SKILL_ITEM_ICONS = {
+  // Programming Languages
+  'Kotlin': 'devicon-kotlin-plain',
+  'Java': 'devicon-java-plain',
+  'C++': 'devicon-cplusplus-plain',
+  'Python': 'devicon-python-plain',
+  'Dart': 'devicon-dart-plain',
+  'JavaScript': 'devicon-javascript-plain',
+
+  // AI Orchestration & Agentic Engineering
+  'Autonomous Coding Agents': 'fas fa-robot',
+  'Google Antigravity & Gemini': 'fas fa-brain',
+  'GPT / Codex Integration': 'fas fa-bolt',
+  'Spec-Driven Prompting': 'fas fa-file-code',
+  'Tech Lead Code Verification': 'fas fa-clipboard-check',
+  'AI-Driven Workflow Automation': 'fas fa-cogs',
+  'Agent Skills (SKILL.md)': 'fas fa-magic',
+
+  // Systems & C++
+  'C++20': 'devicon-cplusplus-plain',
+  'SIMD (AVX2 / NEON)': 'fas fa-tachometer-alt',
+  'CMake': 'devicon-cmake-plain',
+  'Zero-Allocation Architecture': 'fas fa-microchip',
+  'Polyadic Coding (OPC)': 'fas fa-project-diagram',
+  'Data Compression Algorithms': 'fas fa-compress-alt',
+
+  // Modern Web & Edge
+  'Astro Islands': 'devicon-astro-plain',
+  'Vite': 'devicon-vitejs-plain',
+  'Semantic CSS3 & Tokens': 'devicon-css3-plain',
+  'Cloudflare Pages': 'devicon-cloudflare-plain',
+  'Technical SEO & Schema.org JSON-LD': 'fas fa-search',
+  'Web Accessibility (WCAG 2.1 AA)': 'fas fa-universal-access',
+
+  // IoT & Embedded
+  'ESP32 (LilyGO)': 'fas fa-microchip',
+  'LoRa (SX1276)': 'fas fa-broadcast-tower',
+  'LoRaWAN': 'fas fa-wifi',
+  'MQTT Broker': 'fas fa-network-wired',
+  'Node-RED': 'devicon-nodered-plain',
+  'SerialPort / UART': 'fas fa-plug',
+
+  // Cybersecurity & Research
+  'Steganography': 'fas fa-eye-slash',
+  'Cryptocompression': 'fas fa-lock',
+  'Digital Forensics': 'fas fa-fingerprint',
+  'Cybercrime Countermeasures': 'fas fa-user-shield',
+  'Information Security': 'fas fa-shield-alt',
+
+  // Android Core & UI
+  'Android SDK': 'devicon-android-plain',
+  'Jetpack Compose': 'devicon-jetpackcompose-plain',
+  'Material 3': 'fas fa-swatchbook',
+  'Android TV (Leanback)': 'fas fa-tv',
+  'Android NDK': 'fas fa-cogs',
+  'Kotlin Multiplatform': 'devicon-kotlin-plain',
+  'Flutter': 'devicon-flutter-plain',
+
+  // Architecture & Design
+  'Clean Architecture': 'fas fa-layer-group',
+  'MVVM': 'fas fa-cubes',
+  'MVP': 'fas fa-th-large',
+  'MVI': 'fas fa-sync',
+  'BLoC': 'fas fa-stream',
+  'Redux': 'devicon-redux-original',
+  'SOLID': 'fas fa-shapes',
+  'GoF Patterns': 'fas fa-sitemap',
+
+  // Asynchrony & Networking
+  'Coroutines': 'fas fa-random',
+  'Flow': 'fas fa-water',
+  'RxJava / RxKotlin': 'fas fa-infinity',
+  'Retrofit 2': 'fas fa-exchange-alt',
+  'OkHttp': 'fas fa-paper-plane',
+  'WebSockets': 'fas fa-bolt',
+  'WorkManager': 'fas fa-clock',
+  'Fetch 2': 'fas fa-cloud-download-alt',
+
+  // Databases & Local Storage
+  'Room': 'fas fa-database',
+  'Firebase Firestore': 'devicon-firebase-plain',
+  'Firebase Realtime Database': 'devicon-firebase-plain',
+  'SQLite': 'devicon-sqlite-plain',
+  'Proto DataStore': 'fas fa-archive',
+  'SharedPreferences': 'fas fa-sliders-h',
+  'Realm': 'fas fa-server',
+
+  // Cloud & Backend
+  'Firebase Authentication': 'fas fa-key',
+  'Firebase Storage': 'fas fa-hdd',
+  'AWS Cognito': 'devicon-amazonwebservices-plain',
+
+  // Dependency Injection
+  'Dagger 2': 'fas fa-syringe',
+  'Hilt': 'fas fa-cube',
+  'Koin': 'fas fa-coins',
+
+  // Multimedia, Hardware & Camera
+  'CameraX': 'fas fa-camera',
+  'Camera 2 API': 'fas fa-video',
+  'ExoPlayer': 'fas fa-play-circle',
+  'VLC': 'fas fa-film',
+  'JNI (Java Native Interface)': 'fas fa-code-branch',
+  'SerialPort API': 'fas fa-microchip',
+  'Wi-Fi Direct': 'fas fa-wifi',
+  'Glide': 'fas fa-images',
+  'Coil': 'fas fa-image',
+
+  // Testing & Debugging
+  'JUnit 5': 'fas fa-vial',
+  'Mockito': 'fas fa-flask',
+  'Mockk': 'fas fa-check-double',
+  'Espresso': 'fas fa-coffee',
+  'Firebase Test Lab': 'devicon-firebase-plain',
+  'Timber': 'fas fa-tree',
+  'LeakCanary': 'fas fa-bug',
+  'Android Profiler': 'fas fa-chart-area',
+
+  // Monetization, Analytics & DevOps
+  'Google Play Billing (In-App Purchases)': 'fab fa-google-play',
+  'AdMob': 'fas fa-ad',
+  'Firebase Analytics': 'fas fa-chart-line',
+  'Crashlytics': 'fas fa-heartbeat',
+  'Remote Config (A/B Testing)': 'fas fa-sliders-h',
+  'CI/CD Pipelines': 'fas fa-tasks',
+  'Git Flow': 'devicon-git-plain',
+
+  // Inferred Game Dev & Publishing
+  'Game Loop & Economy Design': 'fas fa-gamepad',
+  'AI Opponent Logic (Tic-Tac-Toe)': 'fas fa-brain',
+  'Real-time Multiplayer Matchmaking': 'fas fa-users',
+  'Procedural Audio': 'fas fa-volume-up',
+  'Haptics & Tactile Feedback': 'fas fa-mobile-alt',
+  'App Store Optimization (ASO)': 'fas fa-chart-pie',
+  'Product Management & Publishing': 'fas fa-rocket'
+};
+
+export function getSkillIcon(skillName, categoryKey) {
+  if (SKILL_ITEM_ICONS[skillName]) return SKILL_ITEM_ICONS[skillName];
+  const lower = skillName.toLowerCase();
+  for (const [key, icon] of Object.entries(SKILL_ITEM_ICONS)) {
+    if (key.toLowerCase() === lower) return icon;
+  }
+  return SKILL_ICONS[categoryKey] || 'fas fa-check-circle';
+}
+
 export const SKILL_CATEGORY_GROUPS = [
   {
     id: 'core',
@@ -176,10 +322,11 @@ export function renderSkills(data, details, ui) {
           ${items.map(skillName => {
             const pCount = (matchedProjectsMap.get(skillName) || []).length;
             const targetId = sanitizeSkillId(skillName);
+            const skillIcon = getSkillIcon(skillName, key);
             return `<button type="button" class="skills-overview-chip" data-target-id="${targetId}" aria-label="${safe(skillName)}: ${pCount} ${ui.skillsUi?.projectsUnit || (uk ? 'проєктів' : 'projects')}">
-              <span class="skills-chip-bullet" aria-hidden="true"></span>
+              <span class="skills-chip-icon"><i class="${skillIcon}" aria-hidden="true"></i></span>
               <span class="skills-chip-name">${safe(skillName)}</span>
-              ${pCount ? `<span class="skills-chip-count">${pCount}</span>` : ''}
+              ${pCount ? `<span class="skills-chip-count" title="${pCount} ${ui.skillsUi?.projectsUnit || (uk ? 'проєктів' : 'projects')}"><i class="fas fa-folder-open" aria-hidden="true"></i> ${pCount}</span>` : ''}
             </button>`;
           }).join('')}
         </div>
@@ -203,10 +350,11 @@ export function renderSkills(data, details, ui) {
           const initial = matched.slice(0, 3);
           const extra = matched.slice(3);
           const entryId = sanitizeSkillId(item.skill);
+          const skillIcon = getSkillIcon(item.skill, key);
           const renderTag = p => `<a href="${projectUrl(p)}" class="skills-project-tag" data-project="${safe(p.title)}"><span>${safe(p.title)}</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`;
           return `<article class="skills-entry" id="${entryId}" tabindex="-1">
             <div class="skills-entry-top">
-              <span class="skills-entry-dot" aria-hidden="true"></span>
+              <span class="skills-entry-icon-box"><i class="${skillIcon}" aria-hidden="true"></i></span>
               <h4 class="skills-entry-name">${safe(item.skill)}</h4>
             </div>
             ${item.description ? `<p class="skills-entry-desc">${safe(item.description)}</p>` : ''}
