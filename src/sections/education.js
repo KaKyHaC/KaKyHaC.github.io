@@ -110,11 +110,18 @@ function bindCards(root) {
       const box = track.getBoundingClientRect();
       const pts = [...track.querySelectorAll('.edu-node')].map(n => {
         const r = n.getBoundingClientRect();
-        return [r.left + r.width / 2 - box.left, r.top + r.height / 2 - box.top];
+        return { x: r.left + r.width / 2 - box.left, y: r.top + r.height / 2 - box.top, r: r.width / 2 + 7 };
       });
       if (pts.length < 2 || getComputedStyle(svg).display === 'none') return;
       svg.setAttribute('viewBox', `0 0 ${box.width} ${box.height}`);
-      const d = 'M ' + pts.map(p => p.map(v => v.toFixed(1)).join(' ')).join(' L ');
+      // Segments stop short of each node's edge so the line never crosses the numbers.
+      const d = pts.slice(1).map((b, i) => {
+        const a = pts[i];
+        const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+        const ux = (b.x - a.x) / len, uy = (b.y - a.y) / len;
+        const f = v => v.toFixed(1);
+        return `M ${f(a.x + ux * a.r)} ${f(a.y + uy * a.r)} L ${f(b.x - ux * b.r)} ${f(b.y - uy * b.r)}`;
+      }).join(' ');
       svg.querySelectorAll('path').forEach(p => { p.setAttribute('d', d); p.setAttribute('pathLength', '1'); });
     };
     new ResizeObserver(draw).observe(track);
